@@ -44,6 +44,22 @@ The Pieces OS Client SDK is a powerful code engine package designed for writing 
 The Pieces SDK offers the following key features:
 
 1. Copilot Chats: Communicate seamlessly with copilot chats functionality.
-2. Asset Management: Save and manage assets and formats efficiently.
-3. Local Server Interaction: Interact with a locally hosted server for various functionality.
-4. Multi LLMs support: Use any Pieces supported LLM to power your app.
+1. Asset Management: Save and manage assets and formats efficiently.
+1. Local Server Interaction: Interact with a locally hosted server for various functionality.
+1. Multi LLMs support: Use any Pieces supported LLM to power your app.
+
+
+## Installation
+
+To get started with the Pieces OS Client SDK, follow these steps:
+
+1. **Download Pieces OS**: Pieces OS serves as the primary backend service, providing essential functionality for the SDK. Download the appropriate version for your operating system:
+   - [macOS](https://docs.pieces.app/installation-getting-started/macos) 
+   - [Windows](https://docs.pieces.app/installation-getting-started/windows) 
+   - [Linux](https://docs.pieces.app/installation-getting-started/linux)
+
+2. **Install the SDK**: Use nuget to install the Pieces OS Client SDK package:
+
+   ```shell
+   dotnet add package Pieces.OS.Client
+   ```
