@@ -21,9 +21,9 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>JimBobBennett.POS.Client</PackageId>
+    <PackageId>Pieces.OS.Client</PackageId>
     <PackageIcon>pieces-circle.png</PackageIcon>
-    <Version>0.0.4-beta</Version>
+    <Version>0.0.5-beta</Version>
     <Authors>Pieces for Devlopers</Authors>
     <Company>Pieces for Devlopers</Company>
     <Description>A powerful code engine package for writing applications on top of Pieces OS</Description>

@@ -1,4 +1,4 @@
-[![Pieces](./assets/pieces-logo.png)](https://pieces.app)
+[![Pieces](https://raw.githubusercontent.com/pieces-app/pieces-os-client-sdk-for-csharp/main/assets/pieces-logo.png?token=GHSAT0AAAAAACTAEQJM63MDD3OICVSXMCLCZW2LDQQ)](https://pieces.app)
 
 # Pieces OS Client SDK For C#
 
