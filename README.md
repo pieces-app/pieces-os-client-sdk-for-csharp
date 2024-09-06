@@ -1,40 +1,12 @@
-<h1 align="center">
-    <b>
-        <a href="https://pieces.app">
-            <picture>
-                <source srcset="./assets/Logo-light-theme.png" media="(prefers-color-scheme: light)">
-                <source srcset="./assets/Logo-dark-theme.png" media="(prefers-color-scheme: dark)">
-                <img src="./assets/Logo-dark-theme.png" height="125" width="600" />
-            </picture>
-        </a><br>
-    </b>
-</h1>
+[![Pieces](./assets/pieces-logo.png)](https://pieces.app)
 
-# <p align="center"> Pieces OS Client SDK For C#
-   <p align="center">
-      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/graphs/contributors" alt="GitHub contributors">
-         <img src="https://img.shields.io/github/contributors/pieces-app/pieces-os-client-sdk-for-csharp.svg" />
-      </a>
-      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues" alt="GitHub issues by-label">
-         <img src="https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-csharp" />
-      </a>
-      <a href="https://discord.gg/getpieces" alt="Discord">
-         <img src="https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff" />
-      </a>
-      <a href="https://twitter.com/getpieces" alt="Twitter Follow">
-         <img src="https://img.shields.io/twitter/follow/pieces.svg?label=Follow" />
-      </a>
-      <a href="https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/blob/main/LICENSE" alt="License">
-         <img src="https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-csharp.svg" />
-      </a>
-      <!-- <a href="https://pypi.org/project/pieces_os_client" >
-         <img src="https://badge.fury.io/py/pieces-os-client.svg" />
-      </a>
-      <a href="https://pepy.tech/project/pieces_os_client" >
-         <img src="https://static.pepy.tech/badge/pieces_os_client" />
-      </a> -->
-   </p>
-</p>
+# Pieces OS Client SDK For C#
+
+[![GitHub contributors](https://img.shields.io/github/contributors/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/graphs/contributors)
+[![GitHub issues by-label](https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-csharp)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues)
+[![Discord](https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff)](https://discord.gg/getpieces)
+[![Twitter Follow](https://img.shields.io/twitter/follow/pieces.svg?label=Follow)](https://twitter.com/getpieces)
+[![License](https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/blob/main/LICENSE)
 
 ## Introduction
 

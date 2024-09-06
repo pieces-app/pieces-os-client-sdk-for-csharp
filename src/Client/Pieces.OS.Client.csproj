@@ -6,6 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+    <PackageReference Include="JsonSubTypes" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="Polly" Version="8.1.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -15,14 +20,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-
   <PropertyGroup>
-    <PackageId>Pieces.OS.Client</PackageId>
-    <PackageIcon>pieces-logo.png</PackageIcon>
-    <Version>0.0.1-beta</Version>
+    <PackageId>JimBobBennett.POS.Client</PackageId>
+    <PackageIcon>pieces-circle.png</PackageIcon>
+    <Version>0.0.4-beta</Version>
     <Authors>Pieces for Devlopers</Authors>
     <Company>Pieces for Devlopers</Company>
     <Description>A powerful code engine package for writing applications on top of Pieces OS</Description>
@@ -36,7 +37,7 @@
 
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-    <None Include="..\..\assets\pieces-logo.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\assets\pieces-circle.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <PropertyGroup>
