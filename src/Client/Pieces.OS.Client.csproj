@@ -23,6 +23,7 @@
   <PropertyGroup>
     <PackageId>Pieces.OS.Client</PackageId>
     <PackageIcon>pieces-circle.png</PackageIcon>
+    <Copyright>2024 Mesh Intelligent Technologies, Inc</Copyright>
     <Version>0.0.5-beta</Version>
     <Authors>Pieces for Devlopers</Authors>
     <Company>Pieces for Devlopers</Company>
