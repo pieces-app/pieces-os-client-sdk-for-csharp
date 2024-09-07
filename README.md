@@ -4,6 +4,7 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/graphs/contributors)
 [![GitHub issues by-label](https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-csharp)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues)
+[![Pieces OS Client SDK on nuget](https://img.shields.io/nuget/vpre/Pieces.OS.Client)](https://www.nuget.org/packages/Pieces.OS.Client/)
 [![Discord](https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff)](https://discord.gg/getpieces)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pieces.svg?label=Follow)](https://twitter.com/getpieces)
 [![License](https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/blob/main/LICENSE)
