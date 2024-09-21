@@ -1,11 +1,10 @@
 ﻿/// This file contains some examples for using the Pieces .NET SDK
 ///
 /// You can find each example in a region below. These examples are commented out, so uncomment each one to run it.
-
-using Microsoft.Extensions.Logging;
-using Pieces.OS.Client;
-
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+
+using Pieces.OS.Client;
 
 // Set up logging
 var services = new ServiceCollection();
@@ -186,7 +185,7 @@ Console.WriteLine();
 // var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
 // Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
 
-// var chat6 = await copilot.CreateChatAsync("C# streaming question on primary constructors", assetIds: [newAsset.Id]).ConfigureAwait(false);
+// var chat6 = await copilot.CreateChatAsync("C# chat with an asset", assetIds: [newAsset.Id]).ConfigureAwait(false);
 
 // var question6 = "Describe this C# program";
 // Console.WriteLine(question6);
