@@ -401,3 +401,7 @@ FodyWeavers.xsd
 # docfx
 _site/
 /api/
+
+# act secrets
+.secrets
+.env
