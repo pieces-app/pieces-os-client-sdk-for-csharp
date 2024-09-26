@@ -25,7 +25,7 @@ jobs:
         encodedString: ${{ secrets.NUGET_CERTIFICATE }}
     - name: Sign the nuget package
       working-directory: ./src/Client
-      run: dotnet nuget sign ./bin/Release/Pieces.OS.Client.${GITHUB_REF#refs/tags/v}.nupkg --certificate-path /tmp/certfile.pfx --certificate-password ${{ secrets.NUGET_CERTIFICATE_PASSWORD }} --timestamper http://timestamp.digicert.com
+      run: dotnet nuget sign ./bin/Release/Pieces.OS.Client.${GITHUB_REF#refs/tags/v}.nupkg --certificate-path ${{ steps.cert_file.outputs.filePath }} --certificate-password ${{ secrets.NUGET_CERTIFICATE_PASSWORD }} --timestamper http://timestamp.digicert.com
     - name: Push to NuGet
       working-directory: ./src/Client
       run: dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org
