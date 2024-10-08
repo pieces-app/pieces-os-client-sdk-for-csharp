@@ -14,13 +14,13 @@
 The Pieces OS Client SDK is a powerful code engine package designed for writing applications on top of Pieces OS. It facilitates communication with a locally hosted server to enable features such as copilot chats, asset saving, and more.
 
 ## Features
+
 The Pieces SDK offers the following key features:
 
 1. Copilot Chats: Communicate seamlessly with copilot chats functionality.
 1. Asset Management: Save and manage assets and formats efficiently.
 1. Local Server Interaction: Interact with a locally hosted server for various functionality.
 1. Multi LLMs support: Use any Pieces supported LLM to power your app.
-
 
 ## Installation
 
@@ -80,14 +80,13 @@ Once you have the `IPiecesCopilot`, you can ask questions, and get the response 
 
 This will create a new copilot chat that you will be able to see in other Pieces applications, such as Pieces Desktop, or Pieces for Visual Studio Code. This chat will be named `"C# question on async tasks"`, and you will see this name in other Pieces applications. The chat will ask a question, then return the full answer to the console once it has the complete answer.
 
-
 ```csharp
 var chat = await copilot.CreateChatAsync("C# question on async tasks").ConfigureAwait(false);
 
 Console.WriteLine(await chat.AskQuestionAsync("What does the async keyword do in C#?"));
 ```
 
-#### create a chat and ask a question, then a follow up question:
+#### Create a chat and ask a question, then a follow up question:
 
 This example creates a copilot chat, and asks 2 connected questions, showing the response from each once it has been completely generated.
 
@@ -98,7 +97,22 @@ Console.WriteLine(await chat2.AskQuestionAsync("What does the async keyword do i
 Console.WriteLine(await chat2.AskQuestionAsync("Give me an example using it with an HTTP call?").ConfigureAwait(false));
 ```
 
-#region Example 3 - stream the response
+#### Create a chat with seeded messages:
+
+This example shows how to seed a conversation with a set of messages that are used in the conversation
+
+```csharp
+var seeds = new List<SeedMessage>{
+    new(QGPTConversationMessageRoleEnum.SYSTEM, "Answer every question from now on in the style of a pirate. Start every response with 'Hey matey!'."),
+    new(QGPTConversationMessageRoleEnum.USER, "How can I make a web request"),
+    new(QGPTConversationMessageRoleEnum.ASSISTANT, "To make a web request in a programming language, you typically use an HTTP client library."),
+};
+
+var chat = await copilot.CreateSeededChatAsync("C# web requests", 
+                                               seeds: seeds).ConfigureAwait(false);
+
+Console.WriteLine(await chat.AskQuestionAsync("What about in C#?").ConfigureAwait(false));
+```
 
 #### Stream the response
 

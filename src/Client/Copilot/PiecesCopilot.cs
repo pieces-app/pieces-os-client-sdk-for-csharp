@@ -47,11 +47,37 @@ public class PiecesCopilot : IPiecesCopilot
     /// <param name="useLiveContext">Should this chat use live context or not</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The new chat</returns>
-    public async Task<ICopilotChat> CreateChatAsync(string chatName = "",
+    public Task<ICopilotChat> CreateChatAsync(string chatName = "",
                                                     IEnumerable<string>? assetIds = null,
                                                     Model? model = default,
                                                     bool useLiveContext = false,
                                                     CancellationToken cancellationToken = default)
+    {
+        return CreateSeededChatAsync(chatName: chatName,
+                                     seeds: null,
+                                     assetIds: assetIds,
+                                     model: model,
+                                     useLiveContext: useLiveContext,
+                                     cancellationToken: cancellationToken);
+    }
+
+
+    /// <summary>
+    /// Create a new chat with the copilot seeded with messages
+    /// </summary>
+    /// <param name="chatName">An optional name for the chat. If nothing is provided, the name will be New conversation</param>
+    /// <param name="seeds">A set of seeded messages for the conversation</param>
+    /// <param name="assetIds">An optional list of asset Ids to add to the chat</param>
+    /// <param name="model">The LLM model to use</param>
+    /// <param name="useLiveContext">Should this chat use live context or not</param>
+    /// <param name="cancellationToken">A cancellation token</param>
+    /// <returns>The new chat</returns>
+    public async Task<ICopilotChat> CreateSeededChatAsync(string chatName = "",
+                                                          IEnumerable<SeedMessage>? seeds = null,
+                                                          IEnumerable<string>? assetIds = null,
+                                                          Model? model = default,
+                                                          bool useLiveContext = false,
+                                                          CancellationToken cancellationToken = default)
     {
         chatName = string.IsNullOrWhiteSpace(chatName) ? "New Conversation" : chatName;
 
@@ -85,8 +111,22 @@ public class PiecesCopilot : IPiecesCopilot
             flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
         }
 
+        // If we have any seeds, use them
+        List<SeededConversationMessage>? conversationMessages = null;
+        if (seeds is not null && seeds.Any())
+        {
+            conversationMessages = seeds.Select(s =>
+            {
+                var fragment = new FragmentFormat(varString: new TransferableString(raw: s.Message));
+                return new SeededConversationMessage(model: model,
+                                                     role: s.Role,
+                                                     fragment: fragment);
+            }).ToList();
+        }
+
         var seededConversation = new SeededConversation(type: ConversationTypeEnum.COPILOT,
                                                         name: chatName,
+                                                        messages: conversationMessages,
                                                         pipeline: pipeline,
                                                         assets: flattenedAssets);
         var conversation = await conversationsApi.ConversationsCreateSpecificConversationAsync(
