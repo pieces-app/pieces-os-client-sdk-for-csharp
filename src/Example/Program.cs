@@ -107,25 +107,25 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // This example creates a conversation, then deletes it. You should see it deleted in other Pieces apps
 // like Pieces Desktop
 
-{
-    var chat = await copilot.CreateChatAsync("This chat will be deleted").ConfigureAwait(false);
-    var response = await chat.AskQuestionAsync("Hello").ConfigureAwait(false);
-    Console.WriteLine(response);
+// {
+//     var chat = await copilot.CreateChatAsync("This chat will be deleted").ConfigureAwait(false);
+//     var response = await chat.AskQuestionAsync("Hello").ConfigureAwait(false);
+//     Console.WriteLine(response);
 
-    await copilot.DeleteChatAsync(chat).ConfigureAwait(false);
+//     await copilot.DeleteChatAsync(chat).ConfigureAwait(false);
 
-    try
-    {
-        await chat.AskQuestionAsync("Hello").ConfigureAwait(false);
-        Console.WriteLine("Yu should not see this - deleted chats should be unavailable");
-    }
-    catch (Exception)
-    {
-        Console.WriteLine("Exception correctly thrown when accessing a deleted chat");
-    }
+//     try
+//     {
+//         await chat.AskQuestionAsync("Hello").ConfigureAwait(false);
+//         Console.WriteLine("Yu should not see this - deleted chats should be unavailable");
+//     }
+//     catch (Exception)
+//     {
+//         Console.WriteLine("Exception correctly thrown when accessing a deleted chat");
+//     }
     
-    Console.WriteLine();
-}
+//     Console.WriteLine();
+// }
 
 #endregion Create a chat and delete it
 
