@@ -9,7 +9,12 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/src/Client.Example/Pieces.OS.Client.Example.csproj"
+        },
+        {
+            "name": "Extensions Example Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/src/Extensions.Example/Pieces.Extensions.AI.Example.csproj"
         }
-
     ]
 }

@@ -6,7 +6,7 @@ on:
       - '*'
 
 jobs:
-  publish-to-nuget:
+  publish-client-to-nuget:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
