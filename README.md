@@ -37,9 +37,9 @@ To get started with the Pieces OS Client SDK, follow these steps:
    dotnet add package Pieces.OS.Client
    ```
 
-## Examples
+## Pieces Client Examples
 
-There is an example project in the [`./src/Example`](./src/Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`./src/Example`](./src/Example) folder.
+There is an example project using the Pieces Client in the [`./src/Client.Example`](./src/Client.Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`./src/Client.Example`](./src/Client.Example) folder.
 
 ### Set up the SDK
 
