@@ -24,49 +24,53 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 
 // Examples
 
-#region Example 0 - list all the models
+#region List all the models
 
-// Example 0 - list all the models
+// List all the models
 //
 // This example lists out all the LLMs Pieces currently supports
 
-// foreach (var model in await client.GetModelsAsync().ConfigureAwait(false))
 // {
-//     var modelStatus = model.Cloud ? "Cloud model" : "On-device model";
-//     if (!model.Cloud)
+//     foreach (var model in await client.GetModelsAsync().ConfigureAwait(false))
 //     {
-//         var downloaded = model.Downloaded ? "downloaded" : "Not downloaded";
-//         modelStatus += $", {downloaded}";
-//     }
+//         var modelStatus = model.Cloud ? "Cloud model" : "On-device model";
+//         if (!model.Cloud)
+//         {
+//             var downloaded = model.Downloaded ? "downloaded" : "Not downloaded";
+//             modelStatus += $", {downloaded}";
+//         }
 
-//     Console.WriteLine($"Model: {model.Name}, ID: {model.Id}. {modelStatus}");
+//         Console.WriteLine($"Model: {model.Name}, ID: {model.Id}. {modelStatus}");
+//     }
 // }
 
-#endregion Example 0 - list all the models
+#endregion List all the models
 
-#region Example 1 - create a chat and ask a question:
+#region Create a chat and ask a question:
 
-// Example 1 - create a chat and ask a question
+// Create a chat and ask a question
 //
 // This will create a new copilot chat called C# question on async tasks that you will be able to see in other Pieces applications,
 // such as Pieces Desktop, or Pieces for Visual Studio Code.
 // The chat will ask a question, then return the full answer to the console once it has the answer.
 
-// var chat1 = await copilot.CreateChatAsync("C# question on async tasks").ConfigureAwait(false);
+// {
+//     var chat = await copilot.CreateChatAsync("C# question on async tasks").ConfigureAwait(false);
 
-// var question1 = "What does the async keyword do in C#?";
-// var response1 = await chat1.AskQuestionAsync(question1);
+//     var question = "What does the async keyword do in C#?";
+//     var response = await chat.AskQuestionAsync(question);
 
-// Console.WriteLine(question1);
-// Console.WriteLine();
-// Console.WriteLine(response1);
-// Console.WriteLine();
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+//     Console.WriteLine(response);
+//     Console.WriteLine();
+// }
 
-#endregion Example 1 - create a chat and ask a question:
+#endregion Create a chat and ask a question:
 
-#region Example 2 - create a chat and ask a question, then a follow up question:
+#region Create a chat and ask a question, then a follow up question:
 
-// Example 2 - create a chat and ask a question
+// Create a chat and ask a question
 //
 // This will create a new copilot chat called C# question on async tasks that you will be able to see in other Pieces applications,
 // such as Pieces Desktop, or Pieces for Visual Studio Code.
@@ -74,76 +78,110 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // It will then ask a follow up question that relies on the first question to make sense, to show how copilot chats can have
 // context from previous questions in the same chat.
 
-// var chat2 = await copilot.CreateChatAsync("2 C# questions on async tasks").ConfigureAwait(false);
+// {
+//     var chat = await copilot.CreateChatAsync("2 C# questions on async tasks").ConfigureAwait(false);
 
-// var question2 = "What does the async keyword do in C#?";
-// var response2 = await chat2.AskQuestionAsync(question2).ConfigureAwait(false);
+//     var question = "What does the async keyword do in C#?";
+//     var response = await chat.AskQuestionAsync(question).ConfigureAwait(false);
 
-// var question2FollowUp = "Give me an example using it with an HTTP call?";
-// var response2FollowUp = await chat2.AskQuestionAsync(question2FollowUp).ConfigureAwait(false);
+//     var questionFollowUp = "Give me an example using it with an HTTP call?";
+//     var responseFollowUp = await chat.AskQuestionAsync(questionFollowUp).ConfigureAwait(false);
 
-// Console.WriteLine(question2);
-// Console.WriteLine();
-// Console.WriteLine(response2);
-// Console.WriteLine();
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+//     Console.WriteLine(response);
+//     Console.WriteLine();
 
-// Console.WriteLine(question2FollowUp);
-// Console.WriteLine();
-// Console.WriteLine(response2FollowUp);
-// Console.WriteLine();
+//     Console.WriteLine(questionFollowUp);
+//     Console.WriteLine();
+//     Console.WriteLine(responseFollowUp);
+//     Console.WriteLine();
+// }
 
-#endregion Example 2 - create a chat and ask a question, then a follow up question:
+#endregion Create a chat and ask a question, then a follow up question:
 
-#region Example 3 - stream the response
+#region Create a chat then delete it
 
-// Example 3 - stream the response
+// Create a chat then delete it
+//
+// This example creates a conversation, then deletes it. You should see it deleted in other Pieces apps
+// like Pieces Desktop
+
+{
+    var chat = await copilot.CreateChatAsync("This chat will be deleted").ConfigureAwait(false);
+    var response = await chat.AskQuestionAsync("Hello").ConfigureAwait(false);
+    Console.WriteLine(response);
+
+    await copilot.DeleteChatAsync(chat).ConfigureAwait(false);
+
+    try
+    {
+        await chat.AskQuestionAsync("Hello").ConfigureAwait(false);
+        Console.WriteLine("Yu should not see this - deleted chats should be unavailable");
+    }
+    catch (Exception)
+    {
+        Console.WriteLine("Exception correctly thrown when accessing a deleted chat");
+    }
+    
+    Console.WriteLine();
+}
+
+#endregion Create a chat and delete it
+
+#region Stream the response
+
+// Stream the response
 //
 // This will create a new copilot chat called C# question on async tasks that you will be able to see in other Pieces applications,
 // such as Pieces Desktop, or Pieces for Visual Studio Code.
 // The chat will ask a question, then stream the response back token by token
 
-// var chat3 = await copilot.CreateChatAsync("C# streaming question on primary constructors").ConfigureAwait(false);
-
-// var question3 = "In C#, what is a primary constructor? Give me some example code that declares a class with one.";
-// Console.WriteLine(question3);
-// Console.WriteLine();
-
-// await foreach (var token in chat3.AskStreamingQuestionAsync(question3))
 // {
-//     Console.Write(token);
+//     var chat = await copilot.CreateChatAsync("C# streaming question on primary constructors").ConfigureAwait(false);
+
+//     var question = "In C#, what is a primary constructor? Give me some example code that declares a class with one.";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
 // }
 
-// Console.WriteLine();
+#endregion Stream the response
 
-#endregion Example 3 - stream the response
+#region Use live context
 
-#region Example 4 - use live context
-
-// Example 4 - use live context
+// Use live context
 //
 // This will create a new copilot chat called 1 hour context window, with live context turned on that you will be able to see in other Pieces applications,
 // such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see live context turned on against the chat
 // The chat will ask a question related to this code file using a 1 hour context window, then stream the response back token by token
 
-// Create a chat with a 1 hour context window
-// var chat4 = await copilot.CreateChatAsync("1 hour context window", useLiveContext: true).ConfigureAwait(false);
-
-// var question4 = "Describe the Program.cs file I was just reading in my IDE";
-// Console.WriteLine(question4);
-// Console.WriteLine();
-
-// await foreach (var token in chat4.AskStreamingQuestionAsync(question4, liveContextTimeSpan: TimeSpan.FromHours(1)))
 // {
-//     Console.Write(token);
+//     var chat = await copilot.CreateChatAsync("1 hour context window", useLiveContext: true).ConfigureAwait(false);
+
+//     var question = "Describe the Program.cs file I was just reading in my IDE";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question, liveContextTimeSpan: TimeSpan.FromHours(1)))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
 // }
 
-Console.WriteLine();
+#endregion Use live context
 
-#endregion Example 4 - use live context
+#region Load assets
 
-#region Example 5 - Load assets
-
-// Example 5 - load assets
+// Load assets
 //
 // This example loads all the assets in your current Pieces OS and prints the names and language
 
@@ -153,105 +191,111 @@ Console.WriteLine();
 //     Console.WriteLine($"{asset.Name} - {language}");
 // }
 
-#endregion Example 5 - Load assets
+#endregion Load assets
 
-#region Example 6 - Create an asset and use it in a copilot chat
+#region Create an asset and use it in a copilot chat
 
-// Example 6 - Create an asset and use it in a copilot chat
+// Create an asset and use it in a copilot chat
 //
 // This example creates a new asset. It then uses it in a copilot chat asking a question about it.
-// var assetCode = @"using System;
 
-// class Program
 // {
-//     static void Main(string[] args)
+//     var assetCode = @"using System;
+//     class Program
 //     {
-//         // Prompt the user for their name
-//         Console.Write(""Please enter your name: "");
-        
-//         // Read the user's input
-//         string name = Console.ReadLine();
-        
-//         // Print a greeting with the user's name
-//         Console.WriteLine($""Hello, {name}! Nice to meet you."");
-        
-//         // Wait for the user to press a key before closing the console window
-//         Console.WriteLine(""Press any key to exit..."");
-//         Console.ReadKey();
+//         static void Main(string[] args)
+//         {
+//             // Prompt the user for their name
+//             Console.Write(""Please enter your name: "");
+            
+//             // Read the user's input
+//             string name = Console.ReadLine();
+            
+//             // Print a greeting with the user's name
+//             Console.WriteLine($""Hello, {name}! Nice to meet you."");
+            
+//             // Wait for the user to press a key before closing the console window
+//             Console.WriteLine(""Press any key to exit..."");
+//             Console.ReadKey();
+//         }
 //     }
+//     ";
+
+//     var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
+//     Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
+
+//     var chat = await copilot.CreateChatAsync("C# chat with an asset", assetIds: [newAsset.Id]).ConfigureAwait(false);
+
+//     var question = "Describe this C# program";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
 // }
-// ";
 
-// var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
-// Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
+#endregion Create an asset and use it in a copilot chat
 
-// var chat6 = await copilot.CreateChatAsync("C# chat with an asset", assetIds: [newAsset.Id]).ConfigureAwait(false);
+#region Change the model
 
-// var question6 = "Describe this C# program";
-// Console.WriteLine(question6);
-// Console.WriteLine();
-
-// await foreach (var token in chat6.AskStreamingQuestionAsync(question6))
-// {
-//     Console.Write(token);
-// }
-
-// Console.WriteLine();
-
-#endregion Example 6 - Create an asset and use it in a copilot chat
-
-#region Example 7 - Change the model
-
-// Example 7 - Change the model
+// Change the model
 //
 // This example shows how to select a different model and use it for a copilot chat
 // If the current model is claude, select GPT-4o, otherwise select Claude
 
-// var models7 = await client.GetModelsAsync().ConfigureAwait(false);
-// var claudeModel = models7.First(m => m.Name.Contains("Claude 3.5 Sonnet", StringComparison.CurrentCultureIgnoreCase));
-// var gpt4oModel = models7.First(m => m.Name.Contains("GPT-4o", StringComparison.CurrentCultureIgnoreCase));
-
-// var chat7Model = copilot.Model.Id == claudeModel.Id ? gpt4oModel : claudeModel;
-
-// var chat7 = await copilot.CreateChatAsync("Chat with a different model", model: chat7Model).ConfigureAwait(false);
-// var question7 = "What LLM are you?";
-// Console.WriteLine(question7);
-// Console.WriteLine();
-
-// await foreach (var token in chat7.AskStreamingQuestionAsync(question7))
 // {
-//     Console.Write(token);
+//     var models = await client.GetModelsAsync().ConfigureAwait(false);
+//     var claudeModel = models.First(m => m.Name.Contains("Claude 3.5 Sonnet", StringComparison.CurrentCultureIgnoreCase));
+//     var gpt4oModel = models.First(m => m.Name.Contains("GPT-4o", StringComparison.CurrentCultureIgnoreCase));
+
+//     var chatModel = copilot.Model.Id == claudeModel.Id ? gpt4oModel : claudeModel;
+
+//     var chat = await copilot.CreateChatAsync("Chat with a different model", model: chatModel).ConfigureAwait(false);
+//     var question = "What LLM are you?";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
 // }
 
-#endregion Example 7 - Change the model
+#endregion Change the model
 
-#region Example 8 - Change the model to a local model
+#region Change the model to a local model
 
-// Example 8 - Change the model to a local model
+// Change the model to a local model
 //
 // This example shows how to select a different model and use it for a copilot chat
 // In this case, the model is a local model, so may need to be downloaded. If the model needs to be downloaded,
 // you will be able to monitor the progress in Pieces Desktop
 
-// var models8 = await client.GetModelsAsync().ConfigureAwait(false);
-// var llamaModel = models8.First(m => m.Name.Contains("Llama-3", StringComparison.CurrentCultureIgnoreCase));
-// var phi3Model = models8.First(m => m.Name.Contains("Phi-3", StringComparison.CurrentCultureIgnoreCase));
-
-// var chat8Model = copilot.Model.Id == llamaModel.Id ? phi3Model : llamaModel;
-
-// if (!chat8Model.Downloaded)
 // {
-//     await client.DownloadModelAsync(chat8Model).ConfigureAwait(false);
+//     var models = await client.GetModelsAsync().ConfigureAwait(false);
+//     var llamaModel = models.First(m => m.Name.Contains("Llama-3", StringComparison.CurrentCultureIgnoreCase));
+//     var phi3Model = models.First(m => m.Name.Contains("Phi-3", StringComparison.CurrentCultureIgnoreCase));
+
+//     var chatModel = copilot.Model.Id == llamaModel.Id ? phi3Model : llamaModel;
+
+//     if (!chatModel.Downloaded)
+//     {
+//         await client.DownloadModelAsync(chatModel).ConfigureAwait(false);
+//     }
+
+//     var chat = await copilot.CreateChatAsync("Chat with a different model", model: chatModel).ConfigureAwait(false);
+//     var question = "What LLM are you?";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
 // }
 
-// var chat8 = await copilot.CreateChatAsync("Chat with a different model", model: chat8Model).ConfigureAwait(false);
-// var question8 = "What LLM are you?";
-// Console.WriteLine(question8);
-// Console.WriteLine();
-
-// await foreach (var token in chat8.AskStreamingQuestionAsync(question8))
-// {
-//     Console.Write(token);
-// }
-
-#endregion Example 8 - Change the model to a local model
+#endregion Change the model to a local model
