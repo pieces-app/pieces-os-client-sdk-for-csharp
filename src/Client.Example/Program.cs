@@ -161,6 +161,7 @@ Console.WriteLine();
 // Example 6 - Create an asset and use it in a copilot chat
 //
 // This example creates a new asset. It then uses it in a copilot chat asking a question about it.
+
 // var assetCode = @"using System;
 
 // class Program
