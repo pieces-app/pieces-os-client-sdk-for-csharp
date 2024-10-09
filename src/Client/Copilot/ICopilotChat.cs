@@ -30,6 +30,11 @@ public interface ICopilotChat
     event EventHandler<TokenEventArgs>? TokenEvent;
 
     /// <summary>
+    /// Has this chat been deleted? If true, then any calls to ask questions will fail.
+    /// </summary>
+    public bool Deleted { get; }
+
+    /// <summary>
     /// Ask the copilot a question and get the response as a stream
     /// 
     /// The response is streamed as an async enumerable that you can iterate through.

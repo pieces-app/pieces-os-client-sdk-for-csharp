@@ -20,6 +20,11 @@ public class CopilotChat : ICopilotChat
     private readonly IRangesApi rangesApi;
     private readonly bool useLiveContext;
 
+    /// <summary>
+    /// Has this chat been deleted? If true, then any calls to ask questions will fail.
+    /// </summary>
+    public bool Deleted { get; internal set; } = false;
+
     internal CopilotChat(ILogger? logger, Model model, Application application, IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient, Conversation conversation, IRangesApi rangesApi, bool useLiveContext)
     {
         this.logger = logger;
@@ -67,6 +72,12 @@ public class CopilotChat : ICopilotChat
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
     public async IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
+        if (Deleted)
+        {
+            logger?.LogError("Cannot ask streaming question, this conversation has been deleted");
+            throw new PiecesClientException("Cannot ask streaming question, this conversation has been deleted");
+        }
+
         logger?.LogInformation("Streaming question {question} asked", question);
 
         // Save the question
@@ -192,6 +203,12 @@ public class CopilotChat : ICopilotChat
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
     public async Task<string?> AskQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, CancellationToken cancellationToken = default)
     {
+        if (Deleted)
+        {
+            logger?.LogError("Cannot ask streaming question, this conversation has been deleted");
+            throw new PiecesClientException("Cannot ask streaming question, this conversation has been deleted");
+        }
+
         logger?.LogInformation("Question {question} asked", question);
 
         // Reuse the streaming function, and let it run

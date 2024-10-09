@@ -24,4 +24,11 @@ public interface IPiecesCopilot
     /// Get all the chats with the current copilot
     /// </summary>
     IEnumerable<ICopilotChat> Chats { get; }
+
+    /// <summary>
+    /// Deletes a copilot chat
+    /// </summary>
+    /// <param name="chat">The chat to delete</param>
+    /// <returns></returns>
+    Task DeleteChatAsync(ICopilotChat chat, CancellationToken cancellationToken = default);
 }
