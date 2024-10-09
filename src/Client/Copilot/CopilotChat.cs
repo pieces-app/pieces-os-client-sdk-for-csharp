@@ -205,8 +205,8 @@ public class CopilotChat : ICopilotChat
     {
         if (Deleted)
         {
-            logger?.LogError("Cannot ask streaming question, this conversation has been deleted");
-            throw new PiecesClientException("Cannot ask streaming question, this conversation has been deleted");
+            logger?.LogError("Cannot ask question, this conversation has been deleted");
+            throw new PiecesClientException("Cannot ask question, this conversation has been deleted");
         }
 
         logger?.LogInformation("Question {question} asked", question);
