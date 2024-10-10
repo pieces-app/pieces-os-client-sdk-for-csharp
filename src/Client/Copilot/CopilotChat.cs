@@ -18,14 +18,18 @@ public class CopilotChat : ICopilotChat
     private readonly IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient;
     private readonly Conversation conversation;
     private readonly IRangesApi rangesApi;
-    private readonly bool useLiveContext;
 
     /// <summary>
     /// Has this chat been deleted? If true, then any calls to ask questions will fail.
     /// </summary>
     public bool Deleted { get; internal set; } = false;
 
-    internal CopilotChat(ILogger? logger, Model model, Application application, IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient, Conversation conversation, IRangesApi rangesApi, bool useLiveContext)
+    /// <summary>
+    /// The context for this chat
+    /// </summary>
+    public ChatContext? ChatContext { get; set; }
+
+    internal CopilotChat(ILogger? logger, Model model, Application application, IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient, Conversation conversation, IRangesApi rangesApi, ChatContext? chatContext = null)
     {
         this.logger = logger;
         Model = model;
@@ -33,7 +37,7 @@ public class CopilotChat : ICopilotChat
         this.webSocketClient = webSocketClient;
         this.conversation = conversation;
         this.rangesApi = rangesApi;
-        this.useLiveContext = useLiveContext;
+        ChatContext = chatContext;
     }
 
     /// <summary>
@@ -65,12 +69,10 @@ public class CopilotChat : ICopilotChat
     /// Both the question and the response are added to the <see cref="Messages"/> collection
     /// </summary>
     /// <param name="question">The question to ask</param>
-    /// <param name="assetIds">The Ids of assets to add to this chat</param>
-    /// <param name="liveContextTimeSpan">The time window for live context queries if this is created using live context</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The full response</returns>
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
-    public async IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    public async IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         if (Deleted)
         {
@@ -84,7 +86,7 @@ public class CopilotChat : ICopilotChat
         messages.Add(new Message(Role.User, question));
 
         // Get the question stream as JSON
-        var questionStreamJson = await CreateQuestionInputJson(question, assetIds, liveContextTimeSpan, cancellationToken).ConfigureAwait(false);
+        var questionStreamJson = await CreateQuestionInputJson(question, cancellationToken).ConfigureAwait(false);
 
         // Build a waiter to wait for events
         var eventWaiter = new EventWaiter<EventArgs>(cancellationToken);
@@ -196,12 +198,10 @@ public class CopilotChat : ICopilotChat
     /// Both the question and the response are added to the <see cref="Messages"/> collection
     /// </summary>
     /// <param name="question">The question to ask</param>
-    /// <param name="assetIds">The Ids of assets to add to this chat</param>
-    /// <param name="liveContextTimeSpan">The time window for live context queries if this is created using live context</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The full response</returns>
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
-    public async Task<string?> AskQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, CancellationToken cancellationToken = default)
+    public async Task<string?> AskQuestionAsync(string question, CancellationToken cancellationToken = default)
     {
         if (Deleted)
         {
@@ -212,20 +212,20 @@ public class CopilotChat : ICopilotChat
         logger?.LogInformation("Question {question} asked", question);
 
         // Reuse the streaming function, and let it run
-        await foreach (var _ in AskStreamingQuestionAsync(question, assetIds, liveContextTimeSpan, cancellationToken)) ;
+        await foreach (var _ in AskStreamingQuestionAsync(question, cancellationToken)) ;
 
         // Return the response from the messages collection
         return messages.LastOrDefault()?.Content;
     }
 
-    private async Task<string> CreateQuestionInputJson(string question, IEnumerable<string>? assetIds, TimeSpan? liveContextTimeSpan, CancellationToken cancellationToken)
+    private async Task<string> CreateQuestionInputJson(string question, CancellationToken cancellationToken)
     {
         logger?.LogInformation("Creating question input for question: {question}.", question);
         TemporalRangeGrounding? temporalRangeGrounding = default;
 
-        if (useLiveContext)
+        if (ChatContext?.LiveContext == true)
         {
-            var span = liveContextTimeSpan ?? TimeSpan.FromMinutes(15);
+            var span = ChatContext?.LiveContextTimeSpan ?? TimeSpan.FromMinutes(15);
             logger?.LogInformation("Using live context with a time span of: {span}.", span);
             // Create a temporal range from the provided time span ago to now minutes
             // If the provided time span is null, use 15 minutes ago
@@ -237,19 +237,35 @@ public class CopilotChat : ICopilotChat
             var referencedRange = new ReferencedRange(id: range.Id);
             var flattenedRanges = new FlattenedRanges(iterable: [referencedRange]);
             temporalRangeGrounding = new TemporalRangeGrounding(workstreams: flattenedRanges);
+
+            // If the conversation wasn't set up for live context, set this up now
+            if (conversation.Pipeline.Conversation.ContextualizedCodeWorkstreamDialog is null)
+            {
+                var dialog = new QGPTConversationPipelineForContextualizedCodeWorkstreamDialog();
+                var conversationPipeline = new QGPTConversationPipeline(contextualizedCodeWorkstreamDialog: dialog);
+                conversation.Pipeline = new QGPTPromptPipeline(conversation: conversationPipeline);
+            }
         }
         else
         {
             logger?.LogInformation("Not using live context");
+
+            // If the conversation was set up for live context, disable this if we are not using live context now
+            if (conversation.Pipeline.Conversation.ContextualizedCodeWorkstreamDialog is null)
+            {
+                var dialog = new QGPTConversationPipelineForGeneralizedCodeDialog();
+                var conversationPipeline = new QGPTConversationPipeline(generalizedCodeDialog: dialog);
+                conversation.Pipeline = new QGPTPromptPipeline(conversation: conversationPipeline);
+            }
         }
 
         // Get all relevant assets passed in to this chat
         var relevantQgptSeeds = new List<RelevantQGPTSeed>();
 
-        if (assetIds is not null)
+        if (ChatContext?.AssetIds is not null)
         {
             logger?.LogInformation("Adding assets to question input");
-            var referencedAssets = assetIds.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
+            var referencedAssets = ChatContext.AssetIds.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
             var flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
 
             foreach (var flattenedAsset in flattenedAssets.Iterable)

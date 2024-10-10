@@ -42,22 +42,20 @@ public class PiecesCopilot : IPiecesCopilot
     /// Create a new chat with the copilot
     /// </summary>
     /// <param name="chatName">An optional name for the chat. If nothing is provided, the name will be New conversation</param>
-    /// <param name="assetIds">An optional list of asset Ids to add to the chat</param>
+    /// <param name="chatContext">An optional list of asset Ids to add to the chat</param>
     /// <param name="model">The LLM model to use</param>
-    /// <param name="useLiveContext">Should this chat use live context or not</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The new chat</returns>
     public async Task<ICopilotChat> CreateChatAsync(string chatName = "",
-                                                    IEnumerable<string>? assetIds = null,
+                                                    ChatContext? chatContext = null,
                                                     Model? model = default,
-                                                    bool useLiveContext = false,
                                                     CancellationToken cancellationToken = default)
     {
         chatName = string.IsNullOrWhiteSpace(chatName) ? "New Conversation" : chatName;
 
         QGPTPromptPipeline? pipeline = default;
 
-        if (useLiveContext)
+        if (chatContext?.LiveContext == true)
         {
             logger?.LogDebug("Creating copilot chat with live context");
             var dialog = new QGPTConversationPipelineForContextualizedCodeWorkstreamDialog();
@@ -77,11 +75,11 @@ public class PiecesCopilot : IPiecesCopilot
         FlattenedAssets? flattenedAssets = default;
 
         // If we have assets, add them as context
-        if (assetIds is not null && assetIds.Any())
+        if (chatContext?.AssetIds is not null && chatContext!.AssetIds!.Any())
         {
             logger?.LogDebug("Adding assets to the chat");
 
-            var referencedAssets = assetIds.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
+            var referencedAssets = chatContext!.AssetIds!.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
             flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
         }
 
@@ -101,7 +99,7 @@ public class PiecesCopilot : IPiecesCopilot
 
         logger?.LogInformation("Conversation {name} created", chatName);
 
-        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, rangesApi, useLiveContext);
+        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, rangesApi, chatContext);
         copilotChats.Add(chat);
 
         logger?.LogInformation("Copilot chat {name} created", chatName);

@@ -32,7 +32,12 @@ public interface ICopilotChat
     /// <summary>
     /// Has this chat been deleted? If true, then any calls to ask questions will fail.
     /// </summary>
-    public bool Deleted { get; }
+    bool Deleted { get; }
+
+    /// <summary>
+    /// The context for this chat
+    /// </summary>
+    ChatContext? ChatContext { get; set; }
 
     /// <summary>
     /// Ask the copilot a question and get the response as a stream
@@ -43,12 +48,10 @@ public interface ICopilotChat
     /// Both the question and the response are added to the <see cref="Messages"/> collection
     /// </summary>
     /// <param name="question">The question to ask</param>
-    /// <param name="assetIds">The Ids of assets to add to this chat</param>
-    /// <param name="liveContextTimeSpan">The time window for live context queries if this is created using live context</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The full response</returns>
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
-    IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, CancellationToken cancellationToken = default);
+    IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Ask the copilot a question and get the response as a string
@@ -59,10 +62,8 @@ public interface ICopilotChat
     /// Both the question and the response are added to the <see cref="Messages"/> collection
     /// </summary>
     /// <param name="question">The question to ask</param>
-    /// <param name="assetIds">The Ids of assets to add to this chat</param>
-    /// <param name="liveContextTimeSpan">The time window for live context queries if this is created using live context</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The full response</returns>
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
-    Task<string?> AskQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, CancellationToken cancellationToken = default);
+    Task<string?> AskQuestionAsync(string question, CancellationToken cancellationToken = default);
 }
