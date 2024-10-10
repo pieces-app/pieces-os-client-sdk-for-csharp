@@ -108,4 +108,15 @@ public class PiecesCopilot : IPiecesCopilot
 
         return chat;
     }
+
+    /// <summary>
+    /// Deletes a copilot chat
+    /// </summary>
+    /// <param name="chat">The chat to delete</param>
+    /// <returns></returns>
+    public async Task DeleteChatAsync(ICopilotChat chat, CancellationToken cancellationToken = default)
+    {
+        await conversationsApi.ConversationsDeleteSpecificConversationAsync(conversation: chat.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        ((CopilotChat)chat).Deleted = true;
+    }
 }
