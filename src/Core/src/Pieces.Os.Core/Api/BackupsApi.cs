@@ -184,7 +184,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Backup</returns>
-        System.Threading.Tasks.Task<Backup> BackupsCreateNewBackupAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Backup> BackupsCreateNewBackupAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /backups/create [POST]
@@ -197,7 +197,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Backup)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Backup>> BackupsCreateNewBackupWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Backup>> BackupsCreateNewBackupWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /backups/create/streamed [POST]
         /// </summary>
@@ -209,7 +209,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackupStreamedProgress</returns>
-        System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /backups/create/streamed [POST]
@@ -222,7 +222,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackupStreamedProgress)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /backups/create/streamed/websocket [WS]
         /// </summary>
@@ -234,7 +234,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackupStreamedProgress</returns>
-        System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedWebsocketAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedWebsocketAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /backups/create/streamed/websocket [WS]
@@ -247,7 +247,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackupStreamedProgress)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWebsocketWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWebsocketWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /backups/{backup}/delete [POST]
         /// </summary>
@@ -260,7 +260,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task BackupsDeleteSpecificBackupAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task BackupsDeleteSpecificBackupAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /backups/{backup}/delete [POST]
@@ -274,7 +274,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> BackupsDeleteSpecificBackupWithHttpInfoAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> BackupsDeleteSpecificBackupWithHttpInfoAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /backups [GET]
         /// </summary>
@@ -285,7 +285,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Backups</returns>
-        System.Threading.Tasks.Task<Backups> BackupsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Backups> BackupsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /backups [GET]
@@ -297,7 +297,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Backups)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Backups>> BackupsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Backups>> BackupsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /backups/streamed/progress [WS]
         /// </summary>
@@ -308,7 +308,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackupsStreamedProgress</returns>
-        System.Threading.Tasks.Task<BackupsStreamedProgress> BackupsStreamedProgressAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BackupsStreamedProgress> BackupsStreamedProgressAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /backups/streamed/progress [WS]
@@ -320,7 +320,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackupsStreamedProgress)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BackupsStreamedProgress>> BackupsStreamedProgressWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BackupsStreamedProgress>> BackupsStreamedProgressWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -492,6 +492,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsCreateNewBackup";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Backup>("/backups/create", localVarRequestOptions, this.Configuration);
@@ -515,7 +520,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Backup</returns>
-        public async System.Threading.Tasks.Task<Backup> BackupsCreateNewBackupAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Backup> BackupsCreateNewBackupAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Backup> localVarResponse = await BackupsCreateNewBackupWithHttpInfoAsync(seededBackup, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -529,7 +534,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Backup)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Backup>> BackupsCreateNewBackupWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Backup>> BackupsCreateNewBackupWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -561,6 +566,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsCreateNewBackup";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Backup>("/backups/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -628,6 +638,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsCreateNewBackupStreamed";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<BackupStreamedProgress>("/backups/create/streamed", localVarRequestOptions, this.Configuration);
@@ -651,7 +666,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackupStreamedProgress</returns>
-        public async System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<BackupStreamedProgress> localVarResponse = await BackupsCreateNewBackupStreamedWithHttpInfoAsync(seededBackup, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -665,7 +680,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackupStreamedProgress)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -697,6 +712,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsCreateNewBackupStreamed";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<BackupStreamedProgress>("/backups/create/streamed", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -764,6 +784,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsCreateNewBackupStreamedWebsocket";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<BackupStreamedProgress>("/backups/create/streamed/websocket", localVarRequestOptions, this.Configuration);
@@ -787,7 +812,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackupStreamedProgress</returns>
-        public async System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedWebsocketAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BackupStreamedProgress> BackupsCreateNewBackupStreamedWebsocketAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<BackupStreamedProgress> localVarResponse = await BackupsCreateNewBackupStreamedWebsocketWithHttpInfoAsync(seededBackup, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -801,7 +826,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackupStreamedProgress)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWebsocketWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<BackupStreamedProgress>> BackupsCreateNewBackupStreamedWebsocketWithHttpInfoAsync(SeededBackup seededBackup = default(SeededBackup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -833,6 +858,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsCreateNewBackupStreamedWebsocket";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<BackupStreamedProgress>("/backups/create/streamed/websocket", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -907,6 +937,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsDeleteSpecificBackup";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/backups/{backup}/delete", localVarRequestOptions, this.Configuration);
@@ -931,7 +966,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task BackupsDeleteSpecificBackupAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task BackupsDeleteSpecificBackupAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await BackupsDeleteSpecificBackupWithHttpInfoAsync(backup, backup2, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -945,7 +980,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> BackupsDeleteSpecificBackupWithHttpInfoAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> BackupsDeleteSpecificBackupWithHttpInfoAsync(string backup, Backup backup2 = default(Backup), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'backup' is set
             if (backup == null)
@@ -983,6 +1018,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsDeleteSpecificBackup";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/backups/{backup}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1046,6 +1086,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Backups>("/backups", localVarRequestOptions, this.Configuration);
@@ -1068,7 +1113,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Backups</returns>
-        public async System.Threading.Tasks.Task<Backups> BackupsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Backups> BackupsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Backups> localVarResponse = await BackupsSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1081,7 +1126,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Backups)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Backups>> BackupsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Backups>> BackupsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1111,6 +1156,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Backups>("/backups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1174,6 +1224,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsStreamedProgress";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<BackupsStreamedProgress>("/backups/streamed/progress", localVarRequestOptions, this.Configuration);
@@ -1196,7 +1251,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackupsStreamedProgress</returns>
-        public async System.Threading.Tasks.Task<BackupsStreamedProgress> BackupsStreamedProgressAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BackupsStreamedProgress> BackupsStreamedProgressAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<BackupsStreamedProgress> localVarResponse = await BackupsStreamedProgressWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1209,7 +1264,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackupsStreamedProgress)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<BackupsStreamedProgress>> BackupsStreamedProgressWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<BackupsStreamedProgress>> BackupsStreamedProgressWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1239,6 +1294,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "BackupsApi.BackupsStreamedProgress";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<BackupsStreamedProgress>("/backups/streamed/progress", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

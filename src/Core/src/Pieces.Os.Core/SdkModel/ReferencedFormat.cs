@@ -65,7 +65,9 @@ namespace Pieces.Os.Core.SdkModel
         /// The id of the Format
         /// </summary>
         /// <value>The id of the Format</value>
-        /// <example>102ff265-fdfb-4142-8d94-4932d400199c</example>
+        /*
+        <example>102ff265-fdfb-4142-8d94-4932d400199c</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 

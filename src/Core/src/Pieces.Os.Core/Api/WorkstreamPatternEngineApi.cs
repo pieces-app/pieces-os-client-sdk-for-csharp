@@ -406,7 +406,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamIngestion</returns>
-        System.Threading.Tasks.Task<WorkstreamIngestion> WorkstreamPatternEngineCreateIngestionAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamIngestion> WorkstreamPatternEngineCreateIngestionAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/ingestions/create [POST]
@@ -419,7 +419,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamIngestion)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamIngestion>> WorkstreamPatternEngineCreateIngestionWithHttpInfoAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamIngestion>> WorkstreamPatternEngineCreateIngestionWithHttpInfoAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/sources [GET]
         /// </summary>
@@ -430,7 +430,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineSources</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineSources> WorkstreamPatternEngineProcessorsSourcesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineSources> WorkstreamPatternEngineProcessorsSourcesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/sources [GET]
@@ -442,7 +442,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineSources)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineSources>> WorkstreamPatternEngineProcessorsSourcesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineSources>> WorkstreamPatternEngineProcessorsSourcesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/activate [POST]
         /// </summary>
@@ -454,7 +454,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionActivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionActivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/activate [POST]
@@ -467,7 +467,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionActivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionActivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/calibration/capture [POST]
         /// </summary>
@@ -478,7 +478,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionCalibration</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/calibration/capture [POST]
@@ -490,7 +490,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionCalibration)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/calibrations/focused [GET]
         /// </summary>
@@ -501,7 +501,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionCalibration</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/calibrations/focused [GET]
@@ -513,7 +513,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionCalibration)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/calibrations [GET]
         /// </summary>
@@ -524,7 +524,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionCalibrations</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibrations> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibrations> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/calibrations [GET]
@@ -536,7 +536,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionCalibrations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionCalibrations>> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionCalibrations>> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/clear [POST]
         /// </summary>
@@ -548,7 +548,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionDataClearAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionDataClearAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/clear [POST]
@@ -561,7 +561,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionDataClearWithHttpInfoAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionDataClearWithHttpInfoAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/deactivate [POST]
         /// </summary>
@@ -573,7 +573,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionDeactivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionDeactivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/deactivate [POST]
@@ -586,7 +586,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionDeactivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionDeactivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/events/{vision_event}/delete [POST]
         /// </summary>
@@ -598,7 +598,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/events/{vision_event}/delete [POST]
@@ -611,7 +611,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventWithHttpInfoAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventWithHttpInfoAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/events/scoped_delete [POST]
         /// </summary>
@@ -623,7 +623,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedWorkstreamPatternEngineVisionEvents</returns>
-        System.Threading.Tasks.Task<FlattenedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FlattenedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/events/scoped_delete [POST]
@@ -636,7 +636,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedWorkstreamPatternEngineVisionEvents)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FlattenedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteWithHttpInfoAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FlattenedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteWithHttpInfoAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/events/search [POST]
         /// </summary>
@@ -649,7 +649,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedWorkstreamPatternEngineVisionEvents</returns>
-        System.Threading.Tasks.Task<SearchedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSearchAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSearchAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/events/search [POST]
@@ -663,7 +663,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedWorkstreamPatternEngineVisionEvents)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSearchWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSearchWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/events [GET]
         /// </summary>
@@ -675,7 +675,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionEvents</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/events [GET]
@@ -688,7 +688,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionEvents)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/events/{vision_event} [GET]
         /// </summary>
@@ -701,7 +701,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionEvent</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvent> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvent> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/data/events/{vision_event} [GET]
@@ -715,7 +715,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionEvent)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionEvent>> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotWithHttpInfoAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionEvent>> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotWithHttpInfoAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/metadata [GET]
         /// </summary>
@@ -726,7 +726,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionMetadata</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionMetadata> WorkstreamPatternEngineProcessorsVisionMetadataAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineVisionMetadata> WorkstreamPatternEngineProcessorsVisionMetadataAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/metadata [GET]
@@ -738,7 +738,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionMetadata>> WorkstreamPatternEngineProcessorsVisionMetadataWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineVisionMetadata>> WorkstreamPatternEngineProcessorsVisionMetadataWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/status [GET]
         /// </summary>
@@ -749,7 +749,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/status [GET]
@@ -761,7 +761,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/status/steam [WS]
         /// </summary>
@@ -772,7 +772,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_pattern_engine/processors/vision/status/steam [WS]
@@ -784,7 +784,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -956,6 +956,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineCreateIngestion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkstreamIngestion>("/workstream_pattern_engine/ingestions/create", localVarRequestOptions, this.Configuration);
@@ -979,7 +984,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamIngestion</returns>
-        public async System.Threading.Tasks.Task<WorkstreamIngestion> WorkstreamPatternEngineCreateIngestionAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamIngestion> WorkstreamPatternEngineCreateIngestionAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamIngestion> localVarResponse = await WorkstreamPatternEngineCreateIngestionWithHttpInfoAsync(seededWorkstreamIngestion, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -993,7 +998,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamIngestion)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamIngestion>> WorkstreamPatternEngineCreateIngestionWithHttpInfoAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamIngestion>> WorkstreamPatternEngineCreateIngestionWithHttpInfoAsync(SeededWorkstreamIngestion seededWorkstreamIngestion = default(SeededWorkstreamIngestion), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1025,6 +1030,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineCreateIngestion";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkstreamIngestion>("/workstream_pattern_engine/ingestions/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1088,6 +1098,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsSources";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineSources>("/workstream_pattern_engine/processors/sources", localVarRequestOptions, this.Configuration);
@@ -1110,7 +1125,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineSources</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineSources> WorkstreamPatternEngineProcessorsSourcesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineSources> WorkstreamPatternEngineProcessorsSourcesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineSources> localVarResponse = await WorkstreamPatternEngineProcessorsSourcesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1123,7 +1138,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineSources)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineSources>> WorkstreamPatternEngineProcessorsSourcesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineSources>> WorkstreamPatternEngineProcessorsSourcesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1153,6 +1168,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsSources";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineSources>("/workstream_pattern_engine/processors/sources", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1220,6 +1240,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionActivate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/activate", localVarRequestOptions, this.Configuration);
@@ -1243,7 +1268,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionActivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionActivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus> localVarResponse = await WorkstreamPatternEngineProcessorsVisionActivateWithHttpInfoAsync(workstreamPatternEngineStatus, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1257,7 +1282,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionActivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionActivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1289,6 +1314,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionActivate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/activate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1352,6 +1382,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionCalibrationCapture";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkstreamPatternEngineVisionCalibration>("/workstream_pattern_engine/processors/vision/calibration/capture", localVarRequestOptions, this.Configuration);
@@ -1374,7 +1409,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionCalibration</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibration> localVarResponse = await WorkstreamPatternEngineProcessorsVisionCalibrationCaptureWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1387,7 +1422,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionCalibration)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationCaptureWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1417,6 +1452,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionCalibrationCapture";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkstreamPatternEngineVisionCalibration>("/workstream_pattern_engine/processors/vision/calibration/capture", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1480,6 +1520,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionCalibrationsFocused";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineVisionCalibration>("/workstream_pattern_engine/processors/vision/calibrations/focused", localVarRequestOptions, this.Configuration);
@@ -1502,7 +1547,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionCalibration</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibration> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibration> localVarResponse = await WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1515,7 +1560,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionCalibration)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibration>> WorkstreamPatternEngineProcessorsVisionCalibrationsFocusedWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1545,6 +1590,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionCalibrationsFocused";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineVisionCalibration>("/workstream_pattern_engine/processors/vision/calibrations/focused", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1608,6 +1658,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineVisionCalibrations>("/workstream_pattern_engine/processors/vision/calibrations", localVarRequestOptions, this.Configuration);
@@ -1630,7 +1685,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionCalibrations</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibrations> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionCalibrations> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibrations> localVarResponse = await WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1643,7 +1698,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionCalibrations)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibrations>> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionCalibrations>> WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1673,6 +1728,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionCalibrationsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineVisionCalibrations>("/workstream_pattern_engine/processors/vision/calibrations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1738,6 +1798,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDataClear";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/workstream_pattern_engine/processors/vision/data/clear", localVarRequestOptions, this.Configuration);
@@ -1761,7 +1826,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionDataClearAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionDataClearAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WorkstreamPatternEngineProcessorsVisionDataClearWithHttpInfoAsync(workstreamPatternEngineDataCleanupRequest, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1774,7 +1839,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionDataClearWithHttpInfoAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionDataClearWithHttpInfoAsync(WorkstreamPatternEngineDataCleanupRequest workstreamPatternEngineDataCleanupRequest = default(WorkstreamPatternEngineDataCleanupRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1805,6 +1870,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDataClear";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/workstream_pattern_engine/processors/vision/data/clear", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1872,6 +1942,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDeactivate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/deactivate", localVarRequestOptions, this.Configuration);
@@ -1895,7 +1970,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionDeactivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionDeactivateAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus> localVarResponse = await WorkstreamPatternEngineProcessorsVisionDeactivateWithHttpInfoAsync(workstreamPatternEngineStatus, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1909,7 +1984,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionDeactivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionDeactivateWithHttpInfoAsync(WorkstreamPatternEngineStatus workstreamPatternEngineStatus = default(WorkstreamPatternEngineStatus), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1941,6 +2016,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDeactivate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/deactivate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2011,6 +2091,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/workstream_pattern_engine/processors/vision/data/events/{vision_event}/delete", localVarRequestOptions, this.Configuration);
@@ -2034,7 +2119,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventWithHttpInfoAsync(visionEvent, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -2047,7 +2132,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventWithHttpInfoAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEventWithHttpInfoAsync(string visionEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'visionEvent' is set
             if (visionEvent == null)
@@ -2083,6 +2168,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventDeleteSpecificVisionEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/workstream_pattern_engine/processors/vision/data/events/{vision_event}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2150,6 +2240,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsScopedDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<FlattenedWorkstreamPatternEngineVisionEvents>("/workstream_pattern_engine/processors/vision/data/events/scoped_delete", localVarRequestOptions, this.Configuration);
@@ -2173,7 +2268,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedWorkstreamPatternEngineVisionEvents</returns>
-        public async System.Threading.Tasks.Task<FlattenedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FlattenedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<FlattenedWorkstreamPatternEngineVisionEvents> localVarResponse = await WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteWithHttpInfoAsync(workstreamPatternEngineVisionEventDeletions, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2187,7 +2282,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedWorkstreamPatternEngineVisionEvents)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteWithHttpInfoAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsScopedDeleteWithHttpInfoAsync(WorkstreamPatternEngineVisionEventDeletions workstreamPatternEngineVisionEventDeletions = default(WorkstreamPatternEngineVisionEventDeletions), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2219,6 +2314,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsScopedDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<FlattenedWorkstreamPatternEngineVisionEvents>("/workstream_pattern_engine/processors/vision/data/events/scoped_delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2292,6 +2392,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SearchedWorkstreamPatternEngineVisionEvents>("/workstream_pattern_engine/processors/vision/data/events/search", localVarRequestOptions, this.Configuration);
@@ -2316,7 +2421,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedWorkstreamPatternEngineVisionEvents</returns>
-        public async System.Threading.Tasks.Task<SearchedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSearchAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedWorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSearchAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedWorkstreamPatternEngineVisionEvents> localVarResponse = await WorkstreamPatternEngineProcessorsVisionEventsSearchWithHttpInfoAsync(transferables, searchInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2331,7 +2436,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedWorkstreamPatternEngineVisionEvents)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSearchWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedWorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSearchWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2367,6 +2472,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SearchedWorkstreamPatternEngineVisionEvents>("/workstream_pattern_engine/processors/vision/data/events/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2436,6 +2546,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineVisionEvents>("/workstream_pattern_engine/processors/vision/data/events", localVarRequestOptions, this.Configuration);
@@ -2459,7 +2574,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionEvents</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvents> WorkstreamPatternEngineProcessorsVisionEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionEvents> localVarResponse = await WorkstreamPatternEngineProcessorsVisionEventsSnapshotWithHttpInfoAsync(transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2473,7 +2588,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionEvents)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionEvents>> WorkstreamPatternEngineProcessorsVisionEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2507,6 +2622,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineVisionEvents>("/workstream_pattern_engine/processors/vision/data/events", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2585,6 +2705,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineVisionEvent>("/workstream_pattern_engine/processors/vision/data/events/{vision_event}", localVarRequestOptions, this.Configuration);
@@ -2609,7 +2734,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionEvent</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvent> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionEvent> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionEvent> localVarResponse = await WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotWithHttpInfoAsync(visionEvent, transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2624,7 +2749,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionEvent)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionEvent>> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotWithHttpInfoAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionEvent>> WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshotWithHttpInfoAsync(string visionEvent, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'visionEvent' is set
             if (visionEvent == null)
@@ -2665,6 +2790,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineVisionEvent>("/workstream_pattern_engine/processors/vision/data/events/{vision_event}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2728,6 +2858,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionMetadata";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineVisionMetadata>("/workstream_pattern_engine/processors/vision/metadata", localVarRequestOptions, this.Configuration);
@@ -2750,7 +2885,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineVisionMetadata</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionMetadata> WorkstreamPatternEngineProcessorsVisionMetadataAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineVisionMetadata> WorkstreamPatternEngineProcessorsVisionMetadataAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionMetadata> localVarResponse = await WorkstreamPatternEngineProcessorsVisionMetadataWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2763,7 +2898,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineVisionMetadata)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionMetadata>> WorkstreamPatternEngineProcessorsVisionMetadataWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineVisionMetadata>> WorkstreamPatternEngineProcessorsVisionMetadataWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2793,6 +2928,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionMetadata";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineVisionMetadata>("/workstream_pattern_engine/processors/vision/metadata", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2856,6 +2996,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionStatus";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/status", localVarRequestOptions, this.Configuration);
@@ -2878,7 +3023,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus> localVarResponse = await WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2891,7 +3036,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2921,6 +3066,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionStatus";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/status", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2984,6 +3134,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionStatusStream";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/status/stream", localVarRequestOptions, this.Configuration);
@@ -3006,7 +3161,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamPatternEngineStatus</returns>
-        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus> localVarResponse = await WorkstreamPatternEngineProcessorsVisionStatusStreamWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3019,7 +3174,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -3049,6 +3204,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionStatusStream";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamPatternEngineStatus>("/workstream_pattern_engine/processors/vision/status/stream", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

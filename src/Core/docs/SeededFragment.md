@@ -6,7 +6,7 @@ This will be either a TransferableString or TransferableBytes that represent you
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
-**VarString** | [**TransferableString**](TransferableString.md) |  | [optional] 
+**String** | [**TransferableString**](TransferableString.md) |  | [optional] 
 **Bytes** | [**TransferableBytes**](TransferableBytes.md) |  | [optional] 
 **Metadata** | [**FragmentMetadata**](FragmentMetadata.md) |  | [optional] 
 

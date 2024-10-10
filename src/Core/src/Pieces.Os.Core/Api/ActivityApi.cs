@@ -124,7 +124,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Activity</returns>
-        System.Threading.Tasks.Task<Activity> ActivitiesSpecificActivitySnapshotAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Activity> ActivitiesSpecificActivitySnapshotAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /activity/{activity} [GET]
@@ -138,7 +138,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Activity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Activity>> ActivitiesSpecificActivitySnapshotWithHttpInfoAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Activity>> ActivitiesSpecificActivitySnapshotWithHttpInfoAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /activity/identifiers [GET]
         /// </summary>
@@ -151,7 +151,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedActivities</returns>
-        System.Threading.Tasks.Task<FlattenedActivities> ActivityIdentifiersSnapshotAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FlattenedActivities> ActivityIdentifiersSnapshotAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /activity/identifiers [GET]
@@ -165,7 +165,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedActivities)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FlattenedActivities>> ActivityIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FlattenedActivities>> ActivityIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /activity/update [POST]
         /// </summary>
@@ -178,7 +178,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Activity</returns>
-        System.Threading.Tasks.Task<Activity> ActivityUpdateAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Activity> ActivityUpdateAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /activity/update [POST]
@@ -192,7 +192,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Activity)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Activity>> ActivityUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Activity>> ActivityUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -375,6 +375,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ActivityApi.ActivitiesSpecificActivitySnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Activity>("/activity/{activity}", localVarRequestOptions, this.Configuration);
@@ -399,7 +404,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Activity</returns>
-        public async System.Threading.Tasks.Task<Activity> ActivitiesSpecificActivitySnapshotAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Activity> ActivitiesSpecificActivitySnapshotAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Activity> localVarResponse = await ActivitiesSpecificActivitySnapshotWithHttpInfoAsync(activity, transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -414,7 +419,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Activity)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Activity>> ActivitiesSpecificActivitySnapshotWithHttpInfoAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Activity>> ActivitiesSpecificActivitySnapshotWithHttpInfoAsync(string activity, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'activity' is set
             if (activity == null)
@@ -455,6 +460,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ActivityApi.ActivitiesSpecificActivitySnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Activity>("/activity/{activity}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -530,6 +540,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ActivityApi.ActivityIdentifiersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FlattenedActivities>("/activity/identifiers", localVarRequestOptions, this.Configuration);
@@ -554,7 +569,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedActivities</returns>
-        public async System.Threading.Tasks.Task<FlattenedActivities> ActivityIdentifiersSnapshotAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FlattenedActivities> ActivityIdentifiersSnapshotAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<FlattenedActivities> localVarResponse = await ActivityIdentifiersSnapshotWithHttpInfoAsync(pseudo, activityFilterEnum, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -569,7 +584,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedActivities)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedActivities>> ActivityIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedActivities>> ActivityIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), string activityFilterEnum = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -607,6 +622,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ActivityApi.ActivityIdentifiersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FlattenedActivities>("/activity/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -680,6 +700,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ActivityApi.ActivityUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Activity>("/activity/update", localVarRequestOptions, this.Configuration);
@@ -704,7 +729,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Activity</returns>
-        public async System.Threading.Tasks.Task<Activity> ActivityUpdateAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Activity> ActivityUpdateAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Activity> localVarResponse = await ActivityUpdateWithHttpInfoAsync(transferables, activity, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -719,7 +744,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Activity)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Activity>> ActivityUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Activity>> ActivityUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Activity activity = default(Activity), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -755,6 +780,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ActivityApi.ActivityUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Activity>("/activity/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

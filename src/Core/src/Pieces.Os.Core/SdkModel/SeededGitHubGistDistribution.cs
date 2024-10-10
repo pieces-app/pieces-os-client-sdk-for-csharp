@@ -55,7 +55,7 @@ namespace Pieces.Os.Core.SdkModel
             this.Name = name;
             this.Schema = schema;
             this.Recipients = recipients;
-            this.VarPublic = varPublic;
+            this.Public = varPublic;
             this.Description = description;
         }
 
@@ -76,7 +76,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>we will default to true</value>
         [DataMember(Name = "public", EmitDefaultValue = true)]
-        public bool VarPublic { get; set; }
+        public bool Public { get; set; }
 
         /// <summary>
         /// This is the description of the Gist Distribution
@@ -102,7 +102,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class SeededGitHubGistDistribution {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
-            sb.Append("  VarPublic: ").Append(VarPublic).Append("\n");
+            sb.Append("  Public: ").Append(Public).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");

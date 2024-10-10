@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Audience** | **string** | The Server Audience of your Auth0 Service | 
 **Redirects** | [**Auth0Redirects**](Auth0Redirects.md) |  | 
 **OAuth** | [**OAuthGroup**](OAuthGroup.md) |  | 
-**VarNamespace** | **string** | An optional namespace parameter to add an additional namespace | [optional] 
+**Namespace** | **string** | An optional namespace parameter to add an additional namespace | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

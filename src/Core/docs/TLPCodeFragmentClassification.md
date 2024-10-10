@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **Metadata** | [**TLPCodeFragmentClassificationMetadata**](TLPCodeFragmentClassificationMetadata.md) |  | [optional] 
 **User** | **string** | identifier for the user | 
 **Latency** | **decimal** | this is the time it takes to run this model. | [optional] 
-**VarSystem** | [**SystemExecutionInformation**](SystemExecutionInformation.md) |  | [optional] 
+**System** | [**SystemExecutionInformation**](SystemExecutionInformation.md) |  | [optional] 
+**Os** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

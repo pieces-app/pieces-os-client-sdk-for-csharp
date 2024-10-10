@@ -35,6 +35,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new QGPTApi(config);
             var qGPTHintsInput = new QGPTHintsInput(); // QGPTHintsInput |  (optional) 
 
@@ -87,7 +92,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -127,6 +132,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new QGPTApi(config);
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
             var qGPTPersonsRelatedInput = new QGPTPersonsRelatedInput(); // QGPTPersonsRelatedInput |  (optional) 
@@ -181,7 +191,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -221,6 +231,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new QGPTApi(config);
             var qGPTStreamInput = new QGPTStreamInput(); // QGPTStreamInput |  (optional) 
 
@@ -273,7 +288,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -316,6 +331,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new QGPTApi(config);
             var qGPTQuestionInput = new QGPTQuestionInput(); // QGPTQuestionInput |  (optional) 
 
@@ -368,7 +388,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -411,6 +431,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new QGPTApi(config);
             var qGPTRelevanceInput = new QGPTRelevanceInput(); // QGPTRelevanceInput |  (optional) 
 
@@ -463,7 +488,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -506,6 +531,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new QGPTApi(config);
             var qGPTRepromptInput = new QGPTRepromptInput(); // QGPTRepromptInput |  (optional) 
 
@@ -558,7 +588,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

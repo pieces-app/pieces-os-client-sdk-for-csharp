@@ -47,7 +47,9 @@ namespace Pieces.Os.Core.SdkModel
         /// A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters) 
         /// </summary>
         /// <value>A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters) </value>
-        /// <example>6a2f41a3-c54c-fce8-32d2-0324e1c32e22</example>
+        /*
+        <example>6a2f41a3-c54c-fce8-32d2-0324e1c32e22</example>
+        */
         [DataMember(Name = "asset", EmitDefaultValue = false)]
         public Guid Asset { get; set; }
 

@@ -173,7 +173,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> Auth0LogoutAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> Auth0LogoutAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// https://auth.pieces.services/v2/logout [GET]
@@ -187,7 +187,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> Auth0LogoutWithHttpInfoAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> Auth0LogoutWithHttpInfoAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// https://auth.pieces.services/authorize [GET]
         /// </summary>
@@ -209,7 +209,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResultedPKCE</returns>
-        System.Threading.Tasks.Task<ResultedPKCE> AuthorizeAuth0Async(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ResultedPKCE> AuthorizeAuth0Async(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// https://auth.pieces.services/authorize [GET]
@@ -232,7 +232,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResultedPKCE)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResultedPKCE>> AuthorizeAuth0WithHttpInfoAsync(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ResultedPKCE>> AuthorizeAuth0WithHttpInfoAsync(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// https://auth.pieces.services/oauth/token [POST]
         /// </summary>
@@ -250,7 +250,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OAuthToken</returns>
-        System.Threading.Tasks.Task<OAuthToken> ExchangeForAuth0TokenAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OAuthToken> ExchangeForAuth0TokenAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// https://auth.pieces.services/oauth/token [POST]
@@ -269,7 +269,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OAuthToken)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OAuthToken>> ExchangeForAuth0TokenWithHttpInfoAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OAuthToken>> ExchangeForAuth0TokenWithHttpInfoAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// https://auth.pieces.services/userinfo [GET]
         /// </summary>
@@ -280,7 +280,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Auth0User</returns>
-        System.Threading.Tasks.Task<Auth0User> GetAuth0UserInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Auth0User> GetAuth0UserInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// https://auth.pieces.services/userinfo [GET]
@@ -292,7 +292,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Auth0User)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Auth0User>> GetAuth0UserInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Auth0User>> GetAuth0UserInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -471,6 +471,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "Auth0Api.Auth0Logout";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<string>("/v2/logout", localVarRequestOptions, this.Configuration);
@@ -495,7 +500,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> Auth0LogoutAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> Auth0LogoutAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await Auth0LogoutWithHttpInfoAsync(clientId, returnTo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -510,7 +515,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> Auth0LogoutWithHttpInfoAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> Auth0LogoutWithHttpInfoAsync(string clientId = default(string), string returnTo = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -547,6 +552,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "Auth0Api.Auth0Logout";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/v2/logout", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -696,6 +706,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "Auth0Api.AuthorizeAuth0";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ResultedPKCE>("/authorize", localVarRequestOptions, this.Configuration);
@@ -729,7 +744,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResultedPKCE</returns>
-        public async System.Threading.Tasks.Task<ResultedPKCE> AuthorizeAuth0Async(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ResultedPKCE> AuthorizeAuth0Async(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<ResultedPKCE> localVarResponse = await AuthorizeAuth0WithHttpInfoAsync(audience, scope, responseType, clientId, codeChallengeMethod, codeChallenge, responseMode, state, redirectUri, connection, prompt, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -753,7 +768,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResultedPKCE)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ResultedPKCE>> AuthorizeAuth0WithHttpInfoAsync(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ResultedPKCE>> AuthorizeAuth0WithHttpInfoAsync(string audience, List<string> scope, string responseType, string clientId, string codeChallengeMethod, string codeChallenge, string responseMode, string state = default(string), string redirectUri = default(string), string connection = default(string), string prompt = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'audience' is set
             if (audience == null)
@@ -847,6 +862,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "Auth0Api.AuthorizeAuth0";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ResultedPKCE>("/authorize", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -967,6 +987,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "Auth0Api.ExchangeForAuth0Token";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<OAuthToken>("/oauth/token", localVarRequestOptions, this.Configuration);
@@ -996,7 +1021,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OAuthToken</returns>
-        public async System.Threading.Tasks.Task<OAuthToken> ExchangeForAuth0TokenAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OAuthToken> ExchangeForAuth0TokenAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<OAuthToken> localVarResponse = await ExchangeForAuth0TokenWithHttpInfoAsync(grantType, clientId, code, redirectUri, codeVerifier, schema, audience, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1016,7 +1041,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OAuthToken)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<OAuthToken>> ExchangeForAuth0TokenWithHttpInfoAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<OAuthToken>> ExchangeForAuth0TokenWithHttpInfoAsync(string grantType, string clientId, string code, string redirectUri, string codeVerifier, EmbeddedModelSchema schema = default(EmbeddedModelSchema), string audience = default(string), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'grantType' is set
             if (grantType == null)
@@ -1089,6 +1114,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "Auth0Api.ExchangeForAuth0Token";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<OAuthToken>("/oauth/token", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1221,7 +1251,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Auth0User</returns>
-        public async System.Threading.Tasks.Task<Auth0User> GetAuth0UserInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Auth0User> GetAuth0UserInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Auth0User> localVarResponse = await GetAuth0UserInfoWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1234,7 +1264,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Auth0User)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Auth0User>> GetAuth0UserInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Auth0User>> GetAuth0UserInfoWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();

@@ -33,6 +33,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new Auth0Api(config);
             var clientId = "clientId_example";  // string | The client ID of the Auth0 Instance (optional) 
             var returnTo = "returnTo_example";  // string | The URL that the logout endpoint will return to (optional) 
@@ -87,7 +92,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -126,6 +131,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new Auth0Api(config);
             var audience = https://pieces.us.auth0.com/api/v2/;  // string |  The unique identifier of the target API you want to access.
             var scope = new List<string>(); // List<string> | The scopes which you want to request authorization for. These must be separated by a space. You can request any of the standard OpenID Connect (OIDC) scopes about users, such as profile and email, custom claims that must conform to a namespaced format, or any scopes supported by the target API (for example, read:contacts). Include offline_access to get a Refresh Token.
@@ -198,7 +208,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -237,6 +247,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new Auth0Api(config);
             var grantType = "refresh_token";  // string | Denotes the flow you are using. For Authorization Code, use authorization_code or refresh_token.
             var clientId = "clientId_example";  // string | Your application's Client ID.
@@ -301,7 +316,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

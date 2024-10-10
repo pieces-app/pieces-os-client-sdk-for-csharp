@@ -138,7 +138,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserProfile</returns>
-        System.Threading.Tasks.Task<UserProfile> AuthenticateFromOauthTokenAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UserProfile> AuthenticateFromOauthTokenAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /users/authenticate/from_token [POST]
@@ -151,7 +151,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserProfile)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserProfile>> AuthenticateFromOauthTokenWithHttpInfoAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UserProfile>> AuthenticateFromOauthTokenWithHttpInfoAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /users/{user}/disconnect [POST]
         /// </summary>
@@ -163,7 +163,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Users</returns>
-        System.Threading.Tasks.Task<Users> UsersDisconnectUserAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Users> UsersDisconnectUserAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /users/{user}/disconnect [POST]
@@ -176,7 +176,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Users)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Users>> UsersDisconnectUserWithHttpInfoAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Users>> UsersDisconnectUserWithHttpInfoAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /users [GET]
         /// </summary>
@@ -187,7 +187,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Users</returns>
-        System.Threading.Tasks.Task<Users> UsersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Users> UsersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /users [GET]
@@ -199,7 +199,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Users)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Users>> UsersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Users>> UsersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /users/{user} [GET] Scoped to Users
         /// </summary>
@@ -211,7 +211,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserProfile</returns>
-        System.Threading.Tasks.Task<UserProfile> UsersSpecificUserSnapshotAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UserProfile> UsersSpecificUserSnapshotAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /users/{user} [GET] Scoped to Users
@@ -224,7 +224,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserProfile)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserProfile>> UsersSpecificUserSnapshotWithHttpInfoAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UserProfile>> UsersSpecificUserSnapshotWithHttpInfoAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -466,7 +466,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserProfile</returns>
-        public async System.Threading.Tasks.Task<UserProfile> AuthenticateFromOauthTokenAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UserProfile> AuthenticateFromOauthTokenAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<UserProfile> localVarResponse = await AuthenticateFromOauthTokenWithHttpInfoAsync(oAuthToken, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -480,7 +480,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserProfile)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<UserProfile>> AuthenticateFromOauthTokenWithHttpInfoAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<UserProfile>> AuthenticateFromOauthTokenWithHttpInfoAsync(OAuthToken oAuthToken = default(OAuthToken), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -630,6 +630,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UsersApi.UsersDisconnectUser";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Users>("/users/{user}/disconnect", localVarRequestOptions, this.Configuration);
@@ -653,7 +658,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Users</returns>
-        public async System.Threading.Tasks.Task<Users> UsersDisconnectUserAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Users> UsersDisconnectUserAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Users> localVarResponse = await UsersDisconnectUserWithHttpInfoAsync(user, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -667,7 +672,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Users)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Users>> UsersDisconnectUserWithHttpInfoAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Users>> UsersDisconnectUserWithHttpInfoAsync(string user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'user' is set
             if (user == null)
@@ -703,6 +708,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UsersApi.UsersDisconnectUser";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Users>("/users/{user}/disconnect", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -765,6 +775,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UsersApi.UsersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Users>("/users", localVarRequestOptions, this.Configuration);
@@ -787,7 +802,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Users</returns>
-        public async System.Threading.Tasks.Task<Users> UsersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Users> UsersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Users> localVarResponse = await UsersSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -800,7 +815,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Users)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Users>> UsersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Users>> UsersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -829,6 +844,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UsersApi.UsersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Users>("/users", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -894,6 +914,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UsersApi.UsersSpecificUserSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<UserProfile>("/users/{user}", localVarRequestOptions, this.Configuration);
@@ -917,7 +942,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserProfile</returns>
-        public async System.Threading.Tasks.Task<UserProfile> UsersSpecificUserSnapshotAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UserProfile> UsersSpecificUserSnapshotAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<UserProfile> localVarResponse = await UsersSpecificUserSnapshotWithHttpInfoAsync(user, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -931,7 +956,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserProfile)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<UserProfile>> UsersSpecificUserSnapshotWithHttpInfoAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<UserProfile>> UsersSpecificUserSnapshotWithHttpInfoAsync(Guid user, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -961,6 +986,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UsersApi.UsersSpecificUserSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<UserProfile>("/users/{user}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

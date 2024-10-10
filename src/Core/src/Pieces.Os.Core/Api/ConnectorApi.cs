@@ -196,7 +196,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Context</returns>
-        System.Threading.Tasks.Task<Context> ConnectAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Context> ConnectAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /connect [POST]
@@ -209,7 +209,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Context)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Context>> ConnectWithHttpInfoAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Context>> ConnectWithHttpInfoAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /{application}/intention [POST]
         /// </summary>
@@ -222,7 +222,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> IntentionAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> IntentionAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /{application}/intention [POST]
@@ -236,7 +236,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> IntentionWithHttpInfoAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> IntentionWithHttpInfoAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /onboarded [POST]
         /// </summary>
@@ -249,7 +249,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> OnboardedAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> OnboardedAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /onboarded [POST]
@@ -263,7 +263,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> OnboardedWithHttpInfoAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> OnboardedWithHttpInfoAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /{application}/reaction [POST]
         /// </summary>
@@ -276,7 +276,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> ReactAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> ReactAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /{application}/reaction [POST]
@@ -290,7 +290,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> ReactWithHttpInfoAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> ReactWithHttpInfoAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /{application}/suggestion [POST]
         /// </summary>
@@ -303,7 +303,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Suggestion</returns>
-        System.Threading.Tasks.Task<Suggestion> SuggestAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Suggestion> SuggestAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /{application}/suggestion [POST]
@@ -317,7 +317,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Suggestion)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Suggestion>> SuggestWithHttpInfoAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Suggestion>> SuggestWithHttpInfoAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /{application}/track [POST]
         /// </summary>
@@ -330,7 +330,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> TrackAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> TrackAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /{application}/track [POST]
@@ -344,7 +344,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> TrackWithHttpInfoAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> TrackWithHttpInfoAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -539,7 +539,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Context</returns>
-        public async System.Threading.Tasks.Task<Context> ConnectAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Context> ConnectAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Context> localVarResponse = await ConnectWithHttpInfoAsync(seededConnectorConnection, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -553,7 +553,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Context)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Context>> ConnectWithHttpInfoAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Context>> ConnectWithHttpInfoAsync(SeededConnectorConnection seededConnectorConnection = default(SeededConnectorConnection), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -660,6 +660,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Intention";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<string>("/{application}/intention", localVarRequestOptions, this.Configuration);
@@ -684,7 +689,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> IntentionAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> IntentionAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await IntentionWithHttpInfoAsync(application, seededConnectorAsset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -699,7 +704,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> IntentionWithHttpInfoAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> IntentionWithHttpInfoAsync(string application, SeededConnectorAsset seededConnectorAsset = default(SeededConnectorAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'application' is set
             if (application == null)
@@ -737,6 +742,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Intention";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/{application}/intention", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -812,6 +822,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Onboarded";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<string>("/{application}/onboarded", localVarRequestOptions, this.Configuration);
@@ -836,7 +851,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> OnboardedAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> OnboardedAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await OnboardedWithHttpInfoAsync(application, body, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -851,7 +866,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> OnboardedWithHttpInfoAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> OnboardedWithHttpInfoAsync(string application, bool? body = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'application' is set
             if (application == null)
@@ -889,6 +904,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Onboarded";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/{application}/onboarded", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -964,6 +984,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.React";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<string>("/{application}/reaction", localVarRequestOptions, this.Configuration);
@@ -988,7 +1013,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> ReactAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> ReactAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await ReactWithHttpInfoAsync(application, reaction, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1003,7 +1028,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> ReactWithHttpInfoAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> ReactWithHttpInfoAsync(string application, Reaction reaction = default(Reaction), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'application' is set
             if (application == null)
@@ -1041,6 +1066,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.React";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/{application}/reaction", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1117,6 +1147,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Suggest";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Suggestion>("/{application}/suggestion", localVarRequestOptions, this.Configuration);
@@ -1141,7 +1176,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Suggestion</returns>
-        public async System.Threading.Tasks.Task<Suggestion> SuggestAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Suggestion> SuggestAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Suggestion> localVarResponse = await SuggestWithHttpInfoAsync(application, seededConnectorCreation, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1156,7 +1191,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Suggestion)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Suggestion>> SuggestWithHttpInfoAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Suggestion>> SuggestWithHttpInfoAsync(string application, SeededConnectorCreation seededConnectorCreation = default(SeededConnectorCreation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'application' is set
             if (application == null)
@@ -1195,6 +1230,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Suggest";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Suggestion>("/{application}/suggestion", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1270,6 +1310,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Track";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<string>("/{application}/track", localVarRequestOptions, this.Configuration);
@@ -1294,7 +1339,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> TrackAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> TrackAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await TrackWithHttpInfoAsync(application, seededConnectorTracking, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1309,7 +1354,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> TrackWithHttpInfoAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> TrackWithHttpInfoAsync(string application, SeededConnectorTracking seededConnectorTracking = default(SeededConnectorTracking), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'application' is set
             if (application == null)
@@ -1347,6 +1392,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConnectorApi.Track";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/{application}/track", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

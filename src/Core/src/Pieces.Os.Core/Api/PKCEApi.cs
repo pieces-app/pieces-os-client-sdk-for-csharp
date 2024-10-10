@@ -162,7 +162,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ClearPKCEAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ClearPKCEAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /pkce/clear [POST]
@@ -174,7 +174,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ClearPKCEWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ClearPKCEWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /pkce/code [POST]
         /// </summary>
@@ -186,7 +186,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        System.Threading.Tasks.Task<PKCE> GenerateCodeAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PKCE> GenerateCodeAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /pkce/code [POST]
@@ -199,7 +199,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PKCE>> GenerateCodeWithHttpInfoAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PKCE>> GenerateCodeWithHttpInfoAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /pkce/token [POST]
         /// </summary>
@@ -211,7 +211,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        System.Threading.Tasks.Task<PKCE> GenerateTokenAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PKCE> GenerateTokenAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /pkce/token [POST]
@@ -224,7 +224,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PKCE>> GenerateTokenWithHttpInfoAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PKCE>> GenerateTokenWithHttpInfoAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Your GET endpoint
         /// </summary>
@@ -235,7 +235,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        System.Threading.Tasks.Task<PKCE> GetChallengeAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PKCE> GetChallengeAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Your GET endpoint
@@ -247,7 +247,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PKCE>> GetChallengeWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PKCE>> GetChallengeWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /pkce/response/code [POST]
         /// </summary>
@@ -261,7 +261,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        System.Threading.Tasks.Task<PKCE> RespondWithCodeAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PKCE> RespondWithCodeAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /pkce/response/code [POST]
@@ -276,7 +276,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PKCE>> RespondWithCodeWithHttpInfoAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PKCE>> RespondWithCodeWithHttpInfoAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -441,6 +441,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.ClearPKCE";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/pkce/clear", localVarRequestOptions, this.Configuration);
@@ -463,7 +468,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ClearPKCEAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ClearPKCEAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ClearPKCEWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -475,7 +480,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ClearPKCEWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ClearPKCEWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -503,6 +508,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.ClearPKCE";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/pkce/clear", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -569,6 +579,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.GenerateCode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<PKCE>("/pkce/code", localVarRequestOptions, this.Configuration);
@@ -592,7 +607,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        public async System.Threading.Tasks.Task<PKCE> GenerateCodeAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PKCE> GenerateCodeAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<PKCE> localVarResponse = await GenerateCodeWithHttpInfoAsync(seededPKCE, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -606,7 +621,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> GenerateCodeWithHttpInfoAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> GenerateCodeWithHttpInfoAsync(SeededPKCE seededPKCE = default(SeededPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -637,6 +652,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.GenerateCode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<PKCE>("/pkce/code", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -703,6 +723,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.GenerateToken";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<PKCE>("/pkce/token", localVarRequestOptions, this.Configuration);
@@ -726,7 +751,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        public async System.Threading.Tasks.Task<PKCE> GenerateTokenAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PKCE> GenerateTokenAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<PKCE> localVarResponse = await GenerateTokenWithHttpInfoAsync(tokenizedPKCE, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -740,7 +765,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> GenerateTokenWithHttpInfoAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> GenerateTokenWithHttpInfoAsync(TokenizedPKCE tokenizedPKCE = default(TokenizedPKCE), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -771,6 +796,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.GenerateToken";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<PKCE>("/pkce/token", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -833,6 +863,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.GetChallenge";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<PKCE>("/pkce/challenge", localVarRequestOptions, this.Configuration);
@@ -855,7 +890,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        public async System.Threading.Tasks.Task<PKCE> GetChallengeAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PKCE> GetChallengeAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<PKCE> localVarResponse = await GetChallengeWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -868,7 +903,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> GetChallengeWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> GetChallengeWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -897,6 +932,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.GetChallenge";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<PKCE>("/pkce/challenge", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -985,6 +1025,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.RespondWithCode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<PKCE>("/pkce/response/code", localVarRequestOptions, this.Configuration);
@@ -1010,7 +1055,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PKCE</returns>
-        public async System.Threading.Tasks.Task<PKCE> RespondWithCodeAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PKCE> RespondWithCodeAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<PKCE> localVarResponse = await RespondWithCodeWithHttpInfoAsync(code, state, schema, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1026,7 +1071,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PKCE)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> RespondWithCodeWithHttpInfoAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PKCE>> RespondWithCodeWithHttpInfoAsync(string code, string state, EmbeddedModelSchema schema = default(EmbeddedModelSchema), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'code' is set
             if (code == null)
@@ -1075,6 +1120,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "PKCEApi.RespondWithCode";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<PKCE>("/pkce/response/code", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

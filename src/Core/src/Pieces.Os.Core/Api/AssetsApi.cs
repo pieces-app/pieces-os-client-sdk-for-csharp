@@ -408,7 +408,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> AssetsCreateNewAssetAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> AssetsCreateNewAssetAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/create [POST] Scoped to Asset
@@ -422,7 +422,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetsCreateNewAssetWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetsCreateNewAssetWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/{asset}/delete [POST] Scoped to Asset
         /// </summary>
@@ -434,7 +434,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> AssetsDeleteAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> AssetsDeleteAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/{asset}/delete [POST] Scoped to Asset
@@ -447,7 +447,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> AssetsDeleteAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> AssetsDeleteAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/draft [POST]
         /// </summary>
@@ -460,7 +460,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Seed</returns>
-        System.Threading.Tasks.Task<Seed> AssetsDraftAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Seed> AssetsDraftAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/draft [POST]
@@ -474,7 +474,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Seed)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Seed>> AssetsDraftWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Seed>> AssetsDraftWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Your GET endpoint
         /// </summary>
@@ -486,7 +486,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        System.Threading.Tasks.Task<Assets> AssetsGetRecommendedAssetsAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Assets> AssetsGetRecommendedAssetsAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Your GET endpoint
@@ -499,7 +499,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Assets>> AssetsGetRecommendedAssetsWithHttpInfoAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Assets>> AssetsGetRecommendedAssetsWithHttpInfoAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/related [GET]
         /// </summary>
@@ -511,7 +511,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        System.Threading.Tasks.Task<Assets> AssetsGetRelatedAssetsAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Assets> AssetsGetRelatedAssetsAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/related [GET]
@@ -524,7 +524,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Assets>> AssetsGetRelatedAssetsWithHttpInfoAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Assets>> AssetsGetRelatedAssetsWithHttpInfoAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/identifiers [GET]
         /// </summary>
@@ -536,7 +536,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedAssets</returns>
-        System.Threading.Tasks.Task<FlattenedAssets> AssetsIdentifiersSnapshotAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FlattenedAssets> AssetsIdentifiersSnapshotAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/identifiers [GET]
@@ -549,7 +549,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FlattenedAssets>> AssetsIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FlattenedAssets>> AssetsIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/pseudo [GET]
         /// </summary>
@@ -560,7 +560,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PseudoAssets</returns>
-        System.Threading.Tasks.Task<PseudoAssets> AssetsPseudoSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<PseudoAssets> AssetsPseudoSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/pseudo [GET]
@@ -572,7 +572,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PseudoAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PseudoAssets>> AssetsPseudoSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<PseudoAssets>> AssetsPseudoSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/search [POST]
         /// </summary>
@@ -586,7 +586,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetsSearchWithFiltersOutput</returns>
-        System.Threading.Tasks.Task<AssetsSearchWithFiltersOutput> AssetsSearchWithFiltersAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AssetsSearchWithFiltersOutput> AssetsSearchWithFiltersAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/search [POST]
@@ -601,7 +601,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetsSearchWithFiltersOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AssetsSearchWithFiltersOutput>> AssetsSearchWithFiltersWithHttpInfoAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AssetsSearchWithFiltersOutput>> AssetsSearchWithFiltersWithHttpInfoAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets [GET] Scoped to Assets
         /// </summary>
@@ -615,7 +615,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        System.Threading.Tasks.Task<Assets> AssetsSnapshotAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Assets> AssetsSnapshotAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets [GET] Scoped to Assets
@@ -630,7 +630,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Assets>> AssetsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Assets>> AssetsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/{asset}/formats [GET] Scoped To Assets
         /// </summary>
@@ -643,7 +643,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Formats</returns>
-        System.Threading.Tasks.Task<Formats> AssetsSpecificAssetFormatsSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Formats> AssetsSpecificAssetFormatsSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/{asset}/formats [GET] Scoped To Assets
@@ -657,7 +657,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Formats)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Formats>> AssetsSpecificAssetFormatsSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Formats>> AssetsSpecificAssetFormatsSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/{asset} [GET] Scoped to Assets
         /// </summary>
@@ -670,7 +670,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> AssetsSpecificAssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> AssetsSpecificAssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/{asset} [GET] Scoped to Assets
@@ -684,7 +684,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetsSpecificAssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetsSpecificAssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/stream/identifiers [WS]
         /// </summary>
@@ -695,7 +695,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        System.Threading.Tasks.Task<StreamedIdentifiers> AssetsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StreamedIdentifiers> AssetsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/stream/identifiers [WS]
@@ -707,7 +707,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> AssetsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> AssetsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/stream/transferables [WS]
         /// </summary>
@@ -718,7 +718,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        System.Threading.Tasks.Task<Assets> GetAssetsStreamTransferablesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Assets> GetAssetsStreamTransferablesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/stream/transferables [WS]
@@ -730,7 +730,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Assets>> GetAssetsStreamTransferablesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Assets>> GetAssetsStreamTransferablesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/search?query&#x3D;string [GET]
         /// </summary>
@@ -745,7 +745,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        System.Threading.Tasks.Task<SearchedAssets> SearchAssetsAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedAssets> SearchAssetsAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/search?query&#x3D;string [GET]
@@ -761,7 +761,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> SearchAssetsWithHttpInfoAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> SearchAssetsWithHttpInfoAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /assets/stream [WS]
         /// </summary>
@@ -772,7 +772,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        System.Threading.Tasks.Task<Assets> StreamAssetsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Assets> StreamAssetsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /assets/stream [WS]
@@ -784,7 +784,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Assets>> StreamAssetsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Assets>> StreamAssetsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -961,6 +961,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsCreateNewAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Asset>("/assets/create", localVarRequestOptions, this.Configuration);
@@ -985,7 +990,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> AssetsCreateNewAssetAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> AssetsCreateNewAssetAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = await AssetsCreateNewAssetWithHttpInfoAsync(transferables, seed, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1000,7 +1005,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetsCreateNewAssetWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetsCreateNewAssetWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1035,6 +1040,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsCreateNewAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Asset>("/assets/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1100,6 +1110,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsDeleteAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<string>("/assets/{asset}/delete", localVarRequestOptions, this.Configuration);
@@ -1123,7 +1138,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> AssetsDeleteAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> AssetsDeleteAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await AssetsDeleteAssetWithHttpInfoAsync(asset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1137,7 +1152,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> AssetsDeleteAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> AssetsDeleteAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1167,6 +1182,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsDeleteAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/assets/{asset}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1240,6 +1260,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsDraft";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Seed>("/assets/draft", localVarRequestOptions, this.Configuration);
@@ -1264,7 +1289,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Seed</returns>
-        public async System.Threading.Tasks.Task<Seed> AssetsDraftAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Seed> AssetsDraftAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Seed> localVarResponse = await AssetsDraftWithHttpInfoAsync(transferables, seed, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1279,7 +1304,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Seed)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Seed>> AssetsDraftWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Seed>> AssetsDraftWithHttpInfoAsync(bool? transferables = default(bool?), Seed seed = default(Seed), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1315,6 +1340,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsDraft";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Seed>("/assets/draft", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1381,6 +1411,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsGetRecommendedAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Assets>("/assets/recommended", localVarRequestOptions, this.Configuration);
@@ -1404,7 +1439,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        public async System.Threading.Tasks.Task<Assets> AssetsGetRecommendedAssetsAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Assets> AssetsGetRecommendedAssetsAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Assets> localVarResponse = await AssetsGetRecommendedAssetsWithHttpInfoAsync(seededAssetsRecommendation, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1418,7 +1453,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> AssetsGetRecommendedAssetsWithHttpInfoAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> AssetsGetRecommendedAssetsWithHttpInfoAsync(SeededAssetsRecommendation seededAssetsRecommendation = default(SeededAssetsRecommendation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1449,6 +1484,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsGetRecommendedAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Assets>("/assets/recommended", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1515,6 +1555,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsGetRelatedAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Assets>("/assets/related", localVarRequestOptions, this.Configuration);
@@ -1538,7 +1583,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        public async System.Threading.Tasks.Task<Assets> AssetsGetRelatedAssetsAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Assets> AssetsGetRelatedAssetsAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Assets> localVarResponse = await AssetsGetRelatedAssetsWithHttpInfoAsync(assets, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1552,7 +1597,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> AssetsGetRelatedAssetsWithHttpInfoAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> AssetsGetRelatedAssetsWithHttpInfoAsync(Assets assets = default(Assets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1583,6 +1628,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsGetRelatedAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Assets>("/assets/related", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1652,6 +1702,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsIdentifiersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FlattenedAssets>("/assets/identifiers", localVarRequestOptions, this.Configuration);
@@ -1675,7 +1730,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedAssets</returns>
-        public async System.Threading.Tasks.Task<FlattenedAssets> AssetsIdentifiersSnapshotAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FlattenedAssets> AssetsIdentifiersSnapshotAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<FlattenedAssets> localVarResponse = await AssetsIdentifiersSnapshotWithHttpInfoAsync(pseudo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1689,7 +1744,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedAssets>> AssetsIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedAssets>> AssetsIdentifiersSnapshotWithHttpInfoAsync(bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1723,6 +1778,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsIdentifiersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FlattenedAssets>("/assets/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1786,6 +1846,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsPseudoSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<PseudoAssets>("/assets/pseudo", localVarRequestOptions, this.Configuration);
@@ -1808,7 +1873,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PseudoAssets</returns>
-        public async System.Threading.Tasks.Task<PseudoAssets> AssetsPseudoSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<PseudoAssets> AssetsPseudoSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<PseudoAssets> localVarResponse = await AssetsPseudoSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1821,7 +1886,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PseudoAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PseudoAssets>> AssetsPseudoSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<PseudoAssets>> AssetsPseudoSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1851,6 +1916,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsPseudoSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<PseudoAssets>("/assets/pseudo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1930,6 +2000,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSearchWithFilters";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<AssetsSearchWithFiltersOutput>("/assets/search", localVarRequestOptions, this.Configuration);
@@ -1955,7 +2030,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AssetsSearchWithFiltersOutput</returns>
-        public async System.Threading.Tasks.Task<AssetsSearchWithFiltersOutput> AssetsSearchWithFiltersAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AssetsSearchWithFiltersOutput> AssetsSearchWithFiltersAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<AssetsSearchWithFiltersOutput> localVarResponse = await AssetsSearchWithFiltersWithHttpInfoAsync(transferables, pseudo, assetsSearchWithFiltersInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1971,7 +2046,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AssetsSearchWithFiltersOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AssetsSearchWithFiltersOutput>> AssetsSearchWithFiltersWithHttpInfoAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AssetsSearchWithFiltersOutput>> AssetsSearchWithFiltersWithHttpInfoAsync(bool? transferables = default(bool?), bool? pseudo = default(bool?), AssetsSearchWithFiltersInput assetsSearchWithFiltersInput = default(AssetsSearchWithFiltersInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2011,6 +2086,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSearchWithFilters";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<AssetsSearchWithFiltersOutput>("/assets/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2091,6 +2171,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Assets>("/assets", localVarRequestOptions, this.Configuration);
@@ -2116,7 +2201,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        public async System.Threading.Tasks.Task<Assets> AssetsSnapshotAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Assets> AssetsSnapshotAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Assets> localVarResponse = await AssetsSnapshotWithHttpInfoAsync(transferables, suggested, pseudo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2132,7 +2217,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> AssetsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> AssetsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), bool? suggested = default(bool?), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2173,6 +2258,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Assets>("/assets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2244,6 +2334,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSpecificAssetFormatsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Formats>("/assets/{asset}/formats", localVarRequestOptions, this.Configuration);
@@ -2268,7 +2363,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Formats</returns>
-        public async System.Threading.Tasks.Task<Formats> AssetsSpecificAssetFormatsSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Formats> AssetsSpecificAssetFormatsSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Formats> localVarResponse = await AssetsSpecificAssetFormatsSnapshotWithHttpInfoAsync(asset, transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2283,7 +2378,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Formats)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Formats>> AssetsSpecificAssetFormatsSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Formats>> AssetsSpecificAssetFormatsSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2317,6 +2412,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSpecificAssetFormatsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Formats>("/assets/{asset}/formats", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2389,6 +2489,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSpecificAssetSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Asset>("/assets/{asset}", localVarRequestOptions, this.Configuration);
@@ -2413,7 +2518,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> AssetsSpecificAssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> AssetsSpecificAssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = await AssetsSpecificAssetSnapshotWithHttpInfoAsync(asset, transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2428,7 +2533,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetsSpecificAssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetsSpecificAssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2463,6 +2568,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsSpecificAssetSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Asset>("/assets/{asset}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2525,6 +2635,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<StreamedIdentifiers>("/assets/stream/identifiers", localVarRequestOptions, this.Configuration);
@@ -2547,7 +2662,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        public async System.Threading.Tasks.Task<StreamedIdentifiers> AssetsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StreamedIdentifiers> AssetsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers> localVarResponse = await AssetsStreamIdentifiersWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2560,7 +2675,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> AssetsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> AssetsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2589,6 +2704,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.AssetsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<StreamedIdentifiers>("/assets/stream/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2651,6 +2771,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.GetAssetsStreamTransferables";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Assets>("/assets/stream/transferables", localVarRequestOptions, this.Configuration);
@@ -2673,7 +2798,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        public async System.Threading.Tasks.Task<Assets> GetAssetsStreamTransferablesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Assets> GetAssetsStreamTransferablesAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Assets> localVarResponse = await GetAssetsStreamTransferablesWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2686,7 +2811,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> GetAssetsStreamTransferablesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> GetAssetsStreamTransferablesWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2715,6 +2840,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.GetAssetsStreamTransferables";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Assets>("/assets/stream/transferables", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2802,6 +2932,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.SearchAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<SearchedAssets>("/assets/search", localVarRequestOptions, this.Configuration);
@@ -2828,7 +2963,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        public async System.Threading.Tasks.Task<SearchedAssets> SearchAssetsAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedAssets> SearchAssetsAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedAssets> localVarResponse = await SearchAssetsWithHttpInfoAsync(query, transferables, searchableTags, pseudo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2845,7 +2980,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> SearchAssetsWithHttpInfoAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> SearchAssetsWithHttpInfoAsync(string query = default(string), bool? transferables = default(bool?), string searchableTags = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2891,6 +3026,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.SearchAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<SearchedAssets>("/assets/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2953,6 +3093,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.StreamAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Assets>("/assets/stream", localVarRequestOptions, this.Configuration);
@@ -2975,7 +3120,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Assets</returns>
-        public async System.Threading.Tasks.Task<Assets> StreamAssetsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Assets> StreamAssetsAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Assets> localVarResponse = await StreamAssetsWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2988,7 +3133,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Assets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> StreamAssetsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Assets>> StreamAssetsWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -3017,6 +3162,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AssetsApi.StreamAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Assets>("/assets/stream", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

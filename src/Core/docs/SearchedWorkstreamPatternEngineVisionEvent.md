@@ -6,7 +6,7 @@ This will return a list of the returned events.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
-**VarEvent** | [**WorkstreamPatternEngineVisionEvent**](WorkstreamPatternEngineVisionEvent.md) |  | [optional] 
+**Event** | [**WorkstreamPatternEngineVisionEvent**](WorkstreamPatternEngineVisionEvent.md) |  | [optional] 
 **Exact** | **bool** |  | [optional] 
 **Similarity** | **decimal** |  | [optional] 
 **Temporal** | **bool** |  | [optional] 

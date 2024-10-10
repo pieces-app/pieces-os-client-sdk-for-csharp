@@ -94,7 +94,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AllocationCloud</returns>
-        System.Threading.Tasks.Task<AllocationCloud> AllocationSnapshotAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AllocationCloud> AllocationSnapshotAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /allocation/{allocation} [GET]
@@ -107,7 +107,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AllocationCloud)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AllocationCloud>> AllocationSnapshotWithHttpInfoAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AllocationCloud>> AllocationSnapshotWithHttpInfoAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /allocation/update [POST]
         /// </summary>
@@ -119,7 +119,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AllocationCloud</returns>
-        System.Threading.Tasks.Task<AllocationCloud> AllocationUpdateAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AllocationCloud> AllocationUpdateAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /allocation/update [POST]
@@ -132,7 +132,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AllocationCloud)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AllocationCloud>> AllocationUpdateWithHttpInfoAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AllocationCloud>> AllocationUpdateWithHttpInfoAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -309,6 +309,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AllocationApi.AllocationSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<AllocationCloud>("/allocation/{allocation}", localVarRequestOptions, this.Configuration);
@@ -332,7 +337,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AllocationCloud</returns>
-        public async System.Threading.Tasks.Task<AllocationCloud> AllocationSnapshotAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AllocationCloud> AllocationSnapshotAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<AllocationCloud> localVarResponse = await AllocationSnapshotWithHttpInfoAsync(allocation, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -346,7 +351,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AllocationCloud)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AllocationCloud>> AllocationSnapshotWithHttpInfoAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AllocationCloud>> AllocationSnapshotWithHttpInfoAsync(string allocation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'allocation' is set
             if (allocation == null)
@@ -383,6 +388,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AllocationApi.AllocationSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<AllocationCloud>("/allocation/{allocation}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -450,6 +460,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AllocationApi.AllocationUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<AllocationCloud>("/allocation/update", localVarRequestOptions, this.Configuration);
@@ -473,7 +488,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AllocationCloud</returns>
-        public async System.Threading.Tasks.Task<AllocationCloud> AllocationUpdateAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AllocationCloud> AllocationUpdateAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<AllocationCloud> localVarResponse = await AllocationUpdateWithHttpInfoAsync(allocationCloud, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -487,7 +502,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AllocationCloud)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AllocationCloud>> AllocationUpdateWithHttpInfoAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AllocationCloud>> AllocationUpdateWithHttpInfoAsync(AllocationCloud allocationCloud = default(AllocationCloud), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -519,6 +534,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AllocationApi.AllocationUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<AllocationCloud>("/allocation/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

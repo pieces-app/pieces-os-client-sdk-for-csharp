@@ -58,7 +58,7 @@ namespace Pieces.Os.Core.SdkModel
                 throw new ArgumentNullException("recipients is a required property for GitHubGistDistribution and cannot be null");
             }
             this.Recipients = recipients;
-            this.VarPublic = varPublic;
+            this.Public = varPublic;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -111,7 +111,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>This will let us know if the gist is public or private.</value>
         [DataMember(Name = "public", IsRequired = true, EmitDefaultValue = true)]
-        public bool VarPublic { get; set; }
+        public bool Public { get; set; }
 
         /// <summary>
         /// This is the description of the Gist Distribution
@@ -169,7 +169,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class GitHubGistDistribution {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Recipients: ").Append(Recipients).Append("\n");
-            sb.Append("  VarPublic: ").Append(VarPublic).Append("\n");
+            sb.Append("  Public: ").Append(Public).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Created: ").Append(Created).Append("\n");

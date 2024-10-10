@@ -52,7 +52,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="user">identifier for the user (required).</param>
         /// <param name="latency">this is the time it takes to run this model..</param>
         /// <param name="varSystem">varSystem.</param>
-        public TLPCodeFragmentClassification(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string asset = default(string), string model = default(string), string created = default(string), string classification = default(string), decimal probability = default(decimal), string context = default(string), string distribution = default(string), TLPCodeFragmentClassificationMetadata metadata = default(TLPCodeFragmentClassificationMetadata), string user = default(string), decimal latency = default(decimal), SystemExecutionInformation varSystem = default(SystemExecutionInformation))
+        /// <param name="os">os (required).</param>
+        public TLPCodeFragmentClassification(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string asset = default(string), string model = default(string), string created = default(string), string classification = default(string), decimal probability = default(decimal), string context = default(string), string distribution = default(string), TLPCodeFragmentClassificationMetadata metadata = default(TLPCodeFragmentClassificationMetadata), string user = default(string), decimal latency = default(decimal), SystemExecutionInformation varSystem = default(SystemExecutionInformation), string os = default(string))
         {
             // to ensure "asset" is required (not null)
             if (asset == null)
@@ -91,11 +92,17 @@ namespace Pieces.Os.Core.SdkModel
                 throw new ArgumentNullException("user is a required property for TLPCodeFragmentClassification and cannot be null");
             }
             this.User = user;
+            // to ensure "os" is required (not null)
+            if (os == null)
+            {
+                throw new ArgumentNullException("os is a required property for TLPCodeFragmentClassification and cannot be null");
+            }
+            this.Os = os;
             this.Schema = schema;
             this.Distribution = distribution;
             this.Metadata = metadata;
             this.Latency = latency;
-            this.VarSystem = varSystem;
+            this.System = varSystem;
         }
 
         /// <summary>
@@ -167,10 +174,16 @@ namespace Pieces.Os.Core.SdkModel
         public decimal Latency { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarSystem
+        /// Gets or Sets System
         /// </summary>
         [DataMember(Name = "system", EmitDefaultValue = false)]
-        public SystemExecutionInformation VarSystem { get; set; }
+        public SystemExecutionInformation System { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Os
+        /// </summary>
+        [DataMember(Name = "os", IsRequired = true, EmitDefaultValue = true)]
+        public string Os { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -191,7 +204,8 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  Latency: ").Append(Latency).Append("\n");
-            sb.Append("  VarSystem: ").Append(VarSystem).Append("\n");
+            sb.Append("  System: ").Append(System).Append("\n");
+            sb.Append("  Os: ").Append(Os).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

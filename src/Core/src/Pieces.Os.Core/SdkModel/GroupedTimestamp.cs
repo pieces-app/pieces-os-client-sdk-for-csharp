@@ -65,7 +65,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Readable
         /// </summary>
-        /// <example>Last week - June 3rd, 3:33 a.m.</example>
+        /*
+        <example>Last week - June 3rd, 3:33 a.m.</example>
+        */
         [DataMember(Name = "readable", EmitDefaultValue = false)]
         public string Readable { get; set; }
 

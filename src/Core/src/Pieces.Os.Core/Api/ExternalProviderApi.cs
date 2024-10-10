@@ -117,7 +117,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreatedExternalProviderApiKey</returns>
-        System.Threading.Tasks.Task<CreatedExternalProviderApiKey> ExternalProviderApiKeyCreateAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<CreatedExternalProviderApiKey> ExternalProviderApiKeyCreateAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /external_provider/api_key/create [POST]
@@ -130,7 +130,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreatedExternalProviderApiKey)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreatedExternalProviderApiKey>> ExternalProviderApiKeyCreateWithHttpInfoAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<CreatedExternalProviderApiKey>> ExternalProviderApiKeyCreateWithHttpInfoAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /external_provider/api_key/delete [POST]
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeletedExternalProviderApiKey</returns>
-        System.Threading.Tasks.Task<DeletedExternalProviderApiKey> ExternalProviderApiKeyDeleteAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DeletedExternalProviderApiKey> ExternalProviderApiKeyDeleteAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /external_provider/api_key/delete [POST]
@@ -155,7 +155,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeletedExternalProviderApiKey)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeletedExternalProviderApiKey>> ExternalProviderApiKeyDeleteWithHttpInfoAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DeletedExternalProviderApiKey>> ExternalProviderApiKeyDeleteWithHttpInfoAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /external_provider/api_key/update [POST]
         /// </summary>
@@ -167,7 +167,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdatedExternalProviderApiKey</returns>
-        System.Threading.Tasks.Task<UpdatedExternalProviderApiKey> ExternalProviderApiKeyUpdateAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UpdatedExternalProviderApiKey> ExternalProviderApiKeyUpdateAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /external_provider/api_key/update [POST]
@@ -180,7 +180,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdatedExternalProviderApiKey)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdatedExternalProviderApiKey>> ExternalProviderApiKeyUpdateWithHttpInfoAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UpdatedExternalProviderApiKey>> ExternalProviderApiKeyUpdateWithHttpInfoAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -352,6 +352,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ExternalProviderApi.ExternalProviderApiKeyCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<CreatedExternalProviderApiKey>("/external_provider/api_key/create", localVarRequestOptions, this.Configuration);
@@ -375,7 +380,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreatedExternalProviderApiKey</returns>
-        public async System.Threading.Tasks.Task<CreatedExternalProviderApiKey> ExternalProviderApiKeyCreateAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<CreatedExternalProviderApiKey> ExternalProviderApiKeyCreateAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<CreatedExternalProviderApiKey> localVarResponse = await ExternalProviderApiKeyCreateWithHttpInfoAsync(precreatedExternalProviderApiKey, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -389,7 +394,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreatedExternalProviderApiKey)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<CreatedExternalProviderApiKey>> ExternalProviderApiKeyCreateWithHttpInfoAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<CreatedExternalProviderApiKey>> ExternalProviderApiKeyCreateWithHttpInfoAsync(PrecreatedExternalProviderApiKey precreatedExternalProviderApiKey = default(PrecreatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -421,6 +426,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ExternalProviderApi.ExternalProviderApiKeyCreate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<CreatedExternalProviderApiKey>("/external_provider/api_key/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -488,6 +498,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ExternalProviderApi.ExternalProviderApiKeyDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<DeletedExternalProviderApiKey>("/external_provider/api_key/delete", localVarRequestOptions, this.Configuration);
@@ -511,7 +526,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeletedExternalProviderApiKey</returns>
-        public async System.Threading.Tasks.Task<DeletedExternalProviderApiKey> ExternalProviderApiKeyDeleteAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DeletedExternalProviderApiKey> ExternalProviderApiKeyDeleteAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<DeletedExternalProviderApiKey> localVarResponse = await ExternalProviderApiKeyDeleteWithHttpInfoAsync(predeletedExternalProviderApiKey, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -525,7 +540,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeletedExternalProviderApiKey)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DeletedExternalProviderApiKey>> ExternalProviderApiKeyDeleteWithHttpInfoAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DeletedExternalProviderApiKey>> ExternalProviderApiKeyDeleteWithHttpInfoAsync(PredeletedExternalProviderApiKey predeletedExternalProviderApiKey = default(PredeletedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -557,6 +572,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ExternalProviderApi.ExternalProviderApiKeyDelete";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<DeletedExternalProviderApiKey>("/external_provider/api_key/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -624,6 +644,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ExternalProviderApi.ExternalProviderApiKeyUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<UpdatedExternalProviderApiKey>("/external_provider/api_key/update", localVarRequestOptions, this.Configuration);
@@ -647,7 +672,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdatedExternalProviderApiKey</returns>
-        public async System.Threading.Tasks.Task<UpdatedExternalProviderApiKey> ExternalProviderApiKeyUpdateAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UpdatedExternalProviderApiKey> ExternalProviderApiKeyUpdateAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<UpdatedExternalProviderApiKey> localVarResponse = await ExternalProviderApiKeyUpdateWithHttpInfoAsync(preupdatedExternalProviderApiKey, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -661,7 +686,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdatedExternalProviderApiKey)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<UpdatedExternalProviderApiKey>> ExternalProviderApiKeyUpdateWithHttpInfoAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<UpdatedExternalProviderApiKey>> ExternalProviderApiKeyUpdateWithHttpInfoAsync(PreupdatedExternalProviderApiKey preupdatedExternalProviderApiKey = default(PreupdatedExternalProviderApiKey), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -693,6 +718,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ExternalProviderApi.ExternalProviderApiKeyUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<UpdatedExternalProviderApiKey>("/external_provider/api_key/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

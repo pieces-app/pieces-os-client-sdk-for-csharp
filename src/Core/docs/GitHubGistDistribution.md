@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **Recipients** | [**Recipients**](Recipients.md) |  | 
-**VarPublic** | **bool** | This will let us know if the gist is public or private. | 
+**Public** | **bool** | This will let us know if the gist is public or private. | 
 **Description** | **string** | This is the description of the Gist Distribution | [optional] 
 **Name** | **string** | This is the name of the gist you will add. | 
 **Created** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 

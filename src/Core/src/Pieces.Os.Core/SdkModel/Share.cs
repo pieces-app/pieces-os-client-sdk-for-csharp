@@ -91,7 +91,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varShort is a required property for Share and cannot be null");
             }
-            this.VarShort = varShort;
+            this.Short = varShort;
             this.Schema = schema;
             this.User = user;
             this.Asset = asset;
@@ -157,7 +157,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>This is a shortened version of our uuid.</value>
         [DataMember(Name = "short", IsRequired = true, EmitDefaultValue = true)]
-        public string VarShort { get; set; }
+        public string Short { get; set; }
 
         /// <summary>
         /// this is an optional name we can give to the link, ie ?p&#x3D;JAVASCRIPT or what ever the user wants as long as it is available.
@@ -195,7 +195,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Access: ").Append(Access).Append("\n");
             sb.Append("  Accessors: ").Append(Accessors).Append("\n");
             sb.Append("  Created: ").Append(Created).Append("\n");
-            sb.Append("  VarShort: ").Append(VarShort).Append("\n");
+            sb.Append("  Short: ").Append(Short).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Distributions: ").Append(Distributions).Append("\n");
             sb.Append("  Score: ").Append(Score).Append("\n");
