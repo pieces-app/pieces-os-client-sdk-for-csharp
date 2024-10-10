@@ -31,7 +31,7 @@
     <Copyright>2024 Mesh Intelligent Technologies, Inc</Copyright>
     <Authors>Pieces for Devlopers</Authors>
     <Company>Pieces for Devlopers</Company>
-    <Description>Support for the Microsoft AI Extensions using Pieces for Developers</Description>
+    <Description>Support for Microsoft.Extensions.AI using Pieces for Developers as the LLM</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>copilot ai llm artificial intelligence code developer extensions</PackageTags>
     <PackageProjectUrl>https://pieces.app</PackageProjectUrl>
