@@ -50,7 +50,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="asset">asset (required).</param>
         /// <param name="context">this is the application in which this was created from. (required).</param>
         /// <param name="snippet">this is the value of the snippet (required).</param>
-        public TLPCodeFragmentDescriptiveStatistics(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string user = default(string), string os = default(string), string language = default(string), decimal length = default(decimal), string ast = default(string), string timestamp = default(string), string asset = default(string), string context = default(string), string snippet = default(string))
+        /// <param name="probability">probability (required).</param>
+        public TLPCodeFragmentDescriptiveStatistics(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string user = default(string), string os = default(string), string language = default(string), decimal length = default(decimal), string ast = default(string), string timestamp = default(string), string asset = default(string), string context = default(string), string snippet = default(string), string probability = default(string))
         {
             // to ensure "user" is required (not null)
             if (user == null)
@@ -101,6 +102,12 @@ namespace Pieces.Os.Core.SdkModel
                 throw new ArgumentNullException("snippet is a required property for TLPCodeFragmentDescriptiveStatistics and cannot be null");
             }
             this.Snippet = snippet;
+            // to ensure "probability" is required (not null)
+            if (probability == null)
+            {
+                throw new ArgumentNullException("probability is a required property for TLPCodeFragmentDescriptiveStatistics and cannot be null");
+            }
+            this.Probability = probability;
             this.Schema = schema;
         }
 
@@ -167,6 +174,12 @@ namespace Pieces.Os.Core.SdkModel
         public string Snippet { get; set; }
 
         /// <summary>
+        /// Gets or Sets Probability
+        /// </summary>
+        [DataMember(Name = "probability", IsRequired = true, EmitDefaultValue = true)]
+        public string Probability { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -184,6 +197,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Asset: ").Append(Asset).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
             sb.Append("  Snippet: ").Append(Snippet).Append("\n");
+            sb.Append("  Probability: ").Append(Probability).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

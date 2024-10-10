@@ -633,10 +633,6 @@ docs/WorkstreamSummary.md
 docs/WorkstreamSummaryApi.md
 git_push.sh
 src/Pieces.Os.Core.Test/Pieces.Os.Core.Test.csproj
-src/Pieces.Os.Core.Test/SdkModel/BackupsStreamedProgressTests.cs
-src/Pieces.Os.Core.Test/SdkModel/FlattenedApplicationTests.cs
-src/Pieces.Os.Core.Test/SdkModel/ModelCapabilitiesTests.cs
-src/Pieces.Os.Core.Test/SdkModel/ReferencedApplicationTests.cs
 src/Pieces.Os.Core/Api/ActivitiesApi.cs
 src/Pieces.Os.Core/Api/ActivityApi.cs
 src/Pieces.Os.Core/Api/AllocationApi.cs

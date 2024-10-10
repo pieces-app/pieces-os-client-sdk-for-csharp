@@ -96,7 +96,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OnboardedPersonaDetails</returns>
-        System.Threading.Tasks.Task<OnboardedPersonaDetails> PersonificationTechnicalLanguageGenerationAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<OnboardedPersonaDetails> PersonificationTechnicalLanguageGenerationAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /machine_learning/text/technical_language/generators/personification [GET]
@@ -109,7 +109,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OnboardedPersonaDetails)</returns>
-        System.Threading.Tasks.Task<ApiResponse<OnboardedPersonaDetails>> PersonificationTechnicalLanguageGenerationWithHttpInfoAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<OnboardedPersonaDetails>> PersonificationTechnicalLanguageGenerationWithHttpInfoAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /machine_learning/text/technical_language/parsers/segmentation [POST]
         /// </summary>
@@ -122,7 +122,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SegmentedTechnicalLanguage</returns>
-        System.Threading.Tasks.Task<SegmentedTechnicalLanguage> SegmentTechnicalLanguageAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SegmentedTechnicalLanguage> SegmentTechnicalLanguageAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /machine_learning/text/technical_language/parsers/segmentation [POST]
@@ -136,7 +136,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SegmentedTechnicalLanguage)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SegmentedTechnicalLanguage>> SegmentTechnicalLanguageWithHttpInfoAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SegmentedTechnicalLanguage>> SegmentTechnicalLanguageWithHttpInfoAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -308,6 +308,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "MachineLearningApi.PersonificationTechnicalLanguageGeneration";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<OnboardedPersonaDetails>("/machine_learning/text/technical_language/generators/personification", localVarRequestOptions, this.Configuration);
@@ -331,7 +336,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of OnboardedPersonaDetails</returns>
-        public async System.Threading.Tasks.Task<OnboardedPersonaDetails> PersonificationTechnicalLanguageGenerationAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<OnboardedPersonaDetails> PersonificationTechnicalLanguageGenerationAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<OnboardedPersonaDetails> localVarResponse = await PersonificationTechnicalLanguageGenerationWithHttpInfoAsync(preonboardedPersonaDetails, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -345,7 +350,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (OnboardedPersonaDetails)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<OnboardedPersonaDetails>> PersonificationTechnicalLanguageGenerationWithHttpInfoAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<OnboardedPersonaDetails>> PersonificationTechnicalLanguageGenerationWithHttpInfoAsync(PreonboardedPersonaDetails preonboardedPersonaDetails = default(PreonboardedPersonaDetails), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -377,6 +382,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "MachineLearningApi.PersonificationTechnicalLanguageGeneration";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<OnboardedPersonaDetails>("/machine_learning/text/technical_language/generators/personification", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -450,6 +460,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "MachineLearningApi.SegmentTechnicalLanguage";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SegmentedTechnicalLanguage>("/machine_learning/text/technical_language/parsers/segmentation", localVarRequestOptions, this.Configuration);
@@ -474,7 +489,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SegmentedTechnicalLanguage</returns>
-        public async System.Threading.Tasks.Task<SegmentedTechnicalLanguage> SegmentTechnicalLanguageAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SegmentedTechnicalLanguage> SegmentTechnicalLanguageAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SegmentedTechnicalLanguage> localVarResponse = await SegmentTechnicalLanguageWithHttpInfoAsync(classify, unsegmentedTechnicalLanguage, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -489,7 +504,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SegmentedTechnicalLanguage)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SegmentedTechnicalLanguage>> SegmentTechnicalLanguageWithHttpInfoAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SegmentedTechnicalLanguage>> SegmentTechnicalLanguageWithHttpInfoAsync(bool? classify = default(bool?), UnsegmentedTechnicalLanguage unsegmentedTechnicalLanguage = default(UnsegmentedTechnicalLanguage), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -525,6 +540,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "MachineLearningApi.SegmentTechnicalLanguage";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SegmentedTechnicalLanguage>("/machine_learning/text/technical_language/parsers/segmentation", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

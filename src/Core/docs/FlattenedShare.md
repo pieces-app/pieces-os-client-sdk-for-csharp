@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Access** | **AccessEnum** |  | 
 **Accessors** | [**Accessors**](Accessors.md) |  | 
 **Created** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
-**VarShort** | **string** | This is a shortened version of our uuid. | 
+**Short** | **string** | This is a shortened version of our uuid. | 
 **Name** | **string** |  | [optional] 
 **Assets** | [**FlattenedAssets**](FlattenedAssets.md) |  | [optional] 
 **Distributions** | [**FlattenedDistributions**](FlattenedDistributions.md) |  | [optional] 

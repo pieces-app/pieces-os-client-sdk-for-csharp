@@ -92,7 +92,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamSuggestionsRefresh</returns>
-        System.Threading.Tasks.Task<WorkstreamSuggestionsRefresh> WorkstreamSuggestionsRefreshAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamSuggestionsRefresh> WorkstreamSuggestionsRefreshAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream/suggestions/refresh [POST]
@@ -105,7 +105,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamSuggestionsRefresh)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamSuggestionsRefresh>> WorkstreamSuggestionsRefreshWithHttpInfoAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamSuggestionsRefresh>> WorkstreamSuggestionsRefreshWithHttpInfoAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream/suggestions/stream [WS]
         /// </summary>
@@ -116,7 +116,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamSuggestions</returns>
-        System.Threading.Tasks.Task<WorkstreamSuggestions> WorkstreamSuggestionsStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamSuggestions> WorkstreamSuggestionsStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream/suggestions/stream [WS]
@@ -128,7 +128,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamSuggestions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamSuggestions>> WorkstreamSuggestionsStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamSuggestions>> WorkstreamSuggestionsStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -300,6 +300,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamApi.WorkstreamSuggestionsRefresh";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkstreamSuggestionsRefresh>("/workstream/suggestions/refresh", localVarRequestOptions, this.Configuration);
@@ -323,7 +328,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamSuggestionsRefresh</returns>
-        public async System.Threading.Tasks.Task<WorkstreamSuggestionsRefresh> WorkstreamSuggestionsRefreshAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamSuggestionsRefresh> WorkstreamSuggestionsRefreshAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamSuggestionsRefresh> localVarResponse = await WorkstreamSuggestionsRefreshWithHttpInfoAsync(seededWorkstreamSuggestionsRefresh, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -337,7 +342,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamSuggestionsRefresh)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamSuggestionsRefresh>> WorkstreamSuggestionsRefreshWithHttpInfoAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamSuggestionsRefresh>> WorkstreamSuggestionsRefreshWithHttpInfoAsync(SeededWorkstreamSuggestionsRefresh seededWorkstreamSuggestionsRefresh = default(SeededWorkstreamSuggestionsRefresh), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -369,6 +374,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamApi.WorkstreamSuggestionsRefresh";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkstreamSuggestionsRefresh>("/workstream/suggestions/refresh", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -432,6 +442,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamApi.WorkstreamSuggestionsStream";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamSuggestions>("/workstream/suggestions/stream", localVarRequestOptions, this.Configuration);
@@ -454,7 +469,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamSuggestions</returns>
-        public async System.Threading.Tasks.Task<WorkstreamSuggestions> WorkstreamSuggestionsStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamSuggestions> WorkstreamSuggestionsStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamSuggestions> localVarResponse = await WorkstreamSuggestionsStreamWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -467,7 +482,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamSuggestions)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamSuggestions>> WorkstreamSuggestionsStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamSuggestions>> WorkstreamSuggestionsStreamWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -497,6 +512,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamApi.WorkstreamSuggestionsStream";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamSuggestions>("/workstream/suggestions/stream", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

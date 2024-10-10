@@ -56,7 +56,7 @@ namespace Pieces.Os.Core.SdkModel
             }
             this.Identifier = identifier;
             this.Schema = schema;
-            this.VarEvent = varEvent;
+            this.Event = varEvent;
             this.Exact = exact;
             this.Similarity = similarity;
             this.Temporal = temporal;
@@ -70,10 +70,10 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarEvent
+        /// Gets or Sets Event
         /// </summary>
         [DataMember(Name = "event", EmitDefaultValue = false)]
-        public WorkstreamPatternEngineVisionEvent VarEvent { get; set; }
+        public WorkstreamPatternEngineVisionEvent Event { get; set; }
 
         /// <summary>
         /// Gets or Sets Exact
@@ -115,7 +115,7 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class SearchedWorkstreamPatternEngineVisionEvent {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  VarEvent: ").Append(VarEvent).Append("\n");
+            sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Exact: ").Append(Exact).Append("\n");
             sb.Append("  Similarity: ").Append(Similarity).Append("\n");
             sb.Append("  Temporal: ").Append(Temporal).Append("\n");

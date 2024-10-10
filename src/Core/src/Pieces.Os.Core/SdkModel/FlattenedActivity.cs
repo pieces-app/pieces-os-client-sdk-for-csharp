@@ -83,7 +83,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varEvent is a required property for FlattenedActivity and cannot be null");
             }
-            this.VarEvent = varEvent;
+            this.Event = varEvent;
             // to ensure "application" is required (not null)
             if (application == null)
             {
@@ -124,10 +124,10 @@ namespace Pieces.Os.Core.SdkModel
         public GroupedTimestamp Updated { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarEvent
+        /// Gets or Sets Event
         /// </summary>
         [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
-        public SeededConnectorTracking VarEvent { get; set; }
+        public SeededConnectorTracking Event { get; set; }
 
         /// <summary>
         /// Gets or Sets Application
@@ -177,7 +177,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Created: ").Append(Created).Append("\n");
             sb.Append("  Updated: ").Append(Updated).Append("\n");
-            sb.Append("  VarEvent: ").Append(VarEvent).Append("\n");
+            sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Application: ").Append(Application).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("  Asset: ").Append(Asset).Append("\n");

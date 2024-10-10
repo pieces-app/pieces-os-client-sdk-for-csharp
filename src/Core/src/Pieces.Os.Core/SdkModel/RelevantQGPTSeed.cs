@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Pieces.Os.Core.Client.OpenAPIDateConverter;
 namespace Pieces.Os.Core.SdkModel
 {
     /// <summary>
-    /// This is a generic model used, to wrap a seed, as well as give an identifier used to further identifiy this snippet.  Seed is optional here because you may just want to provide the id, and not the original seed.  id is also optional here as you may provide an id or not here.(however with specific endpoint this ID is a guarentee.)
+    /// This is a generic model used, to wrap a seed, as well as give an identifier used to further identifiy this snippet.  Seed is optional here because you may just want to provide the id, and not the original seed.  id is also optional here as you may provide an id or not here.(however with specific endpoint this ID is a guarentee.)  location:(optional) if a path or an anchor is passed in, this will let us know the specific location within the &#39;file&#39; that this relevant seed is located           note: if this is null and a path/anchor is present then we will use the entire file that is provided.(this logic will be determined within the relevance flow &amp; not by the user)
     /// </summary>
     [DataContract(Name = "RelevantQGPTSeed")]
     public partial class RelevantQGPTSeed : IValidatableObject
@@ -41,7 +41,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="path">This is an optional file path.</param>
         /// <param name="anchor">anchor.</param>
         /// <param name="asset">asset.</param>
-        public RelevantQGPTSeed(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string id = default(string), Seed seed = default(Seed), string path = default(string), ReferencedAnchor anchor = default(ReferencedAnchor), ReferencedAsset asset = default(ReferencedAsset))
+        /// <param name="location">location.</param>
+        public RelevantQGPTSeed(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string id = default(string), Seed seed = default(Seed), string path = default(string), ReferencedAnchor anchor = default(ReferencedAnchor), ReferencedAsset asset = default(ReferencedAsset), TextLocation location = default(TextLocation))
         {
             this.Schema = schema;
             this.Id = id;
@@ -49,6 +50,7 @@ namespace Pieces.Os.Core.SdkModel
             this.Path = path;
             this.Anchor = anchor;
             this.Asset = asset;
+            this.Location = location;
         }
 
         /// <summary>
@@ -89,6 +91,12 @@ namespace Pieces.Os.Core.SdkModel
         public ReferencedAsset Asset { get; set; }
 
         /// <summary>
+        /// Gets or Sets Location
+        /// </summary>
+        [DataMember(Name = "location", EmitDefaultValue = false)]
+        public TextLocation Location { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +110,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Path: ").Append(Path).Append("\n");
             sb.Append("  Anchor: ").Append(Anchor).Append("\n");
             sb.Append("  Asset: ").Append(Asset).Append("\n");
+            sb.Append("  Location: ").Append(Location).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

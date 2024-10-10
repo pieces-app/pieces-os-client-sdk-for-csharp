@@ -51,7 +51,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="inferredThreshold">this is the minimum score from the postprocessing that a tag needs to have to be included in the inferred_tags array. (required).</param>
         /// <param name="context">this is the origin in which this asset was created, application(string representation) (required).</param>
         /// <param name="asset">This is the asset id. (required).</param>
-        public TLPCodeSnippetTagifyCode(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string distribution = default(string), string inferredDistribution = default(string), string tags = default(string), string inferredTags = default(string), string model = default(string), string labelVersion = default(string), decimal threshold = default(decimal), decimal inferredThreshold = default(decimal), string context = default(string), string asset = default(string))
+        /// <param name="os">os (required).</param>
+        public TLPCodeSnippetTagifyCode(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string distribution = default(string), string inferredDistribution = default(string), string tags = default(string), string inferredTags = default(string), string model = default(string), string labelVersion = default(string), decimal threshold = default(decimal), decimal inferredThreshold = default(decimal), string context = default(string), string asset = default(string), string os = default(string))
         {
             // to ensure "distribution" is required (not null)
             if (distribution == null)
@@ -103,6 +104,12 @@ namespace Pieces.Os.Core.SdkModel
                 throw new ArgumentNullException("asset is a required property for TLPCodeSnippetTagifyCode and cannot be null");
             }
             this.Asset = asset;
+            // to ensure "os" is required (not null)
+            if (os == null)
+            {
+                throw new ArgumentNullException("os is a required property for TLPCodeSnippetTagifyCode and cannot be null");
+            }
+            this.Os = os;
             this.Schema = schema;
         }
 
@@ -183,6 +190,12 @@ namespace Pieces.Os.Core.SdkModel
         public string Asset { get; set; }
 
         /// <summary>
+        /// Gets or Sets Os
+        /// </summary>
+        [DataMember(Name = "os", IsRequired = true, EmitDefaultValue = true)]
+        public string Os { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -201,6 +214,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  InferredThreshold: ").Append(InferredThreshold).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
             sb.Append("  Asset: ").Append(Asset).Append("\n");
+            sb.Append("  Os: ").Append(Os).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

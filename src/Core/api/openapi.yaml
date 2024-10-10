@@ -18,6 +18,8 @@ servers:
   url: https://api.pieces.services
 - description: Auth0
   url: https://pieces.us.auth0.com
+security:
+- application: []
 tags:
 - name: Activity
 - name: Activities
@@ -102,6 +104,7 @@ paths:
               schema:
                 type: string
           description: OK
+      security: []
       summary: "/.well-known/health [GET]"
       tags:
       - WellKnown
@@ -116,6 +119,7 @@ paths:
                 description: This is the version.
                 type: string
           description: OK
+      security: []
       summary: "/.well-known/version [Get]"
       tags:
       - WellKnown
@@ -138,6 +142,7 @@ paths:
               schema:
                 type: string
           description: Internal Server Error
+      security: []
       summary: "/.well-known/stream/health [WS]"
       tags:
       - WellKnown
@@ -162,6 +167,8 @@ paths:
               schema:
                 type: string
           description: OK
+      security:
+      - application: []
       summary: "/ [GET]"
       tags:
       - Piece
@@ -2697,6 +2704,7 @@ paths:
             \ this is a valid integration. This happens in the case a developer provides\
             \ and incorrect {application} (applicationId) within the route that doest\
             \ match a preregisterd integration."
+      security: []
       summary: "/connect [POST]"
       tags:
       - Connector
@@ -17791,6 +17799,8 @@ components:
         snippet:
           description: this is the value of the snippet
           type: string
+        probability:
+          type: string
       required:
       - asset
       - ast
@@ -17798,6 +17808,7 @@ components:
       - language
       - length
       - os
+      - probability
       - snippet
       - timestamp
       - user
@@ -17832,12 +17843,15 @@ components:
           type: number
         system:
           $ref: '#/components/schemas/SystemExecutionInformation'
+        os:
+          type: string
       required:
       - asset
       - classification
       - context
       - created
       - model
+      - os
       - probability
       - user
       title: TLPCodeFragmentClassification
@@ -17906,11 +17920,14 @@ components:
         context:
           description: this is the application is which this is from.
           type: string
+        os:
+          type: string
       required:
       - asset
       - context
       - created
       - model
+      - os
       - updates
       - user
       title: TLPCodeFragmentReclassification
@@ -18026,6 +18043,8 @@ components:
         asset:
           description: This is the asset id.
           type: string
+        os:
+          type: string
       required:
       - asset
       - context
@@ -18035,6 +18054,7 @@ components:
       - inferred_threshold
       - label_version
       - model
+      - os
       - tags
       - threshold
       title: TLPCodeSnippetTagifyCode
@@ -22657,6 +22677,9 @@ components:
         Seed is optional here because you may just want to provide the id, and not the original seed.
 
         id is also optional here as you may provide an id or not here.(however with specific endpoint this ID is a guarentee.)
+
+        location:(optional) if a path or an anchor is passed in, this will let us know the specific location within the 'file' that this relevant seed is located
+                  note: if this is null and a path/anchor is present then we will use the entire file that is provided.(this logic will be determined within the relevance flow & not by the user)
       properties:
         schema:
           $ref: '#/components/schemas/EmbeddedModelSchema'
@@ -22671,6 +22694,8 @@ components:
           $ref: '#/components/schemas/ReferencedAnchor'
         asset:
           $ref: '#/components/schemas/ReferencedAsset'
+        location:
+          $ref: '#/components/schemas/TextLocation'
       title: RelevantQGPTSeed
       type: object
     QGPTQuestionOutput:
@@ -24960,8 +24985,9 @@ components:
           type: integer
         isr_reports:
           type: integer
-          x-stoplight:
-            id: pd8v0heeuvlqv
+        requests:
+          nullable: true
+          type: integer
       required:
       - anchor_files
       - anchor_folders
@@ -24983,8 +25009,6 @@ components:
       title: TrackedSummaryTotals
       type: object
       x-pieces-internal: true
-      x-stoplight:
-        id: vc1dt02pg2f6e
     InactiveOSServerApplet:
       description: "Note: parent is optional here in the case that (parent here is\
         \ the integration that wants the module launched(VSCode))"
@@ -25231,4 +25255,9 @@ components:
           refreshUrl: ""
           scopes: {}
       type: oauth2
+    application:
+      description: A required applicationID header for the connection application.
+      in: header
+      name: X-Application-ID
+      type: apiKey
 

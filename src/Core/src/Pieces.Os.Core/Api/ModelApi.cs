@@ -209,7 +209,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/{model}/download [POST]
@@ -222,7 +222,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelDownloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelDownloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/{model}/download/cancel [POST]
         /// </summary>
@@ -234,7 +234,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadCancelAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadCancelAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/{model}/download/cancel [POST]
@@ -247,7 +247,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelDownloadCancelWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelDownloadCancelWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/{model}/download/progress [WS]
         /// </summary>
@@ -259,7 +259,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ModelDownloadProgress</returns>
-        System.Threading.Tasks.Task<ModelDownloadProgress> ModelSpecificModelDownloadProgressAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ModelDownloadProgress> ModelSpecificModelDownloadProgressAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/{model}/download/progress [WS]
@@ -272,7 +272,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ModelDownloadProgress)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ModelDownloadProgress>> ModelSpecificModelDownloadProgressWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ModelDownloadProgress>> ModelSpecificModelDownloadProgressWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/{model}/load [POST]
         /// </summary>
@@ -284,7 +284,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        System.Threading.Tasks.Task<Model> ModelSpecificModelLoadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Model> ModelSpecificModelLoadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/{model}/load [POST]
@@ -297,7 +297,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelLoadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelLoadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/{model}/unload [POST]
         /// </summary>
@@ -309,7 +309,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        System.Threading.Tasks.Task<Model> ModelSpecificModelUnloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Model> ModelSpecificModelUnloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/{model}/unload [POST]
@@ -322,7 +322,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelUnloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Model>> ModelSpecificModelUnloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/update [POST]
         /// </summary>
@@ -334,7 +334,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        System.Threading.Tasks.Task<Model> ModelUpdateAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Model> ModelUpdateAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/update [POST]
@@ -347,7 +347,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Model>> ModelUpdateWithHttpInfoAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Model>> ModelUpdateWithHttpInfoAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/{model} [GET]
         /// </summary>
@@ -359,7 +359,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        System.Threading.Tasks.Task<Model> ModelsSpecificModelSnapshotAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Model> ModelsSpecificModelSnapshotAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /model/{model} [GET]
@@ -372,7 +372,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Model>> ModelsSpecificModelSnapshotWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Model>> ModelsSpecificModelSnapshotWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -549,6 +549,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelDownload";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Model>("/model/{model}/download", localVarRequestOptions, this.Configuration);
@@ -572,7 +577,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        public async System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Model> localVarResponse = await ModelSpecificModelDownloadWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -586,7 +591,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelDownloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelDownloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -623,6 +628,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelDownload";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Model>("/model/{model}/download", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -695,6 +705,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelDownloadCancel";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Model>("/model/{model}/download/cancel", localVarRequestOptions, this.Configuration);
@@ -718,7 +733,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        public async System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadCancelAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Model> ModelSpecificModelDownloadCancelAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Model> localVarResponse = await ModelSpecificModelDownloadCancelWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -732,7 +747,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelDownloadCancelWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelDownloadCancelWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -769,6 +784,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelDownloadCancel";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Model>("/model/{model}/download/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -841,6 +861,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelDownloadProgress";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<ModelDownloadProgress>("/model/{model}/download/progress", localVarRequestOptions, this.Configuration);
@@ -864,7 +889,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ModelDownloadProgress</returns>
-        public async System.Threading.Tasks.Task<ModelDownloadProgress> ModelSpecificModelDownloadProgressAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ModelDownloadProgress> ModelSpecificModelDownloadProgressAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<ModelDownloadProgress> localVarResponse = await ModelSpecificModelDownloadProgressWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -878,7 +903,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ModelDownloadProgress)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ModelDownloadProgress>> ModelSpecificModelDownloadProgressWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ModelDownloadProgress>> ModelSpecificModelDownloadProgressWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -915,6 +940,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelDownloadProgress";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<ModelDownloadProgress>("/model/{model}/download/progress", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -987,6 +1017,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelLoad";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Model>("/model/{model}/load", localVarRequestOptions, this.Configuration);
@@ -1010,7 +1045,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        public async System.Threading.Tasks.Task<Model> ModelSpecificModelLoadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Model> ModelSpecificModelLoadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Model> localVarResponse = await ModelSpecificModelLoadWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1024,7 +1059,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelLoadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelLoadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -1061,6 +1096,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelLoad";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Model>("/model/{model}/load", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1133,6 +1173,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelUnload";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Model>("/model/{model}/unload", localVarRequestOptions, this.Configuration);
@@ -1156,7 +1201,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        public async System.Threading.Tasks.Task<Model> ModelSpecificModelUnloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Model> ModelSpecificModelUnloadAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Model> localVarResponse = await ModelSpecificModelUnloadWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1170,7 +1215,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelUnloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelSpecificModelUnloadWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -1207,6 +1252,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelSpecificModelUnload";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Model>("/model/{model}/unload", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1274,6 +1324,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Model>("/model/update", localVarRequestOptions, this.Configuration);
@@ -1297,7 +1352,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        public async System.Threading.Tasks.Task<Model> ModelUpdateAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Model> ModelUpdateAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Model> localVarResponse = await ModelUpdateWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1311,7 +1366,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelUpdateWithHttpInfoAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelUpdateWithHttpInfoAsync(Model model = default(Model), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1343,6 +1398,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Model>("/model/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1415,6 +1475,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelsSpecificModelSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Model>("/model/{model}", localVarRequestOptions, this.Configuration);
@@ -1438,7 +1503,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Model</returns>
-        public async System.Threading.Tasks.Task<Model> ModelsSpecificModelSnapshotAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Model> ModelsSpecificModelSnapshotAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Model> localVarResponse = await ModelsSpecificModelSnapshotWithHttpInfoAsync(model, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1452,7 +1517,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Model)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelsSpecificModelSnapshotWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Model>> ModelsSpecificModelSnapshotWithHttpInfoAsync(string model, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'model' is set
             if (model == null)
@@ -1489,6 +1554,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ModelApi.ModelsSpecificModelSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Model>("/model/{model}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

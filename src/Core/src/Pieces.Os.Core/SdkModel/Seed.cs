@@ -55,7 +55,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        /// <example>SEEDED_ASSET</example>
+        /*
+        <example>SEEDED_ASSET</example>
+        */
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>

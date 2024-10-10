@@ -132,14 +132,18 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>102ff265-fdfb-4142-8d94-4932d400199c</example>
+        /*
+        <example>102ff265-fdfb-4142-8d94-4932d400199c</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Creator
         /// </summary>
-        /// <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        /*
+        <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        */
         [DataMember(Name = "creator", IsRequired = true, EmitDefaultValue = true)]
         public string Creator { get; set; }
 
@@ -165,7 +169,9 @@ namespace Pieces.Os.Core.SdkModel
         /// A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters) 
         /// </summary>
         /// <value>A uuid model. 36 Characters (4 Dashes, 32 Numbers/Letters) </value>
-        /// <example>6a2f41a3-c54c-fce8-32d2-0324e1c32e22</example>
+        /*
+        <example>6a2f41a3-c54c-fce8-32d2-0324e1c32e22</example>
+        */
         [DataMember(Name = "asset", IsRequired = true, EmitDefaultValue = true)]
         public Guid Asset { get; set; }
 

@@ -91,7 +91,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varShort is a required property for FlattenedShare and cannot be null");
             }
-            this.VarShort = varShort;
+            this.Short = varShort;
             this.Schema = schema;
             this.Asset = asset;
             this.User = user;
@@ -152,7 +152,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>This is a shortened version of our uuid.</value>
         [DataMember(Name = "short", IsRequired = true, EmitDefaultValue = true)]
-        public string VarShort { get; set; }
+        public string Short { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -194,7 +194,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Access: ").Append(Access).Append("\n");
             sb.Append("  Accessors: ").Append(Accessors).Append("\n");
             sb.Append("  Created: ").Append(Created).Append("\n");
-            sb.Append("  VarShort: ").Append(VarShort).Append("\n");
+            sb.Append("  Short: ").Append(Short).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Assets: ").Append(Assets).Append("\n");
             sb.Append("  Distributions: ").Append(Distributions).Append("\n");

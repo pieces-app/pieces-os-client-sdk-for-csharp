@@ -114,7 +114,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Shares</returns>
-        System.Threading.Tasks.Task<Shares> LinkifyAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Shares> LinkifyAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /linkify [POST]
@@ -127,7 +127,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Shares)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Shares>> LinkifyWithHttpInfoAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Shares>> LinkifyWithHttpInfoAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /linkify/multiple [POST]
         /// </summary>
@@ -139,7 +139,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Shares</returns>
-        System.Threading.Tasks.Task<Shares> LinkifyMultipleAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Shares> LinkifyMultipleAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /linkify/multiple [POST]
@@ -152,7 +152,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Shares)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Shares>> LinkifyMultipleWithHttpInfoAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Shares>> LinkifyMultipleWithHttpInfoAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// [POST} /linkify/{share}/revoke
         /// </summary>
@@ -164,7 +164,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        System.Threading.Tasks.Task<string> LinkifyShareRevokeAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<string> LinkifyShareRevokeAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// [POST} /linkify/{share}/revoke
@@ -177,7 +177,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        System.Threading.Tasks.Task<ApiResponse<string>> LinkifyShareRevokeWithHttpInfoAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<string>> LinkifyShareRevokeWithHttpInfoAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -349,6 +349,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "LinkifyApi.Linkify";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Shares>("/linkify", localVarRequestOptions, this.Configuration);
@@ -372,7 +377,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Shares</returns>
-        public async System.Threading.Tasks.Task<Shares> LinkifyAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Shares> LinkifyAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Shares> localVarResponse = await LinkifyWithHttpInfoAsync(linkify, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -386,7 +391,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Shares)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Shares>> LinkifyWithHttpInfoAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Shares>> LinkifyWithHttpInfoAsync(Linkify linkify = default(Linkify), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -418,6 +423,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "LinkifyApi.Linkify";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Shares>("/linkify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -485,6 +495,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "LinkifyApi.LinkifyMultiple";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Shares>("/linkify/multiple", localVarRequestOptions, this.Configuration);
@@ -508,7 +523,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Shares</returns>
-        public async System.Threading.Tasks.Task<Shares> LinkifyMultipleAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Shares> LinkifyMultipleAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Shares> localVarResponse = await LinkifyMultipleWithHttpInfoAsync(linkifyMultiple, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -522,7 +537,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Shares)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Shares>> LinkifyMultipleWithHttpInfoAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Shares>> LinkifyMultipleWithHttpInfoAsync(LinkifyMultiple linkifyMultiple = default(LinkifyMultiple), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -554,6 +569,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "LinkifyApi.LinkifyMultiple";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Shares>("/linkify/multiple", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -625,6 +645,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "LinkifyApi.LinkifyShareRevoke";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<string>("/linkify/{share}/revoke", localVarRequestOptions, this.Configuration);
@@ -648,7 +673,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of string</returns>
-        public async System.Threading.Tasks.Task<string> LinkifyShareRevokeAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<string> LinkifyShareRevokeAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await LinkifyShareRevokeWithHttpInfoAsync(share, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -662,7 +687,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (string)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> LinkifyShareRevokeWithHttpInfoAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> LinkifyShareRevokeWithHttpInfoAsync(string share, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'share' is set
             if (share == null)
@@ -698,6 +723,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "LinkifyApi.LinkifyShareRevoke";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<string>("/linkify/{share}/revoke", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

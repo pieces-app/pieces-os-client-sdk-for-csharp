@@ -5,7 +5,7 @@ This is the preseed to a full blown Activity.  This is the minimum information n
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**VarEvent** | [**SeededConnectorTracking**](SeededConnectorTracking.md) |  | 
+**Event** | [**SeededConnectorTracking**](SeededConnectorTracking.md) |  | 
 **Application** | [**Application**](Application.md) |  | 
 **Asset** | [**ReferencedAsset**](ReferencedAsset.md) |  | [optional] 
 **User** | [**ReferencedUser**](ReferencedUser.md) |  | [optional] 

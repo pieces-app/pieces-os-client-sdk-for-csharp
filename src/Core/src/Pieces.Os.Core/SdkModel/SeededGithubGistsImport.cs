@@ -52,7 +52,7 @@ namespace Pieces.Os.Core.SdkModel
             }
             this.Application = application;
             this.Schema = schema;
-            this.VarPublic = varPublic;
+            this.Public = varPublic;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>This will default to false.(ie private), currently not supporting pulling public gists.</value>
         [DataMember(Name = "public", EmitDefaultValue = true)]
-        public bool VarPublic { get; set; }
+        public bool Public { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -85,7 +85,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class SeededGithubGistsImport {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Application: ").Append(Application).Append("\n");
-            sb.Append("  VarPublic: ").Append(VarPublic).Append("\n");
+            sb.Append("  Public: ").Append(Public).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

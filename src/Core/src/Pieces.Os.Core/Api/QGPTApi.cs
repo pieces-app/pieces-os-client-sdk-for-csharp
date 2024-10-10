@@ -188,7 +188,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTQuestionOutput</returns>
-        System.Threading.Tasks.Task<QGPTQuestionOutput> HintsAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QGPTQuestionOutput> HintsAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /qgpt/hints [POST]
@@ -201,7 +201,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTQuestionOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QGPTQuestionOutput>> HintsWithHttpInfoAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QGPTQuestionOutput>> HintsWithHttpInfoAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /qgpt/persons/related [POST]
         /// </summary>
@@ -214,7 +214,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTPersonsRelatedOutput</returns>
-        System.Threading.Tasks.Task<QGPTPersonsRelatedOutput> PersonsRelatedAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QGPTPersonsRelatedOutput> PersonsRelatedAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /qgpt/persons/related [POST]
@@ -228,7 +228,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTPersonsRelatedOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QGPTPersonsRelatedOutput>> PersonsRelatedWithHttpInfoAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QGPTPersonsRelatedOutput>> PersonsRelatedWithHttpInfoAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /qgpt/stream [WS]
         /// </summary>
@@ -240,7 +240,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTStreamOutput</returns>
-        System.Threading.Tasks.Task<QGPTStreamOutput> QgptStreamAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QGPTStreamOutput> QgptStreamAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /qgpt/stream [WS]
@@ -253,7 +253,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTStreamOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QGPTStreamOutput>> QgptStreamWithHttpInfoAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QGPTStreamOutput>> QgptStreamWithHttpInfoAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /qgpt/question [POST]
         /// </summary>
@@ -265,7 +265,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTQuestionOutput</returns>
-        System.Threading.Tasks.Task<QGPTQuestionOutput> QuestionAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QGPTQuestionOutput> QuestionAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /qgpt/question [POST]
@@ -278,7 +278,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTQuestionOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QGPTQuestionOutput>> QuestionWithHttpInfoAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QGPTQuestionOutput>> QuestionWithHttpInfoAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /qgpt/relevance [POST]
         /// </summary>
@@ -290,7 +290,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTRelevanceOutput</returns>
-        System.Threading.Tasks.Task<QGPTRelevanceOutput> RelevanceAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QGPTRelevanceOutput> RelevanceAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /qgpt/relevance [POST]
@@ -303,7 +303,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTRelevanceOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QGPTRelevanceOutput>> RelevanceWithHttpInfoAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QGPTRelevanceOutput>> RelevanceWithHttpInfoAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /qgpt/reprompt [POST]
         /// </summary>
@@ -315,7 +315,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTRepromptOutput</returns>
-        System.Threading.Tasks.Task<QGPTRepromptOutput> RepromptAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<QGPTRepromptOutput> RepromptAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /qgpt/reprompt [POST]
@@ -328,7 +328,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTRepromptOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<QGPTRepromptOutput>> RepromptWithHttpInfoAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<QGPTRepromptOutput>> RepromptWithHttpInfoAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -500,6 +500,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Hints";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<QGPTQuestionOutput>("/qgpt/hints", localVarRequestOptions, this.Configuration);
@@ -523,7 +528,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTQuestionOutput</returns>
-        public async System.Threading.Tasks.Task<QGPTQuestionOutput> HintsAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QGPTQuestionOutput> HintsAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<QGPTQuestionOutput> localVarResponse = await HintsWithHttpInfoAsync(qGPTHintsInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -537,7 +542,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTQuestionOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTQuestionOutput>> HintsWithHttpInfoAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTQuestionOutput>> HintsWithHttpInfoAsync(QGPTHintsInput qGPTHintsInput = default(QGPTHintsInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -569,6 +574,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Hints";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<QGPTQuestionOutput>("/qgpt/hints", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -642,6 +652,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.PersonsRelated";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<QGPTPersonsRelatedOutput>("/qgpt/persons/related", localVarRequestOptions, this.Configuration);
@@ -666,7 +681,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTPersonsRelatedOutput</returns>
-        public async System.Threading.Tasks.Task<QGPTPersonsRelatedOutput> PersonsRelatedAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QGPTPersonsRelatedOutput> PersonsRelatedAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<QGPTPersonsRelatedOutput> localVarResponse = await PersonsRelatedWithHttpInfoAsync(transferables, qGPTPersonsRelatedInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -681,7 +696,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTPersonsRelatedOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTPersonsRelatedOutput>> PersonsRelatedWithHttpInfoAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTPersonsRelatedOutput>> PersonsRelatedWithHttpInfoAsync(bool? transferables = default(bool?), QGPTPersonsRelatedInput qGPTPersonsRelatedInput = default(QGPTPersonsRelatedInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -717,6 +732,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.PersonsRelated";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<QGPTPersonsRelatedOutput>("/qgpt/persons/related", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -784,6 +804,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.QgptStream";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<QGPTStreamOutput>("/qgpt/stream", localVarRequestOptions, this.Configuration);
@@ -807,7 +832,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTStreamOutput</returns>
-        public async System.Threading.Tasks.Task<QGPTStreamOutput> QgptStreamAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QGPTStreamOutput> QgptStreamAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<QGPTStreamOutput> localVarResponse = await QgptStreamWithHttpInfoAsync(qGPTStreamInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -821,7 +846,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTStreamOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTStreamOutput>> QgptStreamWithHttpInfoAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTStreamOutput>> QgptStreamWithHttpInfoAsync(QGPTStreamInput qGPTStreamInput = default(QGPTStreamInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -853,6 +878,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.QgptStream";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<QGPTStreamOutput>("/qgpt/stream", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -920,6 +950,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Question";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<QGPTQuestionOutput>("/qgpt/question", localVarRequestOptions, this.Configuration);
@@ -943,7 +978,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTQuestionOutput</returns>
-        public async System.Threading.Tasks.Task<QGPTQuestionOutput> QuestionAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QGPTQuestionOutput> QuestionAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<QGPTQuestionOutput> localVarResponse = await QuestionWithHttpInfoAsync(qGPTQuestionInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -957,7 +992,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTQuestionOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTQuestionOutput>> QuestionWithHttpInfoAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTQuestionOutput>> QuestionWithHttpInfoAsync(QGPTQuestionInput qGPTQuestionInput = default(QGPTQuestionInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -989,6 +1024,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Question";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<QGPTQuestionOutput>("/qgpt/question", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1056,6 +1096,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Relevance";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<QGPTRelevanceOutput>("/qgpt/relevance", localVarRequestOptions, this.Configuration);
@@ -1079,7 +1124,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTRelevanceOutput</returns>
-        public async System.Threading.Tasks.Task<QGPTRelevanceOutput> RelevanceAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QGPTRelevanceOutput> RelevanceAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<QGPTRelevanceOutput> localVarResponse = await RelevanceWithHttpInfoAsync(qGPTRelevanceInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1093,7 +1138,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTRelevanceOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTRelevanceOutput>> RelevanceWithHttpInfoAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTRelevanceOutput>> RelevanceWithHttpInfoAsync(QGPTRelevanceInput qGPTRelevanceInput = default(QGPTRelevanceInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1125,6 +1170,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Relevance";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<QGPTRelevanceOutput>("/qgpt/relevance", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1192,6 +1242,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Reprompt";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<QGPTRepromptOutput>("/qgpt/reprompt", localVarRequestOptions, this.Configuration);
@@ -1215,7 +1270,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of QGPTRepromptOutput</returns>
-        public async System.Threading.Tasks.Task<QGPTRepromptOutput> RepromptAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<QGPTRepromptOutput> RepromptAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<QGPTRepromptOutput> localVarResponse = await RepromptWithHttpInfoAsync(qGPTRepromptInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1229,7 +1284,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (QGPTRepromptOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTRepromptOutput>> RepromptWithHttpInfoAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<QGPTRepromptOutput>> RepromptWithHttpInfoAsync(QGPTRepromptInput qGPTRepromptInput = default(QGPTRepromptInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1261,6 +1316,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "QGPTApi.Reprompt";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<QGPTRepromptOutput>("/qgpt/reprompt", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
