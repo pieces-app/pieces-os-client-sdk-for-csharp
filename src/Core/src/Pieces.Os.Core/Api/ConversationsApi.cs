@@ -209,7 +209,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConversationsCreateFromAssetOutput</returns>
-        System.Threading.Tasks.Task<ConversationsCreateFromAssetOutput> ConversationsCreateFromAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ConversationsCreateFromAssetOutput> ConversationsCreateFromAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations/create/from_asset/{asset} [POST]
@@ -222,7 +222,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConversationsCreateFromAssetOutput)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ConversationsCreateFromAssetOutput>> ConversationsCreateFromAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ConversationsCreateFromAssetOutput>> ConversationsCreateFromAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /conversations/create [POST]
         /// </summary>
@@ -235,7 +235,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Conversation</returns>
-        System.Threading.Tasks.Task<Conversation> ConversationsCreateSpecificConversationAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Conversation> ConversationsCreateSpecificConversationAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations/create [POST]
@@ -249,7 +249,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Conversation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Conversation>> ConversationsCreateSpecificConversationWithHttpInfoAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Conversation>> ConversationsCreateSpecificConversationWithHttpInfoAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /conversations/{conversation}/delete [POST]
         /// </summary>
@@ -261,7 +261,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ConversationsDeleteSpecificConversationAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ConversationsDeleteSpecificConversationAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations/{conversation}/delete [POST]
@@ -274,7 +274,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ConversationsDeleteSpecificConversationWithHttpInfoAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ConversationsDeleteSpecificConversationWithHttpInfoAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /conversations/identifiers [GET]
         /// </summary>
@@ -285,7 +285,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedConversations</returns>
-        System.Threading.Tasks.Task<FlattenedConversations> ConversationsIdentifiersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<FlattenedConversations> ConversationsIdentifiersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations/identifiers [GET]
@@ -297,7 +297,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedConversations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<FlattenedConversations>> ConversationsIdentifiersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<FlattenedConversations>> ConversationsIdentifiersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /conversations [GET]
         /// </summary>
@@ -309,7 +309,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Conversations</returns>
-        System.Threading.Tasks.Task<Conversations> ConversationsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Conversations> ConversationsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations [GET]
@@ -322,7 +322,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Conversations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Conversations>> ConversationsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Conversations>> ConversationsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /conversations/stream/identifiers [WS]
         /// </summary>
@@ -333,7 +333,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ConversationsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ConversationsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations/stream/identifiers [WS]
@@ -345,7 +345,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ConversationsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ConversationsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /conversations/search [POST]
         /// </summary>
@@ -358,7 +358,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedConversations</returns>
-        System.Threading.Tasks.Task<SearchedConversations> SearchConversationsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedConversations> SearchConversationsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /conversations/search [POST]
@@ -372,7 +372,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedConversations)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedConversations>> SearchConversationsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedConversations>> SearchConversationsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -543,6 +543,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsCreateFromAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<ConversationsCreateFromAssetOutput>("/conversations/create/from_asset/{asset}", localVarRequestOptions, this.Configuration);
@@ -566,7 +571,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ConversationsCreateFromAssetOutput</returns>
-        public async System.Threading.Tasks.Task<ConversationsCreateFromAssetOutput> ConversationsCreateFromAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ConversationsCreateFromAssetOutput> ConversationsCreateFromAssetAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<ConversationsCreateFromAssetOutput> localVarResponse = await ConversationsCreateFromAssetWithHttpInfoAsync(asset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -580,7 +585,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ConversationsCreateFromAssetOutput)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ConversationsCreateFromAssetOutput>> ConversationsCreateFromAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ConversationsCreateFromAssetOutput>> ConversationsCreateFromAssetWithHttpInfoAsync(Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -611,6 +616,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsCreateFromAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<ConversationsCreateFromAssetOutput>("/conversations/create/from_asset/{asset}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -684,6 +694,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsCreateSpecificConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Conversation>("/conversations/create", localVarRequestOptions, this.Configuration);
@@ -708,7 +723,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Conversation</returns>
-        public async System.Threading.Tasks.Task<Conversation> ConversationsCreateSpecificConversationAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conversation> ConversationsCreateSpecificConversationAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Conversation> localVarResponse = await ConversationsCreateSpecificConversationWithHttpInfoAsync(transferables, seededConversation, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -723,7 +738,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Conversation)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Conversation>> ConversationsCreateSpecificConversationWithHttpInfoAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Conversation>> ConversationsCreateSpecificConversationWithHttpInfoAsync(bool? transferables = default(bool?), SeededConversation seededConversation = default(SeededConversation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -759,6 +774,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsCreateSpecificConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Conversation>("/conversations/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -829,6 +849,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsDeleteSpecificConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/conversations/{conversation}/delete", localVarRequestOptions, this.Configuration);
@@ -852,7 +877,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ConversationsDeleteSpecificConversationAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ConversationsDeleteSpecificConversationAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ConversationsDeleteSpecificConversationWithHttpInfoAsync(conversation, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -865,7 +890,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ConversationsDeleteSpecificConversationWithHttpInfoAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ConversationsDeleteSpecificConversationWithHttpInfoAsync(string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'conversation' is set
             if (conversation == null)
@@ -901,6 +926,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsDeleteSpecificConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/conversations/{conversation}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -964,6 +994,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsIdentifiersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<FlattenedConversations>("/conversations/identifiers", localVarRequestOptions, this.Configuration);
@@ -986,7 +1021,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of FlattenedConversations</returns>
-        public async System.Threading.Tasks.Task<FlattenedConversations> ConversationsIdentifiersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<FlattenedConversations> ConversationsIdentifiersSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<FlattenedConversations> localVarResponse = await ConversationsIdentifiersSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -999,7 +1034,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (FlattenedConversations)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedConversations>> ConversationsIdentifiersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<FlattenedConversations>> ConversationsIdentifiersSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1029,6 +1064,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsIdentifiersSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<FlattenedConversations>("/conversations/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1098,6 +1138,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Conversations>("/conversations", localVarRequestOptions, this.Configuration);
@@ -1121,7 +1166,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Conversations</returns>
-        public async System.Threading.Tasks.Task<Conversations> ConversationsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Conversations> ConversationsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Conversations> localVarResponse = await ConversationsSnapshotWithHttpInfoAsync(transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1135,7 +1180,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Conversations)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Conversations>> ConversationsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Conversations>> ConversationsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1169,6 +1214,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Conversations>("/conversations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1229,6 +1279,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Object>("/conversations/stream/identifiers", localVarRequestOptions, this.Configuration);
@@ -1251,7 +1306,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ConversationsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ConversationsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await ConversationsStreamIdentifiersWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1263,7 +1318,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ConversationsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ConversationsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1291,6 +1346,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.ConversationsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/conversations/stream/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1364,6 +1424,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.SearchConversations";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SearchedConversations>("/conversations/search", localVarRequestOptions, this.Configuration);
@@ -1388,7 +1453,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedConversations</returns>
-        public async System.Threading.Tasks.Task<SearchedConversations> SearchConversationsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedConversations> SearchConversationsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedConversations> localVarResponse = await SearchConversationsWithHttpInfoAsync(transferables, searchInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1403,7 +1468,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedConversations)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedConversations>> SearchConversationsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedConversations>> SearchConversationsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1439,6 +1504,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "ConversationsApi.SearchConversations";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SearchedConversations>("/conversations/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

@@ -120,7 +120,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamEvent</returns>
-        System.Threading.Tasks.Task<WorkstreamEvent> WorkstreamEventsCreateNewWorkstreamEventAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamEvent> WorkstreamEventsCreateNewWorkstreamEventAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_events/create [POST]
@@ -134,7 +134,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamEvent)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamEvent>> WorkstreamEventsCreateNewWorkstreamEventWithHttpInfoAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamEvent>> WorkstreamEventsCreateNewWorkstreamEventWithHttpInfoAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_events/{workstream_event}/delete [POST]
         /// </summary>
@@ -146,7 +146,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WorkstreamEventsDeleteSpecificWorkstreamEventAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WorkstreamEventsDeleteSpecificWorkstreamEventAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_events/{workstream_event}/delete [POST]
@@ -159,7 +159,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WorkstreamEventsDeleteSpecificWorkstreamEventWithHttpInfoAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WorkstreamEventsDeleteSpecificWorkstreamEventWithHttpInfoAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /workstream_events [GET]
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamEvents</returns>
-        System.Threading.Tasks.Task<WorkstreamEvents> WorkstreamEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WorkstreamEvents> WorkstreamEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /workstream_events [GET]
@@ -184,7 +184,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamEvents)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkstreamEvents>> WorkstreamEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WorkstreamEvents>> WorkstreamEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -362,6 +362,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamEventsApi.WorkstreamEventsCreateNewWorkstreamEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<WorkstreamEvent>("/workstream_events/create", localVarRequestOptions, this.Configuration);
@@ -386,7 +391,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamEvent</returns>
-        public async System.Threading.Tasks.Task<WorkstreamEvent> WorkstreamEventsCreateNewWorkstreamEventAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamEvent> WorkstreamEventsCreateNewWorkstreamEventAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamEvent> localVarResponse = await WorkstreamEventsCreateNewWorkstreamEventWithHttpInfoAsync(transferables, seededWorkstreamEvent, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -401,7 +406,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamEvent)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamEvent>> WorkstreamEventsCreateNewWorkstreamEventWithHttpInfoAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamEvent>> WorkstreamEventsCreateNewWorkstreamEventWithHttpInfoAsync(bool? transferables = default(bool?), SeededWorkstreamEvent seededWorkstreamEvent = default(SeededWorkstreamEvent), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -437,6 +442,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamEventsApi.WorkstreamEventsCreateNewWorkstreamEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<WorkstreamEvent>("/workstream_events/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -507,6 +517,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamEventsApi.WorkstreamEventsDeleteSpecificWorkstreamEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/workstream_events/{workstream_event}/delete", localVarRequestOptions, this.Configuration);
@@ -530,7 +545,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WorkstreamEventsDeleteSpecificWorkstreamEventAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WorkstreamEventsDeleteSpecificWorkstreamEventAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WorkstreamEventsDeleteSpecificWorkstreamEventWithHttpInfoAsync(workstreamEvent, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -543,7 +558,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WorkstreamEventsDeleteSpecificWorkstreamEventWithHttpInfoAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WorkstreamEventsDeleteSpecificWorkstreamEventWithHttpInfoAsync(string workstreamEvent, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'workstreamEvent' is set
             if (workstreamEvent == null)
@@ -579,6 +594,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamEventsApi.WorkstreamEventsDeleteSpecificWorkstreamEvent";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/workstream_events/{workstream_event}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -648,6 +668,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamEventsApi.WorkstreamEventsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<WorkstreamEvents>("/workstream_events", localVarRequestOptions, this.Configuration);
@@ -671,7 +696,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WorkstreamEvents</returns>
-        public async System.Threading.Tasks.Task<WorkstreamEvents> WorkstreamEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WorkstreamEvents> WorkstreamEventsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<WorkstreamEvents> localVarResponse = await WorkstreamEventsSnapshotWithHttpInfoAsync(transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -685,7 +710,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkstreamEvents)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamEvents>> WorkstreamEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<WorkstreamEvents>> WorkstreamEventsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -719,6 +744,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WorkstreamEventsApi.WorkstreamEventsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<WorkstreamEvents>("/workstream_events", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

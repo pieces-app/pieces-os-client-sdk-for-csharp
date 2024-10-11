@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **InferredThreshold** | **decimal** | this is the minimum score from the postprocessing that a tag needs to have to be included in the inferred_tags array. | 
 **Context** | **string** | this is the origin in which this asset was created, application(string representation) | 
 **Asset** | **string** | This is the asset id. | 
+**Os** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

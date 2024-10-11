@@ -115,7 +115,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Distribution</returns>
-        System.Threading.Tasks.Task<Distribution> DistributionsCreateNewDistributionAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Distribution> DistributionsCreateNewDistributionAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /distributions/create [POST]
@@ -128,7 +128,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Distribution)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Distribution>> DistributionsCreateNewDistributionWithHttpInfoAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Distribution>> DistributionsCreateNewDistributionWithHttpInfoAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /distributions/{distribution}/delete [POST]
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DistributionsDeleteSpecificDistributionAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DistributionsDeleteSpecificDistributionAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /distributions/{distribution}/delete [POST]
@@ -153,7 +153,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DistributionsDeleteSpecificDistributionWithHttpInfoAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DistributionsDeleteSpecificDistributionWithHttpInfoAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /distributions [GET]
         /// </summary>
@@ -164,7 +164,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Distributions</returns>
-        System.Threading.Tasks.Task<Distributions> DistributionsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Distributions> DistributionsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /distributions [GET]
@@ -176,7 +176,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Distributions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Distributions>> DistributionsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Distributions>> DistributionsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -348,6 +348,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DistributionsApi.DistributionsCreateNewDistribution";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Distribution>("/distributions/create", localVarRequestOptions, this.Configuration);
@@ -371,7 +376,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Distribution</returns>
-        public async System.Threading.Tasks.Task<Distribution> DistributionsCreateNewDistributionAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Distribution> DistributionsCreateNewDistributionAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Distribution> localVarResponse = await DistributionsCreateNewDistributionWithHttpInfoAsync(seededDistribution, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -385,7 +390,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Distribution)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Distribution>> DistributionsCreateNewDistributionWithHttpInfoAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Distribution>> DistributionsCreateNewDistributionWithHttpInfoAsync(SeededDistribution seededDistribution = default(SeededDistribution), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -417,6 +422,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DistributionsApi.DistributionsCreateNewDistribution";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Distribution>("/distributions/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -487,6 +497,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DistributionsApi.DistributionsDeleteSpecificDistribution";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/distributions/{distribution}/delete", localVarRequestOptions, this.Configuration);
@@ -510,7 +525,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DistributionsDeleteSpecificDistributionAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DistributionsDeleteSpecificDistributionAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await DistributionsDeleteSpecificDistributionWithHttpInfoAsync(distribution, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -523,7 +538,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> DistributionsDeleteSpecificDistributionWithHttpInfoAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> DistributionsDeleteSpecificDistributionWithHttpInfoAsync(string distribution, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'distribution' is set
             if (distribution == null)
@@ -559,6 +574,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DistributionsApi.DistributionsDeleteSpecificDistribution";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/distributions/{distribution}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -622,6 +642,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DistributionsApi.DistributionsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Distributions>("/distributions", localVarRequestOptions, this.Configuration);
@@ -644,7 +669,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Distributions</returns>
-        public async System.Threading.Tasks.Task<Distributions> DistributionsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Distributions> DistributionsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Distributions> localVarResponse = await DistributionsSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -657,7 +682,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Distributions)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Distributions>> DistributionsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Distributions>> DistributionsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -687,6 +712,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DistributionsApi.DistributionsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Distributions>("/distributions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

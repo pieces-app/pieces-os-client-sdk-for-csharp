@@ -124,7 +124,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        System.Threading.Tasks.Task<SearchedAssets> FullTextSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedAssets> FullTextSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /search/full_text [GET]
@@ -138,7 +138,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> FullTextSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> FullTextSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /search/neural_code [GET]
         /// </summary>
@@ -151,7 +151,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        System.Threading.Tasks.Task<SearchedAssets> NeuralCodeSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedAssets> NeuralCodeSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /search/neural_code [GET]
@@ -165,7 +165,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> NeuralCodeSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> NeuralCodeSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /search/tag_based [POST]
         /// </summary>
@@ -178,7 +178,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        System.Threading.Tasks.Task<SearchedAssets> TagBasedSearchAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedAssets> TagBasedSearchAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /search/tag_based [POST]
@@ -192,7 +192,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> TagBasedSearchWithHttpInfoAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedAssets>> TagBasedSearchWithHttpInfoAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -372,6 +372,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SearchApi.FullTextSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<SearchedAssets>("/search/full_text", localVarRequestOptions, this.Configuration);
@@ -396,7 +401,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        public async System.Threading.Tasks.Task<SearchedAssets> FullTextSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedAssets> FullTextSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedAssets> localVarResponse = await FullTextSearchWithHttpInfoAsync(query, pseudo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -411,7 +416,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> FullTextSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> FullTextSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -449,6 +454,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SearchApi.FullTextSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<SearchedAssets>("/search/full_text", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -524,6 +534,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SearchApi.NeuralCodeSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<SearchedAssets>("/search/neural_code", localVarRequestOptions, this.Configuration);
@@ -548,7 +563,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        public async System.Threading.Tasks.Task<SearchedAssets> NeuralCodeSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedAssets> NeuralCodeSearchAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedAssets> localVarResponse = await NeuralCodeSearchWithHttpInfoAsync(query, pseudo, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -563,7 +578,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> NeuralCodeSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> NeuralCodeSearchWithHttpInfoAsync(string query = default(string), bool? pseudo = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -601,6 +616,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SearchApi.NeuralCodeSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<SearchedAssets>("/search/neural_code", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -674,6 +694,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SearchApi.TagBasedSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SearchedAssets>("/search/tag_based", localVarRequestOptions, this.Configuration);
@@ -698,7 +723,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedAssets</returns>
-        public async System.Threading.Tasks.Task<SearchedAssets> TagBasedSearchAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedAssets> TagBasedSearchAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedAssets> localVarResponse = await TagBasedSearchWithHttpInfoAsync(pseudo, seededAssetTags, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -713,7 +738,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> TagBasedSearchWithHttpInfoAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedAssets>> TagBasedSearchWithHttpInfoAsync(bool? pseudo = default(bool?), SeededAssetTags seededAssetTags = default(SeededAssetTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -749,6 +774,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SearchApi.TagBasedSearch";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SearchedAssets>("/search/tag_based", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

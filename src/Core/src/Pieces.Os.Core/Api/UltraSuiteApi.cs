@@ -71,7 +71,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> AssetsCreateUltraSuiteAssetAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> AssetsCreateUltraSuiteAssetAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /ultra_suite/assets/create [POST]
@@ -84,7 +84,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetsCreateUltraSuiteAssetWithHttpInfoAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetsCreateUltraSuiteAssetWithHttpInfoAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -255,6 +255,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UltraSuiteApi.AssetsCreateUltraSuiteAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Asset>("/ultra_suite/assets/create", localVarRequestOptions, this.Configuration);
@@ -278,7 +283,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> AssetsCreateUltraSuiteAssetAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> AssetsCreateUltraSuiteAssetAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = await AssetsCreateUltraSuiteAssetWithHttpInfoAsync(seededUltraSuiteAsset, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -292,7 +297,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetsCreateUltraSuiteAssetWithHttpInfoAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetsCreateUltraSuiteAssetWithHttpInfoAsync(SeededUltraSuiteAsset seededUltraSuiteAsset = default(SeededUltraSuiteAsset), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -323,6 +328,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "UltraSuiteApi.AssetsCreateUltraSuiteAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Asset>("/ultra_suite/assets/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

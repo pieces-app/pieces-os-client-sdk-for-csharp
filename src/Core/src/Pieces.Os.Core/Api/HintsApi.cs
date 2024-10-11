@@ -161,7 +161,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Hint</returns>
-        System.Threading.Tasks.Task<Hint> HintsCreateNewHintAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Hint> HintsCreateNewHintAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /hints/create [POST]
@@ -174,7 +174,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Hint)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Hint>> HintsCreateNewHintWithHttpInfoAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Hint>> HintsCreateNewHintWithHttpInfoAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /hints/{hint}/delete [POST]
         /// </summary>
@@ -186,7 +186,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task HintsDeleteSpecificHintAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task HintsDeleteSpecificHintAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /hints/{hint}/delete [POST]
@@ -199,7 +199,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> HintsDeleteSpecificHintWithHttpInfoAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> HintsDeleteSpecificHintWithHttpInfoAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /hints [GET]
         /// </summary>
@@ -210,7 +210,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Hints</returns>
-        System.Threading.Tasks.Task<Hints> HintsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Hints> HintsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /hints [GET]
@@ -222,7 +222,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Hints)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Hints>> HintsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Hints>> HintsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /hints/stream/identifiers [WS]
         /// </summary>
@@ -233,7 +233,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        System.Threading.Tasks.Task<StreamedIdentifiers> HintsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StreamedIdentifiers> HintsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /hints/stream/identifiers [WS]
@@ -245,7 +245,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> HintsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> HintsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /hints/search [POST]
         /// </summary>
@@ -258,7 +258,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedHints</returns>
-        System.Threading.Tasks.Task<SearchedHints> SearchHintsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedHints> SearchHintsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /hints/search [POST]
@@ -272,7 +272,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedHints)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedHints>> SearchHintsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedHints>> SearchHintsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -444,6 +444,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsCreateNewHint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Hint>("/hints/create", localVarRequestOptions, this.Configuration);
@@ -467,7 +472,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Hint</returns>
-        public async System.Threading.Tasks.Task<Hint> HintsCreateNewHintAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Hint> HintsCreateNewHintAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Hint> localVarResponse = await HintsCreateNewHintWithHttpInfoAsync(seededHint, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -481,7 +486,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Hint)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Hint>> HintsCreateNewHintWithHttpInfoAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Hint>> HintsCreateNewHintWithHttpInfoAsync(SeededHint seededHint = default(SeededHint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -513,6 +518,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsCreateNewHint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Hint>("/hints/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -583,6 +593,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsDeleteSpecificHint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/hints/{hint}/delete", localVarRequestOptions, this.Configuration);
@@ -606,7 +621,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task HintsDeleteSpecificHintAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task HintsDeleteSpecificHintAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await HintsDeleteSpecificHintWithHttpInfoAsync(hint, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -619,7 +634,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> HintsDeleteSpecificHintWithHttpInfoAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> HintsDeleteSpecificHintWithHttpInfoAsync(string hint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'hint' is set
             if (hint == null)
@@ -655,6 +670,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsDeleteSpecificHint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/hints/{hint}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -718,6 +738,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Hints>("/hints", localVarRequestOptions, this.Configuration);
@@ -740,7 +765,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Hints</returns>
-        public async System.Threading.Tasks.Task<Hints> HintsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Hints> HintsSnapshotAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Hints> localVarResponse = await HintsSnapshotWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -753,7 +778,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Hints)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Hints>> HintsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Hints>> HintsSnapshotWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -783,6 +808,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Hints>("/hints", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -846,6 +876,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<StreamedIdentifiers>("/hints/stream/identifiers", localVarRequestOptions, this.Configuration);
@@ -868,7 +903,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        public async System.Threading.Tasks.Task<StreamedIdentifiers> HintsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StreamedIdentifiers> HintsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers> localVarResponse = await HintsStreamIdentifiersWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -881,7 +916,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> HintsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> HintsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -911,6 +946,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.HintsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<StreamedIdentifiers>("/hints/stream/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -984,6 +1024,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.SearchHints";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SearchedHints>("/hints/search", localVarRequestOptions, this.Configuration);
@@ -1008,7 +1053,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedHints</returns>
-        public async System.Threading.Tasks.Task<SearchedHints> SearchHintsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedHints> SearchHintsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedHints> localVarResponse = await SearchHintsWithHttpInfoAsync(transferables, searchInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1023,7 +1068,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedHints)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedHints>> SearchHintsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedHints>> SearchHintsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1059,6 +1104,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "HintsApi.SearchHints";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SearchedHints>("/hints/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

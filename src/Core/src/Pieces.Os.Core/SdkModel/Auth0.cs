@@ -84,7 +84,7 @@ namespace Pieces.Os.Core.SdkModel
             this.Identity = identity;
             this.User = user;
             this.Metadata = metadata;
-            this.VarNamespace = varNamespace;
+            this.Namespace = varNamespace;
         }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>An optional namespace parameter to add an additional namespace</value>
         [DataMember(Name = "namespace", EmitDefaultValue = false)]
-        public string VarNamespace { get; set; }
+        public string Namespace { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -161,7 +161,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Audience: ").Append(Audience).Append("\n");
             sb.Append("  Redirects: ").Append(Redirects).Append("\n");
             sb.Append("  OAuth: ").Append(OAuth).Append("\n");
-            sb.Append("  VarNamespace: ").Append(VarNamespace).Append("\n");
+            sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Access** | **AccessEnum** |  | 
 **Accessors** | [**Accessors**](Accessors.md) |  | 
 **Created** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
-**VarShort** | **string** | This is a shortened version of our uuid. | 
+**Short** | **string** | This is a shortened version of our uuid. | 
 **Name** | **string** | this is an optional name we can give to the link, ie ?p&#x3D;JAVASCRIPT or what ever the user wants as long as it is available. | [optional] 
 **Distributions** | [**Distributions**](Distributions.md) |  | [optional] 
 **Score** | [**Score**](Score.md) |  | [optional] 

@@ -120,7 +120,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task SensitiveScoresIncrementAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task SensitiveScoresIncrementAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// &#39;/sensitive/{sensitive}/scores/increment&#39; [POST]
@@ -134,7 +134,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> SensitiveScoresIncrementWithHttpInfoAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> SensitiveScoresIncrementWithHttpInfoAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /sensitive/{sensitive} [GET]
         /// </summary>
@@ -146,7 +146,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Sensitive</returns>
-        System.Threading.Tasks.Task<Sensitive> SensitiveSnapshotAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Sensitive> SensitiveSnapshotAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /sensitive/{sensitive} [GET]
@@ -159,7 +159,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Sensitive)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Sensitive>> SensitiveSnapshotWithHttpInfoAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Sensitive>> SensitiveSnapshotWithHttpInfoAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /sensitive/update [POST]
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Sensitive</returns>
-        System.Threading.Tasks.Task<Sensitive> UpdateSensitiveAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Sensitive> UpdateSensitiveAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /sensitive/update [POST]
@@ -184,7 +184,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Sensitive)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Sensitive>> UpdateSensitiveWithHttpInfoAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Sensitive>> UpdateSensitiveWithHttpInfoAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -363,6 +363,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SensitiveApi.SensitiveScoresIncrement";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/sensitive/{sensitive}/scores/increment", localVarRequestOptions, this.Configuration);
@@ -387,7 +392,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task SensitiveScoresIncrementAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task SensitiveScoresIncrementAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await SensitiveScoresIncrementWithHttpInfoAsync(sensitive, seededScoreIncrement, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -401,7 +406,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> SensitiveScoresIncrementWithHttpInfoAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> SensitiveScoresIncrementWithHttpInfoAsync(string sensitive, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'sensitive' is set
             if (sensitive == null)
@@ -439,6 +444,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SensitiveApi.SensitiveScoresIncrement";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/sensitive/{sensitive}/scores/increment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -511,6 +521,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SensitiveApi.SensitiveSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Sensitive>("/sensitive/{sensitive}", localVarRequestOptions, this.Configuration);
@@ -534,7 +549,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Sensitive</returns>
-        public async System.Threading.Tasks.Task<Sensitive> SensitiveSnapshotAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Sensitive> SensitiveSnapshotAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Sensitive> localVarResponse = await SensitiveSnapshotWithHttpInfoAsync(sensitive, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -548,7 +563,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Sensitive)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Sensitive>> SensitiveSnapshotWithHttpInfoAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Sensitive>> SensitiveSnapshotWithHttpInfoAsync(string sensitive, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'sensitive' is set
             if (sensitive == null)
@@ -585,6 +600,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SensitiveApi.SensitiveSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Sensitive>("/sensitive/{sensitive}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -652,6 +672,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SensitiveApi.UpdateSensitive";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Sensitive>("/sensitive/update", localVarRequestOptions, this.Configuration);
@@ -675,7 +700,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Sensitive</returns>
-        public async System.Threading.Tasks.Task<Sensitive> UpdateSensitiveAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Sensitive> UpdateSensitiveAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Sensitive> localVarResponse = await UpdateSensitiveWithHttpInfoAsync(sensitive, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -689,7 +714,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Sensitive)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Sensitive>> UpdateSensitiveWithHttpInfoAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Sensitive>> UpdateSensitiveWithHttpInfoAsync(Sensitive sensitive = default(Sensitive), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -721,6 +746,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "SensitiveApi.UpdateSensitive";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Sensitive>("/sensitive/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

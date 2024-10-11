@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **Application** | **string** | application id. | 
-**VarPublic** | **bool** | This will default to false.(ie private), currently not supporting pulling public gists. | [optional] 
+**Public** | **bool** | This will default to false.(ie private), currently not supporting pulling public gists. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -137,14 +137,18 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>102ff265-fdfb-4142-8d94-4932d400199c</example>
+        /*
+        <example>102ff265-fdfb-4142-8d94-4932d400199c</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Creator
         /// </summary>
-        /// <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        /*
+        <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        */
         [DataMember(Name = "creator", IsRequired = true, EmitDefaultValue = true)]
         public string Creator { get; set; }
 

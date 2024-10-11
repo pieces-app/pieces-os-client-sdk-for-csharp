@@ -6,7 +6,7 @@ This is used as the input in the Context ingestion endpoint for the feed.  This 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
-**VarEvent** | [**SeededWorkstreamEvent**](SeededWorkstreamEvent.md) |  | 
+**Event** | [**SeededWorkstreamEvent**](SeededWorkstreamEvent.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

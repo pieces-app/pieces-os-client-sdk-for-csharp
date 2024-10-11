@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | 
 **Created** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
 **Updated** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
-**VarEvent** | [**SeededConnectorTracking**](SeededConnectorTracking.md) |  | 
+**Event** | [**SeededConnectorTracking**](SeededConnectorTracking.md) |  | 
 **Application** | [**Application**](Application.md) |  | 
 **Deleted** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | [optional] 
 **Asset** | [**FlattenedAsset**](FlattenedAsset.md) |  | [optional] 

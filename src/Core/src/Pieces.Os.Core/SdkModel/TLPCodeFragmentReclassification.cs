@@ -47,7 +47,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="updates">updates (required).</param>
         /// <param name="user">this is the user that is reclassifying (required).</param>
         /// <param name="context">this is the application is which this is from. (required).</param>
-        public TLPCodeFragmentReclassification(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string asset = default(string), string model = default(string), string created = default(string), TLPCodeFragmentReclassificationUpdates updates = default(TLPCodeFragmentReclassificationUpdates), string user = default(string), string context = default(string))
+        /// <param name="os">os (required).</param>
+        public TLPCodeFragmentReclassification(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string asset = default(string), string model = default(string), string created = default(string), TLPCodeFragmentReclassificationUpdates updates = default(TLPCodeFragmentReclassificationUpdates), string user = default(string), string context = default(string), string os = default(string))
         {
             // to ensure "asset" is required (not null)
             if (asset == null)
@@ -85,6 +86,12 @@ namespace Pieces.Os.Core.SdkModel
                 throw new ArgumentNullException("context is a required property for TLPCodeFragmentReclassification and cannot be null");
             }
             this.Context = context;
+            // to ensure "os" is required (not null)
+            if (os == null)
+            {
+                throw new ArgumentNullException("os is a required property for TLPCodeFragmentReclassification and cannot be null");
+            }
+            this.Os = os;
             this.Schema = schema;
         }
 
@@ -133,6 +140,12 @@ namespace Pieces.Os.Core.SdkModel
         public string Context { get; set; }
 
         /// <summary>
+        /// Gets or Sets Os
+        /// </summary>
+        [DataMember(Name = "os", IsRequired = true, EmitDefaultValue = true)]
+        public string Os { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +160,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Updates: ").Append(Updates).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
+            sb.Append("  Os: ").Append(Os).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

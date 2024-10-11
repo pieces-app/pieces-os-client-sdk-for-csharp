@@ -143,7 +143,9 @@ namespace Pieces.Os.Core.SdkModel
         /// The audience domain: i.e. https://pieces.us.auth0.com
         /// </summary>
         /// <value>The audience domain: i.e. https://pieces.us.auth0.com</value>
-        /// <example>https://pieces.us.auth0.com</example>
+        /*
+        <example>https://pieces.us.auth0.com</example>
+        */
         [DataMember(Name = "audience", EmitDefaultValue = false)]
         public string Audience { get; set; }
 

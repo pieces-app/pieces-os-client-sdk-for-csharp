@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Asset** | **string** |  | 
 **Context** | **string** | this is the application in which this was created from. | 
 **Snippet** | **string** | this is the value of the snippet | 
+**Probability** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

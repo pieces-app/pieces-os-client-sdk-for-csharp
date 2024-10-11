@@ -48,6 +48,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var anchor = "anchor_example";  // string | This is the specific uuid of an anchor.
@@ -98,7 +103,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -138,6 +143,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var asset = 2254f2c8-5797-40e8-ac56-41166dc0e159;  // Guid | The id (uuid) of the asset that you are trying to access.
@@ -188,7 +198,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -228,6 +238,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var range = "range_example";  // string | This is a identifier that is used to identify a specific range.
@@ -278,7 +293,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -318,6 +333,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var website = "website_example";  // string | website id
@@ -368,7 +388,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -408,6 +428,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var workstreamSummary = "workstreamSummary_example";  // string | This is a identifier that is used to identify a specific workstream_summary.
@@ -458,7 +483,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -498,6 +523,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var anchor = "anchor_example";  // string | This is the specific uuid of an anchor.
@@ -548,7 +578,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -588,6 +618,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var asset = 2254f2c8-5797-40e8-ac56-41166dc0e159;  // Guid | The id (uuid) of the asset that you are trying to access.
@@ -638,7 +673,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -678,6 +713,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var range = "range_example";  // string | This is a identifier that is used to identify a specific range.
@@ -728,7 +768,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -768,6 +808,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var website = "website_example";  // string | website id
@@ -818,7 +863,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -858,6 +903,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var workstreamSummary = "workstreamSummary_example";  // string | This is a identifier that is used to identify a specific workstream_summary.
@@ -908,7 +958,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -948,6 +998,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
@@ -1002,7 +1057,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1042,6 +1097,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var message = "message_example";  // string | This is the uuid of a message.
@@ -1092,7 +1152,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1132,6 +1192,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var message = "message_example";  // string | This is the uuid of a message.
@@ -1182,7 +1247,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1222,6 +1287,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var seededScoreIncrement = new SeededScoreIncrement(); // SeededScoreIncrement |  (optional) 
@@ -1272,7 +1342,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1312,6 +1382,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
@@ -1366,7 +1441,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1406,6 +1481,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
@@ -1460,7 +1540,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1500,6 +1580,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var conversationSummarizeInput = new ConversationSummarizeInput(); // ConversationSummarizeInput |  (optional) 
@@ -1554,7 +1639,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1594,6 +1679,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
             var conversation = new Conversation(); // Conversation |  (optional) 
@@ -1648,7 +1738,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -1688,6 +1778,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ConversationApi(config);
             var conversation = "conversation_example";  // string | This is the uuid of a conversation.
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
@@ -1744,7 +1839,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

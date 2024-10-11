@@ -374,7 +374,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteAssociateAssetAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteAssociateAssetAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/assets/associate/{asset} [POST]
@@ -388,7 +388,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateAssetWithHttpInfoAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateAssetWithHttpInfoAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/conversations/associate/{conversation} [POST]
         /// </summary>
@@ -401,7 +401,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteAssociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteAssociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/conversations/associate/{conversation} [POST]
@@ -415,7 +415,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/messages/associate/{message} [POST]
         /// </summary>
@@ -428,7 +428,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteAssociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteAssociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/messages/associate/{message} [POST]
@@ -442,7 +442,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/persons/associate/{person} [POST]
         /// </summary>
@@ -455,7 +455,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteAssociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteAssociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/persons/associate/{person} [POST]
@@ -469,7 +469,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/workstream_summaries/associate/{workstream_summary} [POST]
         /// </summary>
@@ -482,7 +482,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteAssociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteAssociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/workstream_summaries/associate/{workstream_summary} [POST]
@@ -496,7 +496,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteAssociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/assets/disassociate/{asset} [POST]
         /// </summary>
@@ -509,7 +509,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteDisassociateAssetAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteDisassociateAssetAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/assets/disassociate/{asset} [POST]
@@ -523,7 +523,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateAssetWithHttpInfoAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateAssetWithHttpInfoAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/conversations/disassociate/{conversation} [POST]
         /// </summary>
@@ -536,7 +536,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteDisassociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteDisassociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/conversations/disassociate/{conversation} [POST]
@@ -550,7 +550,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/messages/disassociate/{message} [POST]
         /// </summary>
@@ -563,7 +563,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteDisassociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteDisassociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/messages/disassociate/{message} [POST]
@@ -577,7 +577,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/persons/disassociate/{person} [POST]
         /// </summary>
@@ -590,7 +590,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteDisassociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteDisassociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/persons/disassociate/{person} [POST]
@@ -604,7 +604,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website}/workstream_summaries/disassociate/{workstream_summary} [POST]
         /// </summary>
@@ -617,7 +617,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteDisassociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteDisassociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website}/workstream_summaries/disassociate/{workstream_summary} [POST]
@@ -631,7 +631,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteDisassociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// &#39;/website/{website}/scores/increment&#39; [POST]
         /// </summary>
@@ -644,7 +644,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task WebsiteScoresIncrementAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task WebsiteScoresIncrementAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// &#39;/website/{website}/scores/increment&#39; [POST]
@@ -658,7 +658,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteScoresIncrementWithHttpInfoAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> WebsiteScoresIncrementWithHttpInfoAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/update [POST]
         /// </summary>
@@ -671,7 +671,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Website</returns>
-        System.Threading.Tasks.Task<Website> WebsiteUpdateAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Website> WebsiteUpdateAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/update [POST]
@@ -685,7 +685,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Website)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Website>> WebsiteUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Website>> WebsiteUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /website/{website} [GET]
         /// </summary>
@@ -698,7 +698,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Website</returns>
-        System.Threading.Tasks.Task<Website> WebsitesSpecificWebsiteSnapshotAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Website> WebsitesSpecificWebsiteSnapshotAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /website/{website} [GET]
@@ -712,7 +712,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Website)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Website>> WebsitesSpecificWebsiteSnapshotWithHttpInfoAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Website>> WebsitesSpecificWebsiteSnapshotWithHttpInfoAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -890,6 +890,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/assets/associate/{asset}", localVarRequestOptions, this.Configuration);
@@ -914,7 +919,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteAssociateAssetAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteAssociateAssetAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteAssociateAssetWithHttpInfoAsync(asset, website, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -928,7 +933,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateAssetWithHttpInfoAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateAssetWithHttpInfoAsync(Guid asset, string website, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -965,6 +970,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/assets/associate/{asset}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1044,6 +1054,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/conversations/associate/{conversation}", localVarRequestOptions, this.Configuration);
@@ -1068,7 +1083,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteAssociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteAssociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteAssociateConversationWithHttpInfoAsync(website, conversation, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1082,7 +1097,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -1125,6 +1140,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/conversations/associate/{conversation}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1204,6 +1224,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateMessage";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/messages/associate/{message}", localVarRequestOptions, this.Configuration);
@@ -1228,7 +1253,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteAssociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteAssociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteAssociateMessageWithHttpInfoAsync(website, message, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1242,7 +1267,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -1285,6 +1310,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateMessage";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/messages/associate/{message}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1364,6 +1394,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociatePerson";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/persons/associate/{person}", localVarRequestOptions, this.Configuration);
@@ -1388,7 +1423,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteAssociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteAssociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteAssociatePersonWithHttpInfoAsync(website, person, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1402,7 +1437,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -1445,6 +1480,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociatePerson";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/persons/associate/{person}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1524,6 +1564,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateWorkstreamSummary";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/workstream_summaries/associate/{workstream_summary}", localVarRequestOptions, this.Configuration);
@@ -1548,7 +1593,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteAssociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteAssociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteAssociateWorkstreamSummaryWithHttpInfoAsync(website, workstreamSummary, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1562,7 +1607,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteAssociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -1605,6 +1650,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteAssociateWorkstreamSummary";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/workstream_summaries/associate/{workstream_summary}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1678,6 +1728,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/assets/disassociate/{asset}", localVarRequestOptions, this.Configuration);
@@ -1702,7 +1757,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteDisassociateAssetAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteDisassociateAssetAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteDisassociateAssetWithHttpInfoAsync(website, asset, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1716,7 +1771,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateAssetWithHttpInfoAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateAssetWithHttpInfoAsync(string website, Guid asset, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -1753,6 +1808,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateAsset";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/assets/disassociate/{asset}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1832,6 +1892,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/conversations/disassociate/{conversation}", localVarRequestOptions, this.Configuration);
@@ -1856,7 +1921,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteDisassociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteDisassociateConversationAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteDisassociateConversationWithHttpInfoAsync(website, conversation, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -1870,7 +1935,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateConversationWithHttpInfoAsync(string website, string conversation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -1913,6 +1978,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateConversation";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/conversations/disassociate/{conversation}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1992,6 +2062,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateMessage";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/messages/disassociate/{message}", localVarRequestOptions, this.Configuration);
@@ -2016,7 +2091,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteDisassociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteDisassociateMessageAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteDisassociateMessageWithHttpInfoAsync(website, message, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -2030,7 +2105,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateMessageWithHttpInfoAsync(string website, string message, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -2073,6 +2148,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateMessage";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/messages/disassociate/{message}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2152,6 +2232,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociatePerson";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/persons/disassociate/{person}", localVarRequestOptions, this.Configuration);
@@ -2176,7 +2261,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteDisassociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteDisassociatePersonAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteDisassociatePersonWithHttpInfoAsync(website, person, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -2190,7 +2275,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociatePersonWithHttpInfoAsync(string website, string person, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -2233,6 +2318,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociatePerson";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/persons/disassociate/{person}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2312,6 +2402,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateWorkstreamSummary";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/workstream_summaries/disassociate/{workstream_summary}", localVarRequestOptions, this.Configuration);
@@ -2336,7 +2431,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteDisassociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteDisassociateWorkstreamSummaryAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteDisassociateWorkstreamSummaryWithHttpInfoAsync(website, workstreamSummary, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -2350,7 +2445,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteDisassociateWorkstreamSummaryWithHttpInfoAsync(string website, string workstreamSummary, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -2393,6 +2488,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteDisassociateWorkstreamSummary";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/workstream_summaries/disassociate/{workstream_summary}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2467,6 +2567,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteScoresIncrement";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/website/{website}/scores/increment", localVarRequestOptions, this.Configuration);
@@ -2491,7 +2596,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task WebsiteScoresIncrementAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task WebsiteScoresIncrementAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await WebsiteScoresIncrementWithHttpInfoAsync(website, seededScoreIncrement, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -2505,7 +2610,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteScoresIncrementWithHttpInfoAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> WebsiteScoresIncrementWithHttpInfoAsync(string website, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -2543,6 +2648,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteScoresIncrement";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/website/{website}/scores/increment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2616,6 +2726,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Website>("/website/update", localVarRequestOptions, this.Configuration);
@@ -2640,7 +2755,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Website</returns>
-        public async System.Threading.Tasks.Task<Website> WebsiteUpdateAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Website> WebsiteUpdateAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Website> localVarResponse = await WebsiteUpdateWithHttpInfoAsync(transferables, website, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2655,7 +2770,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Website)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Website>> WebsiteUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Website>> WebsiteUpdateWithHttpInfoAsync(bool? transferables = default(bool?), Website website = default(Website), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -2691,6 +2806,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsiteUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Website>("/website/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -2769,6 +2889,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsitesSpecificWebsiteSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Website>("/website/{website}", localVarRequestOptions, this.Configuration);
@@ -2793,7 +2918,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Website</returns>
-        public async System.Threading.Tasks.Task<Website> WebsitesSpecificWebsiteSnapshotAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Website> WebsitesSpecificWebsiteSnapshotAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Website> localVarResponse = await WebsitesSpecificWebsiteSnapshotWithHttpInfoAsync(website, transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2808,7 +2933,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Website)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Website>> WebsitesSpecificWebsiteSnapshotWithHttpInfoAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Website>> WebsitesSpecificWebsiteSnapshotWithHttpInfoAsync(string website, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'website' is set
             if (website == null)
@@ -2849,6 +2974,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "WebsiteApi.WebsitesSpecificWebsiteSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Website>("/website/{website}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

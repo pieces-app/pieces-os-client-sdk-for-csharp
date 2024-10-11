@@ -189,7 +189,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedTags</returns>
-        System.Threading.Tasks.Task<SearchedTags> SearchTagsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SearchedTags> SearchTagsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /tags/search [POST]
@@ -203,7 +203,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedTags)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SearchedTags>> SearchTagsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SearchedTags>> SearchTagsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /tags/create [POST]
         /// </summary>
@@ -216,7 +216,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Tag</returns>
-        System.Threading.Tasks.Task<Tag> TagsCreateNewTagAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Tag> TagsCreateNewTagAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /tags/create [POST]
@@ -230,7 +230,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Tag)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tag>> TagsCreateNewTagWithHttpInfoAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Tag>> TagsCreateNewTagWithHttpInfoAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /tags/{tag}/delete [POST]
         /// </summary>
@@ -242,7 +242,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TagsDeleteSpecificTagAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task TagsDeleteSpecificTagAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /tags/{tag}/delete [POST]
@@ -255,7 +255,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TagsDeleteSpecificTagWithHttpInfoAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> TagsDeleteSpecificTagWithHttpInfoAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /tags/exists [POST]
         /// </summary>
@@ -267,7 +267,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExistingMetadata</returns>
-        System.Threading.Tasks.Task<ExistingMetadata> TagsExistsAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ExistingMetadata> TagsExistsAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /tags/exists [POST]
@@ -280,7 +280,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExistingMetadata)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExistingMetadata>> TagsExistsWithHttpInfoAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ExistingMetadata>> TagsExistsWithHttpInfoAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /tags [GET]
         /// </summary>
@@ -292,7 +292,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Tags</returns>
-        System.Threading.Tasks.Task<Tags> TagsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Tags> TagsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /tags [GET]
@@ -305,7 +305,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Tags)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Tags>> TagsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Tags>> TagsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /tags/stream/identifiers [WS]
         /// </summary>
@@ -316,7 +316,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        System.Threading.Tasks.Task<StreamedIdentifiers> TagsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StreamedIdentifiers> TagsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /tags/stream/identifiers [WS]
@@ -328,7 +328,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> TagsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> TagsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -506,6 +506,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.SearchTags";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<SearchedTags>("/tags/search", localVarRequestOptions, this.Configuration);
@@ -530,7 +535,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SearchedTags</returns>
-        public async System.Threading.Tasks.Task<SearchedTags> SearchTagsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SearchedTags> SearchTagsAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<SearchedTags> localVarResponse = await SearchTagsWithHttpInfoAsync(transferables, searchInput, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -545,7 +550,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchedTags)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedTags>> SearchTagsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<SearchedTags>> SearchTagsWithHttpInfoAsync(bool? transferables = default(bool?), SearchInput searchInput = default(SearchInput), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -581,6 +586,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.SearchTags";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<SearchedTags>("/tags/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -654,6 +664,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsCreateNewTag";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Tag>("/tags/create", localVarRequestOptions, this.Configuration);
@@ -678,7 +693,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Tag</returns>
-        public async System.Threading.Tasks.Task<Tag> TagsCreateNewTagAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Tag> TagsCreateNewTagAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Tag> localVarResponse = await TagsCreateNewTagWithHttpInfoAsync(transferables, seededTag, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -693,7 +708,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Tag)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Tag>> TagsCreateNewTagWithHttpInfoAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Tag>> TagsCreateNewTagWithHttpInfoAsync(bool? transferables = default(bool?), SeededTag seededTag = default(SeededTag), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -729,6 +744,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsCreateNewTag";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Tag>("/tags/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -799,6 +819,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsDeleteSpecificTag";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/tags/{tag}/delete", localVarRequestOptions, this.Configuration);
@@ -822,7 +847,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TagsDeleteSpecificTagAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task TagsDeleteSpecificTagAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await TagsDeleteSpecificTagWithHttpInfoAsync(tag, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -835,7 +860,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> TagsDeleteSpecificTagWithHttpInfoAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> TagsDeleteSpecificTagWithHttpInfoAsync(string tag, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'tag' is set
             if (tag == null)
@@ -871,6 +896,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsDeleteSpecificTag";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/tags/{tag}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -938,6 +968,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsExists";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<ExistingMetadata>("/tags/exists", localVarRequestOptions, this.Configuration);
@@ -961,7 +996,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExistingMetadata</returns>
-        public async System.Threading.Tasks.Task<ExistingMetadata> TagsExistsAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ExistingMetadata> TagsExistsAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<ExistingMetadata> localVarResponse = await TagsExistsWithHttpInfoAsync(existentMetadata, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -975,7 +1010,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExistingMetadata)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ExistingMetadata>> TagsExistsWithHttpInfoAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<ExistingMetadata>> TagsExistsWithHttpInfoAsync(ExistentMetadata existentMetadata = default(ExistentMetadata), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1007,6 +1042,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsExists";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<ExistingMetadata>("/tags/exists", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1076,6 +1116,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Tags>("/tags", localVarRequestOptions, this.Configuration);
@@ -1099,7 +1144,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Tags</returns>
-        public async System.Threading.Tasks.Task<Tags> TagsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Tags> TagsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Tags> localVarResponse = await TagsSnapshotWithHttpInfoAsync(transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1113,7 +1158,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Tags)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Tags>> TagsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Tags>> TagsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1147,6 +1192,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Tags>("/tags", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -1210,6 +1260,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<StreamedIdentifiers>("/tags/stream/identifiers", localVarRequestOptions, this.Configuration);
@@ -1232,7 +1287,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        public async System.Threading.Tasks.Task<StreamedIdentifiers> TagsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StreamedIdentifiers> TagsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers> localVarResponse = await TagsStreamIdentifiersWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1245,7 +1300,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> TagsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> TagsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -1275,6 +1330,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "TagsApi.TagsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<StreamedIdentifiers>("/tags/stream/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

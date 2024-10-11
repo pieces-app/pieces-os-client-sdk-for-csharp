@@ -146,7 +146,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Analysis</returns>
-        System.Threading.Tasks.Task<Analysis> FormatAnalysisAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Analysis> FormatAnalysisAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /format/{format}/analysis [GET]
@@ -159,7 +159,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Analysis)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Analysis>> FormatAnalysisWithHttpInfoAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Analysis>> FormatAnalysisWithHttpInfoAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /format/reclassify [POST]
         /// </summary>
@@ -172,7 +172,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        System.Threading.Tasks.Task<Format> FormatReclassifyAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Format> FormatReclassifyAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /format/reclassify [POST]
@@ -186,7 +186,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Format>> FormatReclassifyWithHttpInfoAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Format>> FormatReclassifyWithHttpInfoAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /format/{format} [GET] Scoped to Format
         /// </summary>
@@ -199,7 +199,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /format/{format} [GET] Scoped to Format
@@ -213,7 +213,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// [POST] /format/update/value
         /// </summary>
@@ -226,7 +226,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        System.Threading.Tasks.Task<Format> FormatUpdateValueAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Format> FormatUpdateValueAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// [POST] /format/update/value
@@ -240,7 +240,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Format>> FormatUpdateValueWithHttpInfoAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Format>> FormatUpdateValueWithHttpInfoAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -411,6 +411,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatAnalysis";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Analysis>("/format/{format}/analysis", localVarRequestOptions, this.Configuration);
@@ -434,7 +439,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Analysis</returns>
-        public async System.Threading.Tasks.Task<Analysis> FormatAnalysisAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Analysis> FormatAnalysisAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Analysis> localVarResponse = await FormatAnalysisWithHttpInfoAsync(format, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -448,7 +453,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Analysis)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Analysis>> FormatAnalysisWithHttpInfoAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Analysis>> FormatAnalysisWithHttpInfoAsync(Guid format, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -479,6 +484,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatAnalysis";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Analysis>("/format/{format}/analysis", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -551,6 +561,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatReclassify";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Format>("/format/reclassify", localVarRequestOptions, this.Configuration);
@@ -575,7 +590,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        public async System.Threading.Tasks.Task<Format> FormatReclassifyAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Format> FormatReclassifyAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = await FormatReclassifyWithHttpInfoAsync(transferable, formatReclassification, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -590,7 +605,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatReclassifyWithHttpInfoAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatReclassifyWithHttpInfoAsync(bool? transferable = default(bool?), FormatReclassification formatReclassification = default(FormatReclassification), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -625,6 +640,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatReclassify";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Format>("/format/reclassify", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -696,6 +716,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Format>("/format/{format}", localVarRequestOptions, this.Configuration);
@@ -720,7 +745,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        public async System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = await FormatSnapshotWithHttpInfoAsync(format, transferable, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -735,7 +760,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -769,6 +794,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Format>("/format/{format}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -842,6 +872,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatUpdateValue";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Format>("/format/update/value", localVarRequestOptions, this.Configuration);
@@ -866,7 +901,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        public async System.Threading.Tasks.Task<Format> FormatUpdateValueAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Format> FormatUpdateValueAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = await FormatUpdateValueWithHttpInfoAsync(transferable, format, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -881,7 +916,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatUpdateValueWithHttpInfoAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatUpdateValueWithHttpInfoAsync(bool? transferable = default(bool?), Format format = default(Format), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -917,6 +952,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "FormatApi.FormatUpdateValue";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Format>("/format/update/value", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

@@ -36,6 +36,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = "model_example";  // string | model id
 
@@ -88,7 +93,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -128,6 +133,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = "model_example";  // string | model id
 
@@ -180,7 +190,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -220,6 +230,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = "model_example";  // string | model id
 
@@ -272,7 +287,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -312,6 +327,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = "model_example";  // string | model id
 
@@ -364,7 +384,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -404,6 +424,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = "model_example";  // string | model id
 
@@ -456,7 +481,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -496,6 +521,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = new Model(); // Model |  (optional) 
 
@@ -548,7 +578,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -588,6 +618,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new ModelApi(config);
             var model = "model_example";  // string | model id
 
@@ -640,7 +675,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

@@ -38,6 +38,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
 
             try
@@ -81,7 +86,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -120,6 +125,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
 
             try
@@ -167,7 +177,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -305,6 +315,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
 
             try
@@ -352,7 +367,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -391,6 +406,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
             var userProfile = new UserProfile(); // UserProfile |  (optional) 
 
@@ -443,7 +463,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -482,6 +502,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
             var userBetaStatus = new UserBetaStatus(); // UserBetaStatus |  (optional) 
 
@@ -534,7 +559,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -575,6 +600,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
 
             try
@@ -622,7 +652,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -663,6 +693,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
 
             try
@@ -710,7 +745,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -749,6 +784,11 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
             var apiInstance = new UserApi(config);
             var userProfile = new UserProfile(); // UserProfile | This will take an update userProfile, with the updated vanity name! (optional) 
 
@@ -801,7 +841,7 @@ catch (ApiException e)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

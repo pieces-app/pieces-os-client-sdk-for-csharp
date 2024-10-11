@@ -50,7 +50,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varBase is a required property for Preview and cannot be null");
             }
-            this.VarBase = varBase;
+            this.Base = varBase;
             this.Schema = schema;
             this.Overlay = overlay;
         }
@@ -62,10 +62,10 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarBase
+        /// Gets or Sets Base
         /// </summary>
         [DataMember(Name = "base", IsRequired = true, EmitDefaultValue = true)]
-        public ReferencedFormat VarBase { get; set; }
+        public ReferencedFormat Base { get; set; }
 
         /// <summary>
         /// Gets or Sets Overlay
@@ -82,7 +82,7 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class Preview {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  VarBase: ").Append(VarBase).Append("\n");
+            sb.Append("  Base: ").Append(Base).Append("\n");
             sb.Append("  Overlay: ").Append(Overlay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

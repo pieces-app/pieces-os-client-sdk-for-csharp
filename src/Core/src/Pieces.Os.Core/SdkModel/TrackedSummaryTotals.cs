@@ -57,7 +57,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="anchorFiles">anchorFiles (required).</param>
         /// <param name="anchorFolders">anchorFolders (required).</param>
         /// <param name="isrReports">isrReports (required).</param>
-        public TrackedSummaryTotals(int assets = default(int), int tags = default(int), int websites = default(int), int persons = default(int), int sensitives = default(int), int shares = default(int), int copilotSends = default(int), int copilotReceives = default(int), int copilotSessions = default(int), int copilotConversations = default(int), int productivityScore = default(int), int searches = default(int), int references = default(int), int reuses = default(int), int anchorFiles = default(int), int anchorFolders = default(int), int isrReports = default(int))
+        /// <param name="requests">requests.</param>
+        public TrackedSummaryTotals(int assets = default(int), int tags = default(int), int websites = default(int), int persons = default(int), int sensitives = default(int), int shares = default(int), int copilotSends = default(int), int copilotReceives = default(int), int copilotSessions = default(int), int copilotConversations = default(int), int productivityScore = default(int), int searches = default(int), int references = default(int), int reuses = default(int), int anchorFiles = default(int), int anchorFolders = default(int), int isrReports = default(int), int? requests = default(int?))
         {
             this.Assets = assets;
             this.Tags = tags;
@@ -76,6 +77,7 @@ namespace Pieces.Os.Core.SdkModel
             this.AnchorFiles = anchorFiles;
             this.AnchorFolders = anchorFolders;
             this.IsrReports = isrReports;
+            this.Requests = requests;
         }
 
         /// <summary>
@@ -181,6 +183,12 @@ namespace Pieces.Os.Core.SdkModel
         public int IsrReports { get; set; }
 
         /// <summary>
+        /// Gets or Sets Requests
+        /// </summary>
+        [DataMember(Name = "requests", EmitDefaultValue = true)]
+        public int? Requests { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -205,6 +213,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  AnchorFiles: ").Append(AnchorFiles).Append("\n");
             sb.Append("  AnchorFolders: ").Append(AnchorFolders).Append("\n");
             sb.Append("  IsrReports: ").Append(IsrReports).Append("\n");
+            sb.Append("  Requests: ").Append(Requests).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

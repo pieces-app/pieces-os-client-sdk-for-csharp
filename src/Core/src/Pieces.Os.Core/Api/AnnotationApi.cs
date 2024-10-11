@@ -120,7 +120,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AnnotationScoresIncrementAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AnnotationScoresIncrementAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// &#39;/annotation/{annotation}/scores/increment&#39; [POST]
@@ -134,7 +134,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AnnotationScoresIncrementWithHttpInfoAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AnnotationScoresIncrementWithHttpInfoAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /annotation/{annotation} [GET]
         /// </summary>
@@ -146,7 +146,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Annotation</returns>
-        System.Threading.Tasks.Task<Annotation> AnnotationSpecificAnnotationSnapshotAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Annotation> AnnotationSpecificAnnotationSnapshotAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /annotation/{annotation} [GET]
@@ -159,7 +159,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Annotation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Annotation>> AnnotationSpecificAnnotationSnapshotWithHttpInfoAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Annotation>> AnnotationSpecificAnnotationSnapshotWithHttpInfoAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /annotation/update [POST]
         /// </summary>
@@ -171,7 +171,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Annotation</returns>
-        System.Threading.Tasks.Task<Annotation> AnnotationUpdateAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Annotation> AnnotationUpdateAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /annotation/update [POST]
@@ -184,7 +184,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Annotation)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Annotation>> AnnotationUpdateWithHttpInfoAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Annotation>> AnnotationUpdateWithHttpInfoAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -363,6 +363,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnnotationApi.AnnotationScoresIncrement";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/annotation/{annotation}/scores/increment", localVarRequestOptions, this.Configuration);
@@ -387,7 +392,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AnnotationScoresIncrementAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AnnotationScoresIncrementAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await AnnotationScoresIncrementWithHttpInfoAsync(annotation, seededScoreIncrement, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -401,7 +406,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> AnnotationScoresIncrementWithHttpInfoAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> AnnotationScoresIncrementWithHttpInfoAsync(string annotation, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'annotation' is set
             if (annotation == null)
@@ -439,6 +444,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnnotationApi.AnnotationScoresIncrement";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/annotation/{annotation}/scores/increment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -511,6 +521,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnnotationApi.AnnotationSpecificAnnotationSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Annotation>("/annotation/{annotation}", localVarRequestOptions, this.Configuration);
@@ -534,7 +549,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Annotation</returns>
-        public async System.Threading.Tasks.Task<Annotation> AnnotationSpecificAnnotationSnapshotAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Annotation> AnnotationSpecificAnnotationSnapshotAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Annotation> localVarResponse = await AnnotationSpecificAnnotationSnapshotWithHttpInfoAsync(annotation, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -548,7 +563,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Annotation)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Annotation>> AnnotationSpecificAnnotationSnapshotWithHttpInfoAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Annotation>> AnnotationSpecificAnnotationSnapshotWithHttpInfoAsync(string annotation, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'annotation' is set
             if (annotation == null)
@@ -585,6 +600,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnnotationApi.AnnotationSpecificAnnotationSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Annotation>("/annotation/{annotation}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -652,6 +672,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnnotationApi.AnnotationUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Annotation>("/annotation/update", localVarRequestOptions, this.Configuration);
@@ -675,7 +700,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Annotation</returns>
-        public async System.Threading.Tasks.Task<Annotation> AnnotationUpdateAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Annotation> AnnotationUpdateAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Annotation> localVarResponse = await AnnotationUpdateWithHttpInfoAsync(annotation, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -689,7 +714,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Annotation)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Annotation>> AnnotationUpdateWithHttpInfoAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Annotation>> AnnotationUpdateWithHttpInfoAsync(Annotation annotation = default(Annotation), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -721,6 +746,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnnotationApi.AnnotationUpdate";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Annotation>("/annotation/update", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

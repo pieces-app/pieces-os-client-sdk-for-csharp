@@ -64,7 +64,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /// <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        /*
+        <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 

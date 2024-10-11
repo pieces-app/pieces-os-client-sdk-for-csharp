@@ -63,7 +63,9 @@ namespace Pieces.Os.Core.SdkModel
         /// Indicates to Auth0 which OAuth 2.0 Flow you want to perform. Use code for Authorization Code Grant (PKCE) Flow.
         /// </summary>
         /// <value>Indicates to Auth0 which OAuth 2.0 Flow you want to perform. Use code for Authorization Code Grant (PKCE) Flow.</value>
-        /// <example>code</example>
+        /*
+        <example>code</example>
+        */
         [DataMember(Name = "response_type", IsRequired = true, EmitDefaultValue = true)]
         public ResponseTypeEnum ResponseType { get; set; }
         /// <summary>
@@ -335,7 +337,9 @@ namespace Pieces.Os.Core.SdkModel
         /// Your application&#39;s Client ID.
         /// </summary>
         /// <value>Your application&#39;s Client ID.</value>
-        /// <example>9sW4Pa1LEjX67l6VO14u0207NLYeXnu1</example>
+        /*
+        <example>9sW4Pa1LEjX67l6VO14u0207NLYeXnu1</example>
+        */
         [DataMember(Name = "client_id", IsRequired = true, EmitDefaultValue = true)]
         public string ClientId { get; set; }
 

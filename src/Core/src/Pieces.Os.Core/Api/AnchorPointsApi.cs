@@ -141,7 +141,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AnchorPoint</returns>
-        System.Threading.Tasks.Task<AnchorPoint> AnchorPointsCreateNewAnchorPointAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AnchorPoint> AnchorPointsCreateNewAnchorPointAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /anchor_points/create [POST]
@@ -155,7 +155,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AnchorPoint)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AnchorPoint>> AnchorPointsCreateNewAnchorPointWithHttpInfoAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AnchorPoint>> AnchorPointsCreateNewAnchorPointWithHttpInfoAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /anchor_points/{anchor_point}/delete [POST]
         /// </summary>
@@ -167,7 +167,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AnchorPointsDeleteSpecificAnchorPointAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task AnchorPointsDeleteSpecificAnchorPointAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /anchor_points/{anchor_point}/delete [POST]
@@ -180,7 +180,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AnchorPointsDeleteSpecificAnchorPointWithHttpInfoAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> AnchorPointsDeleteSpecificAnchorPointWithHttpInfoAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /anchor_points [GET]
         /// </summary>
@@ -192,7 +192,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AnchorPoints</returns>
-        System.Threading.Tasks.Task<AnchorPoints> AnchorPointsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AnchorPoints> AnchorPointsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /anchor_points [GET]
@@ -205,7 +205,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AnchorPoints)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AnchorPoints>> AnchorPointsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AnchorPoints>> AnchorPointsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /anchor_points/stream/identifiers [WS]
         /// </summary>
@@ -216,7 +216,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        System.Threading.Tasks.Task<StreamedIdentifiers> AnchorPointsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<StreamedIdentifiers> AnchorPointsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /anchor_points/stream/identifiers [WS]
@@ -228,7 +228,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> AnchorPointsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<StreamedIdentifiers>> AnchorPointsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -406,6 +406,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsCreateNewAnchorPoint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<AnchorPoint>("/anchor_points/create", localVarRequestOptions, this.Configuration);
@@ -430,7 +435,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AnchorPoint</returns>
-        public async System.Threading.Tasks.Task<AnchorPoint> AnchorPointsCreateNewAnchorPointAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AnchorPoint> AnchorPointsCreateNewAnchorPointAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<AnchorPoint> localVarResponse = await AnchorPointsCreateNewAnchorPointWithHttpInfoAsync(transferables, seededAnchorPoint, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -445,7 +450,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AnchorPoint)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AnchorPoint>> AnchorPointsCreateNewAnchorPointWithHttpInfoAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AnchorPoint>> AnchorPointsCreateNewAnchorPointWithHttpInfoAsync(bool? transferables = default(bool?), SeededAnchorPoint seededAnchorPoint = default(SeededAnchorPoint), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -481,6 +486,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsCreateNewAnchorPoint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<AnchorPoint>("/anchor_points/create", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -551,6 +561,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsDeleteSpecificAnchorPoint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<Object>("/anchor_points/{anchor_point}/delete", localVarRequestOptions, this.Configuration);
@@ -574,7 +589,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AnchorPointsDeleteSpecificAnchorPointAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task AnchorPointsDeleteSpecificAnchorPointAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             await AnchorPointsDeleteSpecificAnchorPointWithHttpInfoAsync(anchorPoint, operationIndex, cancellationToken).ConfigureAwait(false);
         }
@@ -587,7 +602,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> AnchorPointsDeleteSpecificAnchorPointWithHttpInfoAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> AnchorPointsDeleteSpecificAnchorPointWithHttpInfoAsync(string anchorPoint, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'anchorPoint' is set
             if (anchorPoint == null)
@@ -623,6 +638,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsDeleteSpecificAnchorPoint";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/anchor_points/{anchor_point}/delete", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -692,6 +712,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<AnchorPoints>("/anchor_points", localVarRequestOptions, this.Configuration);
@@ -715,7 +740,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AnchorPoints</returns>
-        public async System.Threading.Tasks.Task<AnchorPoints> AnchorPointsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AnchorPoints> AnchorPointsSnapshotAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<AnchorPoints> localVarResponse = await AnchorPointsSnapshotWithHttpInfoAsync(transferables, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -729,7 +754,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AnchorPoints)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AnchorPoints>> AnchorPointsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<AnchorPoints>> AnchorPointsSnapshotWithHttpInfoAsync(bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -763,6 +788,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<AnchorPoints>("/anchor_points", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -826,6 +856,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<StreamedIdentifiers>("/anchor_points/stream/identifiers", localVarRequestOptions, this.Configuration);
@@ -848,7 +883,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StreamedIdentifiers</returns>
-        public async System.Threading.Tasks.Task<StreamedIdentifiers> AnchorPointsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<StreamedIdentifiers> AnchorPointsStreamIdentifiersAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers> localVarResponse = await AnchorPointsStreamIdentifiersWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -861,7 +896,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StreamedIdentifiers)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> AnchorPointsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<StreamedIdentifiers>> AnchorPointsStreamIdentifiersWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -891,6 +926,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "AnchorPointsApi.AnchorPointsStreamIdentifiers";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<StreamedIdentifiers>("/anchor_points/stream/identifiers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

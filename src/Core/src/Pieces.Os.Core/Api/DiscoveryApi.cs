@@ -149,7 +149,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredAssets</returns>
-        System.Threading.Tasks.Task<DiscoveredAssets> DiscoveryDiscoverAssetsAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscoveredAssets> DiscoveryDiscoverAssetsAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /discovery/discover/assets [POST]
@@ -163,7 +163,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredAssets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscoveredAssets>> DiscoveryDiscoverAssetsWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscoveredAssets>> DiscoveryDiscoverAssetsWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /discovery/discover/assets/html[POST]
         /// </summary>
@@ -176,7 +176,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredHtmlWebpages</returns>
-        System.Threading.Tasks.Task<DiscoveredHtmlWebpages> DiscoveryDiscoverAssetsHtmlAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscoveredHtmlWebpages> DiscoveryDiscoverAssetsHtmlAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /discovery/discover/assets/html[POST]
@@ -190,7 +190,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredHtmlWebpages)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscoveredHtmlWebpages>> DiscoveryDiscoverAssetsHtmlWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscoveredHtmlWebpages>> DiscoveryDiscoverAssetsHtmlWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /discovery/discover/sensitives [POST]
         /// </summary>
@@ -203,7 +203,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredSensitives</returns>
-        System.Threading.Tasks.Task<DiscoveredSensitives> DiscoveryDiscoverSensitivesAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscoveredSensitives> DiscoveryDiscoverSensitivesAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /discovery/discover/sensitives [POST]
@@ -217,7 +217,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredSensitives)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscoveredSensitives>> DiscoveryDiscoverSensitivesWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscoveredSensitives>> DiscoveryDiscoverSensitivesWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /discovery/discover/tags/related [POST]
         /// </summary>
@@ -230,7 +230,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredRelatedTags</returns>
-        System.Threading.Tasks.Task<DiscoveredRelatedTags> DiscoveryDiscoverTagsRelatedAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<DiscoveredRelatedTags> DiscoveryDiscoverTagsRelatedAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /discovery/discover/tags/related [POST]
@@ -244,7 +244,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredRelatedTags)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DiscoveredRelatedTags>> DiscoveryDiscoverTagsRelatedWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<DiscoveredRelatedTags>> DiscoveryDiscoverTagsRelatedWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -422,6 +422,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<DiscoveredAssets>("/discovery/discover/assets", localVarRequestOptions, this.Configuration);
@@ -446,7 +451,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredAssets</returns>
-        public async System.Threading.Tasks.Task<DiscoveredAssets> DiscoveryDiscoverAssetsAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscoveredAssets> DiscoveryDiscoverAssetsAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<DiscoveredAssets> localVarResponse = await DiscoveryDiscoverAssetsWithHttpInfoAsync(automatic, seededDiscoverableAssets, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -461,7 +466,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredAssets)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredAssets>> DiscoveryDiscoverAssetsWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredAssets>> DiscoveryDiscoverAssetsWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableAssets seededDiscoverableAssets = default(SeededDiscoverableAssets), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -497,6 +502,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverAssets";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<DiscoveredAssets>("/discovery/discover/assets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -570,6 +580,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverAssetsHtml";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<DiscoveredHtmlWebpages>("/discovery/discover/assets/html", localVarRequestOptions, this.Configuration);
@@ -594,7 +609,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredHtmlWebpages</returns>
-        public async System.Threading.Tasks.Task<DiscoveredHtmlWebpages> DiscoveryDiscoverAssetsHtmlAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscoveredHtmlWebpages> DiscoveryDiscoverAssetsHtmlAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<DiscoveredHtmlWebpages> localVarResponse = await DiscoveryDiscoverAssetsHtmlWithHttpInfoAsync(automatic, seededDiscoverableHtmlWebpages, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -609,7 +624,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredHtmlWebpages)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredHtmlWebpages>> DiscoveryDiscoverAssetsHtmlWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredHtmlWebpages>> DiscoveryDiscoverAssetsHtmlWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableHtmlWebpages seededDiscoverableHtmlWebpages = default(SeededDiscoverableHtmlWebpages), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -645,6 +660,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverAssetsHtml";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<DiscoveredHtmlWebpages>("/discovery/discover/assets/html", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -717,6 +737,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverSensitives";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<DiscoveredSensitives>("/discovery/discover/sensitives", localVarRequestOptions, this.Configuration);
@@ -741,7 +766,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredSensitives</returns>
-        public async System.Threading.Tasks.Task<DiscoveredSensitives> DiscoveryDiscoverSensitivesAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscoveredSensitives> DiscoveryDiscoverSensitivesAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<DiscoveredSensitives> localVarResponse = await DiscoveryDiscoverSensitivesWithHttpInfoAsync(automatic, seededDiscoverableSensitives, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -756,7 +781,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredSensitives)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredSensitives>> DiscoveryDiscoverSensitivesWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredSensitives>> DiscoveryDiscoverSensitivesWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableSensitives seededDiscoverableSensitives = default(SeededDiscoverableSensitives), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -791,6 +816,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverSensitives";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<DiscoveredSensitives>("/discovery/discover/sensitives", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
@@ -864,6 +894,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverTagsRelated";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Post<DiscoveredRelatedTags>("/discovery/discover/tags/related", localVarRequestOptions, this.Configuration);
@@ -888,7 +923,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DiscoveredRelatedTags</returns>
-        public async System.Threading.Tasks.Task<DiscoveredRelatedTags> DiscoveryDiscoverTagsRelatedAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<DiscoveredRelatedTags> DiscoveryDiscoverTagsRelatedAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<DiscoveredRelatedTags> localVarResponse = await DiscoveryDiscoverTagsRelatedWithHttpInfoAsync(automatic, seededDiscoverableRelatedTags, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -903,7 +938,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DiscoveredRelatedTags)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredRelatedTags>> DiscoveryDiscoverTagsRelatedWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<DiscoveredRelatedTags>> DiscoveryDiscoverTagsRelatedWithHttpInfoAsync(bool? automatic = default(bool?), SeededDiscoverableRelatedTags seededDiscoverableRelatedTags = default(SeededDiscoverableRelatedTags), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -939,6 +974,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "DiscoveryApi.DiscoveryDiscoverTagsRelated";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.PostAsync<DiscoveredRelatedTags>("/discovery/discover/tags/related", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

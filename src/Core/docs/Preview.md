@@ -6,7 +6,7 @@ This is a preview Model that will hold references to at minimum the base preview
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
-**VarBase** | [**ReferencedFormat**](ReferencedFormat.md) |  | 
+**Base** | [**ReferencedFormat**](ReferencedFormat.md) |  | 
 **Overlay** | [**ReferencedFormat**](ReferencedFormat.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
