@@ -102,7 +102,7 @@ public class PiecesCopilot : IPiecesCopilot
             {
                 var fragment = new FragmentFormat(varString: new TransferableString(raw: s.Message));
                 return new SeededConversationMessage(model: model,
-                                                     role: s.Role,
+                                                     role: s.Role.ToQGPTRole(),
                                                      fragment: fragment);
             }).ToList();
         }
@@ -118,7 +118,7 @@ public class PiecesCopilot : IPiecesCopilot
 
         logger?.LogInformation("Conversation {name} created", chatName);
 
-        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, piecesApis, chatContext);
+        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, piecesApis, chatContext, seeds);
         copilotChats.Add(chat);
 
         logger?.LogInformation("Copilot chat {name} created", chatName);

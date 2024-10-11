@@ -61,7 +61,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     client will not be used.
     public async Task<ChatCompletion> CompleteAsync(IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
-        var chatWithCacheKey = await GetOrCreateChat(chatMessages, options, cancellationToken).ConfigureAwait(false);
+        var chatWithCacheKey = await GetOrCreateChatAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
 
         // Ask the question
         var response = await chatWithCacheKey.Chat.AskQuestionAsync(chatMessages.Last().Text!,
@@ -71,7 +71,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         var responseMessage = new ChatMessage(ChatRole.Assistant, response);
 
         // Cache or delete the chat depending on the options
-        await CacheOrDeleteChat(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
+        await CacheOrDeleteChatAsync(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
 
         // Build the response
         return new ChatCompletion([responseMessage])
@@ -81,7 +81,8 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
             CompletionId = chatWithCacheKey.Chat.Id,
             RawRepresentation = responseMessage.Text,
             CreatedAt = DateTime.UtcNow,
-            Usage = new UsageDetails {
+            Usage = new UsageDetails
+            {
                 AdditionalProperties = options?.AdditionalProperties is null ? null : new AdditionalPropertiesDictionary(options.AdditionalProperties)
             }
         };
@@ -126,7 +127,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
                                                                                         ChatOptions? options = null,
                                                                                         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var chatWithCacheKey = await GetOrCreateChat(chatMessages, options, cancellationToken).ConfigureAwait(false);
+        var chatWithCacheKey = await GetOrCreateChatAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
 
         var responseText = "";
 
@@ -142,7 +143,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
                 FinishReason = null,
                 CreatedAt = DateTime.UtcNow,
                 RawRepresentation = r,
-                AuthorName = "Pieces for Developers",
+                AuthorName = Metadata.ProviderName,
             };
 
             responseText += r;
@@ -154,7 +155,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         var responseMessage = new ChatMessage(ChatRole.Assistant, responseText);
 
         // Cache or delete the chat depending on the options
-        await CacheOrDeleteChat(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
+        await CacheOrDeleteChatAsync(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
 
         yield return new StreamingChatCompletionUpdate()
         {
@@ -164,15 +165,15 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
             FinishReason = ChatFinishReason.Stop,
             CreatedAt = DateTime.UtcNow,
             RawRepresentation = responseText,
-            AuthorName = "Pieces for Developers",
+            AuthorName = Metadata.ProviderName,
         };
     }
 
-    private async Task CacheOrDeleteChat(IList<ChatMessage> chatMessages,
-                                         ChatOptions? options,
-                                         ChatWithCacheKey chatWithCacheKey,
-                                         ChatMessage responseMessage,
-                                         CancellationToken cancellationToken)
+    private async Task CacheOrDeleteChatAsync(IList<ChatMessage> chatMessages,
+                                              ChatOptions? options,
+                                              ChatWithCacheKey chatWithCacheKey,
+                                              ChatMessage responseMessage,
+                                              CancellationToken cancellationToken)
     {
         // If we got this chat from the cache, remove the old entry as the messages will be updated to reflect this response
         chatCache.Remove(chatWithCacheKey.CacheKey);
@@ -194,7 +195,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
 
     private record ChatWithCacheKey(string CacheKey, ICopilotChat Chat);
 
-    private async Task<ChatWithCacheKey> GetOrCreateChat(IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
+    private async Task<ChatWithCacheKey> GetOrCreateChatAsync(IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
     {
         // Look up this chat in our cache
         var chatCacheKey = GetChatKey(chatMessages);
@@ -209,9 +210,14 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
                 logger?.LogInformation("Updating conversation model to {model_name}", model.Name);
                 chat!.Model = model;
             }
+
+            chat!.ChatContext = CreateChatContextFromOptions(options);
         }
         else
         {
+            // Ensure the copilot has been created
+            piecesCopilot ??= await piecesClient.GetCopilotAsync().ConfigureAwait(false);
+
             logger?.LogInformation("Creating a new conversation");
 
             // Build the seeds
@@ -220,44 +226,52 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
             seeds.Remove(seeds.Last());
 
             // Create the chat if we don't have one from our cache
-            // Ensure the copilot has been created
-            piecesCopilot ??= await piecesClient.GetCopilotAsync().ConfigureAwait(false);
 
             // extract the relevant properties from the options
             model = await GetModelFromChatOptionsAsync(options, cancellationToken).ConfigureAwait(false);
-
-            var chatContext = new ChatContext
-            {
-                AssetIds = GetAssetIdsFromOptions(options),
-                LiveContext = GetBoolValueFromOptions(options, "LiveContext"),
-            };
 
             // Create a new chat using all the messages that have been sent
             chat = await piecesCopilot.CreateSeededChatAsync(chatName,
                                                              model: model,
                                                              seeds: seeds,
-                                                             chatContext: chatContext,
+                                                             chatContext: CreateChatContextFromOptions(options),
                                                              cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         return new(chatCacheKey, chat!);
     }
 
-    private static string GetChatKey(IList<ChatMessage> chatMessages)
+    private static ChatContext CreateChatContextFromOptions(ChatOptions? options)
     {
-        return string.Join("", chatMessages.Take(chatMessages.Count - 1).Select(m => $"{m.Role}{m.Text}"));
+        return new ChatContext
+        {
+            AssetIds = GetValueFromOptions<IEnumerable<string>>(options, "AssetIds"),
+            LiveContext = GetBoolValueFromOptions(options, "LiveContext"),
+            LiveContextTimeSpan = GetValueFromOptions<TimeSpan?>(options, "LiveContextTimeSpan", null),
+            Files = GetValueFromOptions<IEnumerable<string>>(options, "Files"),
+            Folders = GetValueFromOptions<IEnumerable<string>>(options, "Folders"),
+        };
     }
 
-    private static IEnumerable<string>? GetAssetIdsFromOptions(ChatOptions? options)
+    private static string GetChatKey(IList<ChatMessage> chatMessages) => string.Join("", chatMessages.Take(chatMessages.Count - 1).Select(m => $"{m.Role}{m.Text}"));
+
+    private static T? GetValueFromOptions<T>(ChatOptions? options, string propertyName, T? defaultValue = default)
     {
         if (options is not null &&
             options.AdditionalProperties is not null &&
-            options!.AdditionalProperties!.TryGetValue("AssetIds", out object? assetIdsVal))
+            options!.AdditionalProperties!.TryGetValue(propertyName, out object? val))
         {
-            return assetIdsVal as IEnumerable<string>;
+            if (val is T tValue)
+            {
+                return tValue;
+            }
+            else if (typeof(T).IsValueType && val is IConvertible)
+            {
+                return (T)Convert.ChangeType(val, typeof(T));
+            }
         }
 
-        return null;
+        return defaultValue;
     }
 
     private static bool GetBoolValueFromOptions(ChatOptions? options, string propertyName, bool defaultValue = false)
@@ -270,18 +284,6 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         }
 
         return defaultValue;
-    }
-
-    private static TimeSpan? GetLiveContextTimeSpanFromOptions(ChatOptions? options)
-    {
-        if (options is not null &&
-            options.AdditionalProperties is not null &&
-            options!.AdditionalProperties!.TryGetValue("LiveContextTimeSpan", out object? liveContextTimeSpanVal))
-        {
-            return liveContextTimeSpanVal as TimeSpan?;
-        }
-
-        return null;
     }
 
     private static List<SeedMessage> GetSeedsFromChatMessages(IList<ChatMessage> chatMessages)
@@ -302,9 +304,9 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         {
             var role = c.Role switch
             {
-                ChatRole when c.Role == ChatRole.System => QGPTConversationMessageRoleEnum.SYSTEM,
-                ChatRole when c.Role == ChatRole.User => QGPTConversationMessageRoleEnum.USER,
-                _ => QGPTConversationMessageRoleEnum.ASSISTANT,
+                ChatRole when c.Role == ChatRole.System => OS.Client.Copilot.Role.System,
+                ChatRole when c.Role == ChatRole.User => OS.Client.Copilot.Role.User,
+                _ => OS.Client.Copilot.Role.Assistant,
             };
             return new SeedMessage(role, c.Text!);
         }).ToList();

@@ -25,7 +25,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 // {
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, chatName: "Continuous chat", logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Continuous chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     // Set the system prompt
 //     var chatMessages = new List<ChatMessage>{
@@ -66,9 +66,65 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 #endregion A continuous conversation
 
-#region A continuous conversation that doesn't persist the chat
+#region A continuous conversation that alters the messages
 
 // This example shows a continuous conversation. It starts by setting the system prompt,
+// then adds a user message, sends this to the chat completion, adds the response to the messages
+// then adds another user message and so on. Part way through, the chat messages are changed from the
+// current conversation. This will end up with a new conversation being created
+
+// {
+//     // Create a Chat completion
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Continuous chat that changes messages - {DateTime.Now.ToShortTimeString()}", logger: logger);
+
+//     // Set the system prompt
+//     var chatMessages = new List<ChatMessage>{
+//         new(ChatRole.System, "Answer every question from now on in the style of a pirate."),
+//     };
+
+//     // Add the first user message
+//     chatMessages.Add(new ChatMessage(ChatRole.User, "Hello"));
+
+//     // Ask the question
+//     var response = await chatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     Console.WriteLine(response);
+
+//     // Add the response to the conversation
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+
+//     // Ask the next question, but change the model
+//     chatMessages.Add(new ChatMessage(ChatRole.User, "Give me a single line of code to create a hello world in C#. No other text."));
+
+//     var options = new ChatOptions()
+//     {
+//         ModelId = "Claude 3.5 Sonnet"
+//     };
+//     response = await chatClient.CompleteAsync(chatMessages, options: options).ConfigureAwait(false);
+//     Console.WriteLine(response);
+
+//     // Add the response to the conversation
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+
+//     // Add a question and answer so we deviate from the conversation
+//     chatMessages.Add(new ChatMessage(ChatRole.User, "What programming language is this?"));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, "This is in C#"));
+
+//     // Ask the next question
+//     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
+
+//     response = await chatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     Console.WriteLine(response);
+
+//     Console.WriteLine();
+// }
+
+#endregion A continuous conversation that alters the messages
+
+#region A continuous conversation that doesn't persist the chat
+
+// This example shows a continuous conversation that alters the messages.
+//
+// It starts by setting the system prompt,
 // then adds a user message, sends this to the chat completion, adds the response to the messages
 // then adds another user message and so on. This shows how to build up a conversation.
 
@@ -81,7 +137,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     };
 
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, chatName: "Continuous chat that is deleted", logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Continuous chat that is deleted - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     // Set the system prompt
 //     var chatMessages = new List<ChatMessage>{
@@ -126,7 +182,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 // {
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, chatName: "Continuous chat", logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Continuous streaming chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     // Set the system prompt
 //     var chatMessages = new List<ChatMessage>{
@@ -136,17 +192,17 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     // Add the first user message
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Hello"));
 
-//     var response = "";
-
 //     // Ask the question
 //     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
-//         response += r.Text;
-//     }
 
-//     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response));
+//         // Once done, store the result
+//         if (r.FinishReason == ChatFinishReason.Stop)
+//         {
+//            chatMessages.Add(new(ChatRole.Assistant, r.Text));
+//         }
+//     }
 
 //     // Ask the next question, but change the model
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Give me a single line of code to create a hello world in C#. No other text."));
@@ -156,17 +212,17 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         ModelId = "Claude 3.5 Sonnet"
 //     };
 
-//     response = "";
-
 //     // Ask the question
 //     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options: options).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
-//         response += r.Text;
-//     }
 
-//     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response));
+//         // Once done, store the result
+//         if (r.FinishReason == ChatFinishReason.Stop)
+//         {
+//            chatMessages.Add(new(ChatRole.Assistant, r.Text));
+//         }
+//     }
 
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
@@ -188,7 +244,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 // {
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Live context chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     var chatMessages = new List<ChatMessage>{
 //         new(ChatRole.User, "Describe the Add support for Microsoft.Extensions.AI github issue I was just reading about in my browser")
@@ -212,13 +268,56 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 #endregion Live context
 
+#region Live context turned on after a question
+
+// This example shows how to use live context in a chat completion via the Additional Properties dictionary.
+// To run this, read this GitHub issue in your browser before running this: https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues/8
+
+// {
+//     // Create a Chat completion
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Live context chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
+
+//     var chatMessages = new List<ChatMessage>{
+//         new(ChatRole.User, "Hello")
+//     };
+
+//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
+//     {
+//         Console.Write(r.Text);
+
+//         if (r.FinishReason == ChatFinishReason.Stop)
+//         {
+//             chatMessages.Add(new(ChatRole.Assistant, r.Text));
+//         }
+//     }
+
+//     chatMessages.Add(new(ChatRole.User, "Describe the Add support for Microsoft.Extensions.AI github issue I was just reading about in my browser"));
+
+//     var options = new ChatOptions()
+//     {
+//         AdditionalProperties = new AdditionalPropertiesDictionary{
+//             { "LiveContext", true },
+//             { "LiveContextTimeSpan", TimeSpan.FromHours(1) }
+//         }
+//     };
+
+//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options: options).ConfigureAwait(false))
+//     {
+//         Console.Write(r.Text);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Live context turned on after a question
+
 #region Create an asset and use it in a chat
 
 // This example creates a new asset. It then uses it in a chat asking a question about it.
 
 // {
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Chat with an asset - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     var assetCode = @"from pieces_os_client.wrapper import PiecesClient
 
@@ -265,10 +364,10 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 // {
 //     var llamaModel = await client.DownloadModelAsync("llama-3 8B").ConfigureAwait(false);
-//     IChatClient modelChatClient = new PiecesChatClient(client, logger, llamaModel);
+//     IChatClient modelChatClient = new PiecesChatClient(client, chatName: $"Chat with a model - {DateTime.Now.ToShortTimeString()}", logger, llamaModel);
 
 //     var chatMessages = new List<ChatMessage>{
-//         new(ChatRole.User, "What model are you using"),
+//         new(ChatRole.User, "Which LLM are you?"),
 //     };
 
 //     var response = await modelChatClient.CompleteAsync(chatMessages).ConfigureAwait(false);

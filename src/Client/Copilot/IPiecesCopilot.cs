@@ -7,7 +7,7 @@ using Pieces.Os.Core.SdkModel;
 /// </summary>
 /// <param name="Role"></param>
 /// <param name="Message"></param>
-public record SeedMessage(QGPTConversationMessageRoleEnum Role, string Message);
+public record SeedMessage(Role Role, string Message);
 
 public interface IPiecesCopilot
 {
