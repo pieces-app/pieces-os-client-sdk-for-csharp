@@ -92,14 +92,18 @@ namespace Pieces.Os.Core.SdkModel
         /// mapped from picture.URL pointing to the user&#39;s profile picture. 
         /// </summary>
         /// <value>mapped from picture.URL pointing to the user&#39;s profile picture. </value>
-        /// <example>https://picsum.photos/200</example>
+        /*
+        <example>https://picsum.photos/200</example>
+        */
         [DataMember(Name = "picture", EmitDefaultValue = false)]
         public string Picture { get; set; }
 
         /// <summary>
         /// Gets or Sets Email
         /// </summary>
-        /// <example>user@pieces.app</example>
+        /*
+        <example>user@pieces.app</example>
+        */
         [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 

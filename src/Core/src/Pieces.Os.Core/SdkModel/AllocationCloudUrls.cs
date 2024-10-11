@@ -51,7 +51,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varBase is a required property for AllocationCloudUrls and cannot be null");
             }
-            this.VarBase = varBase;
+            this.Base = varBase;
             // to ensure "id" is required (not null)
             if (id == null)
             {
@@ -69,10 +69,10 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarBase
+        /// Gets or Sets Base
         /// </summary>
         [DataMember(Name = "base", IsRequired = true, EmitDefaultValue = true)]
-        public AllocationCloudUrl VarBase { get; set; }
+        public AllocationCloudUrl Base { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -95,7 +95,7 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class AllocationCloudUrls {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  VarBase: ").Append(VarBase).Append("\n");
+            sb.Append("  Base: ").Append(Base).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Vanity: ").Append(Vanity).Append("\n");
             sb.Append("}\n");

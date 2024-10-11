@@ -155,7 +155,9 @@ namespace Pieces.Os.Core.SdkModel
         /// The globally available UID representing the asset in the Database, both locally and in the cloud.
         /// </summary>
         /// <value>The globally available UID representing the asset in the Database, both locally and in the cloud.</value>
-        /// <example>2254f2c8-5797-40e8-ac56-41166dc0e159</example>
+        /*
+        <example>2254f2c8-5797-40e8-ac56-41166dc0e159</example>
+        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
@@ -168,7 +170,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Creator
         /// </summary>
-        /// <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        /*
+        <example>497f6eca-6276-4993-bfeb-53cbbbba6f08</example>
+        */
         [DataMember(Name = "creator", IsRequired = true, EmitDefaultValue = true)]
         public string Creator { get; set; }
 

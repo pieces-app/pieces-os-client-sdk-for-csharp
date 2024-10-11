@@ -71,7 +71,9 @@ namespace Pieces.Os.Core.SdkModel
         /// The value of the text that you want to save as an asset.
         /// </summary>
         /// <value>The value of the text that you want to save as an asset.</value>
-        /// <example>console.log(&quot;hello world&quot;)</example>
+        /*
+        <example>console.log(&quot;hello world&quot;)</example>
+        */
         [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public string Value { get; set; }
 

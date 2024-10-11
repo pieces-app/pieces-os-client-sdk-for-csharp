@@ -64,14 +64,18 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        /// <example>33600</example>
+        /*
+        <example>33600</example>
+        */
         [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
         public long Value { get; set; }
 
         /// <summary>
         /// Gets or Sets Readable
         /// </summary>
-        /// <example>33.6 KB</example>
+        /*
+        <example>33.6 KB</example>
+        */
         [DataMember(Name = "readable", IsRequired = true, EmitDefaultValue = true)]
         public string Readable { get; set; }
 

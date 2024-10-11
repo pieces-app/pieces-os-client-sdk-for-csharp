@@ -103,7 +103,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Gets or Sets ExpiresIn
         /// </summary>
-        /// <example>86400</example>
+        /*
+        <example>86400</example>
+        */
         [DataMember(Name = "expires_in", IsRequired = true, EmitDefaultValue = true)]
         public int ExpiresIn { get; set; }
 

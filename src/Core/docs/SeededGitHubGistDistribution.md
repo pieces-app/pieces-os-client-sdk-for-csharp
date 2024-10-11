@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **Recipients** | [**Recipients**](Recipients.md) |  | [optional] 
-**VarPublic** | **bool** | we will default to true | [optional] 
+**Public** | **bool** | we will default to true | [optional] 
 **Description** | **string** | This is the description of the Gist Distribution | [optional] 
 **Name** | **string** | This is the name of the gist you will add. | 
 

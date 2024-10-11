@@ -60,7 +60,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varEvent is a required property for SeededActivity and cannot be null");
             }
-            this.VarEvent = varEvent;
+            this.Event = varEvent;
             // to ensure "application" is required (not null)
             if (application == null)
             {
@@ -75,10 +75,10 @@ namespace Pieces.Os.Core.SdkModel
         }
 
         /// <summary>
-        /// Gets or Sets VarEvent
+        /// Gets or Sets Event
         /// </summary>
         [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
-        public SeededConnectorTracking VarEvent { get; set; }
+        public SeededConnectorTracking Event { get; set; }
 
         /// <summary>
         /// Gets or Sets Application
@@ -118,7 +118,7 @@ namespace Pieces.Os.Core.SdkModel
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class SeededActivity {\n");
-            sb.Append("  VarEvent: ").Append(VarEvent).Append("\n");
+            sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Application: ").Append(Application).Append("\n");
             sb.Append("  Asset: ").Append(Asset).Append("\n");
             sb.Append("  User: ").Append(User).Append("\n");

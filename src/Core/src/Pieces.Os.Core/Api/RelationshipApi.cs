@@ -71,7 +71,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Relationship</returns>
-        System.Threading.Tasks.Task<Relationship> RelationshipsSpecificRelationshipSnapshotAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Relationship> RelationshipsSpecificRelationshipSnapshotAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /relationship/{relationship} [GET]
@@ -84,7 +84,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Relationship)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Relationship>> RelationshipsSpecificRelationshipSnapshotWithHttpInfoAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Relationship>> RelationshipsSpecificRelationshipSnapshotWithHttpInfoAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -260,6 +260,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "RelationshipApi.RelationshipsSpecificRelationshipSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = this.Client.Get<Relationship>("/relationship/{relationship}", localVarRequestOptions, this.Configuration);
@@ -283,7 +288,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Relationship</returns>
-        public async System.Threading.Tasks.Task<Relationship> RelationshipsSpecificRelationshipSnapshotAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Relationship> RelationshipsSpecificRelationshipSnapshotAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             Pieces.Os.Core.Client.ApiResponse<Relationship> localVarResponse = await RelationshipsSpecificRelationshipSnapshotWithHttpInfoAsync(relationship, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -297,7 +302,7 @@ namespace Pieces.Os.Core.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Relationship)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Relationship>> RelationshipsSpecificRelationshipSnapshotWithHttpInfoAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Relationship>> RelationshipsSpecificRelationshipSnapshotWithHttpInfoAsync(string relationship, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'relationship' is set
             if (relationship == null)
@@ -333,6 +338,11 @@ namespace Pieces.Os.Core.Api
             localVarRequestOptions.Operation = "RelationshipApi.RelationshipsSpecificRelationshipSnapshot";
             localVarRequestOptions.OperationIndex = operationIndex;
 
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
 
             // make the HTTP request
             var localVarResponse = await this.AsynchronousClient.GetAsync<Relationship>("/relationship/{relationship}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);

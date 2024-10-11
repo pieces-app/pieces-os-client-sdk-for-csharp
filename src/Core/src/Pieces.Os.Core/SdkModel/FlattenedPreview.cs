@@ -50,7 +50,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varBase is a required property for FlattenedPreview and cannot be null");
             }
-            this.VarBase = varBase;
+            this.Base = varBase;
             this.Schema = schema;
             this.Overlay = overlay;
         }
@@ -66,7 +66,7 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <value>this is a reference(uuid) to the base format</value>
         [DataMember(Name = "base", IsRequired = true, EmitDefaultValue = true)]
-        public string VarBase { get; set; }
+        public string Base { get; set; }
 
         /// <summary>
         /// this is a reference(uuid) to the overlay format
@@ -84,7 +84,7 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class FlattenedPreview {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  VarBase: ").Append(VarBase).Append("\n");
+            sb.Append("  Base: ").Append(Base).Append("\n");
             sb.Append("  Overlay: ").Append(Overlay).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -49,7 +49,7 @@ namespace Pieces.Os.Core.SdkModel
             {
                 throw new ArgumentNullException("varEvent is a required property for SeededWorkstreamIngestion and cannot be null");
             }
-            this.VarEvent = varEvent;
+            this.Event = varEvent;
             this.Schema = schema;
         }
 
@@ -60,10 +60,10 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarEvent
+        /// Gets or Sets Event
         /// </summary>
         [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
-        public SeededWorkstreamEvent VarEvent { get; set; }
+        public SeededWorkstreamEvent Event { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,7 +74,7 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class SeededWorkstreamIngestion {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  VarEvent: ").Append(VarEvent).Append("\n");
+            sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

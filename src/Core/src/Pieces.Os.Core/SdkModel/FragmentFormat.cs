@@ -42,7 +42,7 @@ namespace Pieces.Os.Core.SdkModel
         public FragmentFormat(EmbeddedModelSchema schema = default(EmbeddedModelSchema), TransferableString varString = default(TransferableString), TransferableBytes bytes = default(TransferableBytes), FragmentMetadata metadata = default(FragmentMetadata))
         {
             this.Schema = schema;
-            this.VarString = varString;
+            this.String = varString;
             this.Bytes = bytes;
             this.Metadata = metadata;
         }
@@ -54,10 +54,10 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarString
+        /// Gets or Sets String
         /// </summary>
         [DataMember(Name = "string", EmitDefaultValue = false)]
-        public TransferableString VarString { get; set; }
+        public TransferableString String { get; set; }
 
         /// <summary>
         /// Gets or Sets Bytes
@@ -80,7 +80,7 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class FragmentFormat {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  VarString: ").Append(VarString).Append("\n");
+            sb.Append("  String: ").Append(String).Append("\n");
             sb.Append("  Bytes: ").Append(Bytes).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");

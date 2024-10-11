@@ -43,7 +43,7 @@ namespace Pieces.Os.Core.SdkModel
         {
             this.Schema = schema;
             this.Bytes = bytes;
-            this.VarString = varString;
+            this.String = varString;
             this.Metadata = metadata;
         }
 
@@ -60,10 +60,10 @@ namespace Pieces.Os.Core.SdkModel
         public TransferableBytes Bytes { get; set; }
 
         /// <summary>
-        /// Gets or Sets VarString
+        /// Gets or Sets String
         /// </summary>
         [DataMember(Name = "string", EmitDefaultValue = false)]
-        public TransferableString VarString { get; set; }
+        public TransferableString String { get; set; }
 
         /// <summary>
         /// Gets or Sets Metadata
@@ -81,7 +81,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class SeededFile {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Bytes: ").Append(Bytes).Append("\n");
-            sb.Append("  VarString: ").Append(VarString).Append("\n");
+            sb.Append("  String: ").Append(String).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
