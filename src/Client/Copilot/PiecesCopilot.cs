@@ -1,38 +1,28 @@
 namespace Pieces.OS.Client.Copilot;
 
 using Pieces.Os.Core.SdkModel;
-using Pieces.Os.Core.Api;
 using Pieces.OS.Client.WebSocket;
 using Microsoft.Extensions.Logging;
 
 public class PiecesCopilot : IPiecesCopilot
 {
     private readonly WebSocketBackgroundClient<QGPTStreamOutput> client;
-    private readonly IConversationApi conversationApi;
-    private readonly IConversationsApi conversationsApi;
     private readonly List<ICopilotChat> copilotChats = [];
-    private readonly IRangesApi rangesApi;
-    private readonly IQGPTApi qGPTApi;
     private readonly ILogger? logger;
     private readonly Application application;
+    private readonly PiecesApis piecesApis;
 
     internal PiecesCopilot(ILogger? logger, 
                            Model model, 
                            Application application, 
                            WebSocketBackgroundClient<QGPTStreamOutput> client, 
-                           IConversationApi conversationApi, 
-                           IConversationsApi conversationsApi, 
-                           IRangesApi rangesApi,
-                           IQGPTApi qGPTApi)
+                           PiecesApis piecesApis)
     {
         this.logger = logger;
         Model = model;
         this.application = application;
         this.client = client;
-        this.conversationApi = conversationApi;
-        this.conversationsApi = conversationsApi;
-        this.rangesApi = rangesApi;
-        this.qGPTApi = qGPTApi;
+        this.piecesApis = piecesApis;
     }
 
     /// <summary>
@@ -85,13 +75,13 @@ public class PiecesCopilot : IPiecesCopilot
         var seededConversation = new SeededConversation(type: ConversationTypeEnum.COPILOT,
                                                         name: chatName,
                                                         pipeline: pipeline);
-        var conversation = await conversationsApi.ConversationsCreateSpecificConversationAsync(
+        var conversation = await piecesApis.ConversationsApi.ConversationsCreateSpecificConversationAsync(
             seededConversation: seededConversation,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
         logger?.LogInformation("Conversation {name} created", chatName);
 
-        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, rangesApi, qGPTApi, conversationApi, chatContext);
+        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, piecesApis, chatContext);
         copilotChats.Add(chat);
 
         logger?.LogInformation("Copilot chat {name} created", chatName);
@@ -106,7 +96,7 @@ public class PiecesCopilot : IPiecesCopilot
     /// <returns></returns>
     public async Task DeleteChatAsync(ICopilotChat chat, CancellationToken cancellationToken = default)
     {
-        await conversationsApi.ConversationsDeleteSpecificConversationAsync(conversation: chat.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        await piecesApis.ConversationsApi.ConversationsDeleteSpecificConversationAsync(conversation: chat.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         ((CopilotChat)chat).Deleted = true;
     }
 }

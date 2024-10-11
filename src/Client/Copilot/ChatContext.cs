@@ -19,4 +19,14 @@ public record ChatContext
     /// A list of asset Ids to use as context
     /// </summary>
     public IEnumerable<string>? AssetIds { get; set; } = null;
+
+    /// <summary>
+    /// The paths for files to add to the copilot chat
+    /// </summary>
+    public IEnumerable<string>? Files { get; set; } = null;
+
+    /// <summary>folders
+    /// The paths for files to add to the copilot chat
+    /// </summary>
+    public IEnumerable<string>? Folders { get; set; } = null;
 }

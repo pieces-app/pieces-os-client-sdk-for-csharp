@@ -5,7 +5,6 @@ using System.Text;
 
 using Microsoft.Extensions.Logging;
 
-using Pieces.Os.Core.Api;
 using Pieces.Os.Core.SdkModel;
 using Pieces.OS.Client.Util;
 using Pieces.OS.Client.WebSocket;
@@ -17,9 +16,7 @@ public class CopilotChat : ICopilotChat
     private readonly Application application;
     private readonly IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient;
     private Conversation conversation;
-    private readonly IRangesApi rangesApi;
-    private readonly IQGPTApi qGPTApi;
-    private readonly IConversationApi conversationApi;
+    private readonly PiecesApis piecesApis;
 
     /// <summary>
     /// Has this chat been deleted? If true, then any calls to ask questions will fail.
@@ -36,9 +33,7 @@ public class CopilotChat : ICopilotChat
                          Application application,
                          IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient,
                          Conversation conversation,
-                         IRangesApi rangesApi,
-                         IQGPTApi qGPTApi,
-                         IConversationApi conversationApi,
+                         PiecesApis piecesApis,
                          ChatContext? chatContext)
     {
         this.logger = logger;
@@ -46,9 +41,8 @@ public class CopilotChat : ICopilotChat
         this.application = application;
         this.webSocketClient = webSocketClient;
         this.conversation = conversation;
-        this.rangesApi = rangesApi;
-        this.qGPTApi = qGPTApi;
-        this.conversationApi = conversationApi;
+        this.piecesApis = piecesApis;
+        
         ChatContext = chatContext;
     }
 
@@ -92,6 +86,8 @@ public class CopilotChat : ICopilotChat
             throw new PiecesClientException("Cannot ask streaming question, this conversation has been deleted");
         }
 
+        ValidateChatContext();
+
         logger?.LogInformation("Streaming question {question} asked", question);
 
         // Save the question
@@ -99,6 +95,9 @@ public class CopilotChat : ICopilotChat
 
         // Get the question stream as JSON
         var questionStreamJson = await CreateQuestionInputJson(question, cancellationToken).ConfigureAwait(false);
+
+        logger?.LogDebug("Question stream JSON:");
+        logger?.LogDebug("{json}", questionStreamJson);
 
         // Build a waiter to wait for events
         var eventWaiter = new EventWaiter<EventArgs>(cancellationToken);
@@ -194,13 +193,55 @@ public class CopilotChat : ICopilotChat
             messages.Add(new Message(Role.Assistant, resultStringBuilder.ToString()));
 
             // refresh the conversation
-            conversation = await conversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            conversation = await piecesApis.ConversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         finally
         {
             // Unsubscribe from the web socket events
             webSocketClient.WebsocketDataEvent -= dataEventHandler;
             webSocketClient.WebsocketClosedEvent -= cancelEventHandler;
+        }
+    }
+
+    /// <summary>
+    /// Validates that the chat context is valid. Throws a <see cref="AggregateException"/>  if the chat context is not valid, containing exceptions
+    /// for all the issues
+    /// </summary>
+    /// <exception cref="AggregateException"></exception>
+    private void ValidateChatContext()
+    {
+        if (ChatContext is null) return;
+
+        var exceptions = new List<Exception>();
+
+        // Check folders exist
+        if (ChatContext?.Folders is not null)
+        {
+            foreach (var folder in ChatContext.Folders.Distinct())
+            {
+                if (!Path.Exists(folder))
+                {
+                    logger?.LogError("Folder {folder} does not exist", folder);
+                    exceptions.Add(new PiecesClientException($"Folder {folder} does not exist"));
+                }
+            }
+        }
+        // Check files exist
+        if (ChatContext?.Files is not null)
+        {
+            foreach (var file in ChatContext.Files.Distinct())
+            {
+                if (!Path.Exists(file))
+                {
+                    logger?.LogError("File {file} does not exist", file);
+                    exceptions.Add(new PiecesClientException($"File {file} does not exist"));
+                }
+            }
+        }
+
+        if (exceptions.Count != 0)
+        {
+            throw new AggregateException(exceptions);
         }
     }
 
@@ -275,44 +316,86 @@ public class CopilotChat : ICopilotChat
 
         var assets = new FlattenedAssets(iterable: ChatContext?.AssetIds?.Select(assetId => new ReferencedAsset(id: assetId)).ToList());
 
+        var paths = (ChatContext?.Files ?? []).Concat(ChatContext?.Folders ?? []).ToList();
+
         var qGPTRelevanceInput = new QGPTRelevanceInput(query: question,
                                                         application: application.Id,
                                                         model: Model.Id,
                                                         temporal: temporalRangeGrounding,
                                                         assets: assets,
-                                                        messages: conversation.Messages
+                                                        messages: conversation.Messages,
+                                                        paths: paths.Count != 0 ? paths : null
                                                         );
 
-        var relevance = await qGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken);
+        logger?.LogDebug("qGPTRelevanceInput");
+        logger?.LogDebug("{json}", qGPTRelevanceInput.ToJson());
 
-        logger?.LogInformation("Updating relevant assets on conversation...");
+        var relevance = await piecesApis.QGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken);
+
+        logger?.LogInformation("Updating relevant assets and anchors on conversation...");
+
         // Update the assets associated with the conversation
-        if (conversation.Assets?.Iterable is not null)
-        {
-            foreach (var asset in conversation.Assets.Iterable.ToList())
-            {
-                logger?.LogDebug("Removing asset {id}", asset.Id);
-                await conversationApi.ConversationDisassociateAssetAsync(conversation.Id, Guid.Parse(asset.Id), cancellationToken: cancellationToken);
-            }
-        }
-
-        if (assets?.Iterable is not null)
-        {
-            foreach (var asset in assets.Iterable)
-            {
-                logger?.LogDebug("Adding asset {id}", asset.Id);
-                await conversationApi.ConversationAssociateAssetAsync(conversation.Id, Guid.Parse(asset.Id), cancellationToken: cancellationToken);
-            }
-        }
+        await UpdateConversationAssetsAsync(cancellationToken).ConfigureAwait(false);
+        await UpdateConversationAnchorsAsync(cancellationToken).ConfigureAwait(false);
 
         // Refresh the conversation
-        conversation = await conversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        conversation = await piecesApis.ConversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         logger?.LogInformation("Conversation updated");
 
         logger?.LogInformation("Got relevant input!");
 
         return relevance.Relevant;
+    }
+
+    private async Task UpdateConversationAnchorsAsync(CancellationToken cancellationToken)
+    {
+        if (conversation.Anchors?.Iterable is not null)
+        {
+            foreach (var anchor in conversation.Anchors.Iterable.ToList())
+            {
+                logger?.LogDebug("Removing anchor {anchor}", anchor.Id);
+                await piecesApis.ConversationApi.ConversationDisassociateAnchorAsync(conversation.Id, anchor.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        await AddAnchors(ChatContext?.Files, AnchorTypeEnum.FILE, cancellationToken).ConfigureAwait(false);
+        await AddAnchors(ChatContext?.Folders, AnchorTypeEnum.DIRECTORY, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task AddAnchors(IEnumerable<string>? paths, AnchorTypeEnum anchorType, CancellationToken cancellationToken)
+    {
+        if (paths is not null)
+        {
+            foreach (var path in paths)
+            {
+                logger?.LogDebug("Adding seeded anchor {file}", path);
+                var seededAnchor = new SeededAnchor(fullpath: path, type: anchorType);
+                var anchor = await piecesApis.AnchorsApi.AnchorsCreateNewAnchorAsync(seededAnchor: seededAnchor, cancellationToken: cancellationToken).ConfigureAwait(false);
+                await piecesApis.ConversationApi.ConversationAssociateAnchorAsync(conversation.Id, anchor.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+    }
+
+    private async Task UpdateConversationAssetsAsync(CancellationToken cancellationToken)
+    {
+        if (conversation.Assets?.Iterable is not null)
+        {
+            foreach (var asset in conversation.Assets.Iterable.ToList())
+            {
+                logger?.LogDebug("Removing asset {id}", asset.Id);
+                await piecesApis.ConversationApi.ConversationDisassociateAssetAsync(conversation.Id, Guid.Parse(asset.Id), cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        if (ChatContext?.AssetIds is not null)
+        {
+            foreach (var asset in ChatContext.AssetIds)
+            {
+                logger?.LogDebug("Adding asset {id}", asset);
+                await piecesApis.ConversationApi.ConversationAssociateAssetAsync(conversation.Id, Guid.Parse(asset), cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
     }
 
     /// <summary>
@@ -342,7 +425,7 @@ public class CopilotChat : ICopilotChat
             var from = new GroupedTimestamp(value: DateTime.UtcNow - span);
             var seededRange = new SeededRange(to: to, from: from);
 
-            var range = await rangesApi.RangesCreateNewRangeAsync(seededRange: seededRange, cancellationToken: cancellationToken).ConfigureAwait(false);
+            var range = await piecesApis.RangesApi.RangesCreateNewRangeAsync(seededRange: seededRange, cancellationToken: cancellationToken).ConfigureAwait(false);
             var referencedRange = new ReferencedRange(id: range.Id);
             var flattenedRanges = new FlattenedRanges(iterable: [referencedRange]);
             temporalRangeGrounding = new TemporalRangeGrounding(workstreams: flattenedRanges);

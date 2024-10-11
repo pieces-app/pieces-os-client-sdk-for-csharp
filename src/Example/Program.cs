@@ -9,7 +9,7 @@ using Pieces.OS.Client.Copilot;
 
 // Set up logging
 var services = new ServiceCollection();
-services.AddLogging(builder =>builder.AddConsole());
+services.AddLogging(builder => builder.AddConsole());
 var serviceProvider = services.BuildServiceProvider();
 var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 
@@ -354,6 +354,60 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // }
 
 #endregion Create an asset and use it in a copilot chat later in the conversation
+
+#region Add this file as a path to the copilot chat
+
+// Add a file as a path to the copilot chat
+//
+// This example shows how you can add a file as context to a copilot chat
+
+// {
+//     // Get this file
+//     var file = Path.Combine(Environment.CurrentDirectory, "Program.cs");
+//     var chatContext = new ChatContext
+//     {
+//         Files = [file]
+//     };
+
+//     var chat = await copilot.CreateChatAsync("C# chat with a file", chatContext: chatContext).ConfigureAwait(false);
+
+//     var question = "Describe this C# project";
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Add this file as a path to the copilot chat
+
+#region Add this folder as a path to the copilot chat
+
+// Add a folder as a path to the copilot chat
+//
+// This example shows how you can add a file as context to a copilot chat
+
+// {
+//     var chatContext = new ChatContext
+//     {
+//         Folders = [Environment.CurrentDirectory]
+//     };
+
+//     var chat = await copilot.CreateChatAsync("C# chat with a folder", chatContext: chatContext).ConfigureAwait(false);
+
+//     var question = "Describe this C# project";
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Add this folder as a path to the copilot chat
 
 #region Change the model
 
