@@ -1,28 +1,28 @@
 namespace Pieces.OS.Client.Copilot;
 
 using Pieces.Os.Core.SdkModel;
-using Pieces.Os.Core.Api;
 using Pieces.OS.Client.WebSocket;
 using Microsoft.Extensions.Logging;
 
 public class PiecesCopilot : IPiecesCopilot
 {
     private readonly WebSocketBackgroundClient<QGPTStreamOutput> client;
-
     private readonly List<ICopilotChat> copilotChats = [];
-    private readonly IConversationsApi conversationsApi;
-    private readonly IRangesApi rangesApi;
     private readonly ILogger? logger;
     private readonly Application application;
+    private readonly PiecesApis piecesApis;
 
-    internal PiecesCopilot(ILogger? logger, Model model, Application application, WebSocketBackgroundClient<QGPTStreamOutput> client, IConversationsApi conversationsApi, IRangesApi rangesApi)
+    internal PiecesCopilot(ILogger? logger, 
+                           Model model, 
+                           Application application, 
+                           WebSocketBackgroundClient<QGPTStreamOutput> client, 
+                           PiecesApis piecesApis)
     {
         this.logger = logger;
         Model = model;
         this.application = application;
         this.client = client;
-        this.conversationsApi = conversationsApi;
-        this.rangesApi = rangesApi;
+        this.piecesApis = piecesApis;
     }
 
     /// <summary>
@@ -42,15 +42,13 @@ public class PiecesCopilot : IPiecesCopilot
     /// Create a new chat with the copilot
     /// </summary>
     /// <param name="chatName">An optional name for the chat. If nothing is provided, the name will be New conversation</param>
-    /// <param name="assetIds">An optional list of asset Ids to add to the chat</param>
+    /// <param name="chatContext">An optional list of asset Ids to add to the chat</param>
     /// <param name="model">The LLM model to use</param>
-    /// <param name="useLiveContext">Should this chat use live context or not</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The new chat</returns>
-    public Task<ICopilotChat> CreateChatAsync(string chatName = "",
-                                                    IEnumerable<string>? assetIds = null,
+    public async Task<ICopilotChat> CreateChatAsync(string chatName = "",
+                                                    ChatContext? chatContext = null,
                                                     Model? model = default,
-                                                    bool useLiveContext = false,
                                                     CancellationToken cancellationToken = default)
     {
         return CreateSeededChatAsync(chatName: chatName,
@@ -60,7 +58,6 @@ public class PiecesCopilot : IPiecesCopilot
                                      useLiveContext: useLiveContext,
                                      cancellationToken: cancellationToken);
     }
-
 
     /// <summary>
     /// Create a new chat with the copilot seeded with messages
@@ -81,9 +78,9 @@ public class PiecesCopilot : IPiecesCopilot
     {
         chatName = string.IsNullOrWhiteSpace(chatName) ? "New Conversation" : chatName;
 
-        QGPTPromptPipeline? pipeline = default;
+        QGPTPromptPipeline? pipeline;
 
-        if (useLiveContext)
+        if (chatContext?.LiveContext == true)
         {
             logger?.LogDebug("Creating copilot chat with live context");
             var dialog = new QGPTConversationPipelineForContextualizedCodeWorkstreamDialog();
@@ -99,17 +96,6 @@ public class PiecesCopilot : IPiecesCopilot
         }
 
         logger?.LogInformation("Creating conversation {name}...", chatName);
-
-        FlattenedAssets? flattenedAssets = default;
-
-        // If we have assets, add them as context
-        if (assetIds is not null && assetIds.Any())
-        {
-            logger?.LogDebug("Adding assets to the chat");
-
-            var referencedAssets = assetIds.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
-            flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
-        }
 
         // If we have any seeds, use them
         List<SeededConversationMessage>? conversationMessages = null;
@@ -127,21 +113,14 @@ public class PiecesCopilot : IPiecesCopilot
         var seededConversation = new SeededConversation(type: ConversationTypeEnum.COPILOT,
                                                         name: chatName,
                                                         messages: conversationMessages,
-                                                        pipeline: pipeline,
-                                                        assets: flattenedAssets);
+                                                        pipeline: pipeline;
         var conversation = await conversationsApi.ConversationsCreateSpecificConversationAsync(
             seededConversation: seededConversation,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
-        // Add the assets to the conversation iterable
-        if (flattenedAssets is not null && conversation.Assets is not null && conversation.Assets.Iterable.Count == 0)
-        {
-            conversation.Assets.Iterable = flattenedAssets?.Iterable;
-        }
-
         logger?.LogInformation("Conversation {name} created", chatName);
 
-        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, rangesApi, useLiveContext);
+        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, piecesApis, chatContext);
         copilotChats.Add(chat);
 
         logger?.LogInformation("Copilot chat {name} created", chatName);
@@ -156,7 +135,7 @@ public class PiecesCopilot : IPiecesCopilot
     /// <returns></returns>
     public async Task DeleteChatAsync(ICopilotChat chat, CancellationToken cancellationToken = default)
     {
-        await conversationsApi.ConversationsDeleteSpecificConversationAsync(conversation: chat.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        await piecesApis.ConversationsApi.ConversationsDeleteSpecificConversationAsync(conversation: chat.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         ((CopilotChat)chat).Deleted = true;
     }
 }
