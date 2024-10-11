@@ -94,7 +94,7 @@ public class CopilotChat : ICopilotChat
         messages.Add(new Message(Role.User, question));
 
         // Get the question stream as JSON
-        var questionStreamJson = await CreateQuestionInputJson(question, cancellationToken).ConfigureAwait(false);
+        var questionStreamJson = await CreateQuestionInputJsonAsync(question, cancellationToken).ConfigureAwait(false);
 
         logger?.LogDebug("Question stream JSON:");
         logger?.LogDebug("{json}", questionStreamJson);
@@ -268,18 +268,18 @@ public class CopilotChat : ICopilotChat
         logger?.LogInformation("Question {question} asked", question);
 
         // Reuse the streaming function, and let it run
-        await foreach (var _ in AskStreamingQuestionAsync(question, cancellationToken)) ;
+        await foreach (var _ in AskStreamingQuestionAsync(question, cancellationToken));
 
         // Return the response from the messages collection
         return messages.LastOrDefault()?.Content;
     }
 
-    private async Task<string> CreateQuestionInputJson(string question, CancellationToken cancellationToken)
+    private async Task<string> CreateQuestionInputJsonAsync(string question, CancellationToken cancellationToken)
     {
         logger?.LogInformation("Creating question input for question: {question}.", question);
 
         var temporalRangeGrounding = await CreateGroundingAsync(cancellationToken).ConfigureAwait(false);
-        var relevant = await GetRelevantSeedsAsync(question, temporalRangeGrounding, cancellationToken: cancellationToken);
+        var relevant = await GetRelevantSeedsAsync(question, temporalRangeGrounding, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         // Build the question input
         var questionInput = new QGPTQuestionInput(
@@ -330,7 +330,7 @@ public class CopilotChat : ICopilotChat
         logger?.LogDebug("qGPTRelevanceInput");
         logger?.LogDebug("{json}", qGPTRelevanceInput.ToJson());
 
-        var relevance = await piecesApis.QGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken);
+        var relevance = await piecesApis.QGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         logger?.LogInformation("Updating relevant assets and anchors on conversation...");
 
@@ -359,11 +359,11 @@ public class CopilotChat : ICopilotChat
             }
         }
 
-        await AddAnchors(ChatContext?.Files, AnchorTypeEnum.FILE, cancellationToken).ConfigureAwait(false);
-        await AddAnchors(ChatContext?.Folders, AnchorTypeEnum.DIRECTORY, cancellationToken).ConfigureAwait(false);
+        await AddAnchorsAsync(ChatContext?.Files, AnchorTypeEnum.FILE, cancellationToken).ConfigureAwait(false);
+        await AddAnchorsAsync(ChatContext?.Folders, AnchorTypeEnum.DIRECTORY, cancellationToken).ConfigureAwait(false);
     }
 
-    private async Task AddAnchors(IEnumerable<string>? paths, AnchorTypeEnum anchorType, CancellationToken cancellationToken)
+    private async Task AddAnchorsAsync(IEnumerable<string>? paths, AnchorTypeEnum anchorType, CancellationToken cancellationToken)
     {
         if (paths is not null)
         {
