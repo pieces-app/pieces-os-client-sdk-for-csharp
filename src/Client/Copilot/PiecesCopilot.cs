@@ -8,21 +8,31 @@ using Microsoft.Extensions.Logging;
 public class PiecesCopilot : IPiecesCopilot
 {
     private readonly WebSocketBackgroundClient<QGPTStreamOutput> client;
-
-    private readonly List<ICopilotChat> copilotChats = [];
+    private readonly IConversationApi conversationApi;
     private readonly IConversationsApi conversationsApi;
+    private readonly List<ICopilotChat> copilotChats = [];
     private readonly IRangesApi rangesApi;
+    private readonly IQGPTApi qGPTApi;
     private readonly ILogger? logger;
     private readonly Application application;
 
-    internal PiecesCopilot(ILogger? logger, Model model, Application application, WebSocketBackgroundClient<QGPTStreamOutput> client, IConversationsApi conversationsApi, IRangesApi rangesApi)
+    internal PiecesCopilot(ILogger? logger, 
+                           Model model, 
+                           Application application, 
+                           WebSocketBackgroundClient<QGPTStreamOutput> client, 
+                           IConversationApi conversationApi, 
+                           IConversationsApi conversationsApi, 
+                           IRangesApi rangesApi,
+                           IQGPTApi qGPTApi)
     {
         this.logger = logger;
         Model = model;
         this.application = application;
         this.client = client;
+        this.conversationApi = conversationApi;
         this.conversationsApi = conversationsApi;
         this.rangesApi = rangesApi;
+        this.qGPTApi = qGPTApi;
     }
 
     /// <summary>
@@ -53,7 +63,7 @@ public class PiecesCopilot : IPiecesCopilot
     {
         chatName = string.IsNullOrWhiteSpace(chatName) ? "New Conversation" : chatName;
 
-        QGPTPromptPipeline? pipeline = default;
+        QGPTPromptPipeline? pipeline;
 
         if (chatContext?.LiveContext == true)
         {
@@ -72,34 +82,16 @@ public class PiecesCopilot : IPiecesCopilot
 
         logger?.LogInformation("Creating conversation {name}...", chatName);
 
-        FlattenedAssets? flattenedAssets = default;
-
-        // If we have assets, add them as context
-        if (chatContext?.AssetIds is not null && chatContext!.AssetIds!.Any())
-        {
-            logger?.LogDebug("Adding assets to the chat");
-
-            var referencedAssets = chatContext!.AssetIds!.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
-            flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
-        }
-
         var seededConversation = new SeededConversation(type: ConversationTypeEnum.COPILOT,
                                                         name: chatName,
-                                                        pipeline: pipeline,
-                                                        assets: flattenedAssets);
+                                                        pipeline: pipeline);
         var conversation = await conversationsApi.ConversationsCreateSpecificConversationAsync(
             seededConversation: seededConversation,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
-        // Add the assets to the conversation iterable
-        if (flattenedAssets is not null && conversation.Assets is not null && conversation.Assets.Iterable.Count == 0)
-        {
-            conversation.Assets.Iterable = flattenedAssets?.Iterable;
-        }
-
         logger?.LogInformation("Conversation {name} created", chatName);
 
-        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, rangesApi, chatContext);
+        var chat = new CopilotChat(logger, model ?? Model, application, client, conversation, rangesApi, qGPTApi, conversationApi, chatContext);
         copilotChats.Add(chat);
 
         logger?.LogInformation("Copilot chat {name} created", chatName);

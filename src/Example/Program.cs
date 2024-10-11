@@ -247,49 +247,49 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 //
 // This example creates a new asset. It then uses it in a copilot chat asking a question about it.
 
-// {
-//     var assetCode = @"using System;
-//     class Program
-//     {
-//         static void Main(string[] args)
-//         {
-//             // Prompt the user for their name
-//             Console.Write(""Please enter your name: "");
+{
+    var assetCode = @"using System;
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Prompt the user for their name
+            Console.Write(""Please enter your name: "");
             
-//             // Read the user's input
-//             string name = Console.ReadLine();
+            // Read the user's input
+            string name = Console.ReadLine();
             
-//             // Print a greeting with the user's name
-//             Console.WriteLine($""Hello, {name}! Nice to meet you."");
+            // Print a greeting with the user's name
+            Console.WriteLine($""Hello, {name}! Nice to meet you."");
             
-//             // Wait for the user to press a key before closing the console window
-//             Console.WriteLine(""Press any key to exit..."");
-//             Console.ReadKey();
-//         }
-//     }
-//     ";
+            // Wait for the user to press a key before closing the console window
+            Console.WriteLine(""Press any key to exit..."");
+            Console.ReadKey();
+        }
+    }
+    ";
 
-//     var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
-//     Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
+    var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
+    Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
 
-//     var chatContext = new ChatContext
-//     {
-//         AssetIds = [newAsset.Id],
-//     };
+    var chatContext = new ChatContext
+    {
+        AssetIds = [newAsset.Id],
+    };
 
-//     var chat = await copilot.CreateChatAsync("C# chat with an asset", chatContext: chatContext).ConfigureAwait(false);
+    var chat = await copilot.CreateChatAsync("C# chat with an asset", chatContext: chatContext).ConfigureAwait(false);
 
-//     var question = "Describe this C# program";
-//     Console.WriteLine(question);
-//     Console.WriteLine();
+    var question = "Describe this C# program";
+    Console.WriteLine(question);
+    Console.WriteLine();
 
-//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
-//     {
-//         Console.Write(token);
-//     }
+    await foreach (var token in chat.AskStreamingQuestionAsync(question))
+    {
+        Console.Write(token);
+    }
 
-//     Console.WriteLine();
-// }
+    Console.WriteLine();
+}
 
 #endregion Create an asset and use it in a copilot chat
 

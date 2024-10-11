@@ -16,8 +16,10 @@ public class CopilotChat : ICopilotChat
     private readonly ILogger? logger;
     private readonly Application application;
     private readonly IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient;
-    private readonly Conversation conversation;
+    private Conversation conversation;
     private readonly IRangesApi rangesApi;
+    private readonly IQGPTApi qGPTApi;
+    private readonly IConversationApi conversationApi;
 
     /// <summary>
     /// Has this chat been deleted? If true, then any calls to ask questions will fail.
@@ -29,7 +31,15 @@ public class CopilotChat : ICopilotChat
     /// </summary>
     public ChatContext? ChatContext { get; set; }
 
-    internal CopilotChat(ILogger? logger, Model model, Application application, IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient, Conversation conversation, IRangesApi rangesApi, ChatContext? chatContext = null)
+    internal CopilotChat(ILogger? logger,
+                         Model model,
+                         Application application,
+                         IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient,
+                         Conversation conversation,
+                         IRangesApi rangesApi,
+                         IQGPTApi qGPTApi,
+                         IConversationApi conversationApi,
+                         ChatContext? chatContext)
     {
         this.logger = logger;
         Model = model;
@@ -37,6 +47,8 @@ public class CopilotChat : ICopilotChat
         this.webSocketClient = webSocketClient;
         this.conversation = conversation;
         this.rangesApi = rangesApi;
+        this.qGPTApi = qGPTApi;
+        this.conversationApi = conversationApi;
         ChatContext = chatContext;
     }
 
@@ -135,7 +147,7 @@ public class CopilotChat : ICopilotChat
             }
         }
 
-        void cancelEventHandler(Object? sender, EventArgs e)
+        void cancelEventHandler(object? sender, EventArgs e)
         {
             tokenEventWaiter.EventRaised(sender, new TokenEventArgs(null));
             eventWaiter.EventRaisedWithError(sender, e);
@@ -180,6 +192,9 @@ public class CopilotChat : ICopilotChat
 
             // Save the response
             messages.Add(new Message(Role.Assistant, resultStringBuilder.ToString()));
+
+            // refresh the conversation
+            conversation = await conversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         finally
         {
@@ -221,6 +236,100 @@ public class CopilotChat : ICopilotChat
     private async Task<string> CreateQuestionInputJson(string question, CancellationToken cancellationToken)
     {
         logger?.LogInformation("Creating question input for question: {question}.", question);
+
+        var temporalRangeGrounding = await CreateGroundingAsync(cancellationToken).ConfigureAwait(false);
+        var relevant = await GetRelevantSeedsAsync(question, temporalRangeGrounding, cancellationToken: cancellationToken);
+
+        // Build the question input
+        var questionInput = new QGPTQuestionInput(
+            query: question,
+            pipeline: conversation.Pipeline,
+            relevant: relevant,
+            application: application.Id,
+            temporal: temporalRangeGrounding,
+            model: Model.Id
+        );
+
+        // Build a stream input
+        var questionStreamInput = new QGPTStreamInput(
+            conversation: conversation.Id,
+            question: questionInput
+        );
+
+        // Return the input as JSON
+        return questionStreamInput.ToJson();
+    }
+
+    /// <summary>
+    /// Get all the relevant seeds to send to the chat.
+    /// 
+    /// For snippets set as asset Ids, attach all - if someone is attaching a snippet
+    /// we can assume it's always relevant.
+    /// For files and folders, do a relevancy check by default (can be turned off in the context)
+    /// and only send what is relevant.
+    /// </summary>
+    /// <returns></returns>
+    private async Task<RelevantQGPTSeeds> GetRelevantSeedsAsync(string question, TemporalRangeGrounding? temporalRangeGrounding, CancellationToken cancellationToken = default)
+    {
+        logger?.LogInformation("Getting relevant input...");
+
+        var assets = new FlattenedAssets(iterable: ChatContext?.AssetIds?.Select(assetId => new ReferencedAsset(id: assetId)).ToList());
+
+        var qGPTRelevanceInput = new QGPTRelevanceInput(query: question,
+                                                        application: application.Id,
+                                                        model: Model.Id,
+                                                        temporal: temporalRangeGrounding,
+                                                        assets: assets,
+                                                        messages: conversation.Messages
+                                                        );
+
+        var relevance = await qGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken);
+
+        logger?.LogInformation("Updating relevant assets on conversation...");
+        // Update the assets associated with the conversation
+        if (conversation.Assets?.Iterable is not null)
+        {
+            foreach (var asset in conversation.Assets.Iterable.ToList())
+            {
+                logger?.LogDebug("Removing asset {id}", asset.Id);
+                await conversationApi.ConversationDisassociateAssetAsync(conversation.Id, Guid.Parse(asset.Id), cancellationToken: cancellationToken);
+            }
+        }
+
+        if (assets?.Iterable is not null)
+        {
+            foreach (var asset in assets.Iterable)
+            {
+                logger?.LogDebug("Adding asset {id}", asset.Id);
+                await conversationApi.ConversationAssociateAssetAsync(conversation.Id, Guid.Parse(asset.Id), cancellationToken: cancellationToken);
+            }
+        }
+
+        // Refresh the conversation
+        conversation = await conversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+        logger?.LogInformation("Conversation updated");
+
+        logger?.LogInformation("Got relevant input!");
+
+        return relevance.Relevant;
+    }
+
+    /// <summary>
+    /// Create the temporal grounding. This is only relevant for live context, and creates a grounding based
+    /// off the time span specified in the chat context, defaulting to 15 minutes if this is not set.
+    /// 
+    /// As part of this, the pipeline is checked. For live context, this pipeline should contain a
+    /// <see cref="QGPTConversationPipelineForContextualizedCodeWorkstreamDialog"/>. If not using live
+    /// context, it should contain a <see cref="QGPTConversationPipelineForGeneralizedCodeDialog"/>.
+    /// 
+    /// If the pipeline on the conversation doesn't match this (for example, the chat context has changed since
+    /// the chat was created), then the pipeline is updated.
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The temporal range grounding used in the question</returns>
+    private async Task<TemporalRangeGrounding?> CreateGroundingAsync(CancellationToken cancellationToken)
+    {
         TemporalRangeGrounding? temporalRangeGrounding = default;
 
         if (ChatContext?.LiveContext == true)
@@ -259,61 +368,7 @@ public class CopilotChat : ICopilotChat
             }
         }
 
-        // Get all relevant assets passed in to this chat
-        var relevantQgptSeeds = new List<RelevantQGPTSeed>();
-
-        if (ChatContext?.AssetIds is not null)
-        {
-            logger?.LogInformation("Adding assets to question input");
-            var referencedAssets = ChatContext.AssetIds.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
-            var flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
-
-            foreach (var flattenedAsset in flattenedAssets.Iterable)
-            {
-                if (!relevantQgptSeeds.Any(s => s.Asset.Id == flattenedAsset.Id))
-                {
-                    logger?.LogDebug("Adding asset id: {id}", flattenedAsset.Id);
-                    relevantQgptSeeds.Add(new RelevantQGPTSeed(asset: flattenedAsset));
-                }
-            }
-        }
-
-        // Add all the assets from the conversation
-        var conversationAssets = conversation.Assets?.Iterable;
-        if (conversationAssets is not null)
-        {
-            logger?.LogInformation("Adding conversation assets to question input");
-            var referencedAssets = conversationAssets.Select(asset => new ReferencedAsset(id: asset.Id)).ToList();
-            var flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
-
-            foreach (var flattenedAsset in flattenedAssets.Iterable)
-            {
-                if (!relevantQgptSeeds.Any(s => s.Asset.Id == flattenedAsset.Id))
-                {
-                    logger?.LogDebug("Adding asset id: {id}", flattenedAsset.Id);
-                    relevantQgptSeeds.Add(new RelevantQGPTSeed(asset: flattenedAsset));
-                }
-            }
-        }
-
-        // Build the question input
-        var questionInput = new QGPTQuestionInput(
-            query: question,
-            pipeline: conversation.Pipeline,
-            relevant: new RelevantQGPTSeeds(iterable: relevantQgptSeeds),
-            application: application.Id,
-            temporal: temporalRangeGrounding,
-            model: Model.Id
-        );
-
-        // Build a stream input
-        var questionStreamInput = new QGPTStreamInput(
-            conversation: conversation.Id,
-            question: questionInput
-        );
-
-        // Return the input as JSON
-        return questionStreamInput.ToJson();
+        return temporalRangeGrounding;
     }
 
     /// <summary>

@@ -19,9 +19,4 @@ public record ChatContext
     /// A list of asset Ids to use as context
     /// </summary>
     public IEnumerable<string>? AssetIds { get; set; } = null;
-
-    /// <summary>
-    /// A list of file and folder paths to use for the conversation
-    /// </summary>
-    public IEnumerable<string>? Paths {get; set; } = null;
 }

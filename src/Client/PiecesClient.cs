@@ -21,8 +21,10 @@ public class PiecesClient : IPiecesClient, IDisposable
     private readonly ModelApi modelApi;
     private readonly ModelsApi modelsApi;
     private readonly WellKnownApi wellKnownApi;
+    private readonly ConversationApi conversationApi;
     private readonly ConversationsApi conversationsApi;
     private readonly RangesApi rangesApi;
+    private readonly QGPTApi qGPTApi;
     private readonly ConnectorApi connectorApi;
 
     private Application? application;
@@ -76,8 +78,10 @@ public class PiecesClient : IPiecesClient, IDisposable
         modelsApi = new ModelsApi(apiClient, apiClient, configuration);
         wellKnownApi = new WellKnownApi(apiClient, apiClient, configuration);
         conversationsApi = new ConversationsApi(apiClient, apiClient, configuration);
+        conversationApi = new ConversationApi(apiClient, apiClient, configuration);
         rangesApi = new RangesApi(apiClient, apiClient, configuration);
         connectorApi = new ConnectorApi(apiClient, apiClient, configuration);
+        qGPTApi = new QGPTApi(apiClient, apiClient, configuration);
 
         qgptWebSocket = new WebSocketBackgroundClient<QGPTStreamOutput>();
         var qgptUrlBuilder = new UriBuilder(webSocketBaseUrl)
@@ -115,7 +119,7 @@ public class PiecesClient : IPiecesClient, IDisposable
             var models = modelsApi.ModelsSnapshot().Iterable;
             var defaultModel = models.FirstOrDefault(x => x.Name.Contains("GPT-4o")) ?? models.First();
 
-            copilot = new PiecesCopilot(logger, defaultModel, application!, qgptWebSocket, conversationsApi, rangesApi);
+            copilot = new PiecesCopilot(logger, defaultModel, application!, qgptWebSocket, conversationApi, conversationsApi, rangesApi, qGPTApi);
             assets = new PiecesAssets(logger, application!, assetApi, assetsApi);
         });
         this.logger = logger;
