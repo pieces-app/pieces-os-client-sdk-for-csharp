@@ -15,15 +15,7 @@ using Pieces.OS.Client.Assets;
 /// </summary>
 public class PiecesClient : IPiecesClient, IDisposable
 {
-    private readonly ApiClient apiClient;
-    private readonly AssetApi assetApi;
-    private readonly AssetsApi assetsApi;
-    private readonly ModelApi modelApi;
-    private readonly ModelsApi modelsApi;
-    private readonly WellKnownApi wellKnownApi;
-    private readonly ConversationsApi conversationsApi;
-    private readonly RangesApi rangesApi;
-    private readonly ConnectorApi connectorApi;
+    private readonly PiecesApis piecesApis;
 
     private Application? application;
 
@@ -64,20 +56,27 @@ public class PiecesClient : IPiecesClient, IDisposable
 
         var webSocketBaseUrl = baseUrl.ToLower().Replace("http://", "ws://").Replace("https://", "ws://");
 
-        apiClient = new ApiClient(baseUrl);
+        var apiClient = new ApiClient(baseUrl);
         var configuration = new GlobalConfiguration(GlobalConfiguration.Instance.DefaultHeaders,
                                                     GlobalConfiguration.Instance.ApiKey,
                                                     GlobalConfiguration.Instance.ApiKeyPrefix,
                                                     baseUrl);
 
-        assetApi = new AssetApi(apiClient, apiClient, configuration);
-        assetsApi = new AssetsApi(apiClient, apiClient, configuration);
-        modelApi = new ModelApi(apiClient, apiClient, configuration);
-        modelsApi = new ModelsApi(apiClient, apiClient, configuration);
-        wellKnownApi = new WellKnownApi(apiClient, apiClient, configuration);
-        conversationsApi = new ConversationsApi(apiClient, apiClient, configuration);
-        rangesApi = new RangesApi(apiClient, apiClient, configuration);
-        connectorApi = new ConnectorApi(apiClient, apiClient, configuration);
+        piecesApis = new PiecesApis
+        {
+            ApiClient = apiClient,
+            AnchorsApi = new AnchorsApi(apiClient, apiClient, configuration),
+            AssetApi = new AssetApi(apiClient, apiClient, configuration),
+            AssetsApi = new AssetsApi(apiClient, apiClient, configuration),
+            ConnectorApi = new ConnectorApi(apiClient, apiClient, configuration),
+            ConversationApi = new ConversationApi(apiClient, apiClient, configuration),
+            ConversationsApi = new ConversationsApi(apiClient, apiClient, configuration),
+            ModelApi = new ModelApi(apiClient, apiClient, configuration),
+            ModelsApi = new ModelsApi(apiClient, apiClient, configuration),
+            QGPTApi = new QGPTApi(apiClient, apiClient, configuration),
+            RangesApi = new RangesApi(apiClient, apiClient, configuration),
+            WellKnownApi = new WellKnownApi(apiClient, apiClient, configuration)
+        };
 
         qgptWebSocket = new WebSocketBackgroundClient<QGPTStreamOutput>();
         var qgptUrlBuilder = new UriBuilder(webSocketBaseUrl)
@@ -98,7 +97,7 @@ public class PiecesClient : IPiecesClient, IDisposable
                 );
                 var seededConnector = new SeededConnectorConnection(application: application);
 
-                var connector = await connectorApi.ConnectAsync(seededConnectorConnection: seededConnector).ConfigureAwait(false);
+                var connector = await new ConnectorApi(apiClient, apiClient, configuration).ConnectAsync(seededConnectorConnection: seededConnector).ConfigureAwait(false);
                 this.application = connector.Application;
 
                 logger?.LogInformation("Connected as application {id}", this.application.Id);
@@ -112,11 +111,11 @@ public class PiecesClient : IPiecesClient, IDisposable
             logger?.LogInformation("Web sockets started");
 
             // Get all the models to pick a default - choose GPT-4o mini if it is available
-            var models = modelsApi.ModelsSnapshot().Iterable;
+            var models = new ModelsApi(apiClient, apiClient, configuration).ModelsSnapshot().Iterable;
             var defaultModel = models.FirstOrDefault(x => x.Name.Contains("GPT-4o")) ?? models.First();
 
-            copilot = new PiecesCopilot(logger, defaultModel, application!, qgptWebSocket, conversationsApi, rangesApi);
-            assets = new PiecesAssets(logger, application!, assetApi, assetsApi);
+            copilot = new PiecesCopilot(logger, defaultModel, application!, qgptWebSocket, piecesApis);
+            assets = new PiecesAssets(logger, application!, new AssetApi(apiClient, apiClient, configuration), new AssetsApi(apiClient, apiClient, configuration));
         });
         this.logger = logger;
     }
@@ -146,7 +145,7 @@ public class PiecesClient : IPiecesClient, IDisposable
     public async Task<IEnumerable<Model>> GetModelsAsync()
     {
         await EnsureConnected().ConfigureAwait(false);
-        return modelsApi.ModelsSnapshot().Iterable;
+        return piecesApis.ModelsApi.ModelsSnapshot().Iterable;
     }
 
     /// <summary>
@@ -174,7 +173,7 @@ public class PiecesClient : IPiecesClient, IDisposable
             return model;
         }
 
-        var downloadedModel = await modelApi.ModelSpecificModelDownloadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        var downloadedModel = await piecesApis.ModelApi.ModelSpecificModelDownloadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         if (downloadedModel.Downloaded)
         {
             logger?.LogInformation("Model with id: {id} already downloaded", model.Id);
@@ -189,7 +188,7 @@ public class PiecesClient : IPiecesClient, IDisposable
             cancellationToken.ThrowIfCancellationRequested();
 
             await Task.Delay(10, cancellationToken).ConfigureAwait(false);
-            downloadedModel = await modelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            downloadedModel = await piecesApis.ModelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         // Wait for downloading to complete
@@ -200,11 +199,11 @@ public class PiecesClient : IPiecesClient, IDisposable
             cancellationToken.ThrowIfCancellationRequested();
 
             await Task.Delay(10, cancellationToken).ConfigureAwait(false);
-            downloadedModel = await modelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            downloadedModel = await piecesApis.ModelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         // Now load the model
-        var loadedModel = await modelApi.ModelSpecificModelLoadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        var loadedModel = await piecesApis.ModelApi.ModelSpecificModelLoadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         return loadedModel;
     }
@@ -216,7 +215,7 @@ public class PiecesClient : IPiecesClient, IDisposable
     public async Task<string> GetVersionAsync(CancellationToken cancellationToken = default)
     {
         await EnsureConnected().ConfigureAwait(false);
-        return await wellKnownApi.GetWellKnownVersionAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await piecesApis.WellKnownApi.GetWellKnownVersionAsync(cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>

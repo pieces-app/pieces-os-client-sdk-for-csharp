@@ -5,10 +5,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 using Pieces.OS.Client;
+using Pieces.OS.Client.Copilot;
 
 // Set up logging
 var services = new ServiceCollection();
-services.AddLogging(builder =>builder.AddConsole());
+services.AddLogging(builder => builder.AddConsole());
 var serviceProvider = services.BuildServiceProvider();
 var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
 
@@ -163,13 +164,18 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // The chat will ask a question related to this code file using a 1 hour context window, then stream the response back token by token
 
 // {
-//     var chat = await copilot.CreateChatAsync("1 hour context window", useLiveContext: true).ConfigureAwait(false);
+//     var chatContext = new ChatContext
+//     {
+//         LiveContext = true,
+//         LiveContextTimeSpan = TimeSpan.FromHours(1)
+//     };
+//     var chat = await copilot.CreateChatAsync("1 hour context window", chatContext: chatContext).ConfigureAwait(false);
 
 //     var question = "Describe the Program.cs file I was just reading in my IDE";
 //     Console.WriteLine(question);
 //     Console.WriteLine();
 
-//     await foreach (var token in chat.AskStreamingQuestionAsync(question, liveContextTimeSpan: TimeSpan.FromHours(1)))
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
 //     {
 //         Console.Write(token);
 //     }
@@ -178,6 +184,48 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // }
 
 #endregion Use live context
+
+#region Use live context turned on later in the chat
+
+// Use live context
+//
+// This will create a new copilot chat called 1 hour context window. After asking a first question, live context is turned turned on
+// that you will be able to see in other Pieces applications,
+// such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see live context turned on against the chat
+// The chat will ask a question related to this code file using a 1 hour context window, then stream the response back token by token
+
+// {
+//     var chat = await copilot.CreateChatAsync("1 hour context window turned on later").ConfigureAwait(false);
+
+//     var question = "How can I do a hello world in C#?";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     // Update the context
+//     chat.ChatContext = new ChatContext
+//     {
+//         LiveContext = true,
+//         LiveContextTimeSpan = TimeSpan.FromHours(1)
+//     };
+
+//     question = "Describe the Program.cs file I was just reading in my IDE";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Use live context turned on later in the chat
 
 #region Load assets
 
@@ -224,7 +272,12 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 //     var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
 //     Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
 
-//     var chat = await copilot.CreateChatAsync("C# chat with an asset", assetIds: [newAsset.Id]).ConfigureAwait(false);
+//     var chatContext = new ChatContext
+//     {
+//         AssetIds = [newAsset.Id],
+//     };
+
+//     var chat = await copilot.CreateChatAsync("C# chat with an asset", chatContext: chatContext).ConfigureAwait(false);
 
 //     var question = "Describe this C# program";
 //     Console.WriteLine(question);
@@ -239,6 +292,122 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // }
 
 #endregion Create an asset and use it in a copilot chat
+
+#region Create an asset and use it in a copilot chat later in the conversation
+
+// Create an asset and use it in a copilot chat later in the conversation
+//
+// This example creates a new asset. It then uses it for the second question in a 
+// copilot chat asking a question about it.
+
+// {
+//     var assetCode = @"using System;
+//     class Program
+//     {
+//         static void Main(string[] args)
+//         {
+//             // Prompt the user for their name
+//             Console.Write(""Please enter your name: "");
+            
+//             // Read the user's input
+//             string name = Console.ReadLine();
+            
+//             // Print a greeting with the user's name
+//             Console.WriteLine($""Hello, {name}! Nice to meet you."");
+            
+//             // Wait for the user to press a key before closing the console window
+//             Console.WriteLine(""Press any key to exit..."");
+//             Console.ReadKey();
+//         }
+//     }
+//     ";
+
+//     var newAsset = await assets.CreateAssetAsync(assetCode).ConfigureAwait(false);
+//     Console.WriteLine($"Asset created = name {newAsset.Name}, id: {newAsset.Id}");
+
+//     var chat = await copilot.CreateChatAsync("C# chat with an asset").ConfigureAwait(false);
+
+//     var question = "How can I write a hello world in C#?";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     question = "Describe this C# program";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     chat.ChatContext = new ChatContext
+//     {
+//         AssetIds = [newAsset.Id],
+//     };
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Create an asset and use it in a copilot chat later in the conversation
+
+#region Add this file as a path to the copilot chat
+
+// Add a file as a path to the copilot chat
+//
+// This example shows how you can add a file as context to a copilot chat
+
+// {
+//     // Get this file
+//     var file = Path.Combine(Environment.CurrentDirectory, "Program.cs");
+//     var chatContext = new ChatContext
+//     {
+//         Files = [file]
+//     };
+
+//     var chat = await copilot.CreateChatAsync("C# chat with a file", chatContext: chatContext).ConfigureAwait(false);
+
+//     var question = "Describe this C# project";
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Add this file as a path to the copilot chat
+
+#region Add this folder as a path to the copilot chat
+
+// Add a folder as a path to the copilot chat
+//
+// This example shows how you can add a file as context to a copilot chat
+
+// {
+//     var chatContext = new ChatContext
+//     {
+//         Folders = [Environment.CurrentDirectory]
+//     };
+
+//     var chat = await copilot.CreateChatAsync("C# chat with a folder", chatContext: chatContext).ConfigureAwait(false);
+
+//     var question = "Describe this C# project";
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Add this folder as a path to the copilot chat
 
 #region Change the model
 

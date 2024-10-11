@@ -54,6 +54,7 @@ where T : IValidatableObject
 
         // Buffer to store received data
         var buffer = new byte[1024 * 4];
+        var messageBuilder = new StringBuilder();
 
         try
         {
@@ -68,16 +69,24 @@ where T : IValidatableObject
                     // If a close message is received, close the WebSocket connection
                     await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, string.Empty, cancellationToken).ConfigureAwait(false);
                     OnWebsocketClosedEvent();
+
+                    messageBuilder.Clear();
                 }
                 else
                 {
                     // Convert received data to a string
                     var message = Encoding.UTF8.GetString(buffer, 0, result.Count);
+                    messageBuilder.Append(message);
+
                     logger?.LogDebug("Received: {message}", message);
                     
-                    // Send the message to the event
-                    var webSocketData = JsonConvert.DeserializeObject<T>(message);
-                    OnWebsocketEvent(webSocketData);
+                    if (result.EndOfMessage)
+                    {
+                        // Send the message to the event
+                        var webSocketData = JsonConvert.DeserializeObject<T>(messageBuilder.ToString());
+                        messageBuilder.Clear();
+                        OnWebsocketEvent(webSocketData);
+                    }
 
                 }
             }

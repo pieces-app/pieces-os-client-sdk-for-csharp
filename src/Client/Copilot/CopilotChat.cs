@@ -5,7 +5,6 @@ using System.Text;
 
 using Microsoft.Extensions.Logging;
 
-using Pieces.Os.Core.Api;
 using Pieces.Os.Core.SdkModel;
 using Pieces.OS.Client.Util;
 using Pieces.OS.Client.WebSocket;
@@ -16,24 +15,35 @@ public class CopilotChat : ICopilotChat
     private readonly ILogger? logger;
     private readonly Application application;
     private readonly IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient;
-    private readonly Conversation conversation;
-    private readonly IRangesApi rangesApi;
-    private readonly bool useLiveContext;
+    private Conversation conversation;
+    private readonly PiecesApis piecesApis;
 
     /// <summary>
     /// Has this chat been deleted? If true, then any calls to ask questions will fail.
     /// </summary>
     public bool Deleted { get; internal set; } = false;
 
-    internal CopilotChat(ILogger? logger, Model model, Application application, IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient, Conversation conversation, IRangesApi rangesApi, bool useLiveContext)
+    /// <summary>
+    /// The context for this chat
+    /// </summary>
+    public ChatContext? ChatContext { get; set; }
+
+    internal CopilotChat(ILogger? logger,
+                         Model model,
+                         Application application,
+                         IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient,
+                         Conversation conversation,
+                         PiecesApis piecesApis,
+                         ChatContext? chatContext)
     {
         this.logger = logger;
         Model = model;
         this.application = application;
         this.webSocketClient = webSocketClient;
         this.conversation = conversation;
-        this.rangesApi = rangesApi;
-        this.useLiveContext = useLiveContext;
+        this.piecesApis = piecesApis;
+        
+        ChatContext = chatContext;
     }
 
     /// <summary>
@@ -65,12 +75,10 @@ public class CopilotChat : ICopilotChat
     /// Both the question and the response are added to the <see cref="Messages"/> collection
     /// </summary>
     /// <param name="question">The question to ask</param>
-    /// <param name="assetIds">The Ids of assets to add to this chat</param>
-    /// <param name="liveContextTimeSpan">The time window for live context queries if this is created using live context</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The full response</returns>
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
-    public async IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, [EnumeratorCancellation] CancellationToken cancellationToken = default)
+    public async IAsyncEnumerable<string> AskStreamingQuestionAsync(string question, [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
         if (Deleted)
         {
@@ -78,13 +86,18 @@ public class CopilotChat : ICopilotChat
             throw new PiecesClientException("Cannot ask streaming question, this conversation has been deleted");
         }
 
+        ValidateChatContext();
+
         logger?.LogInformation("Streaming question {question} asked", question);
 
         // Save the question
         messages.Add(new Message(Role.User, question));
 
         // Get the question stream as JSON
-        var questionStreamJson = await CreateQuestionInputJson(question, assetIds, liveContextTimeSpan, cancellationToken).ConfigureAwait(false);
+        var questionStreamJson = await CreateQuestionInputJsonAsync(question, cancellationToken).ConfigureAwait(false);
+
+        logger?.LogDebug("Question stream JSON:");
+        logger?.LogDebug("{json}", questionStreamJson);
 
         // Build a waiter to wait for events
         var eventWaiter = new EventWaiter<EventArgs>(cancellationToken);
@@ -133,7 +146,7 @@ public class CopilotChat : ICopilotChat
             }
         }
 
-        void cancelEventHandler(Object? sender, EventArgs e)
+        void cancelEventHandler(object? sender, EventArgs e)
         {
             tokenEventWaiter.EventRaised(sender, new TokenEventArgs(null));
             eventWaiter.EventRaisedWithError(sender, e);
@@ -178,12 +191,57 @@ public class CopilotChat : ICopilotChat
 
             // Save the response
             messages.Add(new Message(Role.Assistant, resultStringBuilder.ToString()));
+
+            // refresh the conversation
+            conversation = await piecesApis.ConversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         finally
         {
             // Unsubscribe from the web socket events
             webSocketClient.WebsocketDataEvent -= dataEventHandler;
             webSocketClient.WebsocketClosedEvent -= cancelEventHandler;
+        }
+    }
+
+    /// <summary>
+    /// Validates that the chat context is valid. Throws a <see cref="AggregateException"/>  if the chat context is not valid, containing exceptions
+    /// for all the issues
+    /// </summary>
+    /// <exception cref="AggregateException"></exception>
+    private void ValidateChatContext()
+    {
+        if (ChatContext is null) return;
+
+        var exceptions = new List<Exception>();
+
+        // Check folders exist
+        if (ChatContext?.Folders is not null)
+        {
+            foreach (var folder in ChatContext.Folders.Distinct())
+            {
+                if (!Path.Exists(folder))
+                {
+                    logger?.LogError("Folder {folder} does not exist", folder);
+                    exceptions.Add(new PiecesClientException($"Folder {folder} does not exist"));
+                }
+            }
+        }
+        // Check files exist
+        if (ChatContext?.Files is not null)
+        {
+            foreach (var file in ChatContext.Files.Distinct())
+            {
+                if (!Path.Exists(file))
+                {
+                    logger?.LogError("File {file} does not exist", file);
+                    exceptions.Add(new PiecesClientException($"File {file} does not exist"));
+                }
+            }
+        }
+
+        if (exceptions.Count != 0)
+        {
+            throw new AggregateException(exceptions);
         }
     }
 
@@ -196,12 +254,10 @@ public class CopilotChat : ICopilotChat
     /// Both the question and the response are added to the <see cref="Messages"/> collection
     /// </summary>
     /// <param name="question">The question to ask</param>
-    /// <param name="assetIds">The Ids of assets to add to this chat</param>
-    /// <param name="liveContextTimeSpan">The time window for live context queries if this is created using live context</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The full response</returns>
     /// <exception cref="CopilotException">A <see cref="CopilotException"/> is raised if there is an error asking the question, such as losing connection to Pieces OS</exception>
-    public async Task<string?> AskQuestionAsync(string question, IEnumerable<string>? assetIds = default, TimeSpan? liveContextTimeSpan = default, CancellationToken cancellationToken = default)
+    public async Task<string?> AskQuestionAsync(string question, CancellationToken cancellationToken = default)
     {
         if (Deleted)
         {
@@ -212,79 +268,24 @@ public class CopilotChat : ICopilotChat
         logger?.LogInformation("Question {question} asked", question);
 
         // Reuse the streaming function, and let it run
-        await foreach (var _ in AskStreamingQuestionAsync(question, assetIds, liveContextTimeSpan, cancellationToken)) ;
+        await foreach (var _ in AskStreamingQuestionAsync(question, cancellationToken));
 
         // Return the response from the messages collection
         return messages.LastOrDefault()?.Content;
     }
 
-    private async Task<string> CreateQuestionInputJson(string question, IEnumerable<string>? assetIds, TimeSpan? liveContextTimeSpan, CancellationToken cancellationToken)
+    private async Task<string> CreateQuestionInputJsonAsync(string question, CancellationToken cancellationToken)
     {
         logger?.LogInformation("Creating question input for question: {question}.", question);
-        TemporalRangeGrounding? temporalRangeGrounding = default;
 
-        if (useLiveContext)
-        {
-            var span = liveContextTimeSpan ?? TimeSpan.FromMinutes(15);
-            logger?.LogInformation("Using live context with a time span of: {span}.", span);
-            // Create a temporal range from the provided time span ago to now minutes
-            // If the provided time span is null, use 15 minutes ago
-            var to = new GroupedTimestamp(value: DateTime.UtcNow);
-            var from = new GroupedTimestamp(value: DateTime.UtcNow - span);
-            var seededRange = new SeededRange(to: to, from: from);
-
-            var range = await rangesApi.RangesCreateNewRangeAsync(seededRange: seededRange, cancellationToken: cancellationToken).ConfigureAwait(false);
-            var referencedRange = new ReferencedRange(id: range.Id);
-            var flattenedRanges = new FlattenedRanges(iterable: [referencedRange]);
-            temporalRangeGrounding = new TemporalRangeGrounding(workstreams: flattenedRanges);
-        }
-        else
-        {
-            logger?.LogInformation("Not using live context");
-        }
-
-        // Get all relevant assets passed in to this chat
-        var relevantQgptSeeds = new List<RelevantQGPTSeed>();
-
-        if (assetIds is not null)
-        {
-            logger?.LogInformation("Adding assets to question input");
-            var referencedAssets = assetIds.Select(assetId => new ReferencedAsset(id: assetId)).ToList();
-            var flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
-
-            foreach (var flattenedAsset in flattenedAssets.Iterable)
-            {
-                if (!relevantQgptSeeds.Any(s => s.Asset.Id == flattenedAsset.Id))
-                {
-                    logger?.LogDebug("Adding asset id: {id}", flattenedAsset.Id);
-                    relevantQgptSeeds.Add(new RelevantQGPTSeed(asset: flattenedAsset));
-                }
-            }
-        }
-
-        // Add all the assets from the conversation
-        var conversationAssets = conversation.Assets?.Iterable;
-        if (conversationAssets is not null)
-        {
-            logger?.LogInformation("Adding conversation assets to question input");
-            var referencedAssets = conversationAssets.Select(asset => new ReferencedAsset(id: asset.Id)).ToList();
-            var flattenedAssets = new FlattenedAssets(iterable: referencedAssets);
-
-            foreach (var flattenedAsset in flattenedAssets.Iterable)
-            {
-                if (!relevantQgptSeeds.Any(s => s.Asset.Id == flattenedAsset.Id))
-                {
-                    logger?.LogDebug("Adding asset id: {id}", flattenedAsset.Id);
-                    relevantQgptSeeds.Add(new RelevantQGPTSeed(asset: flattenedAsset));
-                }
-            }
-        }
+        var temporalRangeGrounding = await CreateGroundingAsync(cancellationToken).ConfigureAwait(false);
+        var relevant = await GetRelevantSeedsAsync(question, temporalRangeGrounding, cancellationToken: cancellationToken).ConfigureAwait(false);
 
         // Build the question input
         var questionInput = new QGPTQuestionInput(
             query: question,
             pipeline: conversation.Pipeline,
-            relevant: new RelevantQGPTSeeds(iterable: relevantQgptSeeds),
+            relevant: relevant,
             application: application.Id,
             temporal: temporalRangeGrounding,
             model: Model.Id
@@ -298,6 +299,159 @@ public class CopilotChat : ICopilotChat
 
         // Return the input as JSON
         return questionStreamInput.ToJson();
+    }
+
+    /// <summary>
+    /// Get all the relevant seeds to send to the chat.
+    /// 
+    /// For snippets set as asset Ids, attach all - if someone is attaching a snippet
+    /// we can assume it's always relevant.
+    /// For files and folders, do a relevancy check by default (can be turned off in the context)
+    /// and only send what is relevant.
+    /// </summary>
+    /// <returns></returns>
+    private async Task<RelevantQGPTSeeds> GetRelevantSeedsAsync(string question, TemporalRangeGrounding? temporalRangeGrounding, CancellationToken cancellationToken = default)
+    {
+        logger?.LogInformation("Getting relevant input...");
+
+        var assets = new FlattenedAssets(iterable: ChatContext?.AssetIds?.Select(assetId => new ReferencedAsset(id: assetId)).ToList());
+
+        var paths = (ChatContext?.Files ?? []).Concat(ChatContext?.Folders ?? []).ToList();
+
+        var qGPTRelevanceInput = new QGPTRelevanceInput(query: question,
+                                                        application: application.Id,
+                                                        model: Model.Id,
+                                                        temporal: temporalRangeGrounding,
+                                                        assets: assets,
+                                                        messages: conversation.Messages,
+                                                        paths: paths.Count != 0 ? paths : null
+                                                        );
+
+        logger?.LogDebug("qGPTRelevanceInput");
+        logger?.LogDebug("{json}", qGPTRelevanceInput.ToJson());
+
+        var relevance = await piecesApis.QGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+        logger?.LogInformation("Updating relevant assets and anchors on conversation...");
+
+        // Update the assets associated with the conversation
+        await UpdateConversationAssetsAsync(cancellationToken).ConfigureAwait(false);
+        await UpdateConversationAnchorsAsync(cancellationToken).ConfigureAwait(false);
+
+        // Refresh the conversation
+        conversation = await piecesApis.ConversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+
+        logger?.LogInformation("Conversation updated");
+
+        logger?.LogInformation("Got relevant input!");
+
+        return relevance.Relevant;
+    }
+
+    private async Task UpdateConversationAnchorsAsync(CancellationToken cancellationToken)
+    {
+        if (conversation.Anchors?.Iterable is not null)
+        {
+            foreach (var anchor in conversation.Anchors.Iterable.ToList())
+            {
+                logger?.LogDebug("Removing anchor {anchor}", anchor.Id);
+                await piecesApis.ConversationApi.ConversationDisassociateAnchorAsync(conversation.Id, anchor.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        await AddAnchorsAsync(ChatContext?.Files, AnchorTypeEnum.FILE, cancellationToken).ConfigureAwait(false);
+        await AddAnchorsAsync(ChatContext?.Folders, AnchorTypeEnum.DIRECTORY, cancellationToken).ConfigureAwait(false);
+    }
+
+    private async Task AddAnchorsAsync(IEnumerable<string>? paths, AnchorTypeEnum anchorType, CancellationToken cancellationToken)
+    {
+        if (paths is not null)
+        {
+            foreach (var path in paths)
+            {
+                logger?.LogDebug("Adding seeded anchor {file}", path);
+                var seededAnchor = new SeededAnchor(fullpath: path, type: anchorType);
+                var anchor = await piecesApis.AnchorsApi.AnchorsCreateNewAnchorAsync(seededAnchor: seededAnchor, cancellationToken: cancellationToken).ConfigureAwait(false);
+                await piecesApis.ConversationApi.ConversationAssociateAnchorAsync(conversation.Id, anchor.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+    }
+
+    private async Task UpdateConversationAssetsAsync(CancellationToken cancellationToken)
+    {
+        if (conversation.Assets?.Iterable is not null)
+        {
+            foreach (var asset in conversation.Assets.Iterable.ToList())
+            {
+                logger?.LogDebug("Removing asset {id}", asset.Id);
+                await piecesApis.ConversationApi.ConversationDisassociateAssetAsync(conversation.Id, Guid.Parse(asset.Id), cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+
+        if (ChatContext?.AssetIds is not null)
+        {
+            foreach (var asset in ChatContext.AssetIds)
+            {
+                logger?.LogDebug("Adding asset {id}", asset);
+                await piecesApis.ConversationApi.ConversationAssociateAssetAsync(conversation.Id, Guid.Parse(asset), cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Create the temporal grounding. This is only relevant for live context, and creates a grounding based
+    /// off the time span specified in the chat context, defaulting to 15 minutes if this is not set.
+    /// 
+    /// As part of this, the pipeline is checked. For live context, this pipeline should contain a
+    /// <see cref="QGPTConversationPipelineForContextualizedCodeWorkstreamDialog"/>. If not using live
+    /// context, it should contain a <see cref="QGPTConversationPipelineForGeneralizedCodeDialog"/>.
+    /// 
+    /// If the pipeline on the conversation doesn't match this (for example, the chat context has changed since
+    /// the chat was created), then the pipeline is updated.
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns>The temporal range grounding used in the question</returns>
+    private async Task<TemporalRangeGrounding?> CreateGroundingAsync(CancellationToken cancellationToken)
+    {
+        TemporalRangeGrounding? temporalRangeGrounding = default;
+
+        if (ChatContext?.LiveContext == true)
+        {
+            var span = ChatContext?.LiveContextTimeSpan ?? TimeSpan.FromMinutes(15);
+            logger?.LogInformation("Using live context with a time span of: {span}.", span);
+            // Create a temporal range from the provided time span ago to now minutes
+            // If the provided time span is null, use 15 minutes ago
+            var to = new GroupedTimestamp(value: DateTime.UtcNow);
+            var from = new GroupedTimestamp(value: DateTime.UtcNow - span);
+            var seededRange = new SeededRange(to: to, from: from);
+
+            var range = await piecesApis.RangesApi.RangesCreateNewRangeAsync(seededRange: seededRange, cancellationToken: cancellationToken).ConfigureAwait(false);
+            var referencedRange = new ReferencedRange(id: range.Id);
+            var flattenedRanges = new FlattenedRanges(iterable: [referencedRange]);
+            temporalRangeGrounding = new TemporalRangeGrounding(workstreams: flattenedRanges);
+
+            // If the conversation wasn't set up for live context, set this up now
+            if (conversation.Pipeline.Conversation.ContextualizedCodeWorkstreamDialog is null)
+            {
+                var dialog = new QGPTConversationPipelineForContextualizedCodeWorkstreamDialog();
+                var conversationPipeline = new QGPTConversationPipeline(contextualizedCodeWorkstreamDialog: dialog);
+                conversation.Pipeline = new QGPTPromptPipeline(conversation: conversationPipeline);
+            }
+        }
+        else
+        {
+            logger?.LogInformation("Not using live context");
+
+            // If the conversation was set up for live context, disable this if we are not using live context now
+            if (conversation.Pipeline.Conversation.ContextualizedCodeWorkstreamDialog is null)
+            {
+                var dialog = new QGPTConversationPipelineForGeneralizedCodeDialog();
+                var conversationPipeline = new QGPTConversationPipeline(generalizedCodeDialog: dialog);
+                conversation.Pipeline = new QGPTPromptPipeline(conversation: conversationPipeline);
+            }
+        }
+
+        return temporalRangeGrounding;
     }
 
     /// <summary>
