@@ -65,7 +65,6 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
 
         // Ask the question
         var response = await chatWithCacheKey.Chat.AskQuestionAsync(chatMessages.Last().Text!,
-                                                                    liveContextTimeSpan: GetLiveContextTimeSpanFromOptions(options),
                                                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
         // Build the response
@@ -133,8 +132,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
 
         // Ask the question
         await foreach (var r in chatWithCacheKey.Chat.AskStreamingQuestionAsync(chatMessages.Last().Text!,
-                                                               liveContextTimeSpan: GetLiveContextTimeSpanFromOptions(options),
-                                                               cancellationToken: cancellationToken))
+                                                                                cancellationToken: cancellationToken))
         {
             var response = new StreamingChatCompletionUpdate()
             {
@@ -227,15 +225,18 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
 
             // extract the relevant properties from the options
             model = await GetModelFromChatOptionsAsync(options, cancellationToken).ConfigureAwait(false);
-            var assetIds = GetAssetIdsFromOptions(options);
-            var liveContext = GetBoolValueFromOptions(options, "LiveContext");
+
+            var chatContext = new ChatContext
+            {
+                AssetIds = GetAssetIdsFromOptions(options),
+                LiveContext = GetBoolValueFromOptions(options, "LiveContext"),
+            };
 
             // Create a new chat using all the messages that have been sent
             chat = await piecesCopilot.CreateSeededChatAsync(chatName,
                                                              model: model,
                                                              seeds: seeds,
-                                                             assetIds: assetIds,
-                                                             useLiveContext: liveContext,
+                                                             chatContext: chatContext,
                                                              cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

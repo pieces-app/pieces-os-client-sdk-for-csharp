@@ -12,10 +12,10 @@ public class PiecesCopilot : IPiecesCopilot
     private readonly Application application;
     private readonly PiecesApis piecesApis;
 
-    internal PiecesCopilot(ILogger? logger, 
-                           Model model, 
-                           Application application, 
-                           WebSocketBackgroundClient<QGPTStreamOutput> client, 
+    internal PiecesCopilot(ILogger? logger,
+                           Model model,
+                           Application application,
+                           WebSocketBackgroundClient<QGPTStreamOutput> client,
                            PiecesApis piecesApis)
     {
         this.logger = logger;
@@ -46,16 +46,15 @@ public class PiecesCopilot : IPiecesCopilot
     /// <param name="model">The LLM model to use</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The new chat</returns>
-    public async Task<ICopilotChat> CreateChatAsync(string chatName = "",
-                                                    ChatContext? chatContext = null,
-                                                    Model? model = default,
-                                                    CancellationToken cancellationToken = default)
+    public Task<ICopilotChat> CreateChatAsync(string chatName = "",
+                                              ChatContext? chatContext = null,
+                                              Model? model = default,
+                                              CancellationToken cancellationToken = default)
     {
         return CreateSeededChatAsync(chatName: chatName,
                                      seeds: null,
-                                     assetIds: assetIds,
+                                     chatContext: chatContext,
                                      model: model,
-                                     useLiveContext: useLiveContext,
                                      cancellationToken: cancellationToken);
     }
 
@@ -64,17 +63,15 @@ public class PiecesCopilot : IPiecesCopilot
     /// </summary>
     /// <param name="chatName">An optional name for the chat. If nothing is provided, the name will be New conversation</param>
     /// <param name="seeds">A set of seeded messages for the conversation</param>
-    /// <param name="assetIds">An optional list of asset Ids to add to the chat</param>
+    /// <param name="chatContext">An optional list of asset Ids to add to the chat</param>
     /// <param name="model">The LLM model to use</param>
-    /// <param name="useLiveContext">Should this chat use live context or not</param>
     /// <param name="cancellationToken">A cancellation token</param>
     /// <returns>The new chat</returns>
     public async Task<ICopilotChat> CreateSeededChatAsync(string chatName = "",
-                                                          IEnumerable<SeedMessage>? seeds = null,
-                                                          IEnumerable<string>? assetIds = null,
-                                                          Model? model = default,
-                                                          bool useLiveContext = false,
-                                                          CancellationToken cancellationToken = default)
+                                             IEnumerable<SeedMessage>? seeds = null,
+                                             ChatContext? chatContext = null,
+                                             Model? model = default,
+                                             CancellationToken cancellationToken = default)
     {
         chatName = string.IsNullOrWhiteSpace(chatName) ? "New Conversation" : chatName;
 
@@ -113,8 +110,9 @@ public class PiecesCopilot : IPiecesCopilot
         var seededConversation = new SeededConversation(type: ConversationTypeEnum.COPILOT,
                                                         name: chatName,
                                                         messages: conversationMessages,
-                                                        pipeline: pipeline;
-        var conversation = await conversationsApi.ConversationsCreateSpecificConversationAsync(
+                                                        pipeline: pipeline
+                                                        );
+        var conversation = await piecesApis.ConversationsApi.ConversationsCreateSpecificConversationAsync(
             seededConversation: seededConversation,
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
