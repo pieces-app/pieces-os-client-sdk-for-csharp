@@ -36,7 +36,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include=".\README.md" Pack="true" PackagePath="\" />
     <None Include="..\..\assets\pieces-circle.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
