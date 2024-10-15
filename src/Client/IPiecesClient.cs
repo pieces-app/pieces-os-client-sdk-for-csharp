@@ -39,6 +39,16 @@ public interface IPiecesClient
     Task<Model> DownloadModelAsync(string modelName, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Gets the first model that contains the given name.
+    /// If no model matches, the first is returned, unless <see cref="throwIfNotFound"/> 
+    /// is set, then this throws a <see cref="PiecesClientException"/>.
+    /// </summary>
+    /// <param name="modelName">The search string for the model name</param>
+    /// <param name="throwIfNotFound">If false and the model is not found, return the first model. Otherwise throw</param>
+    /// <returns></returns>
+    Model GetModelFromName(string modelName, bool throwIfNotFound = false);
+
+    /// <summary>
     /// Get the Pieces OS version
     /// </summary>
     /// <returns>The version as a string</returns>

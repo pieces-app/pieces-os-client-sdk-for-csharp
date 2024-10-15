@@ -121,12 +121,13 @@ public class PiecesClient : IPiecesClient, IDisposable
 
     /// <summary>
     /// Gets the first model that contains the given name.
-    /// If no model matches, the first is returned.
+    /// If no model matches, the first is returned, unless <see cref="throwIfNotFound"/> 
+    /// is set, then this throws a <see cref="PiecesClientException"/>.
     /// </summary>
     /// <param name="modelName">The search string for the model name</param>
     /// <param name="throwIfNotFound">If false and the model is not found, return the first model. Otherwise throw</param>
     /// <returns></returns>
-    private Model GetModelFromName(string modelName, bool throwIfNotFound = false)
+    public Model GetModelFromName(string modelName, bool throwIfNotFound = false)
     {
         var models = piecesApis.ModelsApi.ModelsSnapshot().Iterable;
         var matchModel = models.FirstOrDefault(x => x.Name.Contains(modelName, StringComparison.OrdinalIgnoreCase));
