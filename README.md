@@ -34,8 +34,8 @@ The Pieces SDK offers the following key features:
 To get started with the Pieces OS Client SDK, follow these steps:
 
 1. **Download Pieces OS**: Pieces OS serves as the primary backend service, providing essential functionality for the SDK. Download the appropriate version for your operating system:
-   - [macOS](https://docs.pieces.app/installation-getting-started/macos) 
-   - [Windows](https://docs.pieces.app/installation-getting-started/windows) 
+   - [macOS](https://docs.pieces.app/installation-getting-started/macos)
+   - [Windows](https://docs.pieces.app/installation-getting-started/windows)
    - [Linux](https://docs.pieces.app/installation-getting-started/linux)
 
 1. **Install the SDK**: Use nuget to install the Pieces OS Client SDK package:
@@ -49,6 +49,21 @@ To get started with the Pieces OS Client SDK, follow these steps:
     ```shell
     dotnet add package Pieces.Extensions.AI --prerelease
     ```
+
+## Projects
+
+This repo contains the following projects:
+
+- [Pieces.OS.Client](./src/Client/) - the OS client SDK
+- [Pieces.Extensions.AI](./src/Extensions/) - support for Microsoft.Extensions.AI
+- [Pieces.Os.Core](./src/Core/) - an internal library wrapping the Pieces OS API
+- [Pieces.OS.Client.Example](./src/Client.Example/) - example code for using the Pieces.OS.Client SDK
+- [Pieces.Extensions.AI.Example](./src/Extensions.Example/) - example code for using the Pieces.Extensions.AI SDK
+- [SampleApps](./src/SampleApps/) - a selection of sample apps
+
+### Sample apps
+
+- [Remind Me](./src/SampleApps/RemindMe/) - an app that reminds you about what you have been working on over the last few hours using live context.
 
 ## Pieces.OS.Client Examples
 

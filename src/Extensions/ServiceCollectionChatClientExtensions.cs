@@ -15,18 +15,20 @@ public static class ServiceCollectionChatClientExtensions
     /// </summary>
     /// <param name="hostBuilder">The host builder to call this on</param>
     /// <param name="builder">A builder function</param>
-    /// <param name="modelId">The Id of the model to use</param>
+    /// <param name="modelId">The Id or name of the model to use</param>
     /// <param name="chatName">The name of the chat</param>
     /// <returns></returns>
     public static IServiceCollection AddPiecesChatClient(
         this IHostApplicationBuilder hostBuilder,
         Func<ChatClientBuilder, ChatClientBuilder>? builder = null,
-        string? modelId = null,
-        string chatName = "")
+        string? model = null,
+        string chatName = "",
+        IPiecesClient? piecesClient = null)
     {
         return hostBuilder.Services.AddPiecesChatClient(
-            modelId,
+            model,
             chatName,
+            piecesClient,
             builder);
     }
 
@@ -35,26 +37,37 @@ public static class ServiceCollectionChatClientExtensions
     /// </summary>
     /// <param name="services">The service collection to call this on</param>
     /// <param name="builder">A builder function</param>
-    /// <param name="modelId">The Id of the model to use</param>
+    /// <param name="modelId">The Id or name of the model to use</param>
     /// <param name="chatName">The name of the chat</param>
     /// <returns></returns>
     public static IServiceCollection AddPiecesChatClient(
         this IServiceCollection services,
-        string? modelId = null,
+        string? model = null,
         string chatName = "",
+        IPiecesClient? piecesClient = null,
         Func<ChatClientBuilder, ChatClientBuilder>? builder = null)
     {
         return services.AddChatClient(pipeline =>
         {
+
             builder?.Invoke(pipeline);
+
+            // Get the logger
             var logger = pipeline.Services.GetService<ILogger>();
 
+            // If the logger is not created yet, create a Pieces logger using the logger factory if it exists
+            if (logger is null)
+            {
+                var loggerFactory = pipeline.Services.GetService<ILoggerFactory>();
+                logger = loggerFactory?.CreateLogger("Pieces logger");
+            }
+
             // Create the Pieces client
-            var client = new PiecesClient(logger);
+            var client = piecesClient ?? new PiecesClient(logger);
 
-            Model? model = default;
+            Model? piecesModel = default;
 
-            if (!string.IsNullOrWhiteSpace(modelId))
+            if (!string.IsNullOrWhiteSpace(model))
             {
                 // Load the models. This is a sync function, and loading models is async, so do the bad thing and 
                 // get the result to force this to be synchronous
@@ -62,11 +75,11 @@ public static class ServiceCollectionChatClientExtensions
 
                 // Find the first model that matches the Id
                 // If there is no match, try based off the name instead
-                model = models.FirstOrDefault(m => m.Id == modelId) ?? client.GetModelFromName(modelId);
+                piecesModel = models.FirstOrDefault(m => m.Id == model) ?? client.GetModelFromName(model);
             }
 
             // Create the chat client in the pipeline
-            return pipeline.Use(new PiecesChatClient(client, chatName, logger, model));
+            return pipeline.Use(new PiecesChatClient(client, chatName, logger, piecesModel));
         });
     }
 }

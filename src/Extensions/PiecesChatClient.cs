@@ -9,6 +9,31 @@ namespace Pieces.Extensions.AI;
 
 public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", ILogger? logger = null, Model? model = null) : IChatClient
 {
+    /// <summary>
+    /// A constant for the name of the AssetsIds property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// </summary>
+    public const string AssetIdsPropertyName = "AssetIds";
+    /// <summary>
+    /// A constant for the name of the Files property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// </summary>
+    public const string FilesPropertyName = "Files";
+    /// <summary>
+    /// A constant for the name of the Folders property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// </summary>
+    public const string FoldersPropertyName = "Folders";
+    /// <summary>
+    /// A constant for the name of the LiveContext property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// </summary>
+    public const string LiveContextPropertyName = "LiveContext";
+    /// <summary>
+    /// A constant for the name of the LiveContextTimeSpan property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// </summary>
+    public const string LiveContextTimeSpanPropertyName = "LiveContextTimeSpan";
+    /// <summary>
+    /// A constant for the name of the PersistChat property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// </summary>
+    public const string PersistChatPropertyName = "PersistChat";
+
     private readonly IPiecesClient piecesClient = piecesClient;
     private readonly string chatName = chatName;
     private readonly ILogger? logger = logger;
@@ -178,7 +203,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         // If we got this chat from the cache, remove the old entry as the messages will be updated to reflect this response
         chatCache.Remove(chatWithCacheKey.CacheKey);
 
-        var persist = GetBoolValueFromOptions(options, "PersistChat", true);
+        var persist = GetBoolValueFromOptions(options, PersistChatPropertyName, true);
 
         if (persist)
         {
@@ -245,11 +270,11 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     {
         return new ChatContext
         {
-            AssetIds = GetValueFromOptions<IEnumerable<string>>(options, "AssetIds"),
-            LiveContext = GetBoolValueFromOptions(options, "LiveContext"),
-            LiveContextTimeSpan = GetValueFromOptions<TimeSpan?>(options, "LiveContextTimeSpan", null),
-            Files = GetValueFromOptions<IEnumerable<string>>(options, "Files"),
-            Folders = GetValueFromOptions<IEnumerable<string>>(options, "Folders"),
+            AssetIds = GetValueFromOptions<IEnumerable<string>>(options, AssetIdsPropertyName),
+            LiveContext = GetBoolValueFromOptions(options, LiveContextPropertyName),
+            LiveContextTimeSpan = GetValueFromOptions<TimeSpan?>(options, LiveContextTimeSpanPropertyName, null),
+            Files = GetValueFromOptions<IEnumerable<string>>(options, FilesPropertyName),
+            Folders = GetValueFromOptions<IEnumerable<string>>(options, FoldersPropertyName),
         };
     }
 

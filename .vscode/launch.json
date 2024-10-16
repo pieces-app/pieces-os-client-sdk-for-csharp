@@ -15,6 +15,12 @@
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/src/Extensions.Example/Pieces.Extensions.AI.Example.csproj"
+        },
+        {
+            "name": "Remind Me Sample Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/src/SampleApps/RemindMe/Pieces.SampleApps.RemindMe.csproj"
         }
     ]
 }
