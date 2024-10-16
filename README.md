@@ -4,6 +4,9 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/graphs/contributors)
 [![GitHub issues by-label](https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-csharp)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues)
+![Publish Client Workflow Status](https://img.shields.io/github/actions/workflow/status/pieces-app/pieces-os-client-sdk-for-csharp/publish-client-nuget.yaml)
+![Publish Extensions Workflow Status](https://img.shields.io/github/actions/workflow/status/pieces-app/pieces-os-client-sdk-for-csharp/publish-extensions-nuget.yaml)
+
 [![Pieces.OS.Client SDK on nuget](https://img.shields.io/nuget/vpre/Pieces.OS.Client)](https://www.nuget.org/packages/Pieces.OS.Client/)
 [![Pieces.Extensions.AI SDK on nuget](https://img.shields.io/nuget/vpre/Pieces.Extensions.AI)](https://www.nuget.org/packages/Pieces.Extensions.AI/)
 [![Discord](https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff)](https://discord.gg/getpieces)
@@ -76,3 +79,17 @@ Details of this example project is provided in the [src/Client/README.md file](.
 There is an example project using the Pieces.Extensions.AI package in the [`./src/Extensions.Example`](./src/Extensions.Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`./src/Extensions.Example`](./src/Extensions.Example) folder.
 
 Details of this example project is provided in the [src/Extensions/README.md file](./src/Extensions/README.md).
+
+## Publish the packages
+
+This repo includes GitHub actions to publish both the Pieces.OS.Client and Pieces.Extensions.AI packages.
+
+The Pieces.Extensions.AI package is dependent on the Pieces.OS.Client package. The way this is implemented is:
+
+- In this repo, the Pieces.Extensions.AI project has a project dependency on Pieces.OS.Client and Pieces.OS.Core
+- In the action to publish, this project dependency is removed, and a nuget package dependency is added to the latest pre-release Pieces.OS.Core.
+
+To publish these packages, do the following:
+
+- Tag this repo using a tag of `client-v<x.y.z-a>` where `<x.y.z-a>` is the version string. For example, to release `0.0.10-beta` you would tag with `client-v0.0.10-beta`. This will only build and publish the Pieces.OS.Client package.
+- Once the Pieces.OS.Client package has been validated and made public on nuget, tag the repo using a tag of `extensions-v<x.y.z-a>`, for example `extensions-v0.0.10-beta`. This will build the Pieces.Extensions.AI package using the nuget package reference to Pieces.OS.Client, and publish to nuget.
