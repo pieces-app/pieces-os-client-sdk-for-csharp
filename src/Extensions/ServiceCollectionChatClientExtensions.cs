@@ -17,6 +17,7 @@ public static class ServiceCollectionChatClientExtensions
     /// <param name="builder">A builder function</param>
     /// <param name="modelId">The Id or name of the model to use</param>
     /// <param name="chatName">The name of the chat</param>
+    /// <param name="piecesClient">The pieces client to use, or create one if this is null</pram>
     /// <returns></returns>
     public static IServiceCollection AddPiecesChatClient(
         this IHostApplicationBuilder hostBuilder,
@@ -39,6 +40,7 @@ public static class ServiceCollectionChatClientExtensions
     /// <param name="builder">A builder function</param>
     /// <param name="modelId">The Id or name of the model to use</param>
     /// <param name="chatName">The name of the chat</param>
+    /// <param name="piecesClient">The pieces client to use, or create one if this is null</pram>
     /// <returns></returns>
     public static IServiceCollection AddPiecesChatClient(
         this IServiceCollection services,
@@ -63,7 +65,7 @@ public static class ServiceCollectionChatClientExtensions
             }
 
             // Create the Pieces client
-            var client = piecesClient ?? new PiecesClient(logger);
+            piecesClient ??= new PiecesClient(logger);
 
             Model? piecesModel = default;
 
@@ -71,15 +73,15 @@ public static class ServiceCollectionChatClientExtensions
             {
                 // Load the models. This is a sync function, and loading models is async, so do the bad thing and 
                 // get the result to force this to be synchronous
-                var models = client.GetModelsAsync().Result;
+                var models = piecesClient.GetModelsAsync().Result;
 
                 // Find the first model that matches the Id
                 // If there is no match, try based off the name instead
-                piecesModel = models.FirstOrDefault(m => m.Id == model) ?? client.GetModelFromName(model);
+                piecesModel = models.FirstOrDefault(m => m.Id == model) ?? piecesClient.GetModelFromName(model);
             }
 
             // Create the chat client in the pipeline
-            return pipeline.Use(new PiecesChatClient(client, chatName, logger, piecesModel));
+            return pipeline.Use(new PiecesChatClient(piecesClient, chatName, logger, piecesModel));
         });
     }
 }

@@ -2,13 +2,16 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Pieces.Extensions.AI;
+using Pieces.OS.Client;
 
 // Set up the service collection with logging and the chat client
 var chatName = $"Recent work reminder {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
 var services = new ServiceCollection();
-services.AddLogging(builder => builder.AddConsole())
-        .AddPiecesChatClient(model: "Claude 3.5 sonnet", chatName: chatName);
+services.AddLogging(builder => builder.AddConsole());
+services.AddChatClient(builder => builder.UseLogging()
+                                         .Use(new PiecesChatClient(new PiecesClient()))); 
 var serviceProvider = services.BuildServiceProvider();
+
 
 // Get the chat client
 var chatClient = serviceProvider.GetRequiredService<IChatClient>();
