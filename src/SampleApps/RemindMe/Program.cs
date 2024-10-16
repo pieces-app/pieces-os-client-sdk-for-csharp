@@ -9,7 +9,7 @@ var chatName = $"Recent work reminder {DateTime.Now.ToShortDateString()} {DateTi
 var services = new ServiceCollection();
 services.AddLogging(builder => builder.AddConsole());
 services.AddChatClient(builder => builder.UseLogging()
-                                         .Use(new PiecesChatClient(new PiecesClient()))); 
+                                         .Use(new PiecesChatClient(new PiecesClient(), chatName: chatName))); 
 var serviceProvider = services.BuildServiceProvider();
 
 
