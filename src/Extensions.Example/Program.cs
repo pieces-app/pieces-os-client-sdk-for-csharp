@@ -375,3 +375,31 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 // }
 
 #endregion Chat client with a model
+
+#region Chat about a folder
+
+// This example chats about the current folder
+
+// {
+//     // Create a Chat completion
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Chat about a folder - {DateTime.Now.ToShortTimeString()}", logger: logger);
+
+//     // Set the system prompt
+//     var chatMessages = new List<ChatMessage>{
+//         new(ChatRole.User, "Describe this C# project")
+//     };
+
+//     var options = new ChatOptions()
+//     {
+//         AdditionalProperties = new AdditionalPropertiesDictionary{
+//             { "Folders", new List<string>{Environment.CurrentDirectory} },
+//         }
+//     };
+
+//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options).ConfigureAwait(false))
+//     {
+//         Console.Write(r.Text);
+//     }
+// }
+
+#endregion Chat about a folder
