@@ -5,11 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: Example Debug",
+            "name": "Client Example Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/src/Example/Pieces.OS.Example.csproj"
+            "projectPath": "${workspaceFolder}/src/Client.Example/Pieces.OS.Client.Example.csproj"
+        },
+        {
+            "name": "Extensions Example Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/src/Extensions.Example/Pieces.Extensions.AI.Example.csproj"
+        },
+        {
+            "name": "Remind Me Sample Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/src/SampleApps/RemindMe/Pieces.SampleApps.RemindMe.csproj"
         }
-
     ]
 }
