@@ -29,7 +29,7 @@ The Pieces SDK offers the following key features:
 1. Copilot Chats: Communicate seamlessly with copilot chats functionality.
 1. Asset Management: Save and manage assets and formats efficiently.
 1. Local Server Interaction: Interact with a locally hosted server for various functionality.
-1. Multi LLMs support: Use any Pieces supported LLM to power your app.
+1. Multi-LLM support: Use any Pieces supported LLM to power your app.
 1. File, folder, and live context in copilot chats
 
 ## Installation
@@ -70,13 +70,13 @@ This repo contains the following projects:
 
 ## Pieces.OS.Client Examples
 
-There is an example project using the Pieces.OS.Client package in the [`./src/Client.Example`](./src/Client.Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`./src/Client.Example`](./src/Client.Example) folder.
+There is an example project using the Pieces.OS.Client package in the [`./src/Client.Example`](./src/Client.Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you want to run, then run `dotnet run` from the [`./src/Client.Example`](./src/Client.Example) folder.
 
 Details of this example project is provided in the [src/Client/README.md file](./src/Client/README.md).
 
 ## Pieces.Extensions.AI Examples
 
-There is an example project using the Pieces.Extensions.AI package in the [`./src/Extensions.Example`](./src/Extensions.Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`./src/Extensions.Example`](./src/Extensions.Example) folder.
+There is an example project using the Pieces.Extensions.AI package in the [`./src/Extensions.Example`](./src/Extensions.Example) folder. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you want to run, then run `dotnet run` from the [`./src/Extensions.Example`](./src/Extensions.Example) folder.
 
 Details of this example project is provided in the [src/Extensions/README.md file](./src/Extensions/README.md).
 
