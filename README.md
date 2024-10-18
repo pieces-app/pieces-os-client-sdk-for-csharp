@@ -60,7 +60,7 @@ This repo contains the following projects:
 
 - [Pieces.OS.Client](./src/Client/) - the OS client SDK
 - [Pieces.Extensions.AI](./src/Extensions/) - support for Microsoft.Extensions.AI
-- [Pieces.Os.Core](./src/Core/) - an internal library wrapping the Pieces OS API
+- [Pieces.OS.Core](./src/Core/) - an internal library wrapping the Pieces OS API
 - [Pieces.OS.Client.Example](./src/Client.Example/) - example code for using the Pieces.OS.Client SDK
 - [Pieces.Extensions.AI.Example](./src/Extensions.Example/) - example code for using the Pieces.Extensions.AI SDK
 - [SampleApps](./src/SampleApps/) - a selection of sample apps
