@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'extensions-*'
+
+jobs:
+  publish-extensions-to-nuget:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+      # Set up .NET 8
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.*
+      
+      # Update the Pieces.OS.Client to use the latest nuget package, not the local packages
+    - name: Update the Pieces.OS.Client nuget package
+      working-directory: ./src/Extensions
+      run: |
+        dotnet remove reference ../Core/src/Pieces.Os.Core/Pieces.Os.Core.csproj
+        dotnet remove reference ../Client/Pieces.OS.Client.csproj
+        dotnet add package Pieces.OS.Client --prerelease
+
+      # Build the Microsoft.Extensions.AI implementation package
+    - name: Build AI Extension
+      working-directory: ./src/Extensions
+      run: dotnet build -c Release -p:Version=${GITHUB_REF#refs/tags/extensions-v}
+
+      # Download the nuget signing certificate to a local file from the Actions secret
+    - name: Get the nuget signing certificate
+      id: cert_file
+      uses: timheuer/base64-to-file@v1.2
+      with:
+        fileName: 'certfile.pfx'
+        encodedString: ${{ secrets.NUGET_CERTIFICATE }}
+
+      # Sign the Microsoft.Extensions.AI implementation nuget package with the certificate from the Actions secret
+    - name: Sign the Extensions nuget package
+      working-directory: ./src/Extensions
+      run: dotnet nuget sign ./bin/Release/Pieces.Extensions.AI.${GITHUB_REF#refs/tags/extensions-v}.nupkg --certificate-path ${{ steps.cert_file.outputs.filePath }} --certificate-password ${{ secrets.NUGET_CERTIFICATE_PASSWORD }} --timestamper http://timestamp.digicert.com
+
+      # Push the Microsoft.Extensions.AI implementation nuget package to nuget
+    - name: Push the Extensions package to NuGet
+      working-directory: ./src/Extensions
+      run: dotnet nuget push ./bin/Release/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://nuget.org
+
+    

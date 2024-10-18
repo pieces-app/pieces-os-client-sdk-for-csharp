@@ -34,15 +34,21 @@ public class CopilotChat : ICopilotChat
                          IWebSocketBackgroundClient<QGPTStreamOutput> webSocketClient,
                          Conversation conversation,
                          PiecesApis piecesApis,
-                         ChatContext? chatContext)
+                         ChatContext? chatContext,
+                         IEnumerable<SeedMessage>? seeds = null)
     {
         this.logger = logger;
-        Model = model;
         this.application = application;
         this.webSocketClient = webSocketClient;
         this.conversation = conversation;
         this.piecesApis = piecesApis;
+
+        if (seeds is not null)
+        {
+            messages.AddRange(seeds.Select(s => new Message(s.Role, s.Message)));
+        }
         
+        Model = model;
         ChatContext = chatContext;
     }
 

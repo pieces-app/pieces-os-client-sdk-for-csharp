@@ -110,14 +110,42 @@ public class PiecesClient : IPiecesClient, IDisposable
 
             logger?.LogInformation("Web sockets started");
 
-            // Get all the models to pick a default - choose GPT-4o mini if it is available
-            var models = new ModelsApi(apiClient, apiClient, configuration).ModelsSnapshot().Iterable;
-            var defaultModel = models.FirstOrDefault(x => x.Name.Contains("GPT-4o")) ?? models.First();
+            // Get all the models to pick a default - choose GPT-4o if it is available
+            var models = piecesApis.ModelsApi.ModelsSnapshot().Iterable;
+            var defaultModel = models.FirstOrDefault(x => x.Name.Contains("GPT-4o Chat", StringComparison.OrdinalIgnoreCase));
 
             copilot = new PiecesCopilot(logger, defaultModel, application!, qgptWebSocket, piecesApis);
             assets = new PiecesAssets(logger, application!, new AssetApi(apiClient, apiClient, configuration), new AssetsApi(apiClient, apiClient, configuration));
         });
         this.logger = logger;
+    }
+
+    /// <summary>
+    /// Gets the first model that contains the given name.
+    /// If no model matches, the first is returned, unless <see cref="throwIfNotFound"/> 
+    /// is set, then this throws a <see cref="PiecesClientException"/>.
+    /// </summary>
+    /// <param name="modelName">The search string for the model name</param>
+    /// <param name="throwIfNotFound">If false and the model is not found, return the first model. Otherwise throw</param>
+    /// <returns></returns>
+    public async Task<Model> GetModelByNameAsync(string modelName, bool throwIfNotFound = false)
+    {
+        var models = await GetModelsAsync().ConfigureAwait(false);
+        var matchModel = models.FirstOrDefault(x => x.Name.Contains(modelName, StringComparison.OrdinalIgnoreCase));
+        
+        if (matchModel == null)
+        {
+            if (throwIfNotFound)
+            {
+                throw new PiecesClientException($"Model {modelName} not found");
+            }
+            else
+            {
+                matchModel = models.First();
+            }
+        }
+       
+       return matchModel;
     }
 
     private async Task EnsureConnected() => await webSocketTask.ConfigureAwait(false);
@@ -203,9 +231,26 @@ public class PiecesClient : IPiecesClient, IDisposable
         }
 
         // Now load the model
-        var loadedModel = await piecesApis.ModelApi.ModelSpecificModelLoadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return await piecesApis.ModelApi.ModelSpecificModelLoadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
 
-        return loadedModel;
+    /// <summary>
+    /// Downloads an offline model based off the name. Models are found using a case insensitive comparison
+    /// finding the first model with a name that contains the given model name.
+    /// 
+    /// For example, if you use GPT-4o as the model name, it will match GPT-4o Mini Chat Model.
+    /// 
+    /// If the model is not found, a <see cref="PiecesException"/> is thrown.
+    /// 
+    /// If the model is not offline, this just returns the model.
+    /// If the model is an offline model, and is already downloaded, this just returns the model
+    /// </summary>
+    /// <param name="modelName">The name model to download</param>
+    /// <returns></returns>
+    public async Task<Model> DownloadModelAsync(string modelName, CancellationToken cancellationToken = default)
+    {
+        var model = await GetModelByNameAsync(modelName, true).ConfigureAwait(false);
+        return await DownloadModelAsync(model, cancellationToken).ConfigureAwait(false);
     }
 
     /// <summary>

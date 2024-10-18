@@ -3,7 +3,7 @@
 /// You can find each example in a region below. These examples are commented out, so uncomment each one to run it.
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
+using Pieces.Os.Core.SdkModel;
 using Pieces.OS.Client;
 using Pieces.OS.Client.Copilot;
 
@@ -446,8 +446,8 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 
 // {
 //     var models = await client.GetModelsAsync().ConfigureAwait(false);
-//     var llamaModel = models.First(m => m.Name.Contains("Llama-3", StringComparison.CurrentCultureIgnoreCase));
-//     var phi3Model = models.First(m => m.Name.Contains("Phi-3", StringComparison.CurrentCultureIgnoreCase));
+//     var llamaModel = await client.GetModelByNameAsync("Llama-3").ConfigureAwait(false);
+//     var phi3Model = await client.GetModelByNameAsync("Phi-3").ConfigureAwait(false);
 
 //     var chatModel = copilot.Model.Id == llamaModel.Id ? phi3Model : llamaModel;
 
@@ -468,3 +468,169 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // }
 
 #endregion Change the model to a local model
+
+#region Seed a conversation
+
+// Seed a conversation
+//
+// This example shows how to seed a conversation with a set of messages
+// That are used in the conversation
+
+// {
+//     var seeds = new List<SeedMessage>{
+//         new(Pieces.OS.Client.Copilot.Role.System, "Answer every question from now on in the style of a pirate. Start every response with 'Hey matey!'."),
+//         new(Pieces.OS.Client.Copilot.Role.User, "How can I make a web request"),
+//         new(Pieces.OS.Client.Copilot.Role.Assistant, @"To make a web request in a programming language, you typically use an HTTP client library. Below are examples in a few popular languages:
+
+//     ### Python
+//     You can use the `requests` library to make web requests in Python.
+
+//     ```python
+//     import requests
+
+//     response = requests.get('https://api.example.com/data')
+//     if response.status_code == 200:
+//         print(response.json())
+//     else:
+//         print(f'Error: {response.status_code}')
+//     ```
+
+//     ### JavaScript (using Fetch API)
+//     In JavaScript, you can use the Fetch API to make web requests.
+
+//     ```javascript
+//     fetch('https://api.example.com/data')
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok ' + response.statusText);
+//             }
+//             return response.json();
+//         })
+//         .then(data => console.log(data))
+//         .catch(error => console.error('There was a problem with the fetch operation:', error));
+//     ```
+
+//     ### Java (using HttpURLConnection)
+//     In Java, you can use `HttpURLConnection` to make web requests.
+
+//     ```java
+//     import java.io.BufferedReader;
+//     import java.io.InputStreamReader;
+//     import java.net.HttpURLConnection;
+//     import java.net.URL;
+
+//     public class WebRequestExample {
+//         public static void main(String[] args) {
+//             try {
+//                 URL url = new URL(""https://api.example.com/data\"");
+//                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+//                 conn.setRequestMethod(""GET"");
+
+//                 int responseCode = conn.getResponseCode();
+//                 if (responseCode == HttpURLConnection.HTTP_OK) {
+//                     BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+//                     String inputLine;
+//                     StringBuilder response = new StringBuilder();
+
+//                     while ((inputLine = in.readLine()) != null) {
+//                         response.append(inputLine);
+//                     }
+//                     in.close();
+//                     System.out.println(response.toString());
+//                 } else {
+//                     System.out.println(""GET request failed: "" + responseCode);
+//                 }
+//             } catch (Exception e) {
+//                 e.printStackTrace();
+//             }
+//         }
+//     }
+//     ```
+
+//     ### C# (using HttpClient)
+//     In C#, you can use `HttpClient` to make web requests.
+
+//     ```csharp
+//     using System;
+//     using System.Net.Http;
+//     using System.Threading.Tasks;
+
+//     class Program
+//     {
+//         static async Task Main()
+//         {
+//             using (HttpClient client = new HttpClient())
+//             {
+//                 HttpResponseMessage response = await client.GetAsync(""https://api.example.com/data"");
+//                 if (response.IsSuccessStatusCode)
+//                 {
+//                     string data = await response.Content.ReadAsStringAsync();
+//                     Console.WriteLine(data);
+//                 }
+//                 else
+//                 {
+//                     Console.WriteLine($""Error: {response.StatusCode}"");
+//                 }
+//             }
+//         }
+//     }
+//     ```
+
+//     Choose the example that fits the programming language you are using!"),
+//         new(Pieces.OS.Client.Copilot.Role.User, "I am using C#"),
+//         new(Pieces.OS.Client.Copilot.Role.Assistant, @"Great! Since you're using C#, you can use the `HttpClient` class to make web requests. Here's a simple example of how to perform a GET request:
+
+//     ```csharp
+//     using System;
+//     using System.Net.Http;
+//     using System.Threading.Tasks;
+
+//     class Program
+//     {
+//         static async Task Main()
+//         {
+//             using (HttpClient client = new HttpClient())
+//             {
+//                 try
+//                 {
+//                     HttpResponseMessage response = await client.GetAsync(""https://api.example.com/data"");
+//                     if (response.IsSuccessStatusCode)
+//                     {
+//                         string data = await response.Content.ReadAsStringAsync();
+//                         Console.WriteLine(data);
+//                     }
+//                     else
+//                     {
+//                         Console.WriteLine($""Error: {response.StatusCode}"");
+//                     }
+//                 }
+//                 catch (Exception e)
+//                 {
+//                     Console.WriteLine($""Exception occurred: {e.Message}"");
+//                 }
+//             }
+//         }
+//     }
+//     ```
+
+//     ### Explanation:
+//     - **HttpClient**: This class is used to send HTTP requests and receive HTTP responses from a resource identified by a URI.
+//     - **GetAsync**: This method sends a GET request to the specified URI.
+//     - **IsSuccessStatusCode**: This property checks if the response status code indicates success (2xx).
+//     - **ReadAsStringAsync**: This method reads the response content as a string asynchronously.
+
+//     Make sure to replace `""https://api.example.com/data""` with the actual URL you want to request. If you have any specific requirements or questions, feel free to ask!"),
+//     };
+
+//     var chat = await copilot.CreateSeededChatAsync("Question on async tasks", seeds: seeds).ConfigureAwait(false);
+
+//     var question = "Comment this code";
+//     var response = await chat.AskQuestionAsync(question);
+
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+//     Console.WriteLine(response);
+//     Console.WriteLine();
+// }
+
+#endregion Seed a conversation

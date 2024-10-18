@@ -24,6 +24,31 @@ public interface IPiecesClient
     Task<Model> DownloadModelAsync(Model model, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Downloads an offline model based off the name. Models are found using a case insensitive comparison
+    /// finding the first model with a name that contains the given model name.
+    /// 
+    /// For example, if you use GPT-4o as the model name, it will match GPT-4o Mini Chat Model.
+    /// 
+    /// If the model is not found, a <see cref="PiecesException"/> is thrown.
+    /// 
+    /// If the model is not offline, this just returns the model.
+    /// If the model is an offline model, and is already downloaded, this just returns the model
+    /// </summary>
+    /// <param name="modelName">The name model to download</param>
+    /// <returns></returns>
+    Task<Model> DownloadModelAsync(string modelName, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Gets the first model that contains the given name.
+    /// If no model matches, the first is returned, unless <see cref="throwIfNotFound"/> 
+    /// is set, then this throws a <see cref="PiecesClientException"/>.
+    /// </summary>
+    /// <param name="modelName">The search string for the model name</param>
+    /// <param name="throwIfNotFound">If false and the model is not found, return the first model. Otherwise throw</param>
+    /// <returns></returns>
+    Task<Model> GetModelByNameAsync(string modelName, bool throwIfNotFound = false);
+
+    /// <summary>
     /// Get the Pieces OS version
     /// </summary>
     /// <returns>The version as a string</returns>
