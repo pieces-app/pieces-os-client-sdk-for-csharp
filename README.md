@@ -20,7 +20,7 @@ The Pieces OS Client SDK is a set of powerful code engine packages designed for 
 
 This SDK has 2 packages:
 
-- [Pieces.Os.Client](https://www.nuget.org/packages/Pieces.OS.Client/) - this is the core SDK package providing access to the features of Pieces from your C# application
+- [Pieces.OS.Client](https://www.nuget.org/packages/Pieces.OS.Client/) - this is the core SDK package providing access to the features of Pieces from your C# application
 - [Pieces.Extensions.AI](https://www.nuget.org/packages/Pieces.Extensions.AI/) - this is an implementation of [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI/) using Pieces to provide support for multiple LLMs, as well as adding context such as snippets, files, folders, and live context to your AI conversation.
 
 ## Features
