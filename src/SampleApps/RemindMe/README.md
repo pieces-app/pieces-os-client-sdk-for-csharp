@@ -33,8 +33,8 @@ To run this code, follow these steps:
    - [macOS](https://docs.pieces.app/installation-getting-started/macos)
    - [Windows](https://docs.pieces.app/installation-getting-started/windows)
    - [Linux](https://docs.pieces.app/installation-getting-started/linux)
-1. Ensure the Workstream Pattern Engine is running.
-1. Build and run the app:
+2. Ensure the Workstream Pattern Engine is running.
+3. Build and run the app:
 
     ```shell
     dotnet run
