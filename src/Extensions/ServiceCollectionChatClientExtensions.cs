@@ -51,7 +51,6 @@ public static class ServiceCollectionChatClientExtensions
     {
         return services.AddChatClient(pipeline =>
         {
-
             builder?.Invoke(pipeline);
 
             // Get the logger
@@ -77,7 +76,7 @@ public static class ServiceCollectionChatClientExtensions
 
                 // Find the first model that matches the Id
                 // If there is no match, try based off the name instead
-                piecesModel = models.FirstOrDefault(m => m.Id == model) ?? piecesClient.GetModelFromName(model);
+                piecesModel = models.FirstOrDefault(m => m.Id == model) ?? piecesClient.GetModelByNameAsync(model).Result;
             }
 
             // Create the chat client in the pipeline

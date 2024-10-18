@@ -446,8 +446,8 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 
 // {
 //     var models = await client.GetModelsAsync().ConfigureAwait(false);
-//     var llamaModel = models.First(m => m.Name.Contains("Llama-3", StringComparison.CurrentCultureIgnoreCase));
-//     var phi3Model = models.First(m => m.Name.Contains("Phi-3", StringComparison.CurrentCultureIgnoreCase));
+//     var llamaModel = await client.GetModelByNameAsync("Llama-3").ConfigureAwait(false);
+//     var phi3Model = await client.GetModelByNameAsync("Phi-3").ConfigureAwait(false);
 
 //     var chatModel = copilot.Model.Id == llamaModel.Id ? phi3Model : llamaModel;
 

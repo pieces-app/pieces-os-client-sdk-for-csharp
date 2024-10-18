@@ -111,7 +111,8 @@ public class PiecesClient : IPiecesClient, IDisposable
             logger?.LogInformation("Web sockets started");
 
             // Get all the models to pick a default - choose GPT-4o if it is available
-            var defaultModel = GetModelFromName("GPT-4o");
+            var models = piecesApis.ModelsApi.ModelsSnapshot().Iterable;
+            var defaultModel = models.FirstOrDefault(x => x.Name.Contains("GPT-4o Chat", StringComparison.OrdinalIgnoreCase));
 
             copilot = new PiecesCopilot(logger, defaultModel, application!, qgptWebSocket, piecesApis);
             assets = new PiecesAssets(logger, application!, new AssetApi(apiClient, apiClient, configuration), new AssetsApi(apiClient, apiClient, configuration));
@@ -127,9 +128,9 @@ public class PiecesClient : IPiecesClient, IDisposable
     /// <param name="modelName">The search string for the model name</param>
     /// <param name="throwIfNotFound">If false and the model is not found, return the first model. Otherwise throw</param>
     /// <returns></returns>
-    public Model GetModelFromName(string modelName, bool throwIfNotFound = false)
+    public async Task<Model> GetModelByNameAsync(string modelName, bool throwIfNotFound = false)
     {
-        var models = piecesApis.ModelsApi.ModelsSnapshot().Iterable;
+        var models = await GetModelsAsync().ConfigureAwait(false);
         var matchModel = models.FirstOrDefault(x => x.Name.Contains(modelName, StringComparison.OrdinalIgnoreCase));
         
         if (matchModel == null)
@@ -248,7 +249,7 @@ public class PiecesClient : IPiecesClient, IDisposable
     /// <returns></returns>
     public async Task<Model> DownloadModelAsync(string modelName, CancellationToken cancellationToken = default)
     {
-        var model = GetModelFromName(modelName, true);
+        var model = await GetModelByNameAsync(modelName, true).ConfigureAwait(false);
         return await DownloadModelAsync(model, cancellationToken).ConfigureAwait(false);
     }
 

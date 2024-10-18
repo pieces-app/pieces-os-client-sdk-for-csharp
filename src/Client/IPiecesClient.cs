@@ -46,7 +46,7 @@ public interface IPiecesClient
     /// <param name="modelName">The search string for the model name</param>
     /// <param name="throwIfNotFound">If false and the model is not found, return the first model. Otherwise throw</param>
     /// <returns></returns>
-    Model GetModelFromName(string modelName, bool throwIfNotFound = false);
+    Task<Model> GetModelByNameAsync(string modelName, bool throwIfNotFound = false);
 
     /// <summary>
     /// Get the Pieces OS version
