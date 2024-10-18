@@ -6,12 +6,13 @@
 [![GitHub issues by-label](https://img.shields.io/github/issues/pieces-app/pieces-os-client-sdk-for-csharp)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues)
 ![Publish Client Workflow Status](https://img.shields.io/github/actions/workflow/status/pieces-app/pieces-os-client-sdk-for-csharp/publish-client-nuget.yaml)
 ![Publish Extensions Workflow Status](https://img.shields.io/github/actions/workflow/status/pieces-app/pieces-os-client-sdk-for-csharp/publish-extensions-nuget.yaml)
+[![License](https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/blob/main/LICENSE)
 
-[![Pieces.OS.Client SDK on nuget](https://img.shields.io/nuget/vpre/Pieces.OS.Client)](https://www.nuget.org/packages/Pieces.OS.Client/)
-[![Pieces.Extensions.AI SDK on nuget](https://img.shields.io/nuget/vpre/Pieces.Extensions.AI)](https://www.nuget.org/packages/Pieces.Extensions.AI/)
+[![NuGet Version](https://img.shields.io/nuget/v/Pieces.OS.Client?label=Pieces.OS.Client%20on%20nuget)](https://www.nuget.org/packages/Pieces.OS.Client/)
+[![Pieces.Extensions.AI SDK on nuget](https://img.shields.io/nuget/vpre/Pieces.Extensions.AI?label=Pieces.Extensions.AI%20on%20nuget)](https://www.nuget.org/packages/Pieces.Extensions.AI/)
+
 [![Discord](https://img.shields.io/badge/Discord-@layer5.svg?color=7389D8&label&logo=discord&logoColor=ffffff)](https://discord.gg/getpieces)
 [![Twitter Follow](https://img.shields.io/twitter/follow/pieces.svg?label=Follow)](https://twitter.com/getpieces)
-[![License](https://img.shields.io/github/license/pieces-app/pieces-os-client-sdk-for-csharp.svg)](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/blob/main/LICENSE)
 
 ## Introduction
 
