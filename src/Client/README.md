@@ -9,7 +9,7 @@ The Pieces SDK offers the following key features:
 1. Copilot Chats: Communicate seamlessly with copilot chats functionality.
 1. Asset Management: Save and manage assets and formats efficiently.
 1. Local Server Interaction: Interact with a locally hosted server for various functionality.
-1. Multi LLMs support: Use any Pieces supported LLM to power your app.
+1. Multi-LLM support: Use any Pieces supported LLM to power your app.
 
 ## Installation
 
@@ -28,7 +28,7 @@ To get started with the Pieces OS Client SDK, follow these steps:
 
 ## Pieces Client Examples
 
-There is an example project using the Pieces Client in the [`Client.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Client.Example/Program.cs) project. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`Client.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Client.Example) project.
+There is an example project using the Pieces Client in the [`Client.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Client.Example/Program.cs) project. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you want to run, then run `dotnet run` from the [`Client.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Client.Example) project.
 
 ## Quickstart
 

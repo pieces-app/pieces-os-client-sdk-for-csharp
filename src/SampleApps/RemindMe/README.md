@@ -29,7 +29,7 @@ As a fun easter egg, depending on the day of the year, this will also add a syst
 
 To run this code, follow these steps:
 
-1. **Download Pieces OS**: Pieces OS serves as the primary backend service, providing essential functionality for the SDK. If you don't have it installed and running alredy, download the appropriate version for your operating system:
+1. **Download Pieces OS**: Pieces OS serves as the primary backend service, providing essential functionality for the SDK. If you don't have it installed and running already, download the appropriate version for your operating system:
    - [macOS](https://docs.pieces.app/installation-getting-started/macos)
    - [Windows](https://docs.pieces.app/installation-getting-started/windows)
    - [Linux](https://docs.pieces.app/installation-getting-started/linux)

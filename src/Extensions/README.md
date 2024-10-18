@@ -27,7 +27,7 @@ To get started with the Pieces.Extensions.AI, follow these steps:
 
 ## Pieces.Extensions.AI Examples
 
-There is an example project using the Pieces.Extensions.AI package in the [`Extensions.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Extensions.Example/Program.cs) project. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you wan to run, then run `dotnet run` from the [`Extensions.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Extensions.Example) project.
+There is an example project using the Pieces.Extensions.AI package in the [`Extensions.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Extensions.Example/Program.cs) project. This example is a console app containing a range of different examples, each commented out. To run these examples, uncomment the one you want to run, then run `dotnet run` from the [`Extensions.Example`](https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/tree/main/src/Extensions.Example) project.
 
 ## Quickstart
 
@@ -53,7 +53,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 IChatClient chatClient = new PiecesChatClient(client, chatName: "A new chat", logger: logger);
 ```
 
-When you use the chat client, a new conversation is create in Pieces, and each time you call `chatClient.CompleteAsync` or `chatClient.CompleteStreamingAsync`, the same conversation is continued - assuming that the original chat messages have not changed. If this happens, a new conversation is created.
+When you use the chat client, a new conversation is created in Pieces, and each time you call `chatClient.CompleteAsync` or `chatClient.CompleteStreamingAsync`, the same conversation is continued - assuming that the original chat messages have not changed. If this happens, a new conversation is created.
 
 You can configure the chat with the following `ChatOptions` settings:
 
@@ -65,7 +65,7 @@ You can also set the following in the `ChatOptions.AdditionalProperties` diction
 
 | Setting               | Type                   | Default  | Description |
 | --------------------- | ---------------------- | -------- | ----------- |
-| `PersistChat`         | `bool`                 | `true`   | Should the conversation be saved in Pieces> If this is false, after each chat message, the conversation is deleted and a new one started. |
+| `PersistChat`         | `bool`                 | `true`   | Should the conversation be saved in Pieces? If this is false, after each chat message, the conversation is deleted and a new one started. |
 | `AssetIds`            | `IEnumerable<string>?` | `null`   | A list of asset Ids to add as context to this conversation. |
 | `Files`               | `IEnumerable<string>?` | `null`   | A list of file paths to add as context to this conversation. |
 | `Folders`             | `IEnumerable<string>?` | `null`   | A list of folder paths to add as context to this conversation. |
