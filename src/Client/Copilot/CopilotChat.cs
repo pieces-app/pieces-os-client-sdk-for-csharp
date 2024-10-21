@@ -294,6 +294,7 @@ public class CopilotChat : ICopilotChat
             relevant: relevant,
             application: application.Id,
             temporal: temporalRangeGrounding,
+            messages: conversation.Messages,
             model: Model.Id
         );
 
