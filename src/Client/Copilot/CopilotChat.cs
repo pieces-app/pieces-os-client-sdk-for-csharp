@@ -406,10 +406,10 @@ public class CopilotChat : ICopilotChat
     }
 
     /// <summary>
-    /// Create the temporal grounding. This is only relevant for live context, and creates a grounding based
+    /// Create the temporal grounding. This is only relevant for Pieces Long-Term Memory, and creates a grounding based
     /// off the time span specified in the chat context, defaulting to 15 minutes if this is not set.
     /// 
-    /// As part of this, the pipeline is checked. For live context, this pipeline should contain a
+    /// As part of this, the pipeline is checked. For Pieces Long-Term Memory, this pipeline should contain a
     /// <see cref="QGPTConversationPipelineForContextualizedCodeWorkstreamDialog"/>. If not using live
     /// context, it should contain a <see cref="QGPTConversationPipelineForGeneralizedCodeDialog"/>.
     /// 
@@ -422,10 +422,10 @@ public class CopilotChat : ICopilotChat
     {
         TemporalRangeGrounding? temporalRangeGrounding = default;
 
-        if (ChatContext?.LiveContext == true)
+        if (ChatContext?.LongTermMemory == true)
         {
-            var span = ChatContext?.LiveContextTimeSpan ?? TimeSpan.FromMinutes(15);
-            logger?.LogInformation("Using live context with a time span of: {span}.", span);
+            var span = ChatContext?.LongTermMemoryTimeSpan ?? TimeSpan.FromMinutes(15);
+            logger?.LogInformation("Using Pieces Long-Term Memory with a time span of: {span}.", span);
             // Create a temporal range from the provided time span ago to now minutes
             // If the provided time span is null, use 15 minutes ago
             var to = new GroupedTimestamp(value: DateTime.UtcNow);
@@ -437,7 +437,7 @@ public class CopilotChat : ICopilotChat
             var flattenedRanges = new FlattenedRanges(iterable: [referencedRange]);
             temporalRangeGrounding = new TemporalRangeGrounding(workstreams: flattenedRanges);
 
-            // If the conversation wasn't set up for live context, set this up now
+            // If the conversation wasn't set up for Pieces Long-Term Memory, set this up now
             if (conversation.Pipeline.Conversation.ContextualizedCodeWorkstreamDialog is null)
             {
                 var dialog = new QGPTConversationPipelineForContextualizedCodeWorkstreamDialog();
@@ -447,9 +447,9 @@ public class CopilotChat : ICopilotChat
         }
         else
         {
-            logger?.LogInformation("Not using live context");
+            logger?.LogInformation("Not using Pieces Long-Term Memory");
 
-            // If the conversation was set up for live context, disable this if we are not using live context now
+            // If the conversation was set up for Pieces Long-Term Memory, disable this if we are not using Pieces Long-Term Memory now
             if (conversation.Pipeline.Conversation.ContextualizedCodeWorkstreamDialog is null)
             {
                 var dialog = new QGPTConversationPipelineForGeneralizedCodeDialog();

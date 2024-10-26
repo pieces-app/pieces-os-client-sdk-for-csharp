@@ -237,14 +237,14 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 
 #endregion A continuous streaming conversation
 
-#region Live context
+#region Pieces Long-Term Memory
 
-// This example shows how to use live context in a chat completion via the Additional Properties dictionary.
+// This example shows how to use Pieces Long-Term Memory in a chat completion via the Additional Properties dictionary.
 // To run this, read this GitHub issue in your browser before running this: https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues/8
 
 // {
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Live context chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Pieces Long-Term Memory chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     var chatMessages = new List<ChatMessage>{
 //         new(ChatRole.User, "Describe the Add support for Microsoft.Extensions.AI github issue I was just reading about in my browser")
@@ -253,8 +253,8 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     var options = new ChatOptions()
 //     {
 //         AdditionalProperties = new AdditionalPropertiesDictionary{
-//             { "LiveContext", true },
-//             { "LiveContextTimeSpan", TimeSpan.FromHours(1) }
+//             { "LongTermMemory", true },
+//             { "LongTermMemoryTimeSpan", TimeSpan.FromHours(1) }
 //         }
 //     };
 
@@ -266,16 +266,16 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine();
 // }
 
-#endregion Live context
+#endregion Pieces Long-Term Memory
 
-#region Live context turned on after a question
+#region Pieces Long-Term Memory turned on after a question
 
-// This example shows how to use live context in a chat completion via the Additional Properties dictionary.
+// This example shows how to use Pieces Long-Term Memory in a chat completion via the Additional Properties dictionary.
 // To run this, read this GitHub issue in your browser before running this: https://github.com/pieces-app/pieces-os-client-sdk-for-csharp/issues/8
 
 // {
 //     // Create a Chat completion
-//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Live context chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Pieces Long-Term Memory chat - {DateTime.Now.ToShortTimeString()}", logger: logger);
 
 //     var chatMessages = new List<ChatMessage>{
 //         new(ChatRole.User, "Hello")
@@ -296,8 +296,8 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     var options = new ChatOptions()
 //     {
 //         AdditionalProperties = new AdditionalPropertiesDictionary{
-//             { "LiveContext", true },
-//             { "LiveContextTimeSpan", TimeSpan.FromHours(1) }
+//             { "LongTermMemory", true },
+//             { "LongTermMemoryTimeSpan", TimeSpan.FromHours(1) }
 //         }
 //     };
 
@@ -309,7 +309,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine();
 // }
 
-#endregion Live context turned on after a question
+#endregion Pieces Long-Term Memory turned on after a question
 
 #region Create an asset and use it in a chat
 

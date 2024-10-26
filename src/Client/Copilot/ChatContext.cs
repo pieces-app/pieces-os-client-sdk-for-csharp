@@ -6,14 +6,14 @@ namespace Pieces.OS.Client.Copilot;
 public record ChatContext
 {
     /// <summary>
-    /// Should this conversation use live context?
+    /// Should this conversation use Pieces Long-Term Memory?
     /// </summary>
-    public bool LiveContext { get; set; }
+    public bool LongTermMemory { get; set; }
 
     /// <summary>
-    /// If this conversation uses live context, what is the size of the context window time
+    /// If this conversation uses Pieces Long-Term Memory, what is the size of the context window time
     /// </summary>
-    public TimeSpan? LiveContextTimeSpan { get; set; } = TimeSpan.FromMinutes(15);
+    public TimeSpan? LongTermMemoryTimeSpan { get; set; } = TimeSpan.FromMinutes(15);
 
     /// <summary>
     /// A list of asset Ids to use as context

@@ -62,9 +62,9 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// True if model is able to support live context and any other temporally powered RAG Capabilities i.e. \&quot;What did I do yesterday?\&quot;
+        /// True if model is able to support Pieces Long-Term Memory and any other temporally powered RAG Capabilities i.e. \&quot;What did I do yesterday?\&quot;
         /// </summary>
-        /// <value>True if model is able to support live context and any other temporally powered RAG Capabilities i.e. \&quot;What did I do yesterday?\&quot;</value>
+        /// <value>True if model is able to support Pieces Long-Term Memory and any other temporally powered RAG Capabilities i.e. \&quot;What did I do yesterday?\&quot;</value>
         [DataMember(Name = "temporal", EmitDefaultValue = true)]
         public bool Temporal { get; set; }
 

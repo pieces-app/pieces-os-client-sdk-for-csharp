@@ -17,13 +17,13 @@ var serviceProvider = services.BuildServiceProvider();
 var chatClient = serviceProvider.GetRequiredService<IChatClient>();
 
 // Set up the options for the chat
-// We need live context over the last few hours
+// We need Pieces Long-Term Memory over the last few hours
 var options = new ChatOptions
 {
     AdditionalProperties = new AdditionalPropertiesDictionary
     {
-        { PiecesChatClient.LiveContextPropertyName, true},
-        { PiecesChatClient.LiveContextTimeSpanPropertyName, TimeSpan.FromHours(6) },
+        { PiecesChatClient.LongTermMemoryPropertyName, true},
+        { PiecesChatClient.LongTermMemoryTimeSpanPropertyName, TimeSpan.FromHours(6) },
     }
 };
 

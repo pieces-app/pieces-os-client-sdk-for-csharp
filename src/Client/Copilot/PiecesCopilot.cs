@@ -77,16 +77,16 @@ public class PiecesCopilot : IPiecesCopilot
 
         QGPTPromptPipeline? pipeline;
 
-        if (chatContext?.LiveContext == true)
+        if (chatContext?.LongTermMemory == true)
         {
-            logger?.LogDebug("Creating copilot chat with live context");
+            logger?.LogDebug("Creating copilot chat with Pieces Long-Term Memory");
             var dialog = new QGPTConversationPipelineForContextualizedCodeWorkstreamDialog();
             var conversationPipeline = new QGPTConversationPipeline(contextualizedCodeWorkstreamDialog: dialog);
             pipeline = new QGPTPromptPipeline(conversation: conversationPipeline);
         }
         else
         {
-            logger?.LogDebug("Creating copilot chat without live context");
+            logger?.LogDebug("Creating copilot chat without Pieces Long-Term Memory");
             var dialog = new QGPTConversationPipelineForGeneralizedCodeDialog();
             var conversationPipeline = new QGPTConversationPipeline(generalizedCodeDialog: dialog);
             pipeline = new QGPTPromptPipeline(conversation: conversationPipeline);

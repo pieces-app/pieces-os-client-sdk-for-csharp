@@ -21,7 +21,7 @@ The Pieces OS Client SDK is a set of powerful code engine packages designed for 
 This SDK has 2 packages:
 
 - [Pieces.OS.Client](https://www.nuget.org/packages/Pieces.OS.Client/) - this is the core SDK package providing access to the features of Pieces from your C# application
-- [Pieces.Extensions.AI](https://www.nuget.org/packages/Pieces.Extensions.AI/) - this is an implementation of [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI/) using Pieces to provide support for multiple LLMs, as well as adding context such as snippets, files, folders, and live context to your AI conversation.
+- [Pieces.Extensions.AI](https://www.nuget.org/packages/Pieces.Extensions.AI/) - this is an implementation of [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI/) using Pieces to provide support for multiple LLMs, as well as adding context such as snippets, files, folders, and Pieces Long-Term Memory to your AI conversation.
 
 ## Features
 
@@ -31,7 +31,7 @@ The Pieces SDK offers the following key features:
 1. Asset Management: Save and manage assets and formats efficiently.
 1. Local Server Interaction: Interact with a locally hosted server for various functionality.
 1. Multi-LLM support: Use any Pieces supported LLM to power your app.
-1. File, folder, and live context in copilot chats
+1. File, folder, and Pieces Long-Term Memory in copilot chats
 
 ## Installation
 
@@ -67,7 +67,7 @@ This repo contains the following projects:
 
 ### Sample apps
 
-- [Remind Me](./src/SampleApps/RemindMe/) - an app that reminds you about what you have been working on over the last few hours using live context.
+- [Remind Me](./src/SampleApps/RemindMe/) - an app that reminds you about what you have been working on over the last few hours using Pieces Long-Term Memory.
 
 ## Pieces.OS.Client Examples
 

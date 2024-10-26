@@ -1,18 +1,18 @@
 # Remind Me
 
-This is an example app using the [Pieces.Extensions.AI](https://www.nuget.org/packages/Pieces.Extensions.AI/) package to show how to build a small application that leverages live context. This application reminds you of what you were doing over the past few hours.
+This is an example app using the [Pieces.Extensions.AI](https://www.nuget.org/packages/Pieces.Extensions.AI/) package to show how to build a small application that leverages Pieces Long-Term Memory. This application reminds you of what you were doing over the past few hours.
 
 ## How this app works
 
-This application creates the chat client, and sends a message to get the activities over the last few hours using live context. This is controlled by the `ChatOptions`:
+This application creates the chat client, and sends a message to get the activities over the last few hours using Pieces Long-Term Memory. This is controlled by the `ChatOptions`:
 
 ```csharp
 var options = new ChatOptions
 {
     AdditionalProperties = new AdditionalPropertiesDictionary
     {
-        { PiecesChatClient.LiveContextPropertyName, true},
-        { PiecesChatClient.LiveContextTimeSpanPropertyName, TimeSpan.FromHours(6) },
+        { PiecesChatClient.LongTermMemoryPropertyName, true},
+        { PiecesChatClient.LongTermMemoryTimeSpanPropertyName, TimeSpan.FromHours(6) },
     }
 };
 ```

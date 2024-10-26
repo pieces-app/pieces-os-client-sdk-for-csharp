@@ -22,13 +22,13 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     /// </summary>
     public const string FoldersPropertyName = "Folders";
     /// <summary>
-    /// A constant for the name of the LiveContext property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// A constant for the name of the LongTermMemory property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
     /// </summary>
-    public const string LiveContextPropertyName = "LiveContext";
+    public const string LongTermMemoryPropertyName = "LongTermMemory";
     /// <summary>
-    /// A constant for the name of the LiveContextTimeSpan property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
+    /// A constant for the name of the LongTermMemoryTimeSpan property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
     /// </summary>
-    public const string LiveContextTimeSpanPropertyName = "LiveContextTimeSpan";
+    public const string LongTermMemoryTimeSpanPropertyName = "LongTermMemoryTimeSpan";
     /// <summary>
     /// A constant for the name of the PersistChat property in the <see cref="ChatOptions"/> AdditionalProperties dictionary
     /// </summary>
@@ -61,8 +61,8 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     The chat options to configure the request. To use Pieces specific features, set the following
     //     in the AdditionalProperties collection:
     //
-    //     ["LiveContext"] = true/false; // set to true to use live context. Default to false.
-    //     ["LiveContextTimeSpan"] = TimeSpan?; // The timespan to use for live context. Defaults to 15 minutes if not set.
+    //     ["LongTermMemory"] = true/false; // set to true to use Pieces Long-Term Memory. Default to false.
+    //     ["LongTermMemoryTimeSpan"] = TimeSpan?; // The timespan to use for Pieces Long-Term Memory. Defaults to 15 minutes if not set.
     //     ["AssetIds"] = [];  // Set to an enumerable of asset ids to use saved assets in the chat. Default to none.
     //     ["PersistChat] = true/false; // By defaults these chats are persisted in Pieces. If this is set to false, 
     //       the chat is deleted after the response is returned
@@ -125,8 +125,8 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     The chat options to configure the request. To use Pieces specific features, set the following
     //     in the AdditionalProperties collection:
     //
-    //     ["LiveContext"] = true/false; // set to true to use live context. Default to false.
-    //     ["LiveContextTimeSpan"] = TimeSpan?; // The timespan to use for live context. Defaults to 15 minutes if not set.
+    //     ["LongTermMemory"] = true/false; // set to true to use Pieces Long-Term Memory. Default to false.
+    //     ["LongTermMemoryTimeSpan"] = TimeSpan?; // The timespan to use for Pieces Long-Term Memory. Defaults to 15 minutes if not set.
     //     ["AssetIds"] = [];  // Set to an enumerable of asset ids to use saved assets in the chat. Default to none.
     //     ["PersistChat] = true/false; // By defaults these chats are persisted in Pieces. If this is set to false, 
     //       the chat is deleted after the response is returned
@@ -271,8 +271,8 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         return new ChatContext
         {
             AssetIds = GetValueFromOptions<IEnumerable<string>>(options, AssetIdsPropertyName),
-            LiveContext = GetBoolValueFromOptions(options, LiveContextPropertyName),
-            LiveContextTimeSpan = GetValueFromOptions<TimeSpan?>(options, LiveContextTimeSpanPropertyName, null),
+            LongTermMemory = GetBoolValueFromOptions(options, LongTermMemoryPropertyName),
+            LongTermMemoryTimeSpan = GetValueFromOptions<TimeSpan?>(options, LongTermMemoryTimeSpanPropertyName, null),
             Files = GetValueFromOptions<IEnumerable<string>>(options, FilesPropertyName),
             Folders = GetValueFromOptions<IEnumerable<string>>(options, FoldersPropertyName),
         };

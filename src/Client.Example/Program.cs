@@ -155,19 +155,19 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 
 #endregion Stream the response
 
-#region Use live context
+#region Use Pieces Long-Term Memory
 
-// Use live context
+// Use Pieces Long-Term Memory
 //
-// This will create a new copilot chat called 1 hour context window, with live context turned on that you will be able to see in other Pieces applications,
-// such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see live context turned on against the chat
+// This will create a new copilot chat called 1 hour context window, with Pieces Long-Term Memory turned on that you will be able to see in other Pieces applications,
+// such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see Pieces Long-Term Memory turned on against the chat
 // The chat will ask a question related to this code file using a 1 hour context window, then stream the response back token by token
 
 // {
 //     var chatContext = new ChatContext
 //     {
-//         LiveContext = true,
-//         LiveContextTimeSpan = TimeSpan.FromHours(1)
+//         LongTermMemory = true,
+//         LongTermMemoryTimeSpan = TimeSpan.FromHours(1)
 //     };
 //     var chat = await copilot.CreateChatAsync("1 hour context window", chatContext: chatContext).ConfigureAwait(false);
 
@@ -183,15 +183,15 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 //     Console.WriteLine();
 // }
 
-#endregion Use live context
+#endregion Use Pieces Long-Term Memory
 
-#region Use live context turned on later in the chat
+#region Use Pieces Long-Term Memory turned on later in the chat
 
-// Use live context
+// Use Pieces Long-Term Memory
 //
-// This will create a new copilot chat called 1 hour context window. After asking a first question, live context is turned turned on
+// This will create a new copilot chat called 1 hour context window. After asking a first question, Pieces Long-Term Memory is turned turned on
 // that you will be able to see in other Pieces applications,
-// such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see live context turned on against the chat
+// such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see Pieces Long-Term Memory turned on against the chat
 // The chat will ask a question related to this code file using a 1 hour context window, then stream the response back token by token
 
 // {
@@ -209,8 +209,8 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 //     // Update the context
 //     chat.ChatContext = new ChatContext
 //     {
-//         LiveContext = true,
-//         LiveContextTimeSpan = TimeSpan.FromHours(1)
+//         LongTermMemory = true,
+//         LongTermMemoryTimeSpan = TimeSpan.FromHours(1)
 //     };
 
 //     question = "Describe the Program.cs file I was just reading in my IDE";
@@ -225,7 +225,7 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 //     Console.WriteLine();
 // }
 
-#endregion Use live context turned on later in the chat
+#endregion Use Pieces Long-Term Memory turned on later in the chat
 
 #region Load assets
 

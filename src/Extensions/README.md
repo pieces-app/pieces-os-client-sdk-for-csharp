@@ -1,6 +1,6 @@
 # Pieces.Extensions.AI - an implementation of Microsoft.Extensions.AI using Pieces
 
-The Pieces.Extensions.AI package is an implementation of [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI/) using Pieces to provide support for multiple LLMs, as well as adding context such as snippets, files, folders, and live context to your AI conversation.
+The Pieces.Extensions.AI package is an implementation of [Microsoft.Extensions.AI](https://www.nuget.org/packages/Microsoft.Extensions.AI/) using Pieces to provide support for multiple LLMs, as well as adding context such as snippets, files, folders, and Pieces Long-Term Memory to your AI conversation.
 
 ## Features
 
@@ -63,11 +63,11 @@ You can configure the chat with the following `ChatOptions` settings:
 
 You can also set the following in the `ChatOptions.AdditionalProperties` dictionary:
 
-| Setting               | Type                   | Default  | Description |
-| --------------------- | ---------------------- | -------- | ----------- |
-| `PersistChat`         | `bool`                 | `true`   | Should the conversation be saved in Pieces? If this is false, after each chat message, the conversation is deleted and a new one started. |
-| `AssetIds`            | `IEnumerable<string>?` | `null`   | A list of asset Ids to add as context to this conversation. |
-| `Files`               | `IEnumerable<string>?` | `null`   | A list of file paths to add as context to this conversation. |
-| `Folders`             | `IEnumerable<string>?` | `null`   | A list of folder paths to add as context to this conversation. |
-| `LiveContext`         | `bool`                 | `false`  | Should this conversation include live context. |
-| `LiveContextTimeSpan` | `TimeSpan?`            | `null`   | The time span to use for the live context window. |
+| Setting                  | Type                   | Default  | Description |
+| ------------------------ | ---------------------- | -------- | ----------- |
+| `PersistChat`            | `bool`                 | `true`   | Should the conversation be saved in Pieces? If this is false, after each chat message, the conversation is deleted and a new one started. |
+| `AssetIds`               | `IEnumerable<string>?` | `null`   | A list of asset Ids to add as context to this conversation. |
+| `Files`                  | `IEnumerable<string>?` | `null`   | A list of file paths to add as context to this conversation. |
+| `Folders`                | `IEnumerable<string>?` | `null`   | A list of folder paths to add as context to this conversation. |
+| `LongTermMemory`         | `bool`                 | `false`  | Should this conversation include Pieces Long-Term Memory. |
+| `LongTermMemoryTimeSpan` | `TimeSpan?`            | `null`   | The time span to use for the Pieces Long-Term Memory window. |
