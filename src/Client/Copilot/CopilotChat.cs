@@ -47,7 +47,7 @@ public class CopilotChat : ICopilotChat
         {
             messages.AddRange(seeds.Select(s => new Message(s.Role, s.Message)));
         }
-        
+
         Model = model;
         ChatContext = chatContext;
     }
@@ -199,6 +199,12 @@ public class CopilotChat : ICopilotChat
             messages.Add(new Message(Role.Assistant, resultStringBuilder.ToString()));
 
             // refresh the conversation
+            logger?.LogInformation("Updating relevant assets and anchors on conversation...");
+
+            // Update the assets associated with the conversation
+            await UpdateConversationAssetsAsync(cancellationToken).ConfigureAwait(false);
+            await UpdateConversationAnchorsAsync(cancellationToken).ConfigureAwait(false);
+
             conversation = await piecesApis.ConversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         finally
@@ -274,7 +280,7 @@ public class CopilotChat : ICopilotChat
         logger?.LogInformation("Question {question} asked", question);
 
         // Reuse the streaming function, and let it run
-        await foreach (var _ in AskStreamingQuestionAsync(question, cancellationToken));
+        await foreach (var _ in AskStreamingQuestionAsync(question, cancellationToken)) ;
 
         // Return the response from the messages collection
         return messages.LastOrDefault()?.Content;
@@ -285,74 +291,28 @@ public class CopilotChat : ICopilotChat
         logger?.LogInformation("Creating question input for question: {question}.", question);
 
         var temporalRangeGrounding = await CreateGroundingAsync(cancellationToken).ConfigureAwait(false);
-        var relevant = await GetRelevantSeedsAsync(question, temporalRangeGrounding, cancellationToken: cancellationToken).ConfigureAwait(false);
-
-        // Build the question input
-        var questionInput = new QGPTQuestionInput(
-            query: question,
-            pipeline: conversation.Pipeline,
-            relevant: relevant,
-            application: application.Id,
-            temporal: temporalRangeGrounding,
-            messages: conversation.Messages,
-            model: Model.Id
-        );
-
-        // Build a stream input
-        var questionStreamInput = new QGPTStreamInput(
-            conversation: conversation.Id,
-            question: questionInput
-        );
-
-        // Return the input as JSON
-        return questionStreamInput.ToJson();
-    }
-
-    /// <summary>
-    /// Get all the relevant seeds to send to the chat.
-    /// 
-    /// For snippets set as asset Ids, attach all - if someone is attaching a snippet
-    /// we can assume it's always relevant.
-    /// For files and folders, do a relevancy check by default (can be turned off in the context)
-    /// and only send what is relevant.
-    /// </summary>
-    /// <returns></returns>
-    private async Task<RelevantQGPTSeeds> GetRelevantSeedsAsync(string question, TemporalRangeGrounding? temporalRangeGrounding, CancellationToken cancellationToken = default)
-    {
-        logger?.LogInformation("Getting relevant input...");
-
         var assets = new FlattenedAssets(iterable: ChatContext?.AssetIds?.Select(assetId => new ReferencedAsset(id: assetId)).ToList());
-
         var paths = (ChatContext?.Files ?? []).Concat(ChatContext?.Folders ?? []).ToList();
+        var relevantOptions = new QGPTRelevanceInputOptions(question: true, pipeline: conversation.Pipeline);
 
+        // Build a relevance input
         var qGPTRelevanceInput = new QGPTRelevanceInput(query: question,
                                                         application: application.Id,
                                                         model: Model.Id,
                                                         temporal: temporalRangeGrounding,
                                                         assets: assets,
                                                         messages: conversation.Messages,
-                                                        paths: paths.Count != 0 ? paths : null
-                                                        );
+                                                        paths: paths.Count != 0 ? paths : null,
+                                                        options: relevantOptions);
 
-        logger?.LogDebug("qGPTRelevanceInput");
-        logger?.LogDebug("{json}", qGPTRelevanceInput.ToJson());
+        // Build a stream input
+        var questionStreamInput = new QGPTStreamInput(
+            conversation: conversation.Id,
+            relevance: qGPTRelevanceInput
+        );
 
-        var relevance = await piecesApis.QGPTApi.RelevanceAsync(qGPTRelevanceInput, cancellationToken: cancellationToken).ConfigureAwait(false);
-
-        logger?.LogInformation("Updating relevant assets and anchors on conversation...");
-
-        // Update the assets associated with the conversation
-        await UpdateConversationAssetsAsync(cancellationToken).ConfigureAwait(false);
-        await UpdateConversationAnchorsAsync(cancellationToken).ConfigureAwait(false);
-
-        // Refresh the conversation
-        conversation = await piecesApis.ConversationApi.ConversationGetSpecificConversationAsync(conversation.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
-
-        logger?.LogInformation("Conversation updated");
-
-        logger?.LogInformation("Got relevant input!");
-
-        return relevance.Relevant;
+        // Return the input as JSON
+        return questionStreamInput.ToJson();
     }
 
     private async Task UpdateConversationAnchorsAsync(CancellationToken cancellationToken)
