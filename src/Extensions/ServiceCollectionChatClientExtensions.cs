@@ -49,19 +49,12 @@ public static class ServiceCollectionChatClientExtensions
         IPiecesClient? piecesClient = null,
         Func<ChatClientBuilder, ChatClientBuilder>? builder = null)
     {
-        return services.AddChatClient(pipeline =>
+        var chatClientBuilder = services.AddChatClient(services =>
         {
-            builder?.Invoke(pipeline);
-
-            // Get the logger
-            var logger = pipeline.Services.GetService<ILogger>();
-
-            // If the logger is not created yet, create a Pieces logger using the logger factory if it exists
-            if (logger is null)
-            {
-                var loggerFactory = pipeline.Services.GetService<ILoggerFactory>();
-                logger = loggerFactory?.CreateLogger("Pieces logger");
-            }
+            // Get the logger. If the logger is not created yet, create a Pieces logger using the logger factory if it exists
+            var logger =
+                services.GetService<ILogger>() ??
+                services.GetService<ILoggerFactory>()?.CreateLogger("Pieces logger");
 
             // Create the Pieces client
             piecesClient ??= new PiecesClient(logger);
@@ -79,8 +72,11 @@ public static class ServiceCollectionChatClientExtensions
                 piecesModel = models.FirstOrDefault(m => m.Id == model) ?? piecesClient.GetModelByNameAsync(model).Result;
             }
 
-            // Create the chat client in the pipeline
-            return pipeline.Use(new PiecesChatClient(piecesClient, chatName, logger, piecesModel));
+            return new PiecesChatClient(piecesClient, chatName, logger, piecesModel);
         });
+
+        builder?.Invoke(chatClientBuilder);
+
+        return services;
     }
 }

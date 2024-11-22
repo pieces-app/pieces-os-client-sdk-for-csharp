@@ -355,7 +355,6 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     }
 
     /// <inheritdoc />
-    public TService? GetService<TService>(object? key = null)
-        where TService : class
-        => key is null ? this as TService : null;
+    public object? GetService(Type serviceType, object? serviceKey = null)
+        => serviceKey is null && serviceType?.IsInstanceOfType(this) is true ? this : null;
 }
