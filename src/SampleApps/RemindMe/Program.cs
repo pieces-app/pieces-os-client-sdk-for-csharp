@@ -8,10 +8,8 @@ using Pieces.OS.Client;
 var chatName = $"Recent work reminder {DateTime.Now.ToShortDateString()} {DateTime.Now.ToShortTimeString()}";
 var services = new ServiceCollection();
 services.AddLogging(builder => builder.AddConsole());
-services.AddChatClient(builder => builder.UseLogging()
-                                         .Use(new PiecesChatClient(new PiecesClient(), chatName: chatName))); 
+services.AddChatClient(new PiecesChatClient(new PiecesClient(), chatName: chatName)).UseLogging();
 var serviceProvider = services.BuildServiceProvider();
-
 
 // Get the chat client
 var chatClient = serviceProvider.GetRequiredService<IChatClient>();
