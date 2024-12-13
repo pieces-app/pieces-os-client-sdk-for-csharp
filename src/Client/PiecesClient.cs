@@ -158,9 +158,9 @@ public class PiecesClient : IPiecesClient, IDisposable
         catch
         {
             // Either the port file is missing, or invalid, so time to poll the ports
-            foreach(var port in Enumerable.Range(39300, 334))
+            foreach(var rangedPort in Enumerable.Range(39300, 334))
             {
-                var wellKnown = new WellKnownApi($"http://localhost:{port}");
+                var wellKnown = new WellKnownApi($"http://localhost:{rangedPort}");
                 try
                 {
                     var health = await wellKnown.GetWellKnownHealthAsync().ConfigureAwait(false);
@@ -168,7 +168,7 @@ public class PiecesClient : IPiecesClient, IDisposable
                     if (health is not null)
                     {
                         // If we get here, the port is good
-                        return $"http://localhost:{port}";
+                        return $"http://localhost:{rangedPort}";
                     }
                 }
                 catch
@@ -176,6 +176,29 @@ public class PiecesClient : IPiecesClient, IDisposable
 
                 }
             }
+        }
+
+        // No luck with the Pieces OS 11 port, so fall back to Pieces 10
+        var port = platform switch
+        {
+            PlatformEnum.LINUX => 5323,
+            _ => 1000
+        };
+
+        try
+        {
+            var wellKnown = new WellKnownApi($"http://localhost:{port}");
+            var health = await wellKnown.GetWellKnownHealthAsync().ConfigureAwait(false);
+
+            if (health is not null)
+            {
+                // If we get here, the port is good
+                return $"http://localhost:{port}";
+            }
+        }
+        catch
+        {
+
         }
 
         throw new PiecesClientException("Cannot connect to PiecesOS, make sure it is running");
