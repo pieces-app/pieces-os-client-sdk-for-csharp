@@ -158,7 +158,7 @@ public class PiecesClient : IPiecesClient, IDisposable
         catch
         {
             // Either the port file is missing, or invalid, so time to poll the ports
-            foreach(var rangedPort in Enumerable.Range(39300, 334))
+            foreach(var rangedPort in Enumerable.Range(39300, 34))
             {
                 var wellKnown = new WellKnownApi($"http://localhost:{rangedPort}");
                 try
