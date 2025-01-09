@@ -61,7 +61,13 @@ namespace Pieces.Os.Core.SdkModel
         /// Enum DELETED for value: DELETED
         /// </summary>
         [EnumMember(Value = "DELETED")]
-        DELETED = 5
+        DELETED = 5,
+
+        /// <summary>
+        /// Enum UNKNOWN for value: UNKNOWN
+        /// </summary>
+        [EnumMember(Value = "UNKNOWN")]
+        UNKNOWN = 6
     }
 
 }

@@ -38,12 +38,14 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="schema">schema.</param>
         /// <param name="name">name.</param>
         /// <param name="memory">memory.</param>
+        /// <param name="sharedMemory">sharedMemory.</param>
         /// <param name="capabilities">capabilities.</param>
-        public OSDeviceGPUHardwareInformation(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string name = default(string), decimal memory = default(decimal), OSDeviceGPUHardwareCapabilitiesInformation capabilities = default(OSDeviceGPUHardwareCapabilitiesInformation))
+        public OSDeviceGPUHardwareInformation(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string name = default(string), decimal memory = default(decimal), bool? sharedMemory = default(bool?), OSDeviceGPUHardwareCapabilitiesInformation capabilities = default(OSDeviceGPUHardwareCapabilitiesInformation))
         {
             this.Schema = schema;
             this.Name = name;
             this.Memory = memory;
+            this.SharedMemory = sharedMemory;
             this.Capabilities = capabilities;
         }
 
@@ -66,6 +68,12 @@ namespace Pieces.Os.Core.SdkModel
         public decimal Memory { get; set; }
 
         /// <summary>
+        /// Gets or Sets SharedMemory
+        /// </summary>
+        [DataMember(Name = "shared_memory", EmitDefaultValue = true)]
+        public bool? SharedMemory { get; set; }
+
+        /// <summary>
         /// Gets or Sets Capabilities
         /// </summary>
         [DataMember(Name = "capabilities", EmitDefaultValue = false)]
@@ -82,6 +90,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Memory: ").Append(Memory).Append("\n");
+            sb.Append("  SharedMemory: ").Append(SharedMemory).Append("\n");
             sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

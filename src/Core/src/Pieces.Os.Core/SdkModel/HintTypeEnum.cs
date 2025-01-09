@@ -43,7 +43,13 @@ namespace Pieces.Os.Core.SdkModel
         /// Enum QGPTHINT for value: QGPT_HINT
         /// </summary>
         [EnumMember(Value = "QGPT_HINT")]
-        QGPTHINT = 2
+        QGPTHINT = 2,
+
+        /// <summary>
+        /// Enum UNKNOWN for value: UNKNOWN
+        /// </summary>
+        [EnumMember(Value = "UNKNOWN")]
+        UNKNOWN = 3
     }
 
 }

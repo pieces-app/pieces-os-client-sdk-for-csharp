@@ -69,9 +69,10 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="workstreamEvents">workstreamEvents.</param>
         /// <param name="ranges">ranges.</param>
         /// <param name="workstreamSummaries">workstreamSummaries.</param>
+        /// <param name="workstreamPatternEngineSources">workstreamPatternEngineSources.</param>
         /// <param name="messageValues">messageValues.</param>
         /// <param name="workstreamEventValues">workstreamEventValues.</param>
-        public ExportedDatabase(List<int> analyses = default(List<int>), List<int> applications = default(List<int>), List<int> assets = default(List<int>), List<int> codeAnalyses = default(List<int>), List<int> files = default(List<int>), List<int> formatMetrics = default(List<int>), List<int> formats = default(List<int>), List<int> fragments = default(List<int>), List<int> imageAnalyses = default(List<int>), List<int> models = default(List<int>), List<int> ocrAnalyses = default(List<int>), List<int> persons = default(List<int>), List<int> sensitives = default(List<int>), List<int> tags = default(List<int>), List<int> websites = default(List<int>), ExportedDatabaseFormats values = default(ExportedDatabaseFormats), string varVersion = default(string), EmbeddedModelSchema schema = default(EmbeddedModelSchema), List<int> relationships = default(List<int>), List<int> activities = default(List<int>), List<int> annotations = default(List<int>), List<int> hints = default(List<int>), List<int> anchors = default(List<int>), List<int> anchorPoints = default(List<int>), List<int> conversations = default(List<int>), List<int> conversationMessages = default(List<int>), List<int> workstreamEvents = default(List<int>), List<int> ranges = default(List<int>), List<int> workstreamSummaries = default(List<int>), ExportedDatabaseFormats messageValues = default(ExportedDatabaseFormats), ExportedDatabaseFormats workstreamEventValues = default(ExportedDatabaseFormats))
+        public ExportedDatabase(List<int> analyses = default(List<int>), List<int> applications = default(List<int>), List<int> assets = default(List<int>), List<int> codeAnalyses = default(List<int>), List<int> files = default(List<int>), List<int> formatMetrics = default(List<int>), List<int> formats = default(List<int>), List<int> fragments = default(List<int>), List<int> imageAnalyses = default(List<int>), List<int> models = default(List<int>), List<int> ocrAnalyses = default(List<int>), List<int> persons = default(List<int>), List<int> sensitives = default(List<int>), List<int> tags = default(List<int>), List<int> websites = default(List<int>), ExportedDatabaseFormats values = default(ExportedDatabaseFormats), string varVersion = default(string), EmbeddedModelSchema schema = default(EmbeddedModelSchema), List<int> relationships = default(List<int>), List<int> activities = default(List<int>), List<int> annotations = default(List<int>), List<int> hints = default(List<int>), List<int> anchors = default(List<int>), List<int> anchorPoints = default(List<int>), List<int> conversations = default(List<int>), List<int> conversationMessages = default(List<int>), List<int> workstreamEvents = default(List<int>), List<int> ranges = default(List<int>), List<int> workstreamSummaries = default(List<int>), List<int> workstreamPatternEngineSources = default(List<int>), ExportedDatabaseFormats messageValues = default(ExportedDatabaseFormats), ExportedDatabaseFormats workstreamEventValues = default(ExportedDatabaseFormats))
         {
             // to ensure "analyses" is required (not null)
             if (analyses == null)
@@ -187,6 +188,7 @@ namespace Pieces.Os.Core.SdkModel
             this.WorkstreamEvents = workstreamEvents;
             this.Ranges = ranges;
             this.WorkstreamSummaries = workstreamSummaries;
+            this.WorkstreamPatternEngineSources = workstreamPatternEngineSources;
             this.MessageValues = messageValues;
             this.WorkstreamEventValues = workstreamEventValues;
         }
@@ -367,6 +369,12 @@ namespace Pieces.Os.Core.SdkModel
         public List<int> WorkstreamSummaries { get; set; }
 
         /// <summary>
+        /// Gets or Sets WorkstreamPatternEngineSources
+        /// </summary>
+        [DataMember(Name = "workstreamPatternEngineSources", EmitDefaultValue = false)]
+        public List<int> WorkstreamPatternEngineSources { get; set; }
+
+        /// <summary>
         /// Gets or Sets MessageValues
         /// </summary>
         [DataMember(Name = "messageValues", EmitDefaultValue = false)]
@@ -415,6 +423,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  WorkstreamEvents: ").Append(WorkstreamEvents).Append("\n");
             sb.Append("  Ranges: ").Append(Ranges).Append("\n");
             sb.Append("  WorkstreamSummaries: ").Append(WorkstreamSummaries).Append("\n");
+            sb.Append("  WorkstreamPatternEngineSources: ").Append(WorkstreamPatternEngineSources).Append("\n");
             sb.Append("  MessageValues: ").Append(MessageValues).Append("\n");
             sb.Append("  WorkstreamEventValues: ").Append(WorkstreamEventValues).Append("\n");
             sb.Append("}\n");
