@@ -1341,1708 +1341,1720 @@ namespace Pieces.Os.Core.SdkModel
         Lua = 218,
 
         /// <summary>
+        /// Enum Luau for value: luau
+        /// </summary>
+        [EnumMember(Value = "luau")]
+        Luau = 219,
+
+        /// <summary>
         /// Enum Md for value: md
         /// </summary>
         [EnumMember(Value = "md")]
-        Md = 219,
+        Md = 220,
 
         /// <summary>
         /// Enum Mdown for value: mdown
         /// </summary>
         [EnumMember(Value = "mdown")]
-        Mdown = 220,
+        Mdown = 221,
 
         /// <summary>
         /// Enum Mdwn for value: mdwn
         /// </summary>
         [EnumMember(Value = "mdwn")]
-        Mdwn = 221,
+        Mdwn = 222,
 
         /// <summary>
         /// Enum Markdown for value: markdown
         /// </summary>
         [EnumMember(Value = "markdown")]
-        Markdown = 222,
+        Markdown = 223,
 
         /// <summary>
         /// Enum Markdn for value: markdn
         /// </summary>
         [EnumMember(Value = "markdn")]
-        Markdn = 223,
+        Markdn = 224,
 
         /// <summary>
         /// Enum Matlab for value: matlab
         /// </summary>
         [EnumMember(Value = "matlab")]
-        Matlab = 224,
+        Matlab = 225,
 
         /// <summary>
         /// Enum M for value: m
         /// </summary>
         [EnumMember(Value = "m")]
-        M = 225,
+        M = 226,
 
         /// <summary>
         /// Enum Ps1 for value: ps1
         /// </summary>
         [EnumMember(Value = "ps1")]
-        Ps1 = 226,
+        Ps1 = 227,
 
         /// <summary>
         /// Enum Sh for value: sh
         /// </summary>
         [EnumMember(Value = "sh")]
-        Sh = 227,
+        Sh = 228,
 
         /// <summary>
         /// Enum Bash for value: bash
         /// </summary>
         [EnumMember(Value = "bash")]
-        Bash = 228,
+        Bash = 229,
 
         /// <summary>
         /// Enum Bashrc for value: bashrc
         /// </summary>
         [EnumMember(Value = "bashrc")]
-        Bashrc = 229,
+        Bashrc = 230,
 
         /// <summary>
         /// Enum Ash for value: ash
         /// </summary>
         [EnumMember(Value = "ash")]
-        Ash = 230,
+        Ash = 231,
 
         /// <summary>
         /// Enum Zsh for value: zsh
         /// </summary>
         [EnumMember(Value = "zsh")]
-        Zsh = 231,
+        Zsh = 232,
 
         /// <summary>
         /// Enum BashAliases for value: .bash_aliases
         /// </summary>
         [EnumMember(Value = ".bash_aliases")]
-        BashAliases = 232,
+        BashAliases = 233,
 
         /// <summary>
         /// Enum BashCompletions for value: .bash_completions
         /// </summary>
         [EnumMember(Value = ".bash_completions")]
-        BashCompletions = 233,
+        BashCompletions = 234,
 
         /// <summary>
         /// Enum BashFunctions for value: .bash_functions
         /// </summary>
         [EnumMember(Value = ".bash_functions")]
-        BashFunctions = 234,
+        BashFunctions = 235,
 
         /// <summary>
         /// Enum BashLogin for value: .bash_login
         /// </summary>
         [EnumMember(Value = ".bash_login")]
-        BashLogin = 235,
+        BashLogin = 236,
 
         /// <summary>
         /// Enum BashLogout for value: .bash_logout
         /// </summary>
         [EnumMember(Value = ".bash_logout")]
-        BashLogout = 236,
+        BashLogout = 237,
 
         /// <summary>
         /// Enum BashProfile for value: .bash_profile
         /// </summary>
         [EnumMember(Value = ".bash_profile")]
-        BashProfile = 237,
+        BashProfile = 238,
 
         /// <summary>
         /// Enum BashVariables for value: .bash_variables
         /// </summary>
         [EnumMember(Value = ".bash_variables")]
-        BashVariables = 238,
+        BashVariables = 239,
 
         /// <summary>
         /// Enum Profile for value: .profile
         /// </summary>
         [EnumMember(Value = ".profile")]
-        Profile = 239,
+        Profile = 240,
 
         /// <summary>
         /// Enum TextmateInit for value: .textmate_init
         /// </summary>
         [EnumMember(Value = ".textmate_init")]
-        TextmateInit = 240,
+        TextmateInit = 241,
 
         /// <summary>
         /// Enum Zlogin for value: .zlogin
         /// </summary>
         [EnumMember(Value = ".zlogin")]
-        Zlogin = 241,
+        Zlogin = 242,
 
         /// <summary>
         /// Enum Zlogout for value: .zlogout
         /// </summary>
         [EnumMember(Value = ".zlogout")]
-        Zlogout = 242,
+        Zlogout = 243,
 
         /// <summary>
         /// Enum Zprofile for value: .zprofile
         /// </summary>
         [EnumMember(Value = ".zprofile")]
-        Zprofile = 243,
+        Zprofile = 244,
 
         /// <summary>
         /// Enum Zshenv for value: .zshenv
         /// </summary>
         [EnumMember(Value = ".zshenv")]
-        Zshenv = 244,
+        Zshenv = 245,
 
         /// <summary>
         /// Enum Zshrc for value: .zshrc
         /// </summary>
         [EnumMember(Value = ".zshrc")]
-        Zshrc = 245,
+        Zshrc = 246,
 
         /// <summary>
         /// Enum PKGBUILD for value: PKGBUILD
         /// </summary>
         [EnumMember(Value = "PKGBUILD")]
-        PKGBUILD = 246,
+        PKGBUILD = 247,
 
         /// <summary>
         /// Enum Ebuild for value: ebuild
         /// </summary>
         [EnumMember(Value = "ebuild")]
-        Ebuild = 247,
+        Ebuild = 248,
 
         /// <summary>
         /// Enum Eclass for value: eclass
         /// </summary>
         [EnumMember(Value = "eclass")]
-        Eclass = 248,
+        Eclass = 249,
 
         /// <summary>
         /// Enum R for value: r
         /// </summary>
         [EnumMember(Value = "r")]
-        R = 249,
+        R = 250,
 
         /// <summary>
         /// Enum Sql for value: sql
         /// </summary>
         [EnumMember(Value = "sql")]
-        Sql = 250,
+        Sql = 251,
 
         /// <summary>
         /// Enum Ddl for value: ddl
         /// </summary>
         [EnumMember(Value = "ddl")]
-        Ddl = 251,
+        Ddl = 252,
 
         /// <summary>
         /// Enum Dml for value: dml
         /// </summary>
         [EnumMember(Value = "dml")]
-        Dml = 252,
+        Dml = 253,
 
         /// <summary>
         /// Enum Tex for value: tex
         /// </summary>
         [EnumMember(Value = "tex")]
-        Tex = 253,
+        Tex = 254,
 
         /// <summary>
         /// Enum Ltx for value: ltx
         /// </summary>
         [EnumMember(Value = "ltx")]
-        Ltx = 254,
+        Ltx = 255,
 
         /// <summary>
         /// Enum Sty for value: sty
         /// </summary>
         [EnumMember(Value = "sty")]
-        Sty = 255,
+        Sty = 256,
 
         /// <summary>
         /// Enum Cls for value: cls
         /// </summary>
         [EnumMember(Value = "cls")]
-        Cls = 256,
+        Cls = 257,
 
         /// <summary>
         /// Enum UNKNOWN for value: UNKNOWN
         /// </summary>
         [EnumMember(Value = "UNKNOWN")]
-        UNKNOWN = 257,
+        UNKNOWN = 258,
 
         /// <summary>
         /// Enum Yaml for value: yaml
         /// </summary>
         [EnumMember(Value = "yaml")]
-        Yaml = 258,
+        Yaml = 259,
 
         /// <summary>
         /// Enum Yml for value: yml
         /// </summary>
         [EnumMember(Value = "yml")]
-        Yml = 259,
+        Yml = 260,
 
         /// <summary>
         /// Enum Toml for value: toml
         /// </summary>
         [EnumMember(Value = "toml")]
-        Toml = 260,
+        Toml = 261,
 
         /// <summary>
         /// Enum Tml for value: tml
         /// </summary>
         [EnumMember(Value = "tml")]
-        Tml = 261,
+        Tml = 262,
 
         /// <summary>
         /// Enum CargoLock for value: Cargo.lock
         /// </summary>
         [EnumMember(Value = "Cargo.lock")]
-        CargoLock = 262,
+        CargoLock = 263,
 
         /// <summary>
         /// Enum GopkgLock for value: Gopkg.lock
         /// </summary>
         [EnumMember(Value = "Gopkg.lock")]
-        GopkgLock = 263,
+        GopkgLock = 264,
 
         /// <summary>
         /// Enum Pipfile for value: Pipfile
         /// </summary>
         [EnumMember(Value = "Pipfile")]
-        Pipfile = 264,
+        Pipfile = 265,
 
         /// <summary>
         /// Enum PoetryLock for value: poetry.lock
         /// </summary>
         [EnumMember(Value = "poetry.lock")]
-        PoetryLock = 265,
+        PoetryLock = 266,
 
         /// <summary>
         /// Enum UniformResourceLocator for value: uniform_resource_locator
         /// </summary>
         [EnumMember(Value = "uniform_resource_locator")]
-        UniformResourceLocator = 266,
+        UniformResourceLocator = 267,
 
         /// <summary>
         /// Enum CustomUrlScheme for value: custom_url_scheme
         /// </summary>
         [EnumMember(Value = "custom_url_scheme")]
-        CustomUrlScheme = 267,
+        CustomUrlScheme = 268,
 
         /// <summary>
         /// Enum UnixFilePath for value: unix_file_path
         /// </summary>
         [EnumMember(Value = "unix_file_path")]
-        UnixFilePath = 268,
+        UnixFilePath = 269,
 
         /// <summary>
         /// Enum WindowsFilePath for value: windows_file_path
         /// </summary>
         [EnumMember(Value = "windows_file_path")]
-        WindowsFilePath = 269,
+        WindowsFilePath = 270,
 
         /// <summary>
         /// Enum UniformResourceIdentifier for value: uniform_resource_identifier
         /// </summary>
         [EnumMember(Value = "uniform_resource_identifier")]
-        UniformResourceIdentifier = 270,
+        UniformResourceIdentifier = 271,
 
         /// <summary>
         /// Enum Hljs1c for value: hljs-1c
         /// </summary>
         [EnumMember(Value = "hljs-1c")]
-        Hljs1c = 271,
+        Hljs1c = 272,
 
         /// <summary>
         /// Enum HljsAbnf for value: hljs-abnf
         /// </summary>
         [EnumMember(Value = "hljs-abnf")]
-        HljsAbnf = 272,
+        HljsAbnf = 273,
 
         /// <summary>
         /// Enum HljsAccesslog for value: hljs-accesslog
         /// </summary>
         [EnumMember(Value = "hljs-accesslog")]
-        HljsAccesslog = 273,
+        HljsAccesslog = 274,
 
         /// <summary>
         /// Enum HljsActionscript for value: hljs-actionscript
         /// </summary>
         [EnumMember(Value = "hljs-actionscript")]
-        HljsActionscript = 274,
+        HljsActionscript = 275,
 
         /// <summary>
         /// Enum HljsAda for value: hljs-ada
         /// </summary>
         [EnumMember(Value = "hljs-ada")]
-        HljsAda = 275,
+        HljsAda = 276,
 
         /// <summary>
         /// Enum HljsAngelscript for value: hljs-angelscript
         /// </summary>
         [EnumMember(Value = "hljs-angelscript")]
-        HljsAngelscript = 276,
+        HljsAngelscript = 277,
 
         /// <summary>
         /// Enum HljsApache for value: hljs-apache
         /// </summary>
         [EnumMember(Value = "hljs-apache")]
-        HljsApache = 277,
+        HljsApache = 278,
 
         /// <summary>
         /// Enum HljsApplescript for value: hljs-applescript
         /// </summary>
         [EnumMember(Value = "hljs-applescript")]
-        HljsApplescript = 278,
+        HljsApplescript = 279,
 
         /// <summary>
         /// Enum HljsArcade for value: hljs-arcade
         /// </summary>
         [EnumMember(Value = "hljs-arcade")]
-        HljsArcade = 279,
+        HljsArcade = 280,
 
         /// <summary>
         /// Enum HljsArduino for value: hljs-arduino
         /// </summary>
         [EnumMember(Value = "hljs-arduino")]
-        HljsArduino = 280,
+        HljsArduino = 281,
 
         /// <summary>
         /// Enum HljsArmasm for value: hljs-armasm
         /// </summary>
         [EnumMember(Value = "hljs-armasm")]
-        HljsArmasm = 281,
+        HljsArmasm = 282,
 
         /// <summary>
         /// Enum HljsAsciidoc for value: hljs-asciidoc
         /// </summary>
         [EnumMember(Value = "hljs-asciidoc")]
-        HljsAsciidoc = 282,
+        HljsAsciidoc = 283,
 
         /// <summary>
         /// Enum HljsAspectj for value: hljs-aspectj
         /// </summary>
         [EnumMember(Value = "hljs-aspectj")]
-        HljsAspectj = 283,
+        HljsAspectj = 284,
 
         /// <summary>
         /// Enum HljsAutohotkey for value: hljs-autohotkey
         /// </summary>
         [EnumMember(Value = "hljs-autohotkey")]
-        HljsAutohotkey = 284,
+        HljsAutohotkey = 285,
 
         /// <summary>
         /// Enum HljsAutoit for value: hljs-autoit
         /// </summary>
         [EnumMember(Value = "hljs-autoit")]
-        HljsAutoit = 285,
+        HljsAutoit = 286,
 
         /// <summary>
         /// Enum HljsAvrasm for value: hljs-avrasm
         /// </summary>
         [EnumMember(Value = "hljs-avrasm")]
-        HljsAvrasm = 286,
+        HljsAvrasm = 287,
 
         /// <summary>
         /// Enum HljsAwk for value: hljs-awk
         /// </summary>
         [EnumMember(Value = "hljs-awk")]
-        HljsAwk = 287,
+        HljsAwk = 288,
 
         /// <summary>
         /// Enum HljsAxapta for value: hljs-axapta
         /// </summary>
         [EnumMember(Value = "hljs-axapta")]
-        HljsAxapta = 288,
+        HljsAxapta = 289,
 
         /// <summary>
         /// Enum HljsBash for value: hljs-bash
         /// </summary>
         [EnumMember(Value = "hljs-bash")]
-        HljsBash = 289,
+        HljsBash = 290,
 
         /// <summary>
         /// Enum HljsBasic for value: hljs-basic
         /// </summary>
         [EnumMember(Value = "hljs-basic")]
-        HljsBasic = 290,
+        HljsBasic = 291,
 
         /// <summary>
         /// Enum HljsBnf for value: hljs-bnf
         /// </summary>
         [EnumMember(Value = "hljs-bnf")]
-        HljsBnf = 291,
+        HljsBnf = 292,
 
         /// <summary>
         /// Enum HljsBrainfuck for value: hljs-brainfuck
         /// </summary>
         [EnumMember(Value = "hljs-brainfuck")]
-        HljsBrainfuck = 292,
+        HljsBrainfuck = 293,
 
         /// <summary>
         /// Enum HljsCal for value: hljs-cal
         /// </summary>
         [EnumMember(Value = "hljs-cal")]
-        HljsCal = 293,
+        HljsCal = 294,
 
         /// <summary>
         /// Enum HljsCapnproto for value: hljs-capnproto
         /// </summary>
         [EnumMember(Value = "hljs-capnproto")]
-        HljsCapnproto = 294,
+        HljsCapnproto = 295,
 
         /// <summary>
         /// Enum HljsCeylon for value: hljs-ceylon
         /// </summary>
         [EnumMember(Value = "hljs-ceylon")]
-        HljsCeylon = 295,
+        HljsCeylon = 296,
 
         /// <summary>
         /// Enum HljsClean for value: hljs-clean
         /// </summary>
         [EnumMember(Value = "hljs-clean")]
-        HljsClean = 296,
+        HljsClean = 297,
 
         /// <summary>
         /// Enum HljsClojureRepl for value: hljs-clojure-repl
         /// </summary>
         [EnumMember(Value = "hljs-clojure-repl")]
-        HljsClojureRepl = 297,
+        HljsClojureRepl = 298,
 
         /// <summary>
         /// Enum HljsClojure for value: hljs-clojure
         /// </summary>
         [EnumMember(Value = "hljs-clojure")]
-        HljsClojure = 298,
+        HljsClojure = 299,
 
         /// <summary>
         /// Enum HljsCmake for value: hljs-cmake
         /// </summary>
         [EnumMember(Value = "hljs-cmake")]
-        HljsCmake = 299,
+        HljsCmake = 300,
 
         /// <summary>
         /// Enum HljsCoffeescript for value: hljs-coffeescript
         /// </summary>
         [EnumMember(Value = "hljs-coffeescript")]
-        HljsCoffeescript = 300,
+        HljsCoffeescript = 301,
 
         /// <summary>
         /// Enum HljsCoq for value: hljs-coq
         /// </summary>
         [EnumMember(Value = "hljs-coq")]
-        HljsCoq = 301,
+        HljsCoq = 302,
 
         /// <summary>
         /// Enum HljsCos for value: hljs-cos
         /// </summary>
         [EnumMember(Value = "hljs-cos")]
-        HljsCos = 302,
+        HljsCos = 303,
 
         /// <summary>
         /// Enum HljsCpp for value: hljs-cpp
         /// </summary>
         [EnumMember(Value = "hljs-cpp")]
-        HljsCpp = 303,
+        HljsCpp = 304,
 
         /// <summary>
         /// Enum HljsCrmsh for value: hljs-crmsh
         /// </summary>
         [EnumMember(Value = "hljs-crmsh")]
-        HljsCrmsh = 304,
+        HljsCrmsh = 305,
 
         /// <summary>
         /// Enum HljsCrystal for value: hljs-crystal
         /// </summary>
         [EnumMember(Value = "hljs-crystal")]
-        HljsCrystal = 305,
+        HljsCrystal = 306,
 
         /// <summary>
         /// Enum HljsC for value: hljs-c
         /// </summary>
         [EnumMember(Value = "hljs-c")]
-        HljsC = 306,
+        HljsC = 307,
 
         /// <summary>
         /// Enum HljsCs for value: hljs-cs
         /// </summary>
         [EnumMember(Value = "hljs-cs")]
-        HljsCs = 307,
+        HljsCs = 308,
 
         /// <summary>
         /// Enum HljsCsp for value: hljs-csp
         /// </summary>
         [EnumMember(Value = "hljs-csp")]
-        HljsCsp = 308,
+        HljsCsp = 309,
 
         /// <summary>
         /// Enum HljsCss for value: hljs-css
         /// </summary>
         [EnumMember(Value = "hljs-css")]
-        HljsCss = 309,
+        HljsCss = 310,
 
         /// <summary>
         /// Enum HljsD for value: hljs-d
         /// </summary>
         [EnumMember(Value = "hljs-d")]
-        HljsD = 310,
+        HljsD = 311,
 
         /// <summary>
         /// Enum HljsDart for value: hljs-dart
         /// </summary>
         [EnumMember(Value = "hljs-dart")]
-        HljsDart = 311,
+        HljsDart = 312,
 
         /// <summary>
         /// Enum HljsDelphi for value: hljs-delphi
         /// </summary>
         [EnumMember(Value = "hljs-delphi")]
-        HljsDelphi = 312,
+        HljsDelphi = 313,
 
         /// <summary>
         /// Enum HljsDiff for value: hljs-diff
         /// </summary>
         [EnumMember(Value = "hljs-diff")]
-        HljsDiff = 313,
+        HljsDiff = 314,
 
         /// <summary>
         /// Enum HljsDjango for value: hljs-django
         /// </summary>
         [EnumMember(Value = "hljs-django")]
-        HljsDjango = 314,
+        HljsDjango = 315,
 
         /// <summary>
         /// Enum HljsDns for value: hljs-dns
         /// </summary>
         [EnumMember(Value = "hljs-dns")]
-        HljsDns = 315,
+        HljsDns = 316,
 
         /// <summary>
         /// Enum HljsDockerfile for value: hljs-dockerfile
         /// </summary>
         [EnumMember(Value = "hljs-dockerfile")]
-        HljsDockerfile = 316,
+        HljsDockerfile = 317,
 
         /// <summary>
         /// Enum HljsDos for value: hljs-dos
         /// </summary>
         [EnumMember(Value = "hljs-dos")]
-        HljsDos = 317,
+        HljsDos = 318,
 
         /// <summary>
         /// Enum HljsDsconfig for value: hljs-dsconfig
         /// </summary>
         [EnumMember(Value = "hljs-dsconfig")]
-        HljsDsconfig = 318,
+        HljsDsconfig = 319,
 
         /// <summary>
         /// Enum HljsDts for value: hljs-dts
         /// </summary>
         [EnumMember(Value = "hljs-dts")]
-        HljsDts = 319,
+        HljsDts = 320,
 
         /// <summary>
         /// Enum HljsDust for value: hljs-dust
         /// </summary>
         [EnumMember(Value = "hljs-dust")]
-        HljsDust = 320,
+        HljsDust = 321,
 
         /// <summary>
         /// Enum HljsEbnf for value: hljs-ebnf
         /// </summary>
         [EnumMember(Value = "hljs-ebnf")]
-        HljsEbnf = 321,
+        HljsEbnf = 322,
 
         /// <summary>
         /// Enum HljsElixir for value: hljs-elixir
         /// </summary>
         [EnumMember(Value = "hljs-elixir")]
-        HljsElixir = 322,
+        HljsElixir = 323,
 
         /// <summary>
         /// Enum HljsElm for value: hljs-elm
         /// </summary>
         [EnumMember(Value = "hljs-elm")]
-        HljsElm = 323,
+        HljsElm = 324,
 
         /// <summary>
         /// Enum HljsErb for value: hljs-erb
         /// </summary>
         [EnumMember(Value = "hljs-erb")]
-        HljsErb = 324,
+        HljsErb = 325,
 
         /// <summary>
         /// Enum HljsErlangRepl for value: hljs-erlang-repl
         /// </summary>
         [EnumMember(Value = "hljs-erlang-repl")]
-        HljsErlangRepl = 325,
+        HljsErlangRepl = 326,
 
         /// <summary>
         /// Enum HljsErlang for value: hljs-erlang
         /// </summary>
         [EnumMember(Value = "hljs-erlang")]
-        HljsErlang = 326,
+        HljsErlang = 327,
 
         /// <summary>
         /// Enum HljsExcel for value: hljs-excel
         /// </summary>
         [EnumMember(Value = "hljs-excel")]
-        HljsExcel = 327,
+        HljsExcel = 328,
 
         /// <summary>
         /// Enum HljsFix for value: hljs-fix
         /// </summary>
         [EnumMember(Value = "hljs-fix")]
-        HljsFix = 328,
+        HljsFix = 329,
 
         /// <summary>
         /// Enum HljsFlix for value: hljs-flix
         /// </summary>
         [EnumMember(Value = "hljs-flix")]
-        HljsFlix = 329,
+        HljsFlix = 330,
 
         /// <summary>
         /// Enum HljsFortran for value: hljs-fortran
         /// </summary>
         [EnumMember(Value = "hljs-fortran")]
-        HljsFortran = 330,
+        HljsFortran = 331,
 
         /// <summary>
         /// Enum HljsFsharp for value: hljs-fsharp
         /// </summary>
         [EnumMember(Value = "hljs-fsharp")]
-        HljsFsharp = 331,
+        HljsFsharp = 332,
 
         /// <summary>
         /// Enum HljsGams for value: hljs-gams
         /// </summary>
         [EnumMember(Value = "hljs-gams")]
-        HljsGams = 332,
+        HljsGams = 333,
 
         /// <summary>
         /// Enum HljsGauss for value: hljs-gauss
         /// </summary>
         [EnumMember(Value = "hljs-gauss")]
-        HljsGauss = 333,
+        HljsGauss = 334,
 
         /// <summary>
         /// Enum HljsGcode for value: hljs-gcode
         /// </summary>
         [EnumMember(Value = "hljs-gcode")]
-        HljsGcode = 334,
+        HljsGcode = 335,
 
         /// <summary>
         /// Enum HljsGherkin for value: hljs-gherkin
         /// </summary>
         [EnumMember(Value = "hljs-gherkin")]
-        HljsGherkin = 335,
+        HljsGherkin = 336,
 
         /// <summary>
         /// Enum HljsGlsl for value: hljs-glsl
         /// </summary>
         [EnumMember(Value = "hljs-glsl")]
-        HljsGlsl = 336,
+        HljsGlsl = 337,
 
         /// <summary>
         /// Enum HljsGml for value: hljs-gml
         /// </summary>
         [EnumMember(Value = "hljs-gml")]
-        HljsGml = 337,
+        HljsGml = 338,
 
         /// <summary>
         /// Enum HljsGo for value: hljs-go
         /// </summary>
         [EnumMember(Value = "hljs-go")]
-        HljsGo = 338,
+        HljsGo = 339,
 
         /// <summary>
         /// Enum HljsGolo for value: hljs-golo
         /// </summary>
         [EnumMember(Value = "hljs-golo")]
-        HljsGolo = 339,
+        HljsGolo = 340,
 
         /// <summary>
         /// Enum HljsGradle for value: hljs-gradle
         /// </summary>
         [EnumMember(Value = "hljs-gradle")]
-        HljsGradle = 340,
+        HljsGradle = 341,
 
         /// <summary>
         /// Enum HljsGroovy for value: hljs-groovy
         /// </summary>
         [EnumMember(Value = "hljs-groovy")]
-        HljsGroovy = 341,
+        HljsGroovy = 342,
 
         /// <summary>
         /// Enum HljsHaml for value: hljs-haml
         /// </summary>
         [EnumMember(Value = "hljs-haml")]
-        HljsHaml = 342,
+        HljsHaml = 343,
 
         /// <summary>
         /// Enum HljsHandlebars for value: hljs-handlebars
         /// </summary>
         [EnumMember(Value = "hljs-handlebars")]
-        HljsHandlebars = 343,
+        HljsHandlebars = 344,
 
         /// <summary>
         /// Enum HljsHaskell for value: hljs-haskell
         /// </summary>
         [EnumMember(Value = "hljs-haskell")]
-        HljsHaskell = 344,
+        HljsHaskell = 345,
 
         /// <summary>
         /// Enum HljsHaxe for value: hljs-haxe
         /// </summary>
         [EnumMember(Value = "hljs-haxe")]
-        HljsHaxe = 345,
+        HljsHaxe = 346,
 
         /// <summary>
         /// Enum HljsHsp for value: hljs-hsp
         /// </summary>
         [EnumMember(Value = "hljs-hsp")]
-        HljsHsp = 346,
+        HljsHsp = 347,
 
         /// <summary>
         /// Enum HljsHtmlbars for value: hljs-htmlbars
         /// </summary>
         [EnumMember(Value = "hljs-htmlbars")]
-        HljsHtmlbars = 347,
+        HljsHtmlbars = 348,
 
         /// <summary>
         /// Enum HljsHttp for value: hljs-http
         /// </summary>
         [EnumMember(Value = "hljs-http")]
-        HljsHttp = 348,
+        HljsHttp = 349,
 
         /// <summary>
         /// Enum HljsHy for value: hljs-hy
         /// </summary>
         [EnumMember(Value = "hljs-hy")]
-        HljsHy = 349,
+        HljsHy = 350,
 
         /// <summary>
         /// Enum HljsInform7 for value: hljs-inform7
         /// </summary>
         [EnumMember(Value = "hljs-inform7")]
-        HljsInform7 = 350,
+        HljsInform7 = 351,
 
         /// <summary>
         /// Enum HljsIni for value: hljs-ini
         /// </summary>
         [EnumMember(Value = "hljs-ini")]
-        HljsIni = 351,
+        HljsIni = 352,
 
         /// <summary>
         /// Enum HljsIrpf90 for value: hljs-irpf90
         /// </summary>
         [EnumMember(Value = "hljs-irpf90")]
-        HljsIrpf90 = 352,
+        HljsIrpf90 = 353,
 
         /// <summary>
         /// Enum HljsIsbl for value: hljs-isbl
         /// </summary>
         [EnumMember(Value = "hljs-isbl")]
-        HljsIsbl = 353,
+        HljsIsbl = 354,
 
         /// <summary>
         /// Enum HljsJava for value: hljs-java
         /// </summary>
         [EnumMember(Value = "hljs-java")]
-        HljsJava = 354,
+        HljsJava = 355,
 
         /// <summary>
         /// Enum HljsJavascript for value: hljs-javascript
         /// </summary>
         [EnumMember(Value = "hljs-javascript")]
-        HljsJavascript = 355,
+        HljsJavascript = 356,
 
         /// <summary>
         /// Enum HljsJbossCli for value: hljs-jboss-cli
         /// </summary>
         [EnumMember(Value = "hljs-jboss-cli")]
-        HljsJbossCli = 356,
+        HljsJbossCli = 357,
 
         /// <summary>
         /// Enum HljsJson for value: hljs-json
         /// </summary>
         [EnumMember(Value = "hljs-json")]
-        HljsJson = 357,
+        HljsJson = 358,
 
         /// <summary>
         /// Enum HljsJuliaRepl for value: hljs-julia-repl
         /// </summary>
         [EnumMember(Value = "hljs-julia-repl")]
-        HljsJuliaRepl = 358,
+        HljsJuliaRepl = 359,
 
         /// <summary>
         /// Enum HljsJulia for value: hljs-julia
         /// </summary>
         [EnumMember(Value = "hljs-julia")]
-        HljsJulia = 359,
+        HljsJulia = 360,
 
         /// <summary>
         /// Enum HljsKotlin for value: hljs-kotlin
         /// </summary>
         [EnumMember(Value = "hljs-kotlin")]
-        HljsKotlin = 360,
+        HljsKotlin = 361,
 
         /// <summary>
         /// Enum HljsLasso for value: hljs-lasso
         /// </summary>
         [EnumMember(Value = "hljs-lasso")]
-        HljsLasso = 361,
+        HljsLasso = 362,
 
         /// <summary>
         /// Enum HljsLdif for value: hljs-ldif
         /// </summary>
         [EnumMember(Value = "hljs-ldif")]
-        HljsLdif = 362,
+        HljsLdif = 363,
 
         /// <summary>
         /// Enum HljsLeaf for value: hljs-leaf
         /// </summary>
         [EnumMember(Value = "hljs-leaf")]
-        HljsLeaf = 363,
+        HljsLeaf = 364,
 
         /// <summary>
         /// Enum HljsLess for value: hljs-less
         /// </summary>
         [EnumMember(Value = "hljs-less")]
-        HljsLess = 364,
+        HljsLess = 365,
 
         /// <summary>
         /// Enum HljsLisp for value: hljs-lisp
         /// </summary>
         [EnumMember(Value = "hljs-lisp")]
-        HljsLisp = 365,
+        HljsLisp = 366,
 
         /// <summary>
         /// Enum HljsLivecodeserver for value: hljs-livecodeserver
         /// </summary>
         [EnumMember(Value = "hljs-livecodeserver")]
-        HljsLivecodeserver = 366,
+        HljsLivecodeserver = 367,
 
         /// <summary>
         /// Enum HljsLivescript for value: hljs-livescript
         /// </summary>
         [EnumMember(Value = "hljs-livescript")]
-        HljsLivescript = 367,
+        HljsLivescript = 368,
 
         /// <summary>
         /// Enum HljsLlvm for value: hljs-llvm
         /// </summary>
         [EnumMember(Value = "hljs-llvm")]
-        HljsLlvm = 368,
+        HljsLlvm = 369,
 
         /// <summary>
         /// Enum HljsLsl for value: hljs-lsl
         /// </summary>
         [EnumMember(Value = "hljs-lsl")]
-        HljsLsl = 369,
+        HljsLsl = 370,
 
         /// <summary>
         /// Enum HljsLua for value: hljs-lua
         /// </summary>
         [EnumMember(Value = "hljs-lua")]
-        HljsLua = 370,
+        HljsLua = 371,
 
         /// <summary>
         /// Enum HljsMakefile for value: hljs-makefile
         /// </summary>
         [EnumMember(Value = "hljs-makefile")]
-        HljsMakefile = 371,
+        HljsMakefile = 372,
 
         /// <summary>
         /// Enum HljsMarkdown for value: hljs-markdown
         /// </summary>
         [EnumMember(Value = "hljs-markdown")]
-        HljsMarkdown = 372,
+        HljsMarkdown = 373,
 
         /// <summary>
         /// Enum HljsMathematica for value: hljs-mathematica
         /// </summary>
         [EnumMember(Value = "hljs-mathematica")]
-        HljsMathematica = 373,
+        HljsMathematica = 374,
 
         /// <summary>
         /// Enum HljsMatlab for value: hljs-matlab
         /// </summary>
         [EnumMember(Value = "hljs-matlab")]
-        HljsMatlab = 374,
+        HljsMatlab = 375,
 
         /// <summary>
         /// Enum HljsMaxima for value: hljs-maxima
         /// </summary>
         [EnumMember(Value = "hljs-maxima")]
-        HljsMaxima = 375,
+        HljsMaxima = 376,
 
         /// <summary>
         /// Enum HljsMel for value: hljs-mel
         /// </summary>
         [EnumMember(Value = "hljs-mel")]
-        HljsMel = 376,
+        HljsMel = 377,
 
         /// <summary>
         /// Enum HljsMercury for value: hljs-mercury
         /// </summary>
         [EnumMember(Value = "hljs-mercury")]
-        HljsMercury = 377,
+        HljsMercury = 378,
 
         /// <summary>
         /// Enum HljsMipsasm for value: hljs-mipsasm
         /// </summary>
         [EnumMember(Value = "hljs-mipsasm")]
-        HljsMipsasm = 378,
+        HljsMipsasm = 379,
 
         /// <summary>
         /// Enum HljsMizar for value: hljs-mizar
         /// </summary>
         [EnumMember(Value = "hljs-mizar")]
-        HljsMizar = 379,
+        HljsMizar = 380,
 
         /// <summary>
         /// Enum HljsMojolicious for value: hljs-mojolicious
         /// </summary>
         [EnumMember(Value = "hljs-mojolicious")]
-        HljsMojolicious = 380,
+        HljsMojolicious = 381,
 
         /// <summary>
         /// Enum HljsMonkey for value: hljs-monkey
         /// </summary>
         [EnumMember(Value = "hljs-monkey")]
-        HljsMonkey = 381,
+        HljsMonkey = 382,
 
         /// <summary>
         /// Enum HljsMoonscript for value: hljs-moonscript
         /// </summary>
         [EnumMember(Value = "hljs-moonscript")]
-        HljsMoonscript = 382,
+        HljsMoonscript = 383,
 
         /// <summary>
         /// Enum HljsN1ql for value: hljs-n1ql
         /// </summary>
         [EnumMember(Value = "hljs-n1ql")]
-        HljsN1ql = 383,
+        HljsN1ql = 384,
 
         /// <summary>
         /// Enum HljsNginx for value: hljs-nginx
         /// </summary>
         [EnumMember(Value = "hljs-nginx")]
-        HljsNginx = 384,
+        HljsNginx = 385,
 
         /// <summary>
         /// Enum HljsNimrod for value: hljs-nimrod
         /// </summary>
         [EnumMember(Value = "hljs-nimrod")]
-        HljsNimrod = 385,
+        HljsNimrod = 386,
 
         /// <summary>
         /// Enum HljsNix for value: hljs-nix
         /// </summary>
         [EnumMember(Value = "hljs-nix")]
-        HljsNix = 386,
+        HljsNix = 387,
 
         /// <summary>
         /// Enum HljsNsis for value: hljs-nsis
         /// </summary>
         [EnumMember(Value = "hljs-nsis")]
-        HljsNsis = 387,
+        HljsNsis = 388,
 
         /// <summary>
         /// Enum HljsObjectivec for value: hljs-objectivec
         /// </summary>
         [EnumMember(Value = "hljs-objectivec")]
-        HljsObjectivec = 388,
+        HljsObjectivec = 389,
 
         /// <summary>
         /// Enum HljsOcaml for value: hljs-ocaml
         /// </summary>
         [EnumMember(Value = "hljs-ocaml")]
-        HljsOcaml = 389,
+        HljsOcaml = 390,
 
         /// <summary>
         /// Enum HljsOpenscad for value: hljs-openscad
         /// </summary>
         [EnumMember(Value = "hljs-openscad")]
-        HljsOpenscad = 390,
+        HljsOpenscad = 391,
 
         /// <summary>
         /// Enum HljsOxygene for value: hljs-oxygene
         /// </summary>
         [EnumMember(Value = "hljs-oxygene")]
-        HljsOxygene = 391,
+        HljsOxygene = 392,
 
         /// <summary>
         /// Enum HljsParser3 for value: hljs-parser3
         /// </summary>
         [EnumMember(Value = "hljs-parser3")]
-        HljsParser3 = 392,
+        HljsParser3 = 393,
 
         /// <summary>
         /// Enum HljsPerl for value: hljs-perl
         /// </summary>
         [EnumMember(Value = "hljs-perl")]
-        HljsPerl = 393,
+        HljsPerl = 394,
 
         /// <summary>
         /// Enum HljsPf for value: hljs-pf
         /// </summary>
         [EnumMember(Value = "hljs-pf")]
-        HljsPf = 394,
+        HljsPf = 395,
 
         /// <summary>
         /// Enum HljsPgsql for value: hljs-pgsql
         /// </summary>
         [EnumMember(Value = "hljs-pgsql")]
-        HljsPgsql = 395,
+        HljsPgsql = 396,
 
         /// <summary>
         /// Enum HljsPhp for value: hljs-php
         /// </summary>
         [EnumMember(Value = "hljs-php")]
-        HljsPhp = 396,
+        HljsPhp = 397,
 
         /// <summary>
         /// Enum HljsPlaintext for value: hljs-plaintext
         /// </summary>
         [EnumMember(Value = "hljs-plaintext")]
-        HljsPlaintext = 397,
+        HljsPlaintext = 398,
 
         /// <summary>
         /// Enum HljsPony for value: hljs-pony
         /// </summary>
         [EnumMember(Value = "hljs-pony")]
-        HljsPony = 398,
+        HljsPony = 399,
 
         /// <summary>
         /// Enum HljsPowershell for value: hljs-powershell
         /// </summary>
         [EnumMember(Value = "hljs-powershell")]
-        HljsPowershell = 399,
+        HljsPowershell = 400,
 
         /// <summary>
         /// Enum HljsProcessing for value: hljs-processing
         /// </summary>
         [EnumMember(Value = "hljs-processing")]
-        HljsProcessing = 400,
+        HljsProcessing = 401,
 
         /// <summary>
         /// Enum HljsProfile for value: hljs-profile
         /// </summary>
         [EnumMember(Value = "hljs-profile")]
-        HljsProfile = 401,
+        HljsProfile = 402,
 
         /// <summary>
         /// Enum HljsProlog for value: hljs-prolog
         /// </summary>
         [EnumMember(Value = "hljs-prolog")]
-        HljsProlog = 402,
+        HljsProlog = 403,
 
         /// <summary>
         /// Enum HljsProperties for value: hljs-properties
         /// </summary>
         [EnumMember(Value = "hljs-properties")]
-        HljsProperties = 403,
+        HljsProperties = 404,
 
         /// <summary>
         /// Enum HljsProtobuf for value: hljs-protobuf
         /// </summary>
         [EnumMember(Value = "hljs-protobuf")]
-        HljsProtobuf = 404,
+        HljsProtobuf = 405,
 
         /// <summary>
         /// Enum HljsPuppet for value: hljs-puppet
         /// </summary>
         [EnumMember(Value = "hljs-puppet")]
-        HljsPuppet = 405,
+        HljsPuppet = 406,
 
         /// <summary>
         /// Enum HljsPurebasic for value: hljs-purebasic
         /// </summary>
         [EnumMember(Value = "hljs-purebasic")]
-        HljsPurebasic = 406,
+        HljsPurebasic = 407,
 
         /// <summary>
         /// Enum HljsPython for value: hljs-python
         /// </summary>
         [EnumMember(Value = "hljs-python")]
-        HljsPython = 407,
+        HljsPython = 408,
 
         /// <summary>
         /// Enum HljsQ for value: hljs-q
         /// </summary>
         [EnumMember(Value = "hljs-q")]
-        HljsQ = 408,
+        HljsQ = 409,
 
         /// <summary>
         /// Enum HljsQml for value: hljs-qml
         /// </summary>
         [EnumMember(Value = "hljs-qml")]
-        HljsQml = 409,
+        HljsQml = 410,
 
         /// <summary>
         /// Enum HljsR for value: hljs-r
         /// </summary>
         [EnumMember(Value = "hljs-r")]
-        HljsR = 410,
+        HljsR = 411,
 
         /// <summary>
         /// Enum HljsReasonml for value: hljs-reasonml
         /// </summary>
         [EnumMember(Value = "hljs-reasonml")]
-        HljsReasonml = 411,
+        HljsReasonml = 412,
 
         /// <summary>
         /// Enum HljsRib for value: hljs-rib
         /// </summary>
         [EnumMember(Value = "hljs-rib")]
-        HljsRib = 412,
+        HljsRib = 413,
 
         /// <summary>
         /// Enum HljsRoboconf for value: hljs-roboconf
         /// </summary>
         [EnumMember(Value = "hljs-roboconf")]
-        HljsRoboconf = 413,
+        HljsRoboconf = 414,
 
         /// <summary>
         /// Enum HljsRouteros for value: hljs-routeros
         /// </summary>
         [EnumMember(Value = "hljs-routeros")]
-        HljsRouteros = 414,
+        HljsRouteros = 415,
 
         /// <summary>
         /// Enum HljsRsl for value: hljs-rsl
         /// </summary>
         [EnumMember(Value = "hljs-rsl")]
-        HljsRsl = 415,
+        HljsRsl = 416,
 
         /// <summary>
         /// Enum HljsRuby for value: hljs-ruby
         /// </summary>
         [EnumMember(Value = "hljs-ruby")]
-        HljsRuby = 416,
+        HljsRuby = 417,
 
         /// <summary>
         /// Enum HljsRuleslanguage for value: hljs-ruleslanguage
         /// </summary>
         [EnumMember(Value = "hljs-ruleslanguage")]
-        HljsRuleslanguage = 417,
+        HljsRuleslanguage = 418,
 
         /// <summary>
         /// Enum HljsRust for value: hljs-rust
         /// </summary>
         [EnumMember(Value = "hljs-rust")]
-        HljsRust = 418,
+        HljsRust = 419,
 
         /// <summary>
         /// Enum HljsSas for value: hljs-sas
         /// </summary>
         [EnumMember(Value = "hljs-sas")]
-        HljsSas = 419,
+        HljsSas = 420,
 
         /// <summary>
         /// Enum HljsScala for value: hljs-scala
         /// </summary>
         [EnumMember(Value = "hljs-scala")]
-        HljsScala = 420,
+        HljsScala = 421,
 
         /// <summary>
         /// Enum HljsScheme for value: hljs-scheme
         /// </summary>
         [EnumMember(Value = "hljs-scheme")]
-        HljsScheme = 421,
+        HljsScheme = 422,
 
         /// <summary>
         /// Enum HljsScilab for value: hljs-scilab
         /// </summary>
         [EnumMember(Value = "hljs-scilab")]
-        HljsScilab = 422,
+        HljsScilab = 423,
 
         /// <summary>
         /// Enum HljsScss for value: hljs-scss
         /// </summary>
         [EnumMember(Value = "hljs-scss")]
-        HljsScss = 423,
+        HljsScss = 424,
 
         /// <summary>
         /// Enum HljsShell for value: hljs-shell
         /// </summary>
         [EnumMember(Value = "hljs-shell")]
-        HljsShell = 424,
+        HljsShell = 425,
 
         /// <summary>
         /// Enum HljsSmali for value: hljs-smali
         /// </summary>
         [EnumMember(Value = "hljs-smali")]
-        HljsSmali = 425,
+        HljsSmali = 426,
 
         /// <summary>
         /// Enum HljsSmalltalk for value: hljs-smalltalk
         /// </summary>
         [EnumMember(Value = "hljs-smalltalk")]
-        HljsSmalltalk = 426,
+        HljsSmalltalk = 427,
 
         /// <summary>
         /// Enum HljsSml for value: hljs-sml
         /// </summary>
         [EnumMember(Value = "hljs-sml")]
-        HljsSml = 427,
+        HljsSml = 428,
 
         /// <summary>
         /// Enum HljsSqf for value: hljs-sqf
         /// </summary>
         [EnumMember(Value = "hljs-sqf")]
-        HljsSqf = 428,
+        HljsSqf = 429,
 
         /// <summary>
         /// Enum HljsSql for value: hljs-sql
         /// </summary>
         [EnumMember(Value = "hljs-sql")]
-        HljsSql = 429,
+        HljsSql = 430,
 
         /// <summary>
         /// Enum HljsStan for value: hljs-stan
         /// </summary>
         [EnumMember(Value = "hljs-stan")]
-        HljsStan = 430,
+        HljsStan = 431,
 
         /// <summary>
         /// Enum HljsStata for value: hljs-stata
         /// </summary>
         [EnumMember(Value = "hljs-stata")]
-        HljsStata = 431,
+        HljsStata = 432,
 
         /// <summary>
         /// Enum HljsStep21 for value: hljs-step21
         /// </summary>
         [EnumMember(Value = "hljs-step21")]
-        HljsStep21 = 432,
+        HljsStep21 = 433,
 
         /// <summary>
         /// Enum HljsStylus for value: hljs-stylus
         /// </summary>
         [EnumMember(Value = "hljs-stylus")]
-        HljsStylus = 433,
+        HljsStylus = 434,
 
         /// <summary>
         /// Enum HljsSubunit for value: hljs-subunit
         /// </summary>
         [EnumMember(Value = "hljs-subunit")]
-        HljsSubunit = 434,
+        HljsSubunit = 435,
 
         /// <summary>
         /// Enum HljsSwift for value: hljs-swift
         /// </summary>
         [EnumMember(Value = "hljs-swift")]
-        HljsSwift = 435,
+        HljsSwift = 436,
 
         /// <summary>
         /// Enum HljsTaggerscript for value: hljs-taggerscript
         /// </summary>
         [EnumMember(Value = "hljs-taggerscript")]
-        HljsTaggerscript = 436,
+        HljsTaggerscript = 437,
 
         /// <summary>
         /// Enum HljsTap for value: hljs-tap
         /// </summary>
         [EnumMember(Value = "hljs-tap")]
-        HljsTap = 437,
+        HljsTap = 438,
 
         /// <summary>
         /// Enum HljsTcl for value: hljs-tcl
         /// </summary>
         [EnumMember(Value = "hljs-tcl")]
-        HljsTcl = 438,
+        HljsTcl = 439,
 
         /// <summary>
         /// Enum HljsTex for value: hljs-tex
         /// </summary>
         [EnumMember(Value = "hljs-tex")]
-        HljsTex = 439,
+        HljsTex = 440,
 
         /// <summary>
         /// Enum HljsThrift for value: hljs-thrift
         /// </summary>
         [EnumMember(Value = "hljs-thrift")]
-        HljsThrift = 440,
+        HljsThrift = 441,
 
         /// <summary>
         /// Enum HljsTp for value: hljs-tp
         /// </summary>
         [EnumMember(Value = "hljs-tp")]
-        HljsTp = 441,
+        HljsTp = 442,
 
         /// <summary>
         /// Enum HljsTwig for value: hljs-twig
         /// </summary>
         [EnumMember(Value = "hljs-twig")]
-        HljsTwig = 442,
+        HljsTwig = 443,
 
         /// <summary>
         /// Enum HljsTypescript for value: hljs-typescript
         /// </summary>
         [EnumMember(Value = "hljs-typescript")]
-        HljsTypescript = 443,
+        HljsTypescript = 444,
 
         /// <summary>
         /// Enum HljsVala for value: hljs-vala
         /// </summary>
         [EnumMember(Value = "hljs-vala")]
-        HljsVala = 444,
+        HljsVala = 445,
 
         /// <summary>
         /// Enum HljsVbnet for value: hljs-vbnet
         /// </summary>
         [EnumMember(Value = "hljs-vbnet")]
-        HljsVbnet = 445,
+        HljsVbnet = 446,
 
         /// <summary>
         /// Enum HljsVbscriptHtml for value: hljs-vbscript-html
         /// </summary>
         [EnumMember(Value = "hljs-vbscript-html")]
-        HljsVbscriptHtml = 446,
+        HljsVbscriptHtml = 447,
 
         /// <summary>
         /// Enum HljsVbscript for value: hljs-vbscript
         /// </summary>
         [EnumMember(Value = "hljs-vbscript")]
-        HljsVbscript = 447,
+        HljsVbscript = 448,
 
         /// <summary>
         /// Enum HljsVerilog for value: hljs-verilog
         /// </summary>
         [EnumMember(Value = "hljs-verilog")]
-        HljsVerilog = 448,
+        HljsVerilog = 449,
 
         /// <summary>
         /// Enum HljsVhdl for value: hljs-vhdl
         /// </summary>
         [EnumMember(Value = "hljs-vhdl")]
-        HljsVhdl = 449,
+        HljsVhdl = 450,
 
         /// <summary>
         /// Enum HljsVim for value: hljs-vim
         /// </summary>
         [EnumMember(Value = "hljs-vim")]
-        HljsVim = 450,
+        HljsVim = 451,
 
         /// <summary>
         /// Enum HljsX86asm for value: hljs-x86asm
         /// </summary>
         [EnumMember(Value = "hljs-x86asm")]
-        HljsX86asm = 451,
+        HljsX86asm = 452,
 
         /// <summary>
         /// Enum HljsXl for value: hljs-xl
         /// </summary>
         [EnumMember(Value = "hljs-xl")]
-        HljsXl = 452,
+        HljsXl = 453,
 
         /// <summary>
         /// Enum HljsXml for value: hljs-xml
         /// </summary>
         [EnumMember(Value = "hljs-xml")]
-        HljsXml = 453,
+        HljsXml = 454,
 
         /// <summary>
         /// Enum HljsXquery for value: hljs-xquery
         /// </summary>
         [EnumMember(Value = "hljs-xquery")]
-        HljsXquery = 454,
+        HljsXquery = 455,
 
         /// <summary>
         /// Enum HljsYaml for value: hljs-yaml
         /// </summary>
         [EnumMember(Value = "hljs-yaml")]
-        HljsYaml = 455,
+        HljsYaml = 456,
 
         /// <summary>
         /// Enum HljsToml for value: hljs-toml
         /// </summary>
         [EnumMember(Value = "hljs-toml")]
-        HljsToml = 456,
+        HljsToml = 457,
 
         /// <summary>
         /// Enum HljsZephir for value: hljs-zephir
         /// </summary>
         [EnumMember(Value = "hljs-zephir")]
-        HljsZephir = 457,
+        HljsZephir = 458,
 
         /// <summary>
         /// Enum HljsHtml for value: hljs-html
         /// </summary>
         [EnumMember(Value = "hljs-html")]
-        HljsHtml = 458,
+        HljsHtml = 459,
 
         /// <summary>
         /// Enum Groovy for value: groovy
         /// </summary>
         [EnumMember(Value = "groovy")]
-        Groovy = 459,
+        Groovy = 460,
 
         /// <summary>
         /// Enum Kt for value: kt
         /// </summary>
         [EnumMember(Value = "kt")]
-        Kt = 460,
+        Kt = 461,
 
         /// <summary>
         /// Enum El for value: el
         /// </summary>
         [EnumMember(Value = "el")]
-        El = 461,
+        El = 462,
 
         /// <summary>
         /// Enum Clj for value: clj
         /// </summary>
         [EnumMember(Value = "clj")]
-        Clj = 462,
+        Clj = 463,
 
         /// <summary>
         /// Enum Ex for value: ex
         /// </summary>
         [EnumMember(Value = "ex")]
-        Ex = 463,
+        Ex = 464,
 
         /// <summary>
         /// Enum Adb for value: adb
         /// </summary>
         [EnumMember(Value = "adb")]
-        Adb = 464,
+        Adb = 465,
 
         /// <summary>
         /// Enum Ads for value: ads
         /// </summary>
         [EnumMember(Value = "ads")]
-        Ads = 465,
+        Ads = 466,
 
         /// <summary>
         /// Enum Agda for value: agda
         /// </summary>
         [EnumMember(Value = "agda")]
-        Agda = 466,
+        Agda = 467,
 
         /// <summary>
         /// Enum Elm for value: elm
         /// </summary>
         [EnumMember(Value = "elm")]
-        Elm = 467,
+        Elm = 468,
 
         /// <summary>
         /// Enum Exs for value: exs
         /// </summary>
         [EnumMember(Value = "exs")]
-        Exs = 468,
+        Exs = 469,
 
         /// <summary>
         /// Enum Glsl for value: glsl
         /// </summary>
         [EnumMember(Value = "glsl")]
-        Glsl = 469,
+        Glsl = 470,
 
         /// <summary>
         /// Enum Ml for value: ml
         /// </summary>
         [EnumMember(Value = "ml")]
-        Ml = 470,
+        Ml = 471,
 
         /// <summary>
         /// Enum Lean for value: lean
         /// </summary>
         [EnumMember(Value = "lean")]
-        Lean = 471,
+        Lean = 472,
 
         /// <summary>
         /// Enum Lisp for value: lisp
         /// </summary>
         [EnumMember(Value = "lisp")]
-        Lisp = 472,
+        Lisp = 473,
 
         /// <summary>
         /// Enum Rkt for value: rkt
         /// </summary>
         [EnumMember(Value = "rkt")]
-        Rkt = 473,
+        Rkt = 474,
 
         /// <summary>
         /// Enum Sparql for value: sparql
         /// </summary>
         [EnumMember(Value = "sparql")]
-        Sparql = 474,
+        Sparql = 475,
 
         /// <summary>
         /// Enum Vhdl for value: vhdl
         /// </summary>
         [EnumMember(Value = "vhdl")]
-        Vhdl = 475,
+        Vhdl = 476,
 
         /// <summary>
         /// Enum Zig for value: zig
         /// </summary>
         [EnumMember(Value = "zig")]
-        Zig = 476,
+        Zig = 477,
 
         /// <summary>
         /// Enum Dockerfile for value: dockerfile
         /// </summary>
         [EnumMember(Value = "dockerfile")]
-        Dockerfile = 477,
+        Dockerfile = 478,
 
         /// <summary>
         /// Enum F03 for value: f03
         /// </summary>
         [EnumMember(Value = "f03")]
-        F03 = 478,
+        F03 = 479,
 
         /// <summary>
         /// Enum F08 for value: f08
         /// </summary>
         [EnumMember(Value = "f08")]
-        F08 = 479,
+        F08 = 480,
 
         /// <summary>
         /// Enum F18 for value: f18
         /// </summary>
         [EnumMember(Value = "f18")]
-        F18 = 480,
+        F18 = 481,
 
         /// <summary>
         /// Enum F90 for value: f90
         /// </summary>
         [EnumMember(Value = "f90")]
-        F90 = 481,
+        F90 = 482,
 
         /// <summary>
         /// Enum F95 for value: f95
         /// </summary>
         [EnumMember(Value = "f95")]
-        F95 = 482,
+        F95 = 483,
 
         /// <summary>
         /// Enum Jl for value: jl
         /// </summary>
         [EnumMember(Value = "jl")]
-        Jl = 483,
+        Jl = 484,
 
         /// <summary>
         /// Enum Mm for value: mm
         /// </summary>
         [EnumMember(Value = "mm")]
-        Mm = 484,
+        Mm = 485,
 
         /// <summary>
         /// Enum Scm for value: scm
         /// </summary>
         [EnumMember(Value = "scm")]
-        Scm = 485,
+        Scm = 486,
 
         /// <summary>
         /// Enum Sol for value: sol
         /// </summary>
         [EnumMember(Value = "sol")]
-        Sol = 486,
+        Sol = 487,
 
         /// <summary>
         /// Enum Sv for value: sv
         /// </summary>
         [EnumMember(Value = "sv")]
-        Sv = 487,
+        Sv = 488,
 
         /// <summary>
         /// Enum Asp for value: asp
         /// </summary>
         [EnumMember(Value = "asp")]
-        Asp = 488,
+        Asp = 489,
 
         /// <summary>
         /// Enum Cfm for value: cfm
         /// </summary>
         [EnumMember(Value = "cfm")]
-        Cfm = 489,
+        Cfm = 490,
 
         /// <summary>
         /// Enum Fs for value: fs
         /// </summary>
         [EnumMember(Value = "fs")]
-        Fs = 490,
+        Fs = 491,
 
         /// <summary>
         /// Enum Fsi for value: fsi
         /// </summary>
         [EnumMember(Value = "fsi")]
-        Fsi = 491,
+        Fsi = 492,
 
         /// <summary>
         /// Enum Fsx for value: fsx
         /// </summary>
         [EnumMember(Value = "fsx")]
-        Fsx = 492,
+        Fsx = 493,
 
         /// <summary>
         /// Enum Tf for value: tf
         /// </summary>
         [EnumMember(Value = "tf")]
-        Tf = 493,
+        Tf = 494,
 
         /// <summary>
         /// Enum Vba for value: vba
         /// </summary>
         [EnumMember(Value = "vba")]
-        Vba = 494,
+        Vba = 495,
 
         /// <summary>
         /// Enum Svelte for value: svelte
         /// </summary>
         [EnumMember(Value = "svelte")]
-        Svelte = 495,
+        Svelte = 496,
 
         /// <summary>
         /// Enum Vue for value: vue
         /// </summary>
         [EnumMember(Value = "vue")]
-        Vue = 496,
+        Vue = 497,
 
         /// <summary>
         /// Enum Scss for value: scss
         /// </summary>
         [EnumMember(Value = "scss")]
-        Scss = 497,
+        Scss = 498,
 
         /// <summary>
         /// Enum Feature for value: feature
         /// </summary>
         [EnumMember(Value = "feature")]
-        Feature = 498,
+        Feature = 499,
 
         /// <summary>
         /// Enum Ini for value: ini
         /// </summary>
         [EnumMember(Value = "ini")]
-        Ini = 499,
+        Ini = 500,
 
         /// <summary>
         /// Enum Ftl for value: ftl
         /// </summary>
         [EnumMember(Value = "ftl")]
-        Ftl = 500,
+        Ftl = 501,
 
         /// <summary>
         /// Enum Hcl for value: hcl
         /// </summary>
         [EnumMember(Value = "hcl")]
-        Hcl = 501,
+        Hcl = 502,
 
         /// <summary>
         /// Enum Abap for value: abap
         /// </summary>
         [EnumMember(Value = "abap")]
-        Abap = 502
+        Abap = 503,
+
+        /// <summary>
+        /// Enum Nim for value: nim
+        /// </summary>
+        [EnumMember(Value = "nim")]
+        Nim = 504
     }
 
 }

@@ -66,7 +66,11 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="workstreamEvent">workstreamEvent.</param>
         /// <param name="ranges">ranges.</param>
         /// <param name="range">range.</param>
-        public SeededScoreIncrement(EmbeddedModelSchema schema = default(EmbeddedModelSchema), SeededScore asset = default(SeededScore), SeededScore assets = default(SeededScore), SeededScore website = default(SeededScore), SeededScore websites = default(SeededScore), SeededScore anchor = default(SeededScore), SeededScore anchors = default(SeededScore), SeededScore anchorPoint = default(SeededScore), SeededScore anchorPoints = default(SeededScore), SeededScore annotation = default(SeededScore), SeededScore annotations = default(SeededScore), SeededScore conversation = default(SeededScore), SeededScore conversations = default(SeededScore), SeededScore conversationMessage = default(SeededScore), SeededScore conversationMessages = default(SeededScore), SeededScore share = default(SeededScore), SeededScore shares = default(SeededScore), SeededScore sensitive = default(SeededScore), SeededScore sensitives = default(SeededScore), SeededScore hint = default(SeededScore), SeededScore hints = default(SeededScore), SeededScore person = default(SeededScore), SeededScore persons = default(SeededScore), SeededScore tag = default(SeededScore), SeededScore tags = default(SeededScore), SeededScore workstreamSummary = default(SeededScore), SeededScore workstreamSummaries = default(SeededScore), SeededScore workstreamEvents = default(SeededScore), SeededScore workstreamEvent = default(SeededScore), SeededScore ranges = default(SeededScore), SeededScore range = default(SeededScore))
+        /// <param name="workstreamPatternEngineSources">workstreamPatternEngineSources.</param>
+        /// <param name="workstreamPatternEngineSource">workstreamPatternEngineSource.</param>
+        /// <param name="models">models.</param>
+        /// <param name="model">model.</param>
+        public SeededScoreIncrement(EmbeddedModelSchema schema = default(EmbeddedModelSchema), SeededScore asset = default(SeededScore), SeededScore assets = default(SeededScore), SeededScore website = default(SeededScore), SeededScore websites = default(SeededScore), SeededScore anchor = default(SeededScore), SeededScore anchors = default(SeededScore), SeededScore anchorPoint = default(SeededScore), SeededScore anchorPoints = default(SeededScore), SeededScore annotation = default(SeededScore), SeededScore annotations = default(SeededScore), SeededScore conversation = default(SeededScore), SeededScore conversations = default(SeededScore), SeededScore conversationMessage = default(SeededScore), SeededScore conversationMessages = default(SeededScore), SeededScore share = default(SeededScore), SeededScore shares = default(SeededScore), SeededScore sensitive = default(SeededScore), SeededScore sensitives = default(SeededScore), SeededScore hint = default(SeededScore), SeededScore hints = default(SeededScore), SeededScore person = default(SeededScore), SeededScore persons = default(SeededScore), SeededScore tag = default(SeededScore), SeededScore tags = default(SeededScore), SeededScore workstreamSummary = default(SeededScore), SeededScore workstreamSummaries = default(SeededScore), SeededScore workstreamEvents = default(SeededScore), SeededScore workstreamEvent = default(SeededScore), SeededScore ranges = default(SeededScore), SeededScore range = default(SeededScore), SeededScore workstreamPatternEngineSources = default(SeededScore), SeededScore workstreamPatternEngineSource = default(SeededScore), SeededScore models = default(SeededScore), SeededScore model = default(SeededScore))
         {
             this.Schema = schema;
             this.Asset = asset;
@@ -99,6 +103,10 @@ namespace Pieces.Os.Core.SdkModel
             this.WorkstreamEvent = workstreamEvent;
             this.Ranges = ranges;
             this.Range = range;
+            this.WorkstreamPatternEngineSources = workstreamPatternEngineSources;
+            this.WorkstreamPatternEngineSource = workstreamPatternEngineSource;
+            this.Models = models;
+            this.Model = model;
         }
 
         /// <summary>
@@ -288,6 +296,30 @@ namespace Pieces.Os.Core.SdkModel
         public SeededScore Range { get; set; }
 
         /// <summary>
+        /// Gets or Sets WorkstreamPatternEngineSources
+        /// </summary>
+        [DataMember(Name = "workstream_pattern_engine_sources", EmitDefaultValue = false)]
+        public SeededScore WorkstreamPatternEngineSources { get; set; }
+
+        /// <summary>
+        /// Gets or Sets WorkstreamPatternEngineSource
+        /// </summary>
+        [DataMember(Name = "workstream_pattern_engine_source", EmitDefaultValue = false)]
+        public SeededScore WorkstreamPatternEngineSource { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Models
+        /// </summary>
+        [DataMember(Name = "models", EmitDefaultValue = false)]
+        public SeededScore Models { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Model
+        /// </summary>
+        [DataMember(Name = "model", EmitDefaultValue = false)]
+        public SeededScore Model { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -326,6 +358,10 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  WorkstreamEvent: ").Append(WorkstreamEvent).Append("\n");
             sb.Append("  Ranges: ").Append(Ranges).Append("\n");
             sb.Append("  Range: ").Append(Range).Append("\n");
+            sb.Append("  WorkstreamPatternEngineSources: ").Append(WorkstreamPatternEngineSources).Append("\n");
+            sb.Append("  WorkstreamPatternEngineSource: ").Append(WorkstreamPatternEngineSource).Append("\n");
+            sb.Append("  Models: ").Append(Models).Append("\n");
+            sb.Append("  Model: ").Append(Model).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

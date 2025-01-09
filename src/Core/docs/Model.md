@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **MaxTokens** | [**ModelMaxTokens**](ModelMaxTokens.md) |  | [optional] 
 **Custom** | **bool** | This will let us know if this is a custom, or fine tuned model imported by the user. | [optional] 
 **Capabilities** | [**ModelCapabilities**](ModelCapabilities.md) |  | [optional] 
+**Score** | [**Score**](Score.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -37,12 +37,22 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <param name="schema">schema.</param>
         /// <param name="name">name.</param>
-        /// <param name="memory">memory.</param>
-        public OSDeviceCPUHardwareInformation(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string name = default(string), decimal memory = default(decimal))
+        /// <param name="l1Cache">l1Cache.</param>
+        /// <param name="l2Cache">l2Cache.</param>
+        /// <param name="l3Cache">l3Cache.</param>
+        /// <param name="sharedMemory">sharedMemory.</param>
+        /// <param name="cores">cores.</param>
+        /// <param name="clockCycleSpeed">clockCycleSpeed.</param>
+        public OSDeviceCPUHardwareInformation(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string name = default(string), decimal l1Cache = default(decimal), decimal l2Cache = default(decimal), decimal l3Cache = default(decimal), bool? sharedMemory = default(bool?), decimal cores = default(decimal), decimal clockCycleSpeed = default(decimal))
         {
             this.Schema = schema;
             this.Name = name;
-            this.Memory = memory;
+            this.L1Cache = l1Cache;
+            this.L2Cache = l2Cache;
+            this.L3Cache = l3Cache;
+            this.SharedMemory = sharedMemory;
+            this.Cores = cores;
+            this.ClockCycleSpeed = clockCycleSpeed;
         }
 
         /// <summary>
@@ -58,10 +68,40 @@ namespace Pieces.Os.Core.SdkModel
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Memory
+        /// Gets or Sets L1Cache
         /// </summary>
-        [DataMember(Name = "memory", EmitDefaultValue = false)]
-        public decimal Memory { get; set; }
+        [DataMember(Name = "l1_cache", EmitDefaultValue = false)]
+        public decimal L1Cache { get; set; }
+
+        /// <summary>
+        /// Gets or Sets L2Cache
+        /// </summary>
+        [DataMember(Name = "l2_cache", EmitDefaultValue = false)]
+        public decimal L2Cache { get; set; }
+
+        /// <summary>
+        /// Gets or Sets L3Cache
+        /// </summary>
+        [DataMember(Name = "l3_cache", EmitDefaultValue = false)]
+        public decimal L3Cache { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SharedMemory
+        /// </summary>
+        [DataMember(Name = "shared_memory", EmitDefaultValue = true)]
+        public bool? SharedMemory { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Cores
+        /// </summary>
+        [DataMember(Name = "cores", EmitDefaultValue = false)]
+        public decimal Cores { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ClockCycleSpeed
+        /// </summary>
+        [DataMember(Name = "clock_cycle_speed", EmitDefaultValue = false)]
+        public decimal ClockCycleSpeed { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,7 +113,12 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class OSDeviceCPUHardwareInformation {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Memory: ").Append(Memory).Append("\n");
+            sb.Append("  L1Cache: ").Append(L1Cache).Append("\n");
+            sb.Append("  L2Cache: ").Append(L2Cache).Append("\n");
+            sb.Append("  L3Cache: ").Append(L3Cache).Append("\n");
+            sb.Append("  SharedMemory: ").Append(SharedMemory).Append("\n");
+            sb.Append("  Cores: ").Append(Cores).Append("\n");
+            sb.Append("  ClockCycleSpeed: ").Append(ClockCycleSpeed).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

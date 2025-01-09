@@ -36,13 +36,15 @@ namespace Pieces.Os.Core.SdkModel
         /// Initializes a new instance of the <see cref="OSDeviceHardwareInformation" /> class.
         /// </summary>
         /// <param name="schema">schema.</param>
-        /// <param name="cpu">cpu.</param>
-        /// <param name="gpu">gpu.</param>
-        public OSDeviceHardwareInformation(EmbeddedModelSchema schema = default(EmbeddedModelSchema), OSDeviceCPUHardwareInformation cpu = default(OSDeviceCPUHardwareInformation), OSDeviceGPUHardwareInformation gpu = default(OSDeviceGPUHardwareInformation))
+        /// <param name="cpus">cpus.</param>
+        /// <param name="gpus">gpus.</param>
+        /// <param name="ram">ram.</param>
+        public OSDeviceHardwareInformation(EmbeddedModelSchema schema = default(EmbeddedModelSchema), List<OSDeviceCPUHardwareInformation> cpus = default(List<OSDeviceCPUHardwareInformation>), List<OSDeviceGPUHardwareInformation> gpus = default(List<OSDeviceGPUHardwareInformation>), OSDeviceRAMHardwareInformation ram = default(OSDeviceRAMHardwareInformation))
         {
             this.Schema = schema;
-            this.Cpu = cpu;
-            this.Gpu = gpu;
+            this.Cpus = cpus;
+            this.Gpus = gpus;
+            this.Ram = ram;
         }
 
         /// <summary>
@@ -52,16 +54,22 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
-        /// Gets or Sets Cpu
+        /// Gets or Sets Cpus
         /// </summary>
-        [DataMember(Name = "cpu", EmitDefaultValue = false)]
-        public OSDeviceCPUHardwareInformation Cpu { get; set; }
+        [DataMember(Name = "cpus", EmitDefaultValue = false)]
+        public List<OSDeviceCPUHardwareInformation> Cpus { get; set; }
 
         /// <summary>
-        /// Gets or Sets Gpu
+        /// Gets or Sets Gpus
         /// </summary>
-        [DataMember(Name = "gpu", EmitDefaultValue = false)]
-        public OSDeviceGPUHardwareInformation Gpu { get; set; }
+        [DataMember(Name = "gpus", EmitDefaultValue = false)]
+        public List<OSDeviceGPUHardwareInformation> Gpus { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Ram
+        /// </summary>
+        [DataMember(Name = "ram", EmitDefaultValue = false)]
+        public OSDeviceRAMHardwareInformation Ram { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,8 +80,9 @@ namespace Pieces.Os.Core.SdkModel
             StringBuilder sb = new StringBuilder();
             sb.Append("class OSDeviceHardwareInformation {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
-            sb.Append("  Cpu: ").Append(Cpu).Append("\n");
-            sb.Append("  Gpu: ").Append(Gpu).Append("\n");
+            sb.Append("  Cpus: ").Append(Cpus).Append("\n");
+            sb.Append("  Gpus: ").Append(Gpus).Append("\n");
+            sb.Append("  Ram: ").Append(Ram).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

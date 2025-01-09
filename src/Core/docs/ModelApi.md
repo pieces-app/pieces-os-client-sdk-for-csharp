@@ -4,6 +4,7 @@ All URIs are relative to *http://localhost:1000*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ModelScoresIncrement**](ModelApi.md#modelscoresincrement) | **POST** /model/{model}/scores/increment | &#39;/model/{model}/scores/increment&#39; [POST] |
 | [**ModelSpecificModelDownload**](ModelApi.md#modelspecificmodeldownload) | **POST** /model/{model}/download | /model/{model}/download [POST] |
 | [**ModelSpecificModelDownloadCancel**](ModelApi.md#modelspecificmodeldownloadcancel) | **POST** /model/{model}/download/cancel | /model/{model}/download/cancel [POST] |
 | [**ModelSpecificModelDownloadProgress**](ModelApi.md#modelspecificmodeldownloadprogress) | **GET** /model/{model}/download/progress | /model/{model}/download/progress [WS] |
@@ -11,6 +12,101 @@ All URIs are relative to *http://localhost:1000*
 | [**ModelSpecificModelUnload**](ModelApi.md#modelspecificmodelunload) | **POST** /model/{model}/unload | /model/{model}/unload [POST] |
 | [**ModelUpdate**](ModelApi.md#modelupdate) | **POST** /model/update | /model/update [POST] |
 | [**ModelsSpecificModelSnapshot**](ModelApi.md#modelsspecificmodelsnapshot) | **GET** /model/{model} | /model/{model} [GET] |
+
+<a id="modelscoresincrement"></a>
+# **ModelScoresIncrement**
+> void ModelScoresIncrement (string model, SeededScoreIncrement seededScoreIncrement = null)
+
+'/model/{model}/scores/increment' [POST]
+
+This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Pieces.Os.Core.Api;
+using Pieces.Os.Core.Client;
+using Pieces.Os.Core.SdkModel;
+
+namespace Example
+{
+    public class ModelScoresIncrementExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
+            var apiInstance = new ModelApi(config);
+            var model = "model_example";  // string | model id
+            var seededScoreIncrement = new SeededScoreIncrement(); // SeededScoreIncrement |  (optional) 
+
+            try
+            {
+                // '/model/{model}/scores/increment' [POST]
+                apiInstance.ModelScoresIncrement(model, seededScoreIncrement);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ModelApi.ModelScoresIncrement: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ModelScoresIncrementWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // '/model/{model}/scores/increment' [POST]
+    apiInstance.ModelScoresIncrementWithHttpInfo(model, seededScoreIncrement);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ModelApi.ModelScoresIncrementWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **model** | **string** | model id |  |
+| **seededScoreIncrement** | [**SeededScoreIncrement**](SeededScoreIncrement.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: text/plain
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="modelspecificmodeldownload"></a>
 # **ModelSpecificModelDownload**

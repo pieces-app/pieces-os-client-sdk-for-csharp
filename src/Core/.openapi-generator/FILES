@@ -174,6 +174,7 @@ docs/FlattenedFormat.md
 docs/FlattenedFormats.md
 docs/FlattenedHint.md
 docs/FlattenedHints.md
+docs/FlattenedIdentifiedWorkstreamPatternEngineSource.md
 docs/FlattenedImageAnalysis.md
 docs/FlattenedOCRAnalysis.md
 docs/FlattenedPerson.md
@@ -230,6 +231,8 @@ docs/IDESelection.md
 docs/IDESelections.md
 docs/IDETab.md
 docs/IDETabs.md
+docs/IdentifiedWorkstreamPatternEngineSource.md
+docs/IdentifiedWorkstreamPatternEngineSources.md
 docs/ImageAnalyses.md
 docs/ImageAnalysesApi.md
 docs/ImageAnalysis.md
@@ -286,6 +289,8 @@ docs/OSDeviceGPUHardwareCapabilitiesInformation.md
 docs/OSDeviceGPUHardwareInformation.md
 docs/OSDeviceHardwareInformation.md
 docs/OSDeviceInformationReturnable.md
+docs/OSDeviceRAMHardwareInformation.md
+docs/OSDeviceRAMTypeEnum.md
 docs/OSFileStreamingRead.md
 docs/OSFileStreamingReadAttempt.md
 docs/OSFileStreamingReadProgress.md
@@ -295,6 +300,12 @@ docs/OSProcessingPermissions.md
 docs/OSServerMetadata.md
 docs/OSServerSettings.md
 docs/OSServerUpdateStatus.md
+docs/OllamaApi.md
+docs/OllamaDeployment.md
+docs/OllamaDeploymentStatusEnum.md
+docs/OllamaDeployments.md
+docs/OllamaRecommendation.md
+docs/OllamaStatus.md
 docs/OnboardedPersonaDetails.md
 docs/OpenAIApi.md
 docs/OpenAIModelsListInput.md
@@ -374,6 +385,7 @@ docs/ReferencedConversationMessage.md
 docs/ReferencedDistribution.md
 docs/ReferencedFormat.md
 docs/ReferencedHint.md
+docs/ReferencedIdentifiedWorkstreamPatternEngineSource.md
 docs/ReferencedModel.md
 docs/ReferencedPerson.md
 docs/ReferencedRange.md
@@ -417,6 +429,8 @@ docs/SearchedConversationMessages.md
 docs/SearchedConversations.md
 docs/SearchedHint.md
 docs/SearchedHints.md
+docs/SearchedIdentifiedWorkstreamPatternEngineSource.md
+docs/SearchedIdentifiedWorkstreamPatternEngineSources.md
 docs/SearchedMatchEnum.md
 docs/SearchedPerson.md
 docs/SearchedPersons.md
@@ -503,6 +517,7 @@ docs/SeededUser.md
 docs/SeededWebsite.md
 docs/SeededWorkstreamEvent.md
 docs/SeededWorkstreamIngestion.md
+docs/SeededWorkstreamPatternEngineSource.md
 docs/SeededWorkstreamSuggestionsRefresh.md
 docs/SeededWorkstreamSummary.md
 docs/Seeds.md
@@ -611,7 +626,9 @@ docs/WorkstreamIngestion.md
 docs/WorkstreamPatternEngineApi.md
 docs/WorkstreamPatternEngineDataCleanupRequest.md
 docs/WorkstreamPatternEngineSource.md
+docs/WorkstreamPatternEngineSourceApi.md
 docs/WorkstreamPatternEngineSources.md
+docs/WorkstreamPatternEngineSourcesApi.md
 docs/WorkstreamPatternEngineStatus.md
 docs/WorkstreamPatternEngineVisionCalibration.md
 docs/WorkstreamPatternEngineVisionCalibrations.md
@@ -678,6 +695,7 @@ src/Pieces.Os.Core/Api/ModelsApi.cs
 src/Pieces.Os.Core/Api/NotificationsApi.cs
 src/Pieces.Os.Core/Api/OCRAnalysesApi.cs
 src/Pieces.Os.Core/Api/OSApi.cs
+src/Pieces.Os.Core/Api/OllamaApi.cs
 src/Pieces.Os.Core/Api/OpenAIApi.cs
 src/Pieces.Os.Core/Api/PKCEApi.cs
 src/Pieces.Os.Core/Api/PersonApi.cs
@@ -705,6 +723,8 @@ src/Pieces.Os.Core/Api/WorkstreamApi.cs
 src/Pieces.Os.Core/Api/WorkstreamEventApi.cs
 src/Pieces.Os.Core/Api/WorkstreamEventsApi.cs
 src/Pieces.Os.Core/Api/WorkstreamPatternEngineApi.cs
+src/Pieces.Os.Core/Api/WorkstreamPatternEngineSourceApi.cs
+src/Pieces.Os.Core/Api/WorkstreamPatternEngineSourcesApi.cs
 src/Pieces.Os.Core/Api/WorkstreamSummariesApi.cs
 src/Pieces.Os.Core/Api/WorkstreamSummaryApi.cs
 src/Pieces.Os.Core/Client/ApiClient.cs
@@ -869,6 +889,7 @@ src/Pieces.Os.Core/SdkModel/FlattenedFormat.cs
 src/Pieces.Os.Core/SdkModel/FlattenedFormats.cs
 src/Pieces.Os.Core/SdkModel/FlattenedHint.cs
 src/Pieces.Os.Core/SdkModel/FlattenedHints.cs
+src/Pieces.Os.Core/SdkModel/FlattenedIdentifiedWorkstreamPatternEngineSource.cs
 src/Pieces.Os.Core/SdkModel/FlattenedImageAnalysis.cs
 src/Pieces.Os.Core/SdkModel/FlattenedOCRAnalysis.cs
 src/Pieces.Os.Core/SdkModel/FlattenedPerson.cs
@@ -920,6 +941,8 @@ src/Pieces.Os.Core/SdkModel/IDESelection.cs
 src/Pieces.Os.Core/SdkModel/IDESelections.cs
 src/Pieces.Os.Core/SdkModel/IDETab.cs
 src/Pieces.Os.Core/SdkModel/IDETabs.cs
+src/Pieces.Os.Core/SdkModel/IdentifiedWorkstreamPatternEngineSource.cs
+src/Pieces.Os.Core/SdkModel/IdentifiedWorkstreamPatternEngineSources.cs
 src/Pieces.Os.Core/SdkModel/ImageAnalyses.cs
 src/Pieces.Os.Core/SdkModel/ImageAnalysis.cs
 src/Pieces.Os.Core/SdkModel/InactiveOSServerApplet.cs
@@ -966,6 +989,8 @@ src/Pieces.Os.Core/SdkModel/OSDeviceGPUHardwareCapabilitiesInformation.cs
 src/Pieces.Os.Core/SdkModel/OSDeviceGPUHardwareInformation.cs
 src/Pieces.Os.Core/SdkModel/OSDeviceHardwareInformation.cs
 src/Pieces.Os.Core/SdkModel/OSDeviceInformationReturnable.cs
+src/Pieces.Os.Core/SdkModel/OSDeviceRAMHardwareInformation.cs
+src/Pieces.Os.Core/SdkModel/OSDeviceRAMTypeEnum.cs
 src/Pieces.Os.Core/SdkModel/OSFileStreamingRead.cs
 src/Pieces.Os.Core/SdkModel/OSFileStreamingReadAttempt.cs
 src/Pieces.Os.Core/SdkModel/OSFileStreamingReadProgress.cs
@@ -975,6 +1000,11 @@ src/Pieces.Os.Core/SdkModel/OSProcessingPermissions.cs
 src/Pieces.Os.Core/SdkModel/OSServerMetadata.cs
 src/Pieces.Os.Core/SdkModel/OSServerSettings.cs
 src/Pieces.Os.Core/SdkModel/OSServerUpdateStatus.cs
+src/Pieces.Os.Core/SdkModel/OllamaDeployment.cs
+src/Pieces.Os.Core/SdkModel/OllamaDeploymentStatusEnum.cs
+src/Pieces.Os.Core/SdkModel/OllamaDeployments.cs
+src/Pieces.Os.Core/SdkModel/OllamaRecommendation.cs
+src/Pieces.Os.Core/SdkModel/OllamaStatus.cs
 src/Pieces.Os.Core/SdkModel/OnboardedPersonaDetails.cs
 src/Pieces.Os.Core/SdkModel/OpenAIModelsListInput.cs
 src/Pieces.Os.Core/SdkModel/OpenAIModelsListOutput.cs
@@ -1046,6 +1076,7 @@ src/Pieces.Os.Core/SdkModel/ReferencedConversationMessage.cs
 src/Pieces.Os.Core/SdkModel/ReferencedDistribution.cs
 src/Pieces.Os.Core/SdkModel/ReferencedFormat.cs
 src/Pieces.Os.Core/SdkModel/ReferencedHint.cs
+src/Pieces.Os.Core/SdkModel/ReferencedIdentifiedWorkstreamPatternEngineSource.cs
 src/Pieces.Os.Core/SdkModel/ReferencedModel.cs
 src/Pieces.Os.Core/SdkModel/ReferencedPerson.cs
 src/Pieces.Os.Core/SdkModel/ReferencedRange.cs
@@ -1086,6 +1117,8 @@ src/Pieces.Os.Core/SdkModel/SearchedConversationMessages.cs
 src/Pieces.Os.Core/SdkModel/SearchedConversations.cs
 src/Pieces.Os.Core/SdkModel/SearchedHint.cs
 src/Pieces.Os.Core/SdkModel/SearchedHints.cs
+src/Pieces.Os.Core/SdkModel/SearchedIdentifiedWorkstreamPatternEngineSource.cs
+src/Pieces.Os.Core/SdkModel/SearchedIdentifiedWorkstreamPatternEngineSources.cs
 src/Pieces.Os.Core/SdkModel/SearchedMatchEnum.cs
 src/Pieces.Os.Core/SdkModel/SearchedPerson.cs
 src/Pieces.Os.Core/SdkModel/SearchedPersons.cs
@@ -1172,6 +1205,7 @@ src/Pieces.Os.Core/SdkModel/SeededUser.cs
 src/Pieces.Os.Core/SdkModel/SeededWebsite.cs
 src/Pieces.Os.Core/SdkModel/SeededWorkstreamEvent.cs
 src/Pieces.Os.Core/SdkModel/SeededWorkstreamIngestion.cs
+src/Pieces.Os.Core/SdkModel/SeededWorkstreamPatternEngineSource.cs
 src/Pieces.Os.Core/SdkModel/SeededWorkstreamSuggestionsRefresh.cs
 src/Pieces.Os.Core/SdkModel/SeededWorkstreamSummary.cs
 src/Pieces.Os.Core/SdkModel/Seeds.cs

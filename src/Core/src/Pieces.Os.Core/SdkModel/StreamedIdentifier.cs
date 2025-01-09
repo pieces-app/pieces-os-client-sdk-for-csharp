@@ -51,8 +51,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="website">website.</param>
         /// <param name="application">application.</param>
         /// <param name="model">model.</param>
+        /// <param name="workstreamPatternEngineSource">workstreamPatternEngineSource.</param>
         /// <param name="deleted">This is a specific bool that will let us know if we deleted an Identifierfrom the db..</param>
-        public StreamedIdentifier(ReferencedAsset asset = default(ReferencedAsset), ReferencedConversation conversation = default(ReferencedConversation), ReferencedAnnotation annotation = default(ReferencedAnnotation), ReferencedActivity activity = default(ReferencedActivity), ReferencedAnchor anchor = default(ReferencedAnchor), ReferencedAnchorPoint anchorPoint = default(ReferencedAnchorPoint), ReferencedHint hint = default(ReferencedHint), ReferencedConversationMessage conversationMessage = default(ReferencedConversationMessage), ReferencedFormat format = default(ReferencedFormat), ReferencedPerson person = default(ReferencedPerson), ReferencedRange range = default(ReferencedRange), ReferencedSensitive sensitive = default(ReferencedSensitive), ReferencedTag tag = default(ReferencedTag), ReferencedWebsite website = default(ReferencedWebsite), ReferencedApplication application = default(ReferencedApplication), ReferencedModel model = default(ReferencedModel), bool deleted = default(bool))
+        public StreamedIdentifier(ReferencedAsset asset = default(ReferencedAsset), ReferencedConversation conversation = default(ReferencedConversation), ReferencedAnnotation annotation = default(ReferencedAnnotation), ReferencedActivity activity = default(ReferencedActivity), ReferencedAnchor anchor = default(ReferencedAnchor), ReferencedAnchorPoint anchorPoint = default(ReferencedAnchorPoint), ReferencedHint hint = default(ReferencedHint), ReferencedConversationMessage conversationMessage = default(ReferencedConversationMessage), ReferencedFormat format = default(ReferencedFormat), ReferencedPerson person = default(ReferencedPerson), ReferencedRange range = default(ReferencedRange), ReferencedSensitive sensitive = default(ReferencedSensitive), ReferencedTag tag = default(ReferencedTag), ReferencedWebsite website = default(ReferencedWebsite), ReferencedApplication application = default(ReferencedApplication), ReferencedModel model = default(ReferencedModel), ReferencedIdentifiedWorkstreamPatternEngineSource workstreamPatternEngineSource = default(ReferencedIdentifiedWorkstreamPatternEngineSource), bool deleted = default(bool))
         {
             this.Asset = asset;
             this.Conversation = conversation;
@@ -70,6 +71,7 @@ namespace Pieces.Os.Core.SdkModel
             this.Website = website;
             this.Application = application;
             this.Model = model;
+            this.WorkstreamPatternEngineSource = workstreamPatternEngineSource;
             this.Deleted = deleted;
         }
 
@@ -170,6 +172,12 @@ namespace Pieces.Os.Core.SdkModel
         public ReferencedModel Model { get; set; }
 
         /// <summary>
+        /// Gets or Sets WorkstreamPatternEngineSource
+        /// </summary>
+        [DataMember(Name = "workstreamPatternEngineSource", EmitDefaultValue = false)]
+        public ReferencedIdentifiedWorkstreamPatternEngineSource WorkstreamPatternEngineSource { get; set; }
+
+        /// <summary>
         /// This is a specific bool that will let us know if we deleted an Identifierfrom the db.
         /// </summary>
         /// <value>This is a specific bool that will let us know if we deleted an Identifierfrom the db.</value>
@@ -200,6 +208,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  Website: ").Append(Website).Append("\n");
             sb.Append("  Application: ").Append(Application).Append("\n");
             sb.Append("  Model: ").Append(Model).Append("\n");
+            sb.Append("  WorkstreamPatternEngineSource: ").Append(WorkstreamPatternEngineSource).Append("\n");
             sb.Append("  Deleted: ").Append(Deleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

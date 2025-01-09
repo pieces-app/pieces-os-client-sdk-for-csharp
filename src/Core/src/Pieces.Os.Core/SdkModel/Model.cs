@@ -87,7 +87,8 @@ namespace Pieces.Os.Core.SdkModel
         /// <param name="maxTokens">maxTokens.</param>
         /// <param name="custom">This will let us know if this is a custom, or fine tuned model imported by the user..</param>
         /// <param name="capabilities">capabilities.</param>
-        public Model(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string id = default(string), string varVersion = default(string), GroupedTimestamp created = default(GroupedTimestamp), string name = default(string), string description = default(string), bool cloud = default(bool), ModelTypeEnum type = default(ModelTypeEnum), ModelUsageEnum usage = default(ModelUsageEnum), ByteDescriptor bytes = default(ByteDescriptor), ByteDescriptor ram = default(ByteDescriptor), string quantization = default(string), ModelFoundationEnum? foundation = default(ModelFoundationEnum?), bool downloaded = default(bool), bool loaded = default(bool), string unique = default(string), decimal? parameters = default(decimal?), ExternalMLProviderEnum? provider = default(ExternalMLProviderEnum?), bool cpu = default(bool), bool downloading = default(bool), ModelMaxTokens maxTokens = default(ModelMaxTokens), bool custom = default(bool), ModelCapabilities capabilities = default(ModelCapabilities))
+        /// <param name="score">score.</param>
+        public Model(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string id = default(string), string varVersion = default(string), GroupedTimestamp created = default(GroupedTimestamp), string name = default(string), string description = default(string), bool cloud = default(bool), ModelTypeEnum type = default(ModelTypeEnum), ModelUsageEnum usage = default(ModelUsageEnum), ByteDescriptor bytes = default(ByteDescriptor), ByteDescriptor ram = default(ByteDescriptor), string quantization = default(string), ModelFoundationEnum? foundation = default(ModelFoundationEnum?), bool downloaded = default(bool), bool loaded = default(bool), string unique = default(string), decimal? parameters = default(decimal?), ExternalMLProviderEnum? provider = default(ExternalMLProviderEnum?), bool cpu = default(bool), bool downloading = default(bool), ModelMaxTokens maxTokens = default(ModelMaxTokens), bool custom = default(bool), ModelCapabilities capabilities = default(ModelCapabilities), Score score = default(Score))
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -132,6 +133,7 @@ namespace Pieces.Os.Core.SdkModel
             this.MaxTokens = maxTokens;
             this.Custom = custom;
             this.Capabilities = capabilities;
+            this.Score = score;
         }
 
         /// <summary>
@@ -262,6 +264,12 @@ namespace Pieces.Os.Core.SdkModel
         public ModelCapabilities Capabilities { get; set; }
 
         /// <summary>
+        /// Gets or Sets Score
+        /// </summary>
+        [DataMember(Name = "score", EmitDefaultValue = false)]
+        public Score Score { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -292,6 +300,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("  MaxTokens: ").Append(MaxTokens).Append("\n");
             sb.Append("  Custom: ").Append(Custom).Append("\n");
             sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
+            sb.Append("  Score: ").Append(Score).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

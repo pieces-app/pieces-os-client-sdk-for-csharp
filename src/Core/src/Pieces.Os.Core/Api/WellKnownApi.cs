@@ -28,6 +28,27 @@ namespace Pieces.Os.Core.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// /.well-known/installation/path [Get]
+        /// </summary>
+        /// <remarks>
+        /// This endpoint will return the installation path of PiecesOS
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        string GetInstallationPath(int operationIndex = 0);
+
+        /// <summary>
+        /// /.well-known/installation/path [Get]
+        /// </summary>
+        /// <remarks>
+        /// This endpoint will return the installation path of PiecesOS
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> GetInstallationPathWithHttpInfo(int operationIndex = 0);
+        /// <summary>
         /// /.well-known/health [GET]
         /// </summary>
         /// <remarks>
@@ -96,6 +117,29 @@ namespace Pieces.Os.Core.Api
     public interface IWellKnownApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// /.well-known/installation/path [Get]
+        /// </summary>
+        /// <remarks>
+        /// This endpoint will return the installation path of PiecesOS
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> GetInstallationPathAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// /.well-known/installation/path [Get]
+        /// </summary>
+        /// <remarks>
+        /// This endpoint will return the installation path of PiecesOS
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> GetInstallationPathWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /.well-known/health [GET]
         /// </summary>
@@ -283,6 +327,132 @@ namespace Pieces.Os.Core.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// /.well-known/installation/path [Get] This endpoint will return the installation path of PiecesOS
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        public string GetInstallationPath(int operationIndex = 0)
+        {
+            Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = GetInstallationPathWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// /.well-known/installation/path [Get] This endpoint will return the installation path of PiecesOS
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        public Pieces.Os.Core.Client.ApiResponse<string> GetInstallationPathWithHttpInfo(int operationIndex = 0)
+        {
+            Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = Pieces.Os.Core.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Pieces.Os.Core.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "WellKnownApi.GetInstallationPath";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<string>("/.well-known/installation/path", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstallationPath", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// /.well-known/installation/path [Get] This endpoint will return the installation path of PiecesOS
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> GetInstallationPathAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await GetInstallationPathWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// /.well-known/installation/path [Get] This endpoint will return the installation path of PiecesOS
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> GetInstallationPathWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = Pieces.Os.Core.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Pieces.Os.Core.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "WellKnownApi.GetInstallationPath";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/.well-known/installation/path", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstallationPath", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

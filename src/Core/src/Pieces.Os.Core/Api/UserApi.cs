@@ -138,6 +138,27 @@ namespace Pieces.Os.Core.Api
         /// <returns>ApiResponse of UserProfile</returns>
         ApiResponse<UserProfile> UpdateUserWithHttpInfo(UserProfile userProfile = default(UserProfile), int operationIndex = 0);
         /// <summary>
+        /// &#39;/user/access_token&#39; [GET]
+        /// </summary>
+        /// <remarks>
+        /// This will return a user accessToken for usage w/ this user.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        string UserAccessToken(int operationIndex = 0);
+
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET]
+        /// </summary>
+        /// <remarks>
+        /// This will return a user accessToken for usage w/ this user.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> UserAccessTokenWithHttpInfo(int operationIndex = 0);
+        /// <summary>
         /// /user/beta/status [POST]
         /// </summary>
         /// <remarks>
@@ -353,6 +374,29 @@ namespace Pieces.Os.Core.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserProfile)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserProfile>> UpdateUserWithHttpInfoAsync(UserProfile userProfile = default(UserProfile), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET]
+        /// </summary>
+        /// <remarks>
+        /// This will return a user accessToken for usage w/ this user.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> UserAccessTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET]
+        /// </summary>
+        /// <remarks>
+        /// This will return a user accessToken for usage w/ this user.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> UserAccessTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /user/beta/status [POST]
         /// </summary>
@@ -1340,6 +1384,142 @@ namespace Pieces.Os.Core.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateUser", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET] This will return a user accessToken for usage w/ this user.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>string</returns>
+        public string UserAccessToken(int operationIndex = 0)
+        {
+            Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = UserAccessTokenWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET] This will return a user accessToken for usage w/ this user.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of string</returns>
+        public Pieces.Os.Core.Client.ApiResponse<string> UserAccessTokenWithHttpInfo(int operationIndex = 0)
+        {
+            Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = Pieces.Os.Core.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Pieces.Os.Core.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "UserApi.UserAccessToken";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<string>("/user/access_token", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UserAccessToken", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET] This will return a user accessToken for usage w/ this user.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> UserAccessTokenAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Pieces.Os.Core.Client.ApiResponse<string> localVarResponse = await UserAccessTokenWithHttpInfoAsync(operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// &#39;/user/access_token&#39; [GET] This will return a user accessToken for usage w/ this user.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<string>> UserAccessTokenWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = Pieces.Os.Core.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Pieces.Os.Core.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+
+            localVarRequestOptions.Operation = "UserApi.UserAccessToken";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.GetAsync<string>("/user/access_token", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UserAccessToken", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

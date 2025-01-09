@@ -29,6 +29,31 @@ namespace Pieces.Os.Core.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST]
+        /// </summary>
+        /// <remarks>
+        /// This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        void ModelScoresIncrement(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0);
+
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST]
+        /// </summary>
+        /// <remarks>
+        /// This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ModelScoresIncrementWithHttpInfo(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0);
+        /// <summary>
         /// /model/{model}/download [POST]
         /// </summary>
         /// <remarks>
@@ -198,6 +223,33 @@ namespace Pieces.Os.Core.Api
     public interface IModelApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST]
+        /// </summary>
+        /// <remarks>
+        /// This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ModelScoresIncrementAsync(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST]
+        /// </summary>
+        /// <remarks>
+        /// This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </remarks>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ModelScoresIncrementWithHttpInfoAsync(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /model/{model}/download [POST]
         /// </summary>
@@ -491,6 +543,166 @@ namespace Pieces.Os.Core.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST] This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns></returns>
+        public void ModelScoresIncrement(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0)
+        {
+            ModelScoresIncrementWithHttpInfo(model, seededScoreIncrement);
+        }
+
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST] This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Pieces.Os.Core.Client.ApiResponse<Object> ModelScoresIncrementWithHttpInfo(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0)
+        {
+            // verify the required parameter 'model' is set
+            if (model == null)
+            {
+                throw new Pieces.Os.Core.Client.ApiException(400, "Missing required parameter 'model' when calling ModelApi->ModelScoresIncrement");
+            }
+
+            Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = Pieces.Os.Core.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Pieces.Os.Core.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("model", Pieces.Os.Core.Client.ClientUtils.ParameterToString(model)); // path parameter
+            localVarRequestOptions.Data = seededScoreIncrement;
+
+            localVarRequestOptions.Operation = "ModelApi.ModelScoresIncrement";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/model/{model}/scores/increment", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ModelScoresIncrement", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST] This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ModelScoresIncrementAsync(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            await ModelScoresIncrementWithHttpInfoAsync(model, seededScoreIncrement, operationIndex, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// &#39;/model/{model}/scores/increment&#39; [POST] This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+        /// </summary>
+        /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="model">model id</param>
+        /// <param name="seededScoreIncrement"> (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Object>> ModelScoresIncrementWithHttpInfoAsync(string model, SeededScoreIncrement seededScoreIncrement = default(SeededScoreIncrement), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'model' is set
+            if (model == null)
+            {
+                throw new Pieces.Os.Core.Client.ApiException(400, "Missing required parameter 'model' when calling ModelApi->ModelScoresIncrement");
+            }
+
+
+            Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain"
+            };
+
+            var localVarContentType = Pieces.Os.Core.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Pieces.Os.Core.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.PathParameters.Add("model", Pieces.Os.Core.Client.ClientUtils.ParameterToString(model)); // path parameter
+            localVarRequestOptions.Data = seededScoreIncrement;
+
+            localVarRequestOptions.Operation = "ModelApi.ModelScoresIncrement";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (application) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Application-ID")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Application-ID", this.Configuration.GetApiKeyWithPrefix("X-Application-ID"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/model/{model}/scores/increment", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ModelScoresIncrement", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

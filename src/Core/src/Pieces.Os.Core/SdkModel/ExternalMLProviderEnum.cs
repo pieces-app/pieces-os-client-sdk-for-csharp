@@ -193,7 +193,13 @@ namespace Pieces.Os.Core.SdkModel
         /// Enum PERPLEXITY for value: PERPLEXITY
         /// </summary>
         [EnumMember(Value = "PERPLEXITY")]
-        PERPLEXITY = 27
+        PERPLEXITY = 27,
+
+        /// <summary>
+        /// Enum UNKNOWN for value: UNKNOWN
+        /// </summary>
+        [EnumMember(Value = "UNKNOWN")]
+        UNKNOWN = 28
     }
 
 }

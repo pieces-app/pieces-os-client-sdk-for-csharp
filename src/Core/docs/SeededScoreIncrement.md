@@ -36,6 +36,10 @@ Name | Type | Description | Notes
 **WorkstreamEvent** | [**SeededScore**](SeededScore.md) |  | [optional] 
 **Ranges** | [**SeededScore**](SeededScore.md) |  | [optional] 
 **Range** | [**SeededScore**](SeededScore.md) |  | [optional] 
+**WorkstreamPatternEngineSources** | [**SeededScore**](SeededScore.md) |  | [optional] 
+**WorkstreamPatternEngineSource** | [**SeededScore**](SeededScore.md) |  | [optional] 
+**Models** | [**SeededScore**](SeededScore.md) |  | [optional] 
+**Model** | [**SeededScore**](SeededScore.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

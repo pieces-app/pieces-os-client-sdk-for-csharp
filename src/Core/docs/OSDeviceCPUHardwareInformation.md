@@ -7,7 +7,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **Name** | **string** |  | [optional] 
-**Memory** | **decimal** |  | [optional] 
+**L1Cache** | **decimal** |  | [optional] 
+**L2Cache** | **decimal** |  | [optional] 
+**L3Cache** | **decimal** |  | [optional] 
+**SharedMemory** | **bool?** |  | [optional] 
+**Cores** | **decimal** |  | [optional] 
+**ClockCycleSpeed** | **decimal** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

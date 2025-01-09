@@ -42,7 +42,8 @@ namespace Pieces.Os.Core.SdkModel
         /// </summary>
         /// <param name="schema">schema.</param>
         /// <param name="iterable">iterable (required).</param>
-        public Models(EmbeddedModelSchema schema = default(EmbeddedModelSchema), List<Model> iterable = default(List<Model>))
+        /// <param name="score">score.</param>
+        public Models(EmbeddedModelSchema schema = default(EmbeddedModelSchema), List<Model> iterable = default(List<Model>), Score score = default(Score))
         {
             // to ensure "iterable" is required (not null)
             if (iterable == null)
@@ -51,6 +52,7 @@ namespace Pieces.Os.Core.SdkModel
             }
             this.Iterable = iterable;
             this.Schema = schema;
+            this.Score = score;
         }
 
         /// <summary>
@@ -66,6 +68,12 @@ namespace Pieces.Os.Core.SdkModel
         public List<Model> Iterable { get; set; }
 
         /// <summary>
+        /// Gets or Sets Score
+        /// </summary>
+        [DataMember(Name = "score", EmitDefaultValue = false)]
+        public Score Score { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -75,6 +83,7 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class Models {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Iterable: ").Append(Iterable).Append("\n");
+            sb.Append("  Score: ").Append(Score).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

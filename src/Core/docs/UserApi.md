@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost:1000*
 | [**SelectUser**](UserApi.md#selectuser) | **POST** /user/select | /user/select [POST] |
 | [**StreamUser**](UserApi.md#streamuser) | **GET** /user/stream | /user/stream [WS] |
 | [**UpdateUser**](UserApi.md#updateuser) | **POST** /user/update | /user/update [POST] |
+| [**UserAccessToken**](UserApi.md#useraccesstoken) | **GET** /user/access_token | &#39;/user/access_token&#39; [GET] |
 | [**UserBetaStatus**](UserApi.md#userbetastatus) | **POST** /user/beta/status | /user/beta/status [POST] |
 | [**UserProviders**](UserApi.md#userproviders) | **GET** /user/providers | Your GET endpoint |
 | [**UserSnapshot**](UserApi.md#usersnapshot) | **GET** /user | /user [GET] |
@@ -475,6 +476,98 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="useraccesstoken"></a>
+# **UserAccessToken**
+> string UserAccessToken ()
+
+'/user/access_token' [GET]
+
+This will return a user accessToken for usage w/ this user.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Pieces.Os.Core.Api;
+using Pieces.Os.Core.Client;
+using Pieces.Os.Core.SdkModel;
+
+namespace Example
+{
+    public class UserAccessTokenExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost:1000";
+            // Configure API key authorization: application
+            config.AddApiKey("X-Application-ID", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("X-Application-ID", "Bearer");
+
+            var apiInstance = new UserApi(config);
+
+            try
+            {
+                // '/user/access_token' [GET]
+                string result = apiInstance.UserAccessToken();
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling UserApi.UserAccessToken: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UserAccessTokenWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // '/user/access_token' [GET]
+    ApiResponse<string> response = apiInstance.UserAccessTokenWithHttpInfo();
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling UserApi.UserAccessTokenWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+### Return type
+
+**string**
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | This will return the PKCE token. |  -  |
+| **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

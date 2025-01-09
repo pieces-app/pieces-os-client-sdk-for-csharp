@@ -502,268 +502,364 @@ namespace Pieces.Os.Core.SdkModel
         GEMINI15 = 78,
 
         /// <summary>
+        /// Enum GEMINI2 for value: GEMINI_2
+        /// </summary>
+        [EnumMember(Value = "GEMINI_2")]
+        GEMINI2 = 79,
+
+        /// <summary>
         /// Enum FASTTEXT for value: FAST_TEXT
         /// </summary>
         [EnumMember(Value = "FAST_TEXT")]
-        FASTTEXT = 79,
+        FASTTEXT = 80,
 
         /// <summary>
         /// Enum UNIXCODER for value: UNIXCODER
         /// </summary>
         [EnumMember(Value = "UNIXCODER")]
-        UNIXCODER = 80,
+        UNIXCODER = 81,
 
         /// <summary>
         /// Enum PHI15 for value: PHI_1.5
         /// </summary>
         [EnumMember(Value = "PHI_1.5")]
-        PHI15 = 81,
+        PHI15 = 82,
 
         /// <summary>
         /// Enum PHI2 for value: PHI_2
         /// </summary>
         [EnumMember(Value = "PHI_2")]
-        PHI2 = 82,
+        PHI2 = 83,
 
         /// <summary>
         /// Enum MIXTRAL8X7B for value: MIXTRAL_8_x_7B
         /// </summary>
         [EnumMember(Value = "MIXTRAL_8_x_7B")]
-        MIXTRAL8X7B = 83,
+        MIXTRAL8X7B = 84,
 
         /// <summary>
         /// Enum MIXTRAL8X22B for value: MIXTRAL_8_x_22B
         /// </summary>
         [EnumMember(Value = "MIXTRAL_8_x_22B")]
-        MIXTRAL8X22B = 84,
+        MIXTRAL8X22B = 85,
 
         /// <summary>
         /// Enum GEMMA7B for value: GEMMA_7B
         /// </summary>
         [EnumMember(Value = "GEMMA_7B")]
-        GEMMA7B = 85,
+        GEMMA7B = 86,
 
         /// <summary>
         /// Enum GEMMA2B for value: GEMMA_2B
         /// </summary>
         [EnumMember(Value = "GEMMA_2B")]
-        GEMMA2B = 86,
+        GEMMA2B = 87,
 
         /// <summary>
         /// Enum CODEGEMMA7B for value: CODE_GEMMA_7B
         /// </summary>
         [EnumMember(Value = "CODE_GEMMA_7B")]
-        CODEGEMMA7B = 87,
+        CODEGEMMA7B = 88,
 
         /// <summary>
         /// Enum CODEGEMMA2B for value: CODE_GEMMA_2B
         /// </summary>
         [EnumMember(Value = "CODE_GEMMA_2B")]
-        CODEGEMMA2B = 88,
+        CODEGEMMA2B = 89,
 
         /// <summary>
         /// Enum RECURRENTGEMMA2B for value: RECURRENT_GEMMA_2B
         /// </summary>
         [EnumMember(Value = "RECURRENT_GEMMA_2B")]
-        RECURRENTGEMMA2B = 89,
+        RECURRENTGEMMA2B = 90,
 
         /// <summary>
         /// Enum GROK1 for value: GROK_1
         /// </summary>
         [EnumMember(Value = "GROK_1")]
-        GROK1 = 90,
+        GROK1 = 91,
 
         /// <summary>
         /// Enum GROK15 for value: GROK_1.5
         /// </summary>
         [EnumMember(Value = "GROK_1.5")]
-        GROK15 = 91,
+        GROK15 = 92,
 
         /// <summary>
         /// Enum CLAUDE2 for value: CLAUDE_2
         /// </summary>
         [EnumMember(Value = "CLAUDE_2")]
-        CLAUDE2 = 92,
+        CLAUDE2 = 93,
 
         /// <summary>
         /// Enum CLAUDE3 for value: CLAUDE_3
         /// </summary>
         [EnumMember(Value = "CLAUDE_3")]
-        CLAUDE3 = 93,
+        CLAUDE3 = 94,
 
         /// <summary>
         /// Enum STARLING7B for value: STARLING_7B
         /// </summary>
         [EnumMember(Value = "STARLING_7B")]
-        STARLING7B = 94,
+        STARLING7B = 95,
 
         /// <summary>
         /// Enum DBRX for value: DBRX
         /// </summary>
         [EnumMember(Value = "DBRX")]
-        DBRX = 95,
+        DBRX = 96,
 
         /// <summary>
         /// Enum COMMANDR for value: COMMAND_R+
         /// </summary>
         [EnumMember(Value = "COMMAND_R+")]
-        COMMANDR = 96,
+        COMMANDR = 97,
 
         /// <summary>
         /// Enum GEMMA112B for value: GEMMA_1.1_2B
         /// </summary>
         [EnumMember(Value = "GEMMA_1.1_2B")]
-        GEMMA112B = 97,
+        GEMMA112B = 98,
 
         /// <summary>
         /// Enum GEMMA117B for value: GEMMA_1.1_7B
         /// </summary>
         [EnumMember(Value = "GEMMA_1.1_7B")]
-        GEMMA117B = 98,
+        GEMMA117B = 99,
 
         /// <summary>
         /// Enum GEMMA29B for value: GEMMA_2_9B
         /// </summary>
         [EnumMember(Value = "GEMMA_2_9B")]
-        GEMMA29B = 99,
+        GEMMA29B = 100,
 
         /// <summary>
         /// Enum PHI3MINI for value: PHI_3_MINI
         /// </summary>
         [EnumMember(Value = "PHI_3_MINI")]
-        PHI3MINI = 100,
+        PHI3MINI = 101,
 
         /// <summary>
         /// Enum PHI3SMALL for value: PHI_3_SMALL
         /// </summary>
         [EnumMember(Value = "PHI_3_SMALL")]
-        PHI3SMALL = 101,
+        PHI3SMALL = 102,
 
         /// <summary>
         /// Enum GRANITE3B for value: GRANITE_3B
         /// </summary>
         [EnumMember(Value = "GRANITE_3B")]
-        GRANITE3B = 102,
+        GRANITE3B = 103,
 
         /// <summary>
         /// Enum GRANITE8B for value: GRANITE_8B
         /// </summary>
         [EnumMember(Value = "GRANITE_8B")]
-        GRANITE8B = 103,
+        GRANITE8B = 104,
 
         /// <summary>
         /// Enum LLAMA38B for value: LLAMA_3_8B
         /// </summary>
         [EnumMember(Value = "LLAMA_3_8B")]
-        LLAMA38B = 104,
+        LLAMA38B = 105,
 
         /// <summary>
         /// Enum CLAUDE35 for value: CLAUDE_3.5
         /// </summary>
         [EnumMember(Value = "CLAUDE_3.5")]
-        CLAUDE35 = 105,
+        CLAUDE35 = 106,
 
         /// <summary>
         /// Enum CLAUDELATEST for value: CLAUDE_LATEST
         /// </summary>
         [EnumMember(Value = "CLAUDE_LATEST")]
-        CLAUDELATEST = 106,
+        CLAUDELATEST = 107,
 
         /// <summary>
         /// Enum GRANITELATEST for value: GRANITE_LATEST
         /// </summary>
         [EnumMember(Value = "GRANITE_LATEST")]
-        GRANITELATEST = 107,
+        GRANITELATEST = 108,
 
         /// <summary>
         /// Enum LLAMALATEST for value: LLAMA_LATEST
         /// </summary>
         [EnumMember(Value = "LLAMA_LATEST")]
-        LLAMALATEST = 108,
+        LLAMALATEST = 109,
 
         /// <summary>
         /// Enum PHILATEST for value: PHI_LATEST
         /// </summary>
         [EnumMember(Value = "PHI_LATEST")]
-        PHILATEST = 109,
+        PHILATEST = 110,
 
         /// <summary>
         /// Enum GEMMALATEST for value: GEMMA_LATEST
         /// </summary>
         [EnumMember(Value = "GEMMA_LATEST")]
-        GEMMALATEST = 110,
+        GEMMALATEST = 111,
 
         /// <summary>
         /// Enum GEMINILATEST for value: GEMINI_LATEST
         /// </summary>
         [EnumMember(Value = "GEMINI_LATEST")]
-        GEMINILATEST = 111,
+        GEMINILATEST = 112,
 
         /// <summary>
         /// Enum GPTLATEST for value: GPT_LATEST
         /// </summary>
         [EnumMember(Value = "GPT_LATEST")]
-        GPTLATEST = 112,
+        GPTLATEST = 113,
 
         /// <summary>
         /// Enum AZURELATEST for value: AZURE_LATEST
         /// </summary>
         [EnumMember(Value = "AZURE_LATEST")]
-        AZURELATEST = 113,
+        AZURELATEST = 114,
 
         /// <summary>
         /// Enum AZUREFAST for value: AZURE_FAST
         /// </summary>
         [EnumMember(Value = "AZURE_FAST")]
-        AZUREFAST = 114,
+        AZUREFAST = 115,
 
         /// <summary>
         /// Enum AZUREBEST for value: AZURE_BEST
         /// </summary>
         [EnumMember(Value = "AZURE_BEST")]
-        AZUREBEST = 115,
+        AZUREBEST = 116,
 
         /// <summary>
         /// Enum AZUREDEFAULT for value: AZURE_DEFAULT
         /// </summary>
         [EnumMember(Value = "AZURE_DEFAULT")]
-        AZUREDEFAULT = 116,
+        AZUREDEFAULT = 117,
 
         /// <summary>
         /// Enum AZURECUSTOM for value: AZURE_CUSTOM
         /// </summary>
         [EnumMember(Value = "AZURE_CUSTOM")]
-        AZURECUSTOM = 117,
+        AZURECUSTOM = 118,
 
         /// <summary>
         /// Enum PERPLEXITYLATEST for value: PERPLEXITY_LATEST
         /// </summary>
         [EnumMember(Value = "PERPLEXITY_LATEST")]
-        PERPLEXITYLATEST = 118,
+        PERPLEXITYLATEST = 119,
 
         /// <summary>
         /// Enum PERPLEXITYFAST for value: PERPLEXITY_FAST
         /// </summary>
         [EnumMember(Value = "PERPLEXITY_FAST")]
-        PERPLEXITYFAST = 119,
+        PERPLEXITYFAST = 120,
 
         /// <summary>
         /// Enum PERPLEXITYBEST for value: PERPLEXITY_BEST
         /// </summary>
         [EnumMember(Value = "PERPLEXITY_BEST")]
-        PERPLEXITYBEST = 120,
+        PERPLEXITYBEST = 121,
 
         /// <summary>
         /// Enum PERPLEXITYDEFAULT for value: PERPLEXITY_DEFAULT
         /// </summary>
         [EnumMember(Value = "PERPLEXITY_DEFAULT")]
-        PERPLEXITYDEFAULT = 121,
+        PERPLEXITYDEFAULT = 122,
 
         /// <summary>
         /// Enum PERPLEXITYCUSTOM for value: PERPLEXITY_CUSTOM
         /// </summary>
         [EnumMember(Value = "PERPLEXITY_CUSTOM")]
-        PERPLEXITYCUSTOM = 122
+        PERPLEXITYCUSTOM = 123,
+
+        /// <summary>
+        /// Enum CODESTRALLATEST for value: CODESTRAL_LATEST
+        /// </summary>
+        [EnumMember(Value = "CODESTRAL_LATEST")]
+        CODESTRALLATEST = 124,
+
+        /// <summary>
+        /// Enum DEEPSEEKLATEST for value: DEEPSEEK_LATEST
+        /// </summary>
+        [EnumMember(Value = "DEEPSEEK_LATEST")]
+        DEEPSEEKLATEST = 125,
+
+        /// <summary>
+        /// Enum LLAVALATEST for value: LLAVA_LATEST
+        /// </summary>
+        [EnumMember(Value = "LLAVA_LATEST")]
+        LLAVALATEST = 126,
+
+        /// <summary>
+        /// Enum MIXTRALLATEST for value: MIXTRAL_LATEST
+        /// </summary>
+        [EnumMember(Value = "MIXTRAL_LATEST")]
+        MIXTRALLATEST = 127,
+
+        /// <summary>
+        /// Enum MISTRALLATEST for value: MISTRAL_LATEST
+        /// </summary>
+        [EnumMember(Value = "MISTRAL_LATEST")]
+        MISTRALLATEST = 128,
+
+        /// <summary>
+        /// Enum ORCALATEST for value: ORCA_LATEST
+        /// </summary>
+        [EnumMember(Value = "ORCA_LATEST")]
+        ORCALATEST = 129,
+
+        /// <summary>
+        /// Enum QWENCODERLATEST for value: QWEN_CODER_LATEST
+        /// </summary>
+        [EnumMember(Value = "QWEN_CODER_LATEST")]
+        QWENCODERLATEST = 130,
+
+        /// <summary>
+        /// Enum QWENLATEST for value: QWEN_LATEST
+        /// </summary>
+        [EnumMember(Value = "QWEN_LATEST")]
+        QWENLATEST = 131,
+
+        /// <summary>
+        /// Enum QWQLATEST for value: QWQ_LATEST
+        /// </summary>
+        [EnumMember(Value = "QWQ_LATEST")]
+        QWQLATEST = 132,
+
+        /// <summary>
+        /// Enum STARCODERLATEST for value: STARCODER_LATEST
+        /// </summary>
+        [EnumMember(Value = "STARCODER_LATEST")]
+        STARCODERLATEST = 133,
+
+        /// <summary>
+        /// Enum TINYLLAMALATEST for value: TINYLLAMA_LATEST
+        /// </summary>
+        [EnumMember(Value = "TINYLLAMA_LATEST")]
+        TINYLLAMALATEST = 134,
+
+        /// <summary>
+        /// Enum VICUNALATEST for value: VICUNA_LATEST
+        /// </summary>
+        [EnumMember(Value = "VICUNA_LATEST")]
+        VICUNALATEST = 135,
+
+        /// <summary>
+        /// Enum WIZARDLATEST for value: WIZARD_LATEST
+        /// </summary>
+        [EnumMember(Value = "WIZARD_LATEST")]
+        WIZARDLATEST = 136,
+
+        /// <summary>
+        /// Enum ZEPHYRLATEST for value: ZEPHYR_LATEST
+        /// </summary>
+        [EnumMember(Value = "ZEPHYR_LATEST")]
+        ZEPHYRLATEST = 137,
+
+        /// <summary>
+        /// Enum UNKNOWN for value: UNKNOWN
+        /// </summary>
+        [EnumMember(Value = "UNKNOWN")]
+        UNKNOWN = 138
     }
 
 }

@@ -90,8 +90,11 @@ tags:
 - name: WorkstreamEvent
 - name: WorkstreamEvents
 - name: WorkstreamPatternEngine
+- name: WorkstreamPatternEngineSources
+- name: WorkstreamPatternEngineSource
 - name: WorkstreamSummary
 - name: WorkstreamSummaries
+- name: Ollama
 paths:
   /.well-known/health:
     get:
@@ -4721,6 +4724,35 @@ paths:
                 type: string
           description: Internal Server Error
       summary: "/model/update [POST]"
+      tags:
+      - Model
+  /model/{model}/scores/increment:
+    post:
+      description: This will take in a SeededScoreIncrement and will increment the
+        material relative to the incoming body.
+      operationId: model-scores-increment
+      parameters:
+      - description: model id
+        in: path
+        name: model
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeededScoreIncrement'
+      responses:
+        "204":
+          description: No Content
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "'/model/{model}/scores/increment' [POST]"
       tags:
       - Model
   /models/create:
@@ -12116,6 +12148,555 @@ paths:
       summary: "/models/stream/identifiers [WS]"
       tags:
       - Models
+  /ollama/installs:
+    get:
+      description: This will return all the installation in a given session
+      operationId: ollama-installs-snapshot
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployments'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/installs [GET]"
+      tags:
+      - Ollama
+  /ollama/install:
+    post:
+      description: |-
+        This will start the installation for ollama.
+        NOTE: This will return immediately, use the update status
+      operationId: ollama-install
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/install [POST]"
+      tags:
+      - Ollama
+  /ollama/install/{identifier}:
+    get:
+      description: This will get the status of a given installation
+      operationId: ollama-install-snapshot
+      parameters:
+      - description: This is a identifier that is used to identify a specific generic
+          event.
+        in: path
+        name: identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/install/{identifier} [GET]"
+      tags:
+      - Ollama
+  /ollama/install/{identifier}/cancel:
+    post:
+      description: This will cancel a specific installation that is in-progress.
+      operationId: ollama-install-cancel
+      parameters:
+      - description: This is a identifier that is used to identify a specific generic
+          event.
+        in: path
+        name: identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/install/{identifier}/cancel [POST]"
+      tags:
+      - Ollama
+  /ollama/updates:
+    get:
+      description: This will return all the attempted updates in a given session
+      operationId: ollama-updates-snapshot
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployments'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/updates [GET]"
+      tags:
+      - Ollama
+  /ollama/update:
+    post:
+      description: |-
+        This will start the update for ollama.
+        NOTE: This will return immediately, use the ollama status endpoint to checks it status.
+        NOTE: This will required a user to pass in deployment that they would like to update to.(only thing required will be version here, and that this is a valid version to update to.)
+      operationId: ollama-update
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OllamaDeployment'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/update [POST]"
+      tags:
+      - Ollama
+  /ollama/uninstall:
+    post:
+      description: |-
+        This will uninstall Ollama.
+
+        NOTE: the request body is the installation that will be deleted.
+      operationId: ollama-uninstall
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OllamaDeployment'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/uninstall [POST]"
+      tags:
+      - Ollama
+  /ollama/update/{identifier}:
+    get:
+      description: This will get the status of a given update.
+      operationId: ollama-update-snapshot
+      parameters:
+      - description: This is a identifier that is used to identify a specific generic
+          event.
+        in: path
+        name: identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/update/{identifier} [GET]"
+      tags:
+      - Ollama
+  /ollama/update/{identifier}/cancel:
+    post:
+      description: This will cancel a specific update that is in-progress.
+      operationId: ollama-update-cancel
+      parameters:
+      - description: This is a identifier that is used to identify a specific generic
+          event.
+        in: path
+        name: identifier
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaDeployment'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/update/{identifier}/cancel [POST]"
+      tags:
+      - Ollama
+  /ollama/status:
+    get:
+      description: "This will get a status on Ollama, ie if ollama is installed, if\
+        \ it needs an update, \nif there are installations in progress, or updates\
+        \ in progress"
+      operationId: ollama-status-check
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaStatus'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/status [GET]"
+      tags:
+      - Ollama
+  /ollama/status/stream:
+    get:
+      description: |-
+        This provides a Websocket connection, that will emit a change on the initial connection and then all realtime updates:
+        - if an update have started
+        - if an installation has started
+        - if Ollama has been installed/uninstalled
+        - if an updated is required for Ollama
+      operationId: ollama-status-check-stream
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OllamaStatus'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/ollama/status/stream [WS]"
+      tags:
+      - Ollama
+  /workstream_pattern_engine/sources/{source}/delete:
+    post:
+      description: This will delete a specific workstream pattern engine source!
+      operationId: workstream_pattern_engine-sources-delete-specific-source
+      parameters:
+      - description: This is a identifier that is used to identify a specific WorkstreamPatternEngineSource
+        in: path
+        name: source
+        required: true
+        schema:
+          type: string
+      responses:
+        "204":
+          description: No Content
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/workstream_pattern_engine/sources/{source}/delete [POST]"
+      tags:
+      - WorkstreamPatternEngineSources
+  /workstream_pattern_engine/sources/create:
+    post:
+      description: This will create a anchor and attach it to a specific asset(s)
+        This will also ensure the anchor is normalized.
+      operationId: workstream_pattern_engine-sources-create-new-source
+      parameters:
+      - description: This is a boolean that will decided if we are want to return
+          the transferable data (default) or not(performance enhancement)
+        in: query
+        name: transferables
+        required: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeededWorkstreamPatternEngineSource'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSource'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/workstream_pattern_engine/sources/create [POST]"
+      tags:
+      - WorkstreamPatternEngineSources
+  /workstream_pattern_engine/sources:
+    get:
+      description: This will get a snapshot of all your anchors.
+      operationId: workstream_pattern_engine-sources-snapshot
+      parameters:
+      - description: This is a boolean that will decided if we are want to return
+          the transferable data (default) or not(performance enhancement)
+        in: query
+        name: transferables
+        required: false
+        schema:
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSources'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/workstream_pattern_engine/sources [GET]"
+      tags:
+      - WorkstreamPatternEngineSources
+  /workstream_pattern_engine/source/{source}:
+    get:
+      description: This will get a snapshot of a single workstream pattern engine
+        source.
+      operationId: workstream_pattern_engine-sources-specific-source-snapshot
+      parameters:
+      - description: This is a identifier that is used to identify a specific WorkstreamPatternEngineSource
+        in: path
+        name: source
+        required: true
+        schema:
+          type: string
+      - description: This is a boolean that will decided if we are want to return
+          the transferable data (default) or not(performance enhancement)
+        in: query
+        name: transferables
+        required: false
+        schema:
+          type: boolean
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSource'
+          description: OK
+        "410":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Workstream pattern Engine source not found.
+      summary: "/workstream_pattern_engine/source/{source} [GET]"
+      tags:
+      - WorkstreamPatternEngineSource
+  /workstream_pattern_engine/source/update:
+    post:
+      description: This will update a specific workstream pattern engine source.
+      operationId: workstream_pattern_engine-source-update
+      parameters:
+      - description: This is a boolean that will decided if we are want to return
+          the transferable data (default) or not(performance enhancement)
+        in: query
+        name: transferables
+        required: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSource'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSource'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/workstream_pattern_engine/source/update [POST]"
+      tags:
+      - WorkstreamPatternEngineSource
+  /workstream_pattern_engine/sources/search:
+    post:
+      description: This will search your workstream pattern engine sources
+      operationId: workstream_pattern_engine-search-sources
+      parameters:
+      - description: This is a boolean that will decided if we are want to return
+          the transferable data (default) or not(performance enhancement)
+        in: query
+        name: transferables
+        required: false
+        schema:
+          type: boolean
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchInput'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchedIdentifiedWorkstreamPatternEngineSources'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/workstream_pattern_engine/sources/search [POST]"
+      tags:
+      - WorkstreamPatternEngineSources
+  /workstream_pattern_engine/sources/stream/identifiers:
+    get:
+      description: Provides a WebSocket connection that emits changes to your workstream-pattern-engine
+        soures identifiers (UUIDs).
+      operationId: workstream_pattern_engine-sources-stream-identifiers
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StreamedIdentifiers'
+          description: OK
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "/workstream_pattern_engine/sources/stream/identifiers [WS]"
+      tags:
+      - WorkstreamPatternEngineSources
+  /workstream_pattern_engine/source/{source}/scores/increment:
+    post:
+      description: This will take in a SeededScoreIncrement and will increment the
+        material relative to the incoming body.
+      operationId: workstream_pattern_engine-source-scores-increment
+      parameters:
+      - description: This is a identifier that is used to identify a specific WorkstreamPatternEngineSource
+        in: path
+        name: source
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SeededScoreIncrement'
+      responses:
+        "204":
+          description: No Content
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "'/workstream_pattern_engine/source/{source}/scores/increment' [POST]"
+      tags:
+      - WorkstreamPatternEngineSource
+  /user/access_token:
+    get:
+      description: This will return a user accessToken for usage w/ this user.
+      operationId: user-access-token
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: This will return the PKCE token.
+        "500":
+          content:
+            text/plain:
+              schema:
+                type: string
+          description: Internal Server Error
+      summary: "'/user/access_token' [GET]"
+      tags:
+      - User
+  /.well-known/installation/path:
+    get:
+      description: This endpoint will return the installation path of PiecesOS
+      operationId: get-installation-path
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                description: This is the version.
+                type: string
+          description: OK
+      security: []
+      summary: "/.well-known/installation/path [Get]"
+      tags:
+      - WellKnown
 components:
   examples: {}
   parameters:
@@ -12392,6 +12973,21 @@ components:
         event.
       in: path
       name: vision_event
+      required: true
+      schema:
+        type: string
+    identifier:
+      description: This is a identifier that is used to identify a specific generic
+        event.
+      in: path
+      name: identifier
+      required: true
+      schema:
+        type: string
+    source:
+      description: This is a identifier that is used to identify a specific WorkstreamPatternEngineSource
+      in: path
+      name: source
       required: true
       schema:
         type: string
@@ -12903,6 +13499,7 @@ components:
       - hrl
       - escript
       - lua
+      - luau
       - md
       - mdown
       - mdwn
@@ -13187,6 +13784,7 @@ components:
       - ftl
       - hcl
       - abap
+      - nim
       title: ClassificationSpecificEnum
       type: string
     ClassificationRenderingEnum:
@@ -13351,6 +13949,7 @@ components:
       - AUTOMATIC
       - INTERNAL
       - DELETED
+      - UNKNOWN
       title: MechanismEnum
       type: string
     SeededAssetEnrichment:
@@ -13641,6 +14240,8 @@ components:
           type: boolean
         capabilities:
           $ref: '#/components/schemas/ModelCapabilities'
+        score:
+          $ref: '#/components/schemas/Score'
       required:
       - cloud
       - created
@@ -13774,6 +14375,7 @@ components:
       - MISTRAL_7B
       - GEMINI
       - GEMINI_1.5
+      - GEMINI_2
       - FAST_TEXT
       - UNIXCODER
       - PHI_1.5
@@ -13818,6 +14420,21 @@ components:
       - PERPLEXITY_BEST
       - PERPLEXITY_DEFAULT
       - PERPLEXITY_CUSTOM
+      - CODESTRAL_LATEST
+      - DEEPSEEK_LATEST
+      - LLAVA_LATEST
+      - MIXTRAL_LATEST
+      - MISTRAL_LATEST
+      - ORCA_LATEST
+      - QWEN_CODER_LATEST
+      - QWEN_LATEST
+      - QWQ_LATEST
+      - STARCODER_LATEST
+      - TINYLLAMA_LATEST
+      - VICUNA_LATEST
+      - WIZARD_LATEST
+      - ZEPHYR_LATEST
+      - UNKNOWN
       title: ModelFoundationEnum
       type: string
       x-stoplight:
@@ -13854,6 +14471,7 @@ components:
       - IBM
       - SNOWFLAKE
       - PERPLEXITY
+      - UNKNOWN
       title: ExternalMLProviderEnum
       type: string
     ModelMaxTokens:
@@ -13922,6 +14540,38 @@ components:
           type: boolean
       title: ModelCapabilities
       type: object
+    Score:
+      description: |-
+        This is use as the score for an asset.
+
+        Manual: will be the raw sum of the asset activity events ranks with mechanismEnum == manual
+        Automatic: will be the raw sum of the asset activity events ranks with mechanismEnum == automatic
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        manual:
+          description: These are points assigned via manual user driven events.
+          type: integer
+        automatic:
+          description: These are point assigned via automatic activity events.
+          type: integer
+        priority:
+          type: integer
+        reuse:
+          type: integer
+        update:
+          type: integer
+        reference:
+          type: integer
+        searched:
+          type: integer
+      required:
+      - automatic
+      - manual
+      title: Score
+      type: object
+      x-stoplight:
+        id: 3xh75xwjtbvvn
     FlattenedImageAnalysis:
       properties:
         schema:
@@ -14438,38 +15088,6 @@ components:
           $ref: '#/components/schemas/Score'
       title: "FlattenedAssets [DAG Safety]"
       type: object
-    Score:
-      description: |-
-        This is use as the score for an asset.
-
-        Manual: will be the raw sum of the asset activity events ranks with mechanismEnum == manual
-        Automatic: will be the raw sum of the asset activity events ranks with mechanismEnum == automatic
-      properties:
-        schema:
-          $ref: '#/components/schemas/EmbeddedModelSchema'
-        manual:
-          description: These are points assigned via manual user driven events.
-          type: integer
-        automatic:
-          description: These are point assigned via automatic activity events.
-          type: integer
-        priority:
-          type: integer
-        reuse:
-          type: integer
-        update:
-          type: integer
-        reference:
-          type: integer
-        searched:
-          type: integer
-      required:
-      - automatic
-      - manual
-      title: Score
-      type: object
-      x-stoplight:
-        id: 3xh75xwjtbvvn
     FlattenedDistributions:
       properties:
         schema:
@@ -17164,6 +17782,7 @@ components:
       enum:
       - SUGGESTED_QUERY
       - QGPT_HINT
+      - UNKNOWN
       title: HintTypeEnum
       type: string
       x-stoplight:
@@ -18704,6 +19323,14 @@ components:
         ranges:
           $ref: '#/components/schemas/SeededScore'
         range:
+          $ref: '#/components/schemas/SeededScore'
+        workstream_pattern_engine_sources:
+          $ref: '#/components/schemas/SeededScore'
+        workstream_pattern_engine_source:
+          $ref: '#/components/schemas/SeededScore'
+        models:
+          $ref: '#/components/schemas/SeededScore'
+        model:
           $ref: '#/components/schemas/SeededScore'
       title: SeededScoreIncrement
       type: object
@@ -20519,6 +21146,8 @@ components:
           $ref: '#/components/schemas/ReferencedApplication'
         model:
           $ref: '#/components/schemas/ReferencedModel'
+        workstreamPatternEngineSource:
+          $ref: '#/components/schemas/ReferencedIdentifiedWorkstreamPatternEngineSource'
         deleted:
           description: This is a specific bool that will let us know if we deleted
             an Identifierfrom the db.
@@ -20572,6 +21201,80 @@ components:
       - privacy
       - version
       title: FlattenedApplication
+      type: object
+    ReferencedIdentifiedWorkstreamPatternEngineSource:
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        id:
+          type: string
+        reference:
+          $ref: '#/components/schemas/FlattenedIdentifiedWorkstreamPatternEngineSource'
+      required:
+      - id
+      title: ReferencedIdentifiedWorkstreamPatternEngineSource
+      type: object
+    FlattenedIdentifiedWorkstreamPatternEngineSource:
+      description: TODO
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        id:
+          type: string
+        raw:
+          $ref: '#/components/schemas/WorkstreamPatternEngineSource'
+        created:
+          $ref: '#/components/schemas/GroupedTimestamp'
+        updated:
+          $ref: '#/components/schemas/GroupedTimestamp'
+        filter:
+          description: This will determine if we want to filter this specific source
+          type: boolean
+        name:
+          description: This is the name of the source(defualt original data) this
+            is NOT used for matching just for readability
+          type: string
+      required:
+      - created
+      - id
+      - name
+      - raw
+      - updated
+      title: FlattenedIdentifiedWorkstreamPatternEngineSource
+      type: object
+    WorkstreamPatternEngineSource:
+      description: |-
+        This is a specific model for a given WPE qdrant source.
+
+        note: application is optional b/c we may want a network sorce in the future
+        TODO: think about adding an enum or something that will delimit the type of processor(vision/filewatcher/network/audio)
+
+        TODO: in the future we can add tabs/filepaths to this model here.
+        TODO: Enum for source/processor ? i.e. WorkstreamPatternEngineProcessorEnum.VISION, WorkstreamPatternEngineProcessorEnum.NETWORK, WorkstreamPatternEngineProcessorEnum.FILE_IO, WorkstreamPatternEngineProcessorEnum.AUDIO, etc.
+
+        NOTE: if all three are null we will thro an error.
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        name:
+          deprecated: true
+          description: THIS IS DEPRECATED WILL NOT BE USED
+          type: string
+        window:
+          description: This is the name of the tab or open file
+          type: string
+        url:
+          description: This is a url that was extracted from the WPE data.
+          type: string
+        application:
+          description: This is the name of the window(foreground window)/application.(this
+            will always be present)
+          type: string
+        installation:
+          description: "This is the path is which this application download location\
+            \ is (NOTE, not being used quite yet)"
+          type: string
+      title: WorkstreamPatternEngineSource
       type: object
     ResultedPKCE:
       description: A Model To Represent the Code Returned from a PKCE Response
@@ -20994,6 +21697,10 @@ components:
             type: integer
           type: array
         workstreamSummaries:
+          items:
+            type: integer
+          type: array
+        workstreamPatternEngineSources:
           items:
             type: integer
           type: array
@@ -21989,6 +22696,8 @@ components:
           items:
             $ref: '#/components/schemas/Model'
           type: array
+        score:
+          $ref: '#/components/schemas/Score'
       required:
       - iterable
       title: Models
@@ -23328,8 +24037,6 @@ components:
           $ref: '#/components/schemas/OSDeviceHardwareInformation'
       title: OSDeviceInformationReturnable
       type: object
-      x-stoplight:
-        id: udz1qeh6bmuh7
     OSDeviceDependenciesInformation:
       description: This will lets us know about specific dependencies that we are
         looking for on the device that are needed for specific tasks.
@@ -23340,30 +24047,27 @@ components:
           description: This will let us know if vulkan is present = true or not there
             ==false
           type: boolean
-          x-stoplight:
-            id: was7yq4ohai5q
       required:
       - vulkan
       title: OSDeviceDependenciesInformation
       type: object
-      x-stoplight:
-        id: 9pvbv5hpj4mag
     OSDeviceHardwareInformation:
       description: this will let us know specific hardware information
       properties:
         schema:
           $ref: '#/components/schemas/EmbeddedModelSchema'
-        cpu:
-          $ref: '#/components/schemas/OSDeviceCPUHardwareInformation'
-        gpu:
-          $ref: '#/components/schemas/OSDeviceGPUHardwareInformation'
-      required:
-      - name
-      - version
+        cpus:
+          items:
+            $ref: '#/components/schemas/OSDeviceCPUHardwareInformation'
+          type: array
+        gpus:
+          items:
+            $ref: '#/components/schemas/OSDeviceGPUHardwareInformation'
+          type: array
+        ram:
+          $ref: '#/components/schemas/OSDeviceRAMHardwareInformation'
       title: OSDeviceHardwareInformation
       type: object
-      x-stoplight:
-        id: 2pjazn214qxj9
     OSDeviceCPUHardwareInformation:
       description: This will let us know specific hardware information related to
         the CPU.
@@ -23372,16 +24076,21 @@ components:
           $ref: '#/components/schemas/EmbeddedModelSchema'
         name:
           type: string
-          x-stoplight:
-            id: w0zahi24snyop
-        memory:
+        l1_cache:
           type: number
-          x-stoplight:
-            id: d3pe3wopc2aqk
+        l2_cache:
+          type: number
+        l3_cache:
+          type: number
+        shared_memory:
+          nullable: true
+          type: boolean
+        cores:
+          type: number
+        clock_cycle_speed:
+          type: number
       title: OSDeviceCPUHardwareInformation
       type: object
-      x-stoplight:
-        id: suurluq51yrdi
     OSDeviceGPUHardwareInformation:
       description: This will let us know specific hardware information related to
         the GPU.
@@ -23390,18 +24099,15 @@ components:
           $ref: '#/components/schemas/EmbeddedModelSchema'
         name:
           type: string
-          x-stoplight:
-            id: d52m7zor8xm4t
         memory:
           type: number
-          x-stoplight:
-            id: ofmprglierm3b
+        shared_memory:
+          nullable: true
+          type: boolean
         capabilities:
           $ref: '#/components/schemas/OSDeviceGPUHardwareCapabilitiesInformation'
       title: OSDeviceGPUHardwareInformation
       type: object
-      x-stoplight:
-        id: av8lq2nip9xnv
     OSDeviceGPUHardwareCapabilitiesInformation:
       description: This will give specific information on task specific capibilites
         for GPU.
@@ -23414,8 +24120,30 @@ components:
           type: boolean
       title: OSDeviceGPUHardwareCapabilitiesInformation
       type: object
-      x-stoplight:
-        id: nfmixcaeh824h
+    OSDeviceRAMHardwareInformation:
+      description: This will let us know specific hardware information related to
+        the RAM.
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        memory:
+          type: number
+        speed:
+          type: number
+        type:
+          $ref: '#/components/schemas/OSDeviceRAMTypeEnum'
+      title: OSDeviceRAMHardwareInformation
+      type: object
+    OSDeviceRAMTypeEnum:
+      description: "ddr3, ddr4, ddr5, gddr6 : this is the type of the RAM"
+      enum:
+      - DDR2
+      - DDR3
+      - DDR4
+      - DDR5
+      - GDDR6
+      title: OSDeviceRAMTypeEnum
+      type: string
     Backups:
       description: This is a plural model of many Cloud Backups.
       properties:
@@ -24176,26 +24904,6 @@ components:
       required:
       - iterable
       title: WorkstreamPatternEngineSources
-      type: object
-    WorkstreamPatternEngineSource:
-      description: |-
-        This is a specific model for a given WPE qdrant source.
-
-        note: application is optional b/c we may want a network sorce in the future
-        TODO: think about adding an enum or something that will delimit the type of processor(vision/filewatcher/network/audio)
-
-        TODO: in the future we can add tabs/filepaths to this model here.
-        TODO: Enum for source/processor ? i.e. WorkstreamPatternEngineProcessorEnum.VISION, WorkstreamPatternEngineProcessorEnum.NETWORK, WorkstreamPatternEngineProcessorEnum.FILE_IO, WorkstreamPatternEngineProcessorEnum.AUDIO, etc.
-      properties:
-        schema:
-          $ref: '#/components/schemas/EmbeddedModelSchema'
-        name:
-          description: This is the name of the window(foreground window)/application.(this
-            will always be present)
-          type: string
-      required:
-      - name
-      title: WorkstreamPatternEngineSource
       type: object
     SearchedTags:
       description: This is the plural Model used to return many searchedTags.
@@ -25166,6 +25874,216 @@ components:
       - total
       - transferred
       title: OSFileStreamingReadProgress
+      type: object
+    OllamaDeployments:
+      description: This is the plural model for Deployment of Ollama.
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        iterable:
+          items:
+            $ref: '#/components/schemas/OllamaDeployment'
+          type: array
+      required:
+      - iterable
+      title: OllamaDeployments
+      type: object
+    OllamaDeployment:
+      description: |-
+        A deployment will be used in 4 cases:
+        1. used to describe an installation in progress
+        2. used to describe an update in progress
+        3. used to say what deployment will be needed to upgrade to.
+        4. used to say what the current version of ollama is present on the machine.
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        id:
+          type: string
+        status:
+          $ref: '#/components/schemas/OllamaDeploymentStatusEnum'
+        updated:
+          $ref: '#/components/schemas/GroupedTimestamp'
+        percentage:
+          description: Optionally if the update is in progress you will recieve a
+            download percent(from 0-100).
+          nullable: true
+          type: number
+        version:
+          type: string
+        userManaged:
+          description: "Optionally set, specifically in the case where an update is\
+            \ required, and a user need to take manual action."
+          type: boolean
+      required:
+      - version
+      title: OllamaDeployment
+      type: object
+    OllamaDeploymentStatusEnum:
+      description: Enum used for the status of Ollama
+      enum:
+      - INITIALIZED
+      - IN-PROGRESS
+      - COMPLETED
+      - FAILED
+      - UNKNOWN
+      - CANCELED
+      - RESET
+      title: OllamaDeploymentStatusEnum
+      type: string
+    OllamaStatus:
+      description: |-
+        This will get used in the Websocket and in the get request for Ollama
+        Note:
+         - updating (nullable) will be used in the case an update is underway
+         - installing (nullable) will be used in the case an installation is underway
+         - updateRequired (nullable) will be used in the case an update is required
+         - installation (nullable) will be provided in the case Ollama is installed.
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        updating:
+          $ref: '#/components/schemas/OllamaDeployment'
+        installing:
+          $ref: '#/components/schemas/OllamaDeployment'
+        updateRequired:
+          $ref: '#/components/schemas/OllamaDeployment'
+        installation:
+          $ref: '#/components/schemas/OllamaDeployment'
+        recommendation:
+          $ref: '#/components/schemas/OllamaRecommendation'
+      title: OllamaStatus
+      type: object
+    OllamaRecommendation:
+      description: |-
+        This is a model that will let the products know some of our recommendations around Ollama:
+
+        for now: will just add a recommendation if the user should even use Ollama or NOT. -- (inference)
+
+        inference: IE if we want to recommendation the user to use inference (ie call the model) or not
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        inference:
+          description: This is a bool that will let the client know if we recommend
+            to use ollama for inference or not
+          type: boolean
+      title: OllamaRecommendation
+      type: object
+    SeededWorkstreamPatternEngineSource:
+      description: TODO
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        raw:
+          $ref: '#/components/schemas/WorkstreamPatternEngineSource'
+        filter:
+          description: This will determine if we want to filter this specific source
+          type: boolean
+        readable:
+          description: This is the name of the source(defualt original data) this
+            is NOT used for matching just for readability
+          type: string
+      required:
+      - raw
+      - readable
+      title: SeededWorkstreamPatternEngineSource
+      type: object
+    IdentifiedWorkstreamPatternEngineSource:
+      description: |-
+        This is a specific persisted model for WorkstreamPatternEngineSources that are persisted in the database(not just on the WPE event)
+
+        note: there is a "WorkstreamPatternEngineSource" model however we will NOT be modify this because it is linked to a different model that would require additional code to properly associate/disassociate.
+
+        note: we get 3 raw events from the WPE data so far:(encapsulated in the "WorkstreamPatternEngineSource") event
+        1. browserUrl - defaults to null
+        2. appTitle - ** not sure on default here ** (this is because this is always present on all WPE events.)
+        3. windowTitle - defaults to "Window Title Not Found"
+
+        note: raw is the raw value from the WPE(expect I will replace the defaults w/ nullish values)
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        id:
+          type: string
+        raw:
+          $ref: '#/components/schemas/WorkstreamPatternEngineSource'
+        created:
+          $ref: '#/components/schemas/GroupedTimestamp'
+        updated:
+          $ref: '#/components/schemas/GroupedTimestamp'
+        filter:
+          description: This will determine if we want to filter this specific source
+          type: boolean
+        score:
+          $ref: '#/components/schemas/Score'
+        readable:
+          description: This is the name of the source(defualt original data) this
+            is NOT used for matching just for readability
+          type: string
+      required:
+      - created
+      - id
+      - raw
+      - readable
+      - updated
+      title: IdentifiedWorkstreamPatternEngineSource
+      type: object
+    IdentifiedWorkstreamPatternEngineSources:
+      description: ""
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        iterable:
+          items:
+            $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSource'
+          type: array
+        indices:
+          additionalProperties:
+            type: integer
+          description: "This is a Map<String, int> where the the key is an source\
+            \ id."
+          type: object
+        score:
+          $ref: '#/components/schemas/Score'
+      required:
+      - iterable
+      title: IdentifiedWorkstreamPatternEngineSources
+      type: object
+    SearchedIdentifiedWorkstreamPatternEngineSources:
+      description: This is the plural Model used to return many SearchedIdentifiedWorkstreamPatternEngineSource.
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        iterable:
+          items:
+            $ref: '#/components/schemas/SearchedIdentifiedWorkstreamPatternEngineSource'
+          type: array
+      required:
+      - iterable
+      title: SearchedIdentifiedWorkstreamPatternEngineSources
+      type: object
+    SearchedIdentifiedWorkstreamPatternEngineSource:
+      description: TODO
+      properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
+        workstreamPatternEngineSource:
+          $ref: '#/components/schemas/IdentifiedWorkstreamPatternEngineSource'
+        exact:
+          type: boolean
+        similarity:
+          type: number
+        temporal:
+          type: boolean
+        identifier:
+          description: This is the uuid of the source.
+          type: string
+      required:
+      - exact
+      - identifier
+      - similarity
+      title: SearchedIdentifiedWorkstreamPatternEngineSource
       type: object
     SeededTrackedAssetsEvent_metadata:
       description: "Additional Metadata as Neeeded i.e. Search + Query, etc"

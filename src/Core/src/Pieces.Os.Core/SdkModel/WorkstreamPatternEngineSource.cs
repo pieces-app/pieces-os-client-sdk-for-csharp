@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Pieces.Os.Core.Client.OpenAPIDateConverter;
 namespace Pieces.Os.Core.SdkModel
 {
     /// <summary>
-    /// This is a specific model for a given WPE qdrant source.  note: application is optional b/c we may want a network sorce in the future TODO: think about adding an enum or something that will delimit the type of processor(vision/filewatcher/network/audio)  TODO: in the future we can add tabs/filepaths to this model here. TODO: Enum for source/processor ? i.e. WorkstreamPatternEngineProcessorEnum.VISION, WorkstreamPatternEngineProcessorEnum.NETWORK, WorkstreamPatternEngineProcessorEnum.FILE_IO, WorkstreamPatternEngineProcessorEnum.AUDIO, etc.
+    /// This is a specific model for a given WPE qdrant source.  note: application is optional b/c we may want a network sorce in the future TODO: think about adding an enum or something that will delimit the type of processor(vision/filewatcher/network/audio)  TODO: in the future we can add tabs/filepaths to this model here. TODO: Enum for source/processor ? i.e. WorkstreamPatternEngineProcessorEnum.VISION, WorkstreamPatternEngineProcessorEnum.NETWORK, WorkstreamPatternEngineProcessorEnum.FILE_IO, WorkstreamPatternEngineProcessorEnum.AUDIO, etc.  NOTE: if all three are null we will thro an error.
     /// </summary>
     [DataContract(Name = "WorkstreamPatternEngineSource")]
     public partial class WorkstreamPatternEngineSource : IValidatableObject
@@ -35,22 +35,20 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkstreamPatternEngineSource" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected WorkstreamPatternEngineSource() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkstreamPatternEngineSource" /> class.
-        /// </summary>
         /// <param name="schema">schema.</param>
-        /// <param name="name">This is the name of the window(foreground window)/application.(this will always be present) (required).</param>
-        public WorkstreamPatternEngineSource(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string name = default(string))
+        /// <param name="name">THIS IS DEPRECATED WILL NOT BE USED.</param>
+        /// <param name="window">This is the name of the tab or open file.</param>
+        /// <param name="url">This is a url that was extracted from the WPE data..</param>
+        /// <param name="application">This is the name of the window(foreground window)/application.(this will always be present).</param>
+        /// <param name="installation">This is the path is which this application download location is (NOTE, not being used quite yet).</param>
+        public WorkstreamPatternEngineSource(EmbeddedModelSchema schema = default(EmbeddedModelSchema), string name = default(string), string window = default(string), string url = default(string), string application = default(string), string installation = default(string))
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for WorkstreamPatternEngineSource and cannot be null");
-            }
-            this.Name = name;
             this.Schema = schema;
+            this.Name = name;
+            this.Window = window;
+            this.Url = url;
+            this.Application = application;
+            this.Installation = installation;
         }
 
         /// <summary>
@@ -60,11 +58,40 @@ namespace Pieces.Os.Core.SdkModel
         public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
+        /// THIS IS DEPRECATED WILL NOT BE USED
+        /// </summary>
+        /// <value>THIS IS DEPRECATED WILL NOT BE USED</value>
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [Obsolete]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// This is the name of the tab or open file
+        /// </summary>
+        /// <value>This is the name of the tab or open file</value>
+        [DataMember(Name = "window", EmitDefaultValue = false)]
+        public string Window { get; set; }
+
+        /// <summary>
+        /// This is a url that was extracted from the WPE data.
+        /// </summary>
+        /// <value>This is a url that was extracted from the WPE data.</value>
+        [DataMember(Name = "url", EmitDefaultValue = false)]
+        public string Url { get; set; }
+
+        /// <summary>
         /// This is the name of the window(foreground window)/application.(this will always be present)
         /// </summary>
         /// <value>This is the name of the window(foreground window)/application.(this will always be present)</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "application", EmitDefaultValue = false)]
+        public string Application { get; set; }
+
+        /// <summary>
+        /// This is the path is which this application download location is (NOTE, not being used quite yet)
+        /// </summary>
+        /// <value>This is the path is which this application download location is (NOTE, not being used quite yet)</value>
+        [DataMember(Name = "installation", EmitDefaultValue = false)]
+        public string Installation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -76,6 +103,10 @@ namespace Pieces.Os.Core.SdkModel
             sb.Append("class WorkstreamPatternEngineSource {\n");
             sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Window: ").Append(Window).Append("\n");
+            sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Application: ").Append(Application).Append("\n");
+            sb.Append("  Installation: ").Append(Installation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
