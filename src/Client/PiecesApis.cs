@@ -18,4 +18,5 @@ public record PiecesApis
     public required IQGPTApi QGPTApi { get; init; }
     public required IRangesApi RangesApi { get; init; }
     public required IWellKnownApi WellKnownApi { get; init; }
+    public required IWorkstreamPatternEngineApi WorkstreamPatternEngineApi { get; init; }
 }

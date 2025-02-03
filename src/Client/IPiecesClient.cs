@@ -65,4 +65,25 @@ public interface IPiecesClient
     /// </summary>
     /// <returns>The assets</returns>
     Task<IPiecesAssets> GetAssetsAsync();
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    Task ClearLongTermMemoryAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces from now going back by the specified time span
+    /// </summary>
+    /// <param name="periodToClear">The period to clear going back from now</param>
+    /// <param name="cancellationToken"></param>
+    Task ClearLongTermMemoryAsync(TimeSpan periodToClear, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces for the given date and time range
+    /// </summary>
+    /// <param name="from">The start date and time to clear from</param>
+    /// <param name="to">The end date and time to clear to</param>
+    /// <param name="cancellationToken"></param>
+    Task ClearLongTermMemoryAsync(DateTime from, DateTime to, CancellationToken cancellationToken = default);
 }
