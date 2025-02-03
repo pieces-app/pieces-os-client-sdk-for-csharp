@@ -206,7 +206,7 @@ catch (ApiException e)
 
 <a id="formatsnapshot"></a>
 # **FormatSnapshot**
-> Format FormatSnapshot (Guid format, bool? transferable = null)
+> Format FormatSnapshot (Guid format, bool? transferable = null, bool? packageActivities = null)
 
 /format/{format} [GET] Scoped to Format
 
@@ -236,11 +236,12 @@ namespace Example
             var apiInstance = new FormatApi(config);
             var format = 102ff265-fdfb-4142-8d94-4932d400199c;  // Guid | The id (uuid) for a specific format.
             var transferable = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
+            var packageActivities = true;  // bool? | This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional) 
 
             try
             {
                 // /format/{format} [GET] Scoped to Format
-                Format result = apiInstance.FormatSnapshot(format, transferable);
+                Format result = apiInstance.FormatSnapshot(format, transferable, packageActivities);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -261,7 +262,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // /format/{format} [GET] Scoped to Format
-    ApiResponse<Format> response = apiInstance.FormatSnapshotWithHttpInfo(format, transferable);
+    ApiResponse<Format> response = apiInstance.FormatSnapshotWithHttpInfo(format, transferable, packageActivities);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -280,6 +281,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **format** | **Guid** | The id (uuid) for a specific format. |  |
 | **transferable** | **bool?** | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) | [optional]  |
+| **packageActivities** | **bool?** | This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) | [optional]  |
 
 ### Return type
 

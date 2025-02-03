@@ -1651,7 +1651,7 @@ void (empty response body)
 
 <a id="assetsnapshot"></a>
 # **AssetSnapshot**
-> Asset AssetSnapshot (Guid asset, bool? transferables = null)
+> Asset AssetSnapshot (Guid asset, bool? transferables = null, bool? packageActivities = null)
 
 /asset/{asset} [GET] Scoped To Asset
 
@@ -1681,11 +1681,12 @@ namespace Example
             var apiInstance = new AssetApi(config);
             var asset = 2254f2c8-5797-40e8-ac56-41166dc0e159;  // Guid | The id (uuid) of the asset that you are trying to access.
             var transferables = true;  // bool? | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional) 
+            var packageActivities = true;  // bool? | This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional) 
 
             try
             {
                 // /asset/{asset} [GET] Scoped To Asset
-                Asset result = apiInstance.AssetSnapshot(asset, transferables);
+                Asset result = apiInstance.AssetSnapshot(asset, transferables, packageActivities);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1706,7 +1707,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // /asset/{asset} [GET] Scoped To Asset
-    ApiResponse<Asset> response = apiInstance.AssetSnapshotWithHttpInfo(asset, transferables);
+    ApiResponse<Asset> response = apiInstance.AssetSnapshotWithHttpInfo(asset, transferables, packageActivities);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1725,6 +1726,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **asset** | **Guid** | The id (uuid) of the asset that you are trying to access. |  |
 | **transferables** | **bool?** | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) | [optional]  |
+| **packageActivities** | **bool?** | This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) | [optional]  |
 
 ### Return type
 

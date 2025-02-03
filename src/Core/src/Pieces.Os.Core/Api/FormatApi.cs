@@ -85,9 +85,10 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Format</returns>
-        Format FormatSnapshot(Guid format, bool? transferable = default(bool?), int operationIndex = 0);
+        Format FormatSnapshot(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// /format/{format} [GET] Scoped to Format
@@ -98,9 +99,10 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Format</returns>
-        ApiResponse<Format> FormatSnapshotWithHttpInfo(Guid format, bool? transferable = default(bool?), int operationIndex = 0);
+        ApiResponse<Format> FormatSnapshotWithHttpInfo(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0);
         /// <summary>
         /// [POST] /format/update/value
         /// </summary>
@@ -196,10 +198,11 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /format/{format} [GET] Scoped to Format
@@ -210,10 +213,11 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// [POST] /format/update/value
         /// </summary>
@@ -667,11 +671,12 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Format</returns>
-        public Format FormatSnapshot(Guid format, bool? transferable = default(bool?), int operationIndex = 0)
+        public Format FormatSnapshot(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0)
         {
-            Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = FormatSnapshotWithHttpInfo(format, transferable);
+            Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = FormatSnapshotWithHttpInfo(format, transferable, packageActivities);
             return localVarResponse.Data;
         }
 
@@ -681,9 +686,10 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Format</returns>
-        public Pieces.Os.Core.Client.ApiResponse<Format> FormatSnapshotWithHttpInfo(Guid format, bool? transferable = default(bool?), int operationIndex = 0)
+        public Pieces.Os.Core.Client.ApiResponse<Format> FormatSnapshotWithHttpInfo(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0)
         {
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
 
@@ -711,6 +717,10 @@ namespace Pieces.Os.Core.Api
             if (transferable != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "transferable", transferable));
+            }
+            if (packageActivities != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "package_activities", packageActivities));
             }
 
             localVarRequestOptions.Operation = "FormatApi.FormatSnapshot";
@@ -742,12 +752,13 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Format</returns>
-        public async System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Format> FormatSnapshotAsync(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = await FormatSnapshotWithHttpInfoAsync(format, transferable, operationIndex, cancellationToken).ConfigureAwait(false);
+            Pieces.Os.Core.Client.ApiResponse<Format> localVarResponse = await FormatSnapshotWithHttpInfoAsync(format, transferable, packageActivities, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -757,10 +768,11 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="format">The id (uuid) for a specific format.</param>
         /// <param name="transferable">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Format)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Format>> FormatSnapshotWithHttpInfoAsync(Guid format, bool? transferable = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -789,6 +801,10 @@ namespace Pieces.Os.Core.Api
             if (transferable != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "transferable", transferable));
+            }
+            if (packageActivities != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "package_activities", packageActivities));
             }
 
             localVarRequestOptions.Operation = "FormatApi.FormatSnapshot";
