@@ -106,10 +106,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
             CompletionId = chatWithCacheKey.Chat.Id,
             RawRepresentation = responseMessage.Text,
             CreatedAt = DateTime.UtcNow,
-            Usage = new UsageDetails
-            {
-                AdditionalProperties = options?.AdditionalProperties is null ? null : new AdditionalPropertiesDictionary(options.AdditionalProperties)
-            }
+            AdditionalProperties = options?.AdditionalProperties is null ? null : new AdditionalPropertiesDictionary(options.AdditionalProperties)
         };
     }
 
