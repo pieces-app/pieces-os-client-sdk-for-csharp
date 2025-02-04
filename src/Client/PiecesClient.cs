@@ -434,14 +434,14 @@ public class PiecesClient : IPiecesClient, IDisposable
         var cleanupRequest = new WorkstreamPatternEngineDataCleanupRequest
         {
             Ranges = [
-                new AnonymousTemporalRange 
+                new AnonymousTemporalRange
                 {
                     From = new GroupedTimestamp(value: from),
-                    To = new GroupedTimestamp(value: to) 
+                    To = new GroupedTimestamp(value: to)
                 }
             ]
         };
-        
+
         await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDataClearAsync(cleanupRequest,
                                                                                                            cancellationToken: cancellationToken).ConfigureAwait(false);
     }
@@ -454,7 +454,7 @@ public class PiecesClient : IPiecesClient, IDisposable
     {
         await EnsureConnected().ConfigureAwait(false);
         var status = new WorkstreamPatternEngineStatus(vision: new WorkstreamPatternEngineVisionStatus(deactivation: new AnonymousTemporalRange(continuous: true)));
-        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDeactivateAsync(status, 
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDeactivateAsync(status,
                                                                                                             cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
@@ -466,7 +466,7 @@ public class PiecesClient : IPiecesClient, IDisposable
     {
         await EnsureConnected().ConfigureAwait(false);
         var status = new WorkstreamPatternEngineStatus(vision: new WorkstreamPatternEngineVisionStatus(activation: new AnonymousTemporalRange(continuous: true)));
-        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionActivateAsync(status, 
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionActivateAsync(status,
                                                                                                           cancellationToken: cancellationToken).ConfigureAwait(false);
 
     }
