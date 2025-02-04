@@ -86,4 +86,16 @@ public interface IPiecesClient
     /// <param name="to">The end date and time to clear to</param>
     /// <param name="cancellationToken"></param>
     Task ClearLongTermMemoryAsync(DateTime from, DateTime to, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Deactivates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    Task DeactivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Activates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    Task ActivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default);
 }

@@ -667,3 +667,27 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // }
 
 #endregion Seed a conversation
+
+#region Disable LTM
+
+// Disable LTM
+//
+// This will turn off the LTM engine so no long-term memories are captured
+
+// {
+//     await client.DeactivateLongTermMemoryCaptureAsync();
+// }
+
+#endregion Disable LTM
+
+#region Enable LTM
+
+// Enable LTM
+//
+// This will turn on the LTM engine so no long-term memories are captured
+
+// {
+//     await client.ActivateLongTermMemoryCaptureAsync();
+// }
+
+#endregion Enable LTM

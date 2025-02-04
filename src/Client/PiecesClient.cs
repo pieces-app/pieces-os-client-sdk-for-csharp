@@ -445,4 +445,29 @@ public class PiecesClient : IPiecesClient, IDisposable
         await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDataClearAsync(cleanupRequest,
                                                                                                            cancellationToken: cancellationToken).ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// Deactivates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    public async Task DeactivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+        var status = new WorkstreamPatternEngineStatus(vision: new WorkstreamPatternEngineVisionStatus(deactivation: new AnonymousTemporalRange(continuous: true)));
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDeactivateAsync(status, 
+                                                                                                            cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reactivates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    public async Task ActivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+        var status = new WorkstreamPatternEngineStatus(vision: new WorkstreamPatternEngineVisionStatus(activation: new AnonymousTemporalRange(continuous: true)));
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionActivateAsync(status, 
+                                                                                                          cancellationToken: cancellationToken).ConfigureAwait(false);
+
+    }
 }
