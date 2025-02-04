@@ -200,7 +200,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         // If we got this chat from the cache, remove the old entry as the messages will be updated to reflect this response
         chatCache.Remove(chatWithCacheKey.CacheKey);
 
-        var persist = GetBoolValueFromOptions(options, PersistChatPropertyName, true);
+        var persist = GetValueFromOptions(options, PersistChatPropertyName, true);
 
         if (persist)
         {
@@ -268,7 +268,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         return new ChatContext
         {
             AssetIds = GetValueFromOptions<IEnumerable<string>>(options, AssetIdsPropertyName),
-            LongTermMemory = GetBoolValueFromOptions(options, LongTermMemoryPropertyName),
+            LongTermMemory = GetValueFromOptions<bool>(options, LongTermMemoryPropertyName),
             LongTermMemoryTimeSpan = GetValueFromOptions<TimeSpan?>(options, LongTermMemoryTimeSpanPropertyName, null),
             Files = GetValueFromOptions<IEnumerable<string>>(options, FilesPropertyName),
             Folders = GetValueFromOptions<IEnumerable<string>>(options, FoldersPropertyName),
@@ -279,30 +279,9 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
 
     private static T? GetValueFromOptions<T>(ChatOptions? options, string propertyName, T? defaultValue = default)
     {
-        if (options is not null &&
-            options.AdditionalProperties is not null &&
-            options!.AdditionalProperties!.TryGetValue(propertyName, out object? val))
+        if (options?.AdditionalProperties?.TryGetValue(propertyName, out T? val) is true)
         {
-            if (val is T tValue)
-            {
-                return tValue;
-            }
-            else if (typeof(T).IsValueType && val is IConvertible)
-            {
-                return (T)Convert.ChangeType(val, typeof(T));
-            }
-        }
-
-        return defaultValue;
-    }
-
-    private static bool GetBoolValueFromOptions(ChatOptions? options, string propertyName, bool defaultValue = false)
-    {
-        if (options is not null &&
-            options.AdditionalProperties is not null &&
-            options!.AdditionalProperties!.TryGetValue(propertyName, out object? boolVal))
-        {
-            return boolVal is bool v && v;
+            return val;
         }
 
         return defaultValue;
