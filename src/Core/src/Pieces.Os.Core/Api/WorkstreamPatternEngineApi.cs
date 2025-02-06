@@ -366,7 +366,7 @@ namespace Pieces.Os.Core.Api
         /// <returns>ApiResponse of WorkstreamPatternEngineStatus</returns>
         ApiResponse<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfo(int operationIndex = 0);
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS]
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS]
         /// </summary>
         /// <remarks>
         /// This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
@@ -377,7 +377,7 @@ namespace Pieces.Os.Core.Api
         WorkstreamPatternEngineStatus WorkstreamPatternEngineProcessorsVisionStatusStream(int operationIndex = 0);
 
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS]
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS]
         /// </summary>
         /// <remarks>
         /// This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
@@ -763,7 +763,7 @@ namespace Pieces.Os.Core.Api
         /// <returns>Task of ApiResponse (WorkstreamPatternEngineStatus)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkstreamPatternEngineStatus>> WorkstreamPatternEngineProcessorsVisionStatusWithHttpInfoAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS]
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS]
         /// </summary>
         /// <remarks>
         /// This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
@@ -775,7 +775,7 @@ namespace Pieces.Os.Core.Api
         System.Threading.Tasks.Task<WorkstreamPatternEngineStatus> WorkstreamPatternEngineProcessorsVisionStatusStreamAsync(int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS]
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS]
         /// </summary>
         /// <remarks>
         /// This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
@@ -3088,7 +3088,7 @@ namespace Pieces.Os.Core.Api
         }
 
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
         /// </summary>
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -3100,7 +3100,7 @@ namespace Pieces.Os.Core.Api
         }
 
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
         /// </summary>
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -3155,7 +3155,7 @@ namespace Pieces.Os.Core.Api
         }
 
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
         /// </summary>
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>
@@ -3168,7 +3168,7 @@ namespace Pieces.Os.Core.Api
         }
 
         /// <summary>
-        /// /workstream_pattern_engine/processors/vision/status/steam [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
+        /// /workstream_pattern_engine/processors/vision/status/stream [WS] This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \&quot;WorkstreamPatternEngineStatus\&quot; Model.
         /// </summary>
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="operationIndex">Index associated with the operation.</param>

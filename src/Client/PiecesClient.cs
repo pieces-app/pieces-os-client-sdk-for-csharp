@@ -73,7 +73,8 @@ public class PiecesClient : IPiecesClient, IDisposable
                 ModelsApi = new ModelsApi(apiClient, apiClient, configuration),
                 QGPTApi = new QGPTApi(apiClient, apiClient, configuration),
                 RangesApi = new RangesApi(apiClient, apiClient, configuration),
-                WellKnownApi = new WellKnownApi(apiClient, apiClient, configuration)
+                WellKnownApi = new WellKnownApi(apiClient, apiClient, configuration),
+                WorkstreamPatternEngineApi = new WorkstreamPatternEngineApi(apiClient, apiClient, configuration)
             };
 
             qgptWebSocket = new WebSocketBackgroundClient<QGPTStreamOutput>();
@@ -129,7 +130,7 @@ public class PiecesClient : IPiecesClient, IDisposable
         {
             return PlatformEnum.MACOS;
         }
-        
+
         throw new PiecesClientException("OS not supported");
     }
 
@@ -158,7 +159,7 @@ public class PiecesClient : IPiecesClient, IDisposable
         catch
         {
             // Either the port file is missing, or invalid, so time to poll the ports
-            foreach(var rangedPort in Enumerable.Range(39300, 34))
+            foreach (var rangedPort in Enumerable.Range(39300, 34))
             {
                 var wellKnown = new WellKnownApi($"http://localhost:{rangedPort}");
                 try
@@ -256,7 +257,7 @@ public class PiecesClient : IPiecesClient, IDisposable
     {
         var models = await GetModelsAsync().ConfigureAwait(false);
         var matchModel = models.FirstOrDefault(x => x.Name.Contains(modelName, StringComparison.OrdinalIgnoreCase));
-        
+
         if (matchModel == null)
         {
             if (throwIfNotFound)
@@ -268,8 +269,8 @@ public class PiecesClient : IPiecesClient, IDisposable
                 matchModel = models.First();
             }
         }
-       
-       return matchModel;
+
+        return matchModel;
     }
 
     private async Task EnsureConnected() => await webSocketTask.ConfigureAwait(false);
@@ -297,7 +298,19 @@ public class PiecesClient : IPiecesClient, IDisposable
     public async Task<IEnumerable<Model>> GetModelsAsync()
     {
         await EnsureConnected().ConfigureAwait(false);
-        return piecesApis!.ModelsApi.ModelsSnapshot().Iterable;
+        return (await piecesApis!.ModelsApi.ModelsSnapshotAsync()).Iterable;
+    }
+
+    /// <summary>
+    /// Delete an offline model - this removes the downloaded model from Ollama
+    /// </summary>
+    /// <param name="model">The model to delete</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async Task DeleteModelAsync(Model model, CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+        await piecesApis!.ModelsApi.ModelsDeleteSpecificModelCacheAsync(model.Id, new ModelDeleteCacheInput(), cancellationToken: cancellationToken);
     }
 
     /// <summary>
@@ -339,7 +352,7 @@ public class PiecesClient : IPiecesClient, IDisposable
 
             cancellationToken.ThrowIfCancellationRequested();
 
-            await Task.Delay(10, cancellationToken).ConfigureAwait(false);
+            await Task.Delay(100, cancellationToken).ConfigureAwait(false);
             downloadedModel = await piecesApis.ModelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -350,12 +363,12 @@ public class PiecesClient : IPiecesClient, IDisposable
 
             cancellationToken.ThrowIfCancellationRequested();
 
-            await Task.Delay(10, cancellationToken).ConfigureAwait(false);
+            await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
             downloadedModel = await piecesApis.ModelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         // Now load the model
-        return await piecesApis.ModelApi.ModelSpecificModelLoadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return downloadedModel;
     }
 
     /// <summary>
@@ -405,5 +418,68 @@ public class PiecesClient : IPiecesClient, IDisposable
     {
         await EnsureConnected().ConfigureAwait(false);
         return assets!;
+    }
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    public Task ClearLongTermMemoryAsync(CancellationToken cancellationToken = default) => ClearLongTermMemoryAsync(DateTime.MinValue, DateTime.Now, cancellationToken);
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces from now going back by the specified time span
+    /// </summary>
+    /// <param name="periodToClear">The period to clear going back from now</param>
+    /// <param name="cancellationToken"></param>
+    public Task ClearLongTermMemoryAsync(TimeSpan periodToClear, CancellationToken cancellationToken = default) => ClearLongTermMemoryAsync(DateTime.Now - periodToClear, DateTime.Now, cancellationToken);
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces for the given date and time range
+    /// </summary>
+    /// <param name="from">The start date and time to clear from</param>
+    /// <param name="to">The end date and time to clear to</param>
+    /// <param name="cancellationToken"></param>
+    public async Task ClearLongTermMemoryAsync(DateTime from, DateTime to, CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+
+        var cleanupRequest = new WorkstreamPatternEngineDataCleanupRequest
+        {
+            Ranges = [
+                new AnonymousTemporalRange
+                {
+                    From = new GroupedTimestamp(value: from),
+                    To = new GroupedTimestamp(value: to)
+                }
+            ]
+        };
+
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDataClearAsync(cleanupRequest,
+                                                                                                           cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Deactivates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    public async Task DeactivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+        var status = new WorkstreamPatternEngineStatus(vision: new WorkstreamPatternEngineVisionStatus(deactivation: new AnonymousTemporalRange(continuous: true)));
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionDeactivateAsync(status,
+                                                                                                            cancellationToken: cancellationToken).ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reactivates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    public async Task ActivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+        var status = new WorkstreamPatternEngineStatus(vision: new WorkstreamPatternEngineVisionStatus(activation: new AnonymousTemporalRange(continuous: true)));
+        await piecesApis!.WorkstreamPatternEngineApi.WorkstreamPatternEngineProcessorsVisionActivateAsync(status,
+                                                                                                          cancellationToken: cancellationToken).ConfigureAwait(false);
+
     }
 }

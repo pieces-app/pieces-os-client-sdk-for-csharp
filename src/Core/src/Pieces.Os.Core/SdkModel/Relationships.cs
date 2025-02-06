@@ -40,8 +40,9 @@ namespace Pieces.Os.Core.SdkModel
         /// <summary>
         /// Initializes a new instance of the <see cref="Relationships" /> class.
         /// </summary>
+        /// <param name="schema">schema.</param>
         /// <param name="iterable">iterable (required).</param>
-        public Relationships(List<Relationship> iterable = default(List<Relationship>))
+        public Relationships(EmbeddedModelSchema schema = default(EmbeddedModelSchema), List<Relationship> iterable = default(List<Relationship>))
         {
             // to ensure "iterable" is required (not null)
             if (iterable == null)
@@ -49,7 +50,14 @@ namespace Pieces.Os.Core.SdkModel
                 throw new ArgumentNullException("iterable is a required property for Relationships and cannot be null");
             }
             this.Iterable = iterable;
+            this.Schema = schema;
         }
+
+        /// <summary>
+        /// Gets or Sets Schema
+        /// </summary>
+        [DataMember(Name = "schema", EmitDefaultValue = false)]
+        public EmbeddedModelSchema Schema { get; set; }
 
         /// <summary>
         /// Gets or Sets Iterable
@@ -65,6 +73,7 @@ namespace Pieces.Os.Core.SdkModel
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class Relationships {\n");
+            sb.Append("  Schema: ").Append(Schema).Append("\n");
             sb.Append("  Iterable: ").Append(Iterable).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

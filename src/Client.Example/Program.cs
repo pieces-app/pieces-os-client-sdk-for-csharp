@@ -227,6 +227,39 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 
 #endregion Use Pieces Long-Term Memory turned on later in the chat
 
+#region Clear Pieces Long-Term Memory
+
+// Clear Pieces Long-Term Memory
+//
+// This will clear the long term memory, then create a new copilot chat called 1 hour context window, with Pieces Long-Term Memory turned on that you will be able to see in other Pieces applications,
+// such as Pieces Desktop, or Pieces for Visual Studio Code. You will also be able to see Pieces Long-Term Memory turned on against the chat
+// The chat will ask a question related to this code file using a 1 hour context window, then stream the response back token by token
+// The response should fail as the LTM is empty
+
+// {
+//     await client.ClearLongTermMemoryAsync();
+
+//     var chatContext = new ChatContext
+//     {
+//         LongTermMemory = true,
+//         LongTermMemoryTimeSpan = TimeSpan.FromHours(1)
+//     };
+//     var chat = await copilot.CreateChatAsync("1 hour context window", chatContext: chatContext).ConfigureAwait(false);
+
+//     var question = "Describe the Program.cs file I was just reading in my IDE";
+//     Console.WriteLine(question);
+//     Console.WriteLine();
+
+//     await foreach (var token in chat.AskStreamingQuestionAsync(question))
+//     {
+//         Console.Write(token);
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Clear Pieces Long-Term Memory
+
 #region Load assets
 
 // Load assets
@@ -634,3 +667,27 @@ Console.WriteLine($"Pieces OS version: {await client.GetVersionAsync().Configure
 // }
 
 #endregion Seed a conversation
+
+#region Disable LTM
+
+// Disable LTM
+//
+// This will turn off the LTM engine so no long-term memories are captured
+
+// {
+//     await client.DeactivateLongTermMemoryCaptureAsync();
+// }
+
+#endregion Disable LTM
+
+#region Enable LTM
+
+// Enable LTM
+//
+// This will turn on the LTM engine so no long-term memories are captured
+
+// {
+//     await client.ActivateLongTermMemoryCaptureAsync();
+// }
+
+#endregion Enable LTM

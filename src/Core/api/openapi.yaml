@@ -1875,6 +1875,13 @@ paths:
         required: false
         schema:
           type: boolean
+      - description: This is a boolean that will decided if we are want to return
+          the activities data (not default) or not(performance enhancement)
+        in: query
+        name: package_activities
+        required: false
+        schema:
+          type: boolean
       responses:
         "200":
           content:
@@ -3671,6 +3678,13 @@ paths:
           the transferable data (default) or not(performance enhancement)
         in: query
         name: transferable
+        schema:
+          type: boolean
+      - description: This is a boolean that will decided if we are want to return
+          the activities data (not default) or not(performance enhancement)
+        in: query
+        name: package_activities
+        required: false
         schema:
           type: boolean
       responses:
@@ -10654,7 +10668,7 @@ paths:
               schema:
                 type: string
           description: Internal Server Error
-      summary: "/workstream_pattern_engine/processors/vision/status/steam [WS]"
+      summary: "/workstream_pattern_engine/processors/vision/status/stream [WS]"
       tags:
       - WorkstreamPatternEngine
   /os/update/check/stream:
@@ -12813,6 +12827,14 @@ components:
       required: true
       schema:
         type: string
+    package_activities:
+      description: This is a boolean that will decided if we are want to return the
+        activities data (not default) or not(performance enhancement)
+      in: query
+      name: package_activities
+      required: false
+      schema:
+        type: boolean
     query:
       description: This is a string that you can use to search your assets.
       in: query
@@ -13848,6 +13870,7 @@ components:
       - version
       title: Application
       type: object
+      x-baseModel: true
     ApplicationNameEnum:
       description: This is a running enumeration for the Names of all the Applications
         that can be Registered
@@ -14170,6 +14193,7 @@ components:
       - type
       title: CodeAnalysis
       type: object
+      x-baseModel: true
     Model:
       description: "This is a Machine Learning Model, that will give readable information\
         \ about the Machine Learning Model Used."
@@ -14252,6 +14276,7 @@ components:
       - version
       title: Model
       type: object
+      x-baseModel: true
     ModelTypeEnum:
       description: "This will describe the type of Model balanced, speed, accuracy..."
       enum:
@@ -14641,8 +14666,7 @@ components:
       - updated
       title: Relationship
       type: object
-      x-stoplight:
-        id: 4rrtvwczrna8a
+      x-baseModel: true
     Embeddings:
       properties:
         iterable:
@@ -15528,6 +15552,7 @@ components:
       - id
       title: UserProfile
       type: object
+      x-baseModel: true
     Aesthetics:
       description: These are aesthetics properties that will ensure the darkmode +
         font size and other aesthetics properties persist:)
@@ -15603,6 +15628,7 @@ components:
       - user
       title: AllocationCloud
       type: object
+      x-baseModel: true
     AllocationCloudUrls:
       description: |-
         you will have at minimum 2 urls,
@@ -16148,8 +16174,6 @@ components:
       - id
       title: ReferencedAnchor
       type: object
-      x-stoplight:
-        id: f744f32378d60
     FlattenedAnchor:
       properties:
         schema:
@@ -16193,8 +16217,6 @@ components:
       - updated
       title: FlattenedAnchor
       type: object
-      x-stoplight:
-        id: 4367412a54ecf
     AnchorTypeEnum:
       description: This is an enum used to differentiate the different between different
         anchors. Used in the Anchor data model.
@@ -17370,6 +17392,7 @@ components:
       - iterable
       title: Applications
       type: object
+      x-baseCollection: Application
     QGPTPromptPipeline:
       description: "This is a model related to switching between different prompts\
         \ based on if we are dealing with \nvarious tasks or if we are attempting\
@@ -17785,8 +17808,6 @@ components:
       - UNKNOWN
       title: HintTypeEnum
       type: string
-      x-stoplight:
-        id: w0w3hcnkp097y
     TrackedFormatEventMetadata:
       properties:
         reclassification:
@@ -19043,8 +19064,7 @@ components:
       - updated
       title: Activity
       type: object
-      x-stoplight:
-        id: q4bbj6s5siojj
+      x-baseModel: true
     Activities:
       description: This is the plural of activity
       properties:
@@ -19058,8 +19078,7 @@ components:
       - iterable
       title: Activities
       type: object
-      x-stoplight:
-        id: eekinsh4u4p4o
+      x-baseCollection: Activity
     Allocations:
       properties:
         schema:
@@ -19072,6 +19091,7 @@ components:
       - iterable
       title: Allocations
       type: object
+      x-baseCollection: AllocationCloud
     Analyses:
       properties:
         schema:
@@ -19084,6 +19104,7 @@ components:
       - iterable
       title: Analyses
       type: object
+      x-baseCollection: Analysis
     Analysis:
       description: |-
         This the the MlAnalysis Object, that will go on a format.
@@ -19108,6 +19129,7 @@ components:
       - id
       title: Analysis
       type: object
+      x-baseModel: true
     ImageAnalysis:
       description: This is a model that represents all the information collected during
         the processing of an image.
@@ -19127,6 +19149,7 @@ components:
       - id
       title: ImageAnalysis
       type: object
+      x-baseModel: true
     OCRAnalysis:
       description: This is the data collected during the ocr analysis of an image.
       properties:
@@ -19151,6 +19174,7 @@ components:
       - raw
       title: OCRAnalysis
       type: object
+      x-baseModel: true
     Format:
       description: |-
         A representation of Data for a particular Form Factor of an Asset.
@@ -19211,6 +19235,7 @@ components:
       - updated
       title: Format
       type: object
+      x-baseModel: true
     Anchor:
       properties:
         schema:
@@ -19254,8 +19279,8 @@ components:
       - updated
       title: Anchor
       type: object
-      x-stoplight:
-        id: 7041aeacf0dbc
+      x-baseModel: true
+      x-reindexable: true
     SeededScoreIncrement:
       description: |-
         This is the body for a respective scores increment,
@@ -19389,8 +19414,8 @@ components:
       - updated
       title: AnchorPoint
       type: object
-      x-stoplight:
-        id: vimzic8ey5idb
+      x-baseModel: true
+      x-reindexable: true
     AnchorPoints:
       description: This is the plural of AnchorPoint.
       properties:
@@ -19412,8 +19437,7 @@ components:
       - iterable
       title: AnchorPoints
       type: object
-      x-stoplight:
-        id: jwtd6gizlkn4w
+      x-baseCollection: AnchorPoint
     SeededAnchorPoint:
       properties:
         schema:
@@ -19458,6 +19482,7 @@ components:
       - iterable
       title: Anchors
       type: object
+      x-baseCollection: Anchor
     Annotation:
       description: |-
         An Annotation is the replacement for descriptions, this will enable comments, description, summaries and many more.
@@ -19512,8 +19537,8 @@ components:
       - updated
       title: Annotation
       type: object
-      x-stoplight:
-        id: 22bulerl8wanu
+      x-baseModel: true
+      x-reindexable: true
     Annotations:
       description: This is the plural of Annotation
       properties:
@@ -19535,8 +19560,7 @@ components:
       - iterable
       title: Annotations
       type: object
-      x-stoplight:
-        id: rwmnz5n55qa6l
+      x-baseCollection: Annotation
     SeededConnectorCreation:
       description: A encompasing creation object that can be utilized to create either
         an asset or a format.
@@ -19885,6 +19909,7 @@ components:
       - iterable
       title: Assets
       type: object
+      x-baseCollection: Asset
     Asset:
       description: |-
         An Asset Model representing data extracted from an Application connecting a group of data containing one or more Formats.
@@ -19972,6 +19997,8 @@ components:
       - updated
       title: Asset
       type: object
+      x-baseModel: true
+      x-reindexable: true
     Formats:
       description: A base class for a collection of formats and some additional meta
         properties.
@@ -19986,6 +20013,7 @@ components:
       - iterable
       title: Formats
       type: object
+      x-baseCollection: Format
     Preview:
       description: "This is a preview Model that will hold references to at minimum\
         \ the base preview. which can be potentiall a base image, or also base text/code\
@@ -20018,6 +20046,7 @@ components:
       - iterable
       title: Shares
       type: object
+      x-baseCollection: Share
     Share:
       description: |-
         This represents what information that is relavent to anything and every sharing related. v1 will look very bare and will add more and more data as we go!
@@ -20065,6 +20094,7 @@ components:
       - short
       title: Share
       type: object
+      x-baseModel: true
     Distributions:
       description: This is the plural Model of a Distribution.
       properties:
@@ -20078,8 +20108,7 @@ components:
       - iterable
       title: Distributions
       type: object
-      x-stoplight:
-        id: 4agjstjbuf6ep
+      x-baseCollection: Distribution
     Distribution:
       description: |-
         This is a fully referenced version of a Distribution.
@@ -20108,8 +20137,7 @@ components:
       - updated
       title: Distribution
       type: object
-      x-stoplight:
-        id: caq7q8ojyajs0
+      x-baseModel: true
     Websites:
       description: This is a specific model for related websites to an asset.
       properties:
@@ -20131,6 +20159,7 @@ components:
       - iterable
       title: Websites
       type: object
+      x-baseCollection: Website
     Website:
       description: This is a specific model for related websites to an asset.
       properties:
@@ -20180,6 +20209,8 @@ components:
       - url
       title: Website
       type: object
+      x-baseModel: true
+      x-reindexable: true
     Tags:
       description: This is a model that represents multiple Tag Models
       properties:
@@ -20200,6 +20231,7 @@ components:
       - iterable
       title: Tags
       type: object
+      x-baseCollection: Tag
     Tag:
       description: "This represents a fully polinated Tag, that is either attached\
         \ to an asset or a format that adds additional information \"tags\" to describe\
@@ -20248,6 +20280,8 @@ components:
       - updated
       title: Tag
       type: object
+      x-baseModel: true
+      x-reindexable: true
     Sensitives:
       description: This is a model that represents many individual sensitive pieces
         of data.
@@ -20264,6 +20298,7 @@ components:
       - iterable
       title: Sensitives
       type: object
+      x-baseCollection: Sensitive
     Sensitive:
       description: This is a fully referenced representation of a sensitive pieces
         of data.
@@ -20313,6 +20348,7 @@ components:
       - updated
       title: Sensitive
       type: object
+      x-baseModel: true
     Persons:
       description: This is the plural of Person. will have top level meta about the
         person including an iterable of all the person.
@@ -20335,6 +20371,7 @@ components:
       - iterable
       title: Persons
       type: object
+      x-baseCollection: Person
     Person:
       description: |-
         if expiration is add then, after the alloted expiration date the user will only have view && comment only permissions. Only present in the case there is a scope such as a defined collection/asset...
@@ -20400,6 +20437,8 @@ components:
       - updated
       title: Person
       type: object
+      x-baseModel: true
+      x-reindexable: true
     Hints:
       description: This is the plural of a Hint.
       properties:
@@ -20420,8 +20459,7 @@ components:
       - iterable
       title: Hints
       type: object
-      x-stoplight:
-        id: wfmw2qozhwlhv
+      x-baseCollection: Hint
     Hint:
       description: "This is a hint that is attached to an asset, used for suggested_queries,\
         \ and hints given via the qgpt flow."
@@ -20461,6 +20499,8 @@ components:
       - updated
       title: Hint
       type: object
+      x-baseModel: true
+      x-reindexable: true
     Conversations:
       description: This is a plural version of a Conversation.
       properties:
@@ -20482,8 +20522,7 @@ components:
       - iterable
       title: Conversations
       type: object
-      x-stoplight:
-        id: e6wn8svszg6ow
+      x-baseCollection: Conversation
     Conversation:
       description: |-
         This is a fully referenced Conversation.
@@ -20545,8 +20584,8 @@ components:
       - updated
       title: Conversation
       type: object
-      x-stoplight:
-        id: typnu965gdvtw
+      x-baseModel: true
+      x-reindexable: true
     WorkstreamSummaries:
       description: This is a collection of many WorkstreamSummary
       properties:
@@ -20568,8 +20607,7 @@ components:
       - iterable
       title: WorkstreamSummaries
       type: object
-      x-stoplight:
-        id: 6x6tiv80fzx7z
+      x-baseCollection: WorkstreamSummary
     WorkstreamSummary:
       description: "This is representation or a summarized version of the highly relevant\
         \ WorkstreamEvent events from a given time period, 1 day, 1 week, 1 month,\
@@ -20616,8 +20654,8 @@ components:
       - updated
       title: WorkstreamSummary
       type: object
-      x-stoplight:
-        id: 89sodddjqbtk4
+      x-baseModel: true
+      x-reindexable: true
     SaveSuggestion:
       description: |-
         This is the SaveSuggestion. Mainly creating an additional model here because I imagine that we will want to add some additional data to this in the future (potentially with more numerical data that is emitted from the ML Models)
@@ -21305,6 +21343,7 @@ components:
       - iterable
       title: CodeAnalyses
       type: object
+      x-baseCollection: CodeAnalysis
     SeededConnectorConnection:
       description: A model that is passed to the context API at bootup
       properties:
@@ -21416,8 +21455,7 @@ components:
       - iterable
       title: ConversationMessages
       type: object
-      x-stoplight:
-        id: deb6bc4791079
+      x-baseCollection: ConversationMessage
     ConversationMessage:
       description: |-
         This is a fully referenced ConversationMessage.
@@ -21464,8 +21502,8 @@ components:
       - updated
       title: ConversationMessage
       type: object
-      x-stoplight:
-        id: 90b602c96e5bc
+      x-baseModel: true
+      x-reindexable: true
     ConversationSummarizeInput:
       description: Optionally you may pass in a list of conversation message that
         you would like to use for the summary.
@@ -22350,6 +22388,7 @@ components:
       - iterable
       title: ImageAnalyses
       type: object
+      x-baseCollection: ImageAnalysis
     LinkifyMultiple:
       description: |
         This is the incoming linkify model.
@@ -22702,6 +22741,7 @@ components:
       - iterable
       title: Models
       type: object
+      x-baseCollection: Model
     Notification:
       description: config model for notification invoking
       properties:
@@ -22799,6 +22839,7 @@ components:
       - iterable
       title: OCRAnalyses
       type: object
+      x-baseCollection: OCRAnalysis
     OpenAIModelsListInput:
       description: This is the input model for the /open_ai/models/list endpoint.
       properties:
@@ -22889,6 +22930,7 @@ components:
           type: array
       title: Users
       type: object
+      x-baseCollection: UserProfile
     UncheckedOSServerUpdate:
       description: "This is the input body for /os/update/check, just a placeholder\
         \ for now."
@@ -23840,6 +23882,8 @@ components:
       type: object
     Relationships:
       properties:
+        schema:
+          $ref: '#/components/schemas/EmbeddedModelSchema'
         iterable:
           items:
             $ref: '#/components/schemas/Relationship'
@@ -23848,8 +23892,7 @@ components:
       - iterable
       title: Relationships
       type: object
-      x-stoplight:
-        id: vqz8hj7kuzfzm
+      x-baseCollection: Relationship
     SeededAssetTags:
       properties:
         iterable:
@@ -24295,6 +24338,7 @@ components:
       - iterable
       title: Ranges
       type: object
+      x-baseCollection: Range
     Range:
       description: "This is an identified Range, this is ONLY needed when using plural\
         \ rangedTimestamps, in order to ensure granularity(add/modify/delete)"
@@ -24325,6 +24369,8 @@ components:
       - updated
       title: Range
       type: object
+      x-baseModel: true
+      x-reindexable: true
     SeededRange:
       description: "This is a preIdentified version of a Range.\n\nconversation: this\
         \ is here to specify the relationship that we want to set up with the Range.\
@@ -24401,6 +24447,7 @@ components:
       - iterable
       title: WorkstreamEvents
       type: object
+      x-baseCollection: WorkstreamEvent
     WorkstreamEvent:
       description: |-
         This is a Shadow Activity event:
@@ -24437,6 +24484,8 @@ components:
       - updated
       title: WorkstreamEvent
       type: object
+      x-baseModel: true
+      x-reindexable: true
     SeededWorkstreamEvent:
       description: "This is a precreated version of a WorkstreamEvent event, this\
         \ will be used ingested into PiecesOS and PiecesOS will do all the magic to\
@@ -26029,6 +26078,7 @@ components:
       - updated
       title: IdentifiedWorkstreamPatternEngineSource
       type: object
+      x-baseModel: true
     IdentifiedWorkstreamPatternEngineSources:
       description: ""
       properties:
@@ -26050,6 +26100,7 @@ components:
       - iterable
       title: IdentifiedWorkstreamPatternEngineSources
       type: object
+      x-baseCollection: IdentifiedWorkstreamPatternEngineSource
     SearchedIdentifiedWorkstreamPatternEngineSources:
       description: This is the plural Model used to return many SearchedIdentifiedWorkstreamPatternEngineSource.
       properties:

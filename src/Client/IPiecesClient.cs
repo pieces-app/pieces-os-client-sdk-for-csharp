@@ -24,6 +24,15 @@ public interface IPiecesClient
     Task<Model> DownloadModelAsync(Model model, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Deletes an offline model.
+    /// 
+    /// If the model is not offline, this does nothing
+    /// If the model is an offline model, it is deleted
+    /// </summary>
+    /// <param name="model">The model to delete</param>
+    Task DeleteModelAsync(Model model, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Downloads an offline model based off the name. Models are found using a case insensitive comparison
     /// finding the first model with a name that contains the given model name.
     /// 
@@ -65,4 +74,37 @@ public interface IPiecesClient
     /// </summary>
     /// <returns>The assets</returns>
     Task<IPiecesAssets> GetAssetsAsync();
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    Task ClearLongTermMemoryAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces from now going back by the specified time span
+    /// </summary>
+    /// <param name="periodToClear">The period to clear going back from now</param>
+    /// <param name="cancellationToken"></param>
+    Task ClearLongTermMemoryAsync(TimeSpan periodToClear, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Clears all the long-term memories from Pieces for the given date and time range
+    /// </summary>
+    /// <param name="from">The start date and time to clear from</param>
+    /// <param name="to">The end date and time to clear to</param>
+    /// <param name="cancellationToken"></param>
+    Task ClearLongTermMemoryAsync(DateTime from, DateTime to, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Deactivates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    Task DeactivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Activates long-term memory capture
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    Task ActivateLongTermMemoryCaptureAsync(CancellationToken cancellationToken = default);
 }

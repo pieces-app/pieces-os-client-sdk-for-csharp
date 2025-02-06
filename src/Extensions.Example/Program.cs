@@ -403,3 +403,31 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 // }
 
 #endregion Chat about a folder
+
+#region Set the system prompt
+
+// This example sets the system prompt
+
+// {
+//     // Create a Chat completion
+//     var llamaModel = await client.DownloadModelAsync("llama-3 8B").ConfigureAwait(false);
+//     IChatClient chatClient = new PiecesChatClient(client, chatName: $"Chat with a system prompt - {DateTime.Now.ToShortTimeString()}", logger: logger, llamaModel);
+
+//     // Set the system prompt
+//     var chatMessages = new List<ChatMessage>{
+//         new(ChatRole.System, "Answer in the style of Yoda from Star Wars"),
+//         new(ChatRole.User, "Hello")
+//     };
+
+//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
+//     {
+//         if (r.FinishReason != ChatFinishReason.Stop)
+//         {
+//             Console.Write(r.Text);
+//         }
+//     }
+
+//     Console.WriteLine();
+// }
+
+#endregion Set the system prompt

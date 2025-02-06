@@ -19,7 +19,7 @@ All URIs are relative to *http://localhost:1000*
 | [**WorkstreamPatternEngineProcessorsVisionEventsSpecificSnapshot**](WorkstreamPatternEngineApi.md#workstreampatternengineprocessorsvisioneventsspecificsnapshot) | **GET** /workstream_pattern_engine/processors/vision/data/events/{vision_event} | /workstream_pattern_engine/processors/vision/data/events/{vision_event} [GET] |
 | [**WorkstreamPatternEngineProcessorsVisionMetadata**](WorkstreamPatternEngineApi.md#workstreampatternengineprocessorsvisionmetadata) | **GET** /workstream_pattern_engine/processors/vision/metadata | /workstream_pattern_engine/processors/vision/metadata [GET] |
 | [**WorkstreamPatternEngineProcessorsVisionStatus**](WorkstreamPatternEngineApi.md#workstreampatternengineprocessorsvisionstatus) | **GET** /workstream_pattern_engine/processors/vision/status | /workstream_pattern_engine/processors/vision/status [GET] |
-| [**WorkstreamPatternEngineProcessorsVisionStatusStream**](WorkstreamPatternEngineApi.md#workstreampatternengineprocessorsvisionstatusstream) | **GET** /workstream_pattern_engine/processors/vision/status/stream | /workstream_pattern_engine/processors/vision/status/steam [WS] |
+| [**WorkstreamPatternEngineProcessorsVisionStatusStream**](WorkstreamPatternEngineApi.md#workstreampatternengineprocessorsvisionstatusstream) | **GET** /workstream_pattern_engine/processors/vision/status/stream | /workstream_pattern_engine/processors/vision/status/stream [WS] |
 
 <a id="workstreampatternenginecreateingestion"></a>
 # **WorkstreamPatternEngineCreateIngestion**
@@ -1450,7 +1450,7 @@ This endpoint does not need any parameter.
 # **WorkstreamPatternEngineProcessorsVisionStatusStream**
 > WorkstreamPatternEngineStatus WorkstreamPatternEngineProcessorsVisionStatusStream ()
 
-/workstream_pattern_engine/processors/vision/status/steam [WS]
+/workstream_pattern_engine/processors/vision/status/stream [WS]
 
 This is a websocket for the status of the workstream pattern engine for vision.  This will emit an event when this is first connected to, and will emit an event when every this value changes  This will emit a \"WorkstreamPatternEngineStatus\" Model.
 
@@ -1479,7 +1479,7 @@ namespace Example
 
             try
             {
-                // /workstream_pattern_engine/processors/vision/status/steam [WS]
+                // /workstream_pattern_engine/processors/vision/status/stream [WS]
                 WorkstreamPatternEngineStatus result = apiInstance.WorkstreamPatternEngineProcessorsVisionStatusStream();
                 Debug.WriteLine(result);
             }
@@ -1500,7 +1500,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // /workstream_pattern_engine/processors/vision/status/steam [WS]
+    // /workstream_pattern_engine/processors/vision/status/stream [WS]
     ApiResponse<WorkstreamPatternEngineStatus> response = apiInstance.WorkstreamPatternEngineProcessorsVisionStatusStreamWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

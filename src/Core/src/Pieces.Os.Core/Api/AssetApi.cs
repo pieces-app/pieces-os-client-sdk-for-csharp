@@ -462,9 +462,10 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        Asset AssetSnapshot(Guid asset, bool? transferables = default(bool?), int operationIndex = 0);
+        Asset AssetSnapshot(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// /asset/{asset} [GET] Scoped To Asset
@@ -475,9 +476,10 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        ApiResponse<Asset> AssetSnapshotWithHttpInfo(Guid asset, bool? transferables = default(bool?), int operationIndex = 0);
+        ApiResponse<Asset> AssetSnapshotWithHttpInfo(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0);
         /// <summary>
         /// /asset/{asset} [POST] Scoped to an Asset
         /// </summary>
@@ -1082,10 +1084,11 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        System.Threading.Tasks.Task<Asset> AssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<Asset> AssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// /asset/{asset} [GET] Scoped To Asset
@@ -1096,10 +1099,11 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Asset>> AssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// /asset/{asset} [POST] Scoped to an Asset
         /// </summary>
@@ -4033,11 +4037,12 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Asset</returns>
-        public Asset AssetSnapshot(Guid asset, bool? transferables = default(bool?), int operationIndex = 0)
+        public Asset AssetSnapshot(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0)
         {
-            Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = AssetSnapshotWithHttpInfo(asset, transferables);
+            Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = AssetSnapshotWithHttpInfo(asset, transferables, packageActivities);
             return localVarResponse.Data;
         }
 
@@ -4047,9 +4052,10 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Asset</returns>
-        public Pieces.Os.Core.Client.ApiResponse<Asset> AssetSnapshotWithHttpInfo(Guid asset, bool? transferables = default(bool?), int operationIndex = 0)
+        public Pieces.Os.Core.Client.ApiResponse<Asset> AssetSnapshotWithHttpInfo(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0)
         {
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
 
@@ -4078,6 +4084,10 @@ namespace Pieces.Os.Core.Api
             if (transferables != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "transferables", transferables));
+            }
+            if (packageActivities != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "package_activities", packageActivities));
             }
 
             localVarRequestOptions.Operation = "AssetApi.AssetSnapshot";
@@ -4109,12 +4119,13 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Asset</returns>
-        public async System.Threading.Tasks.Task<Asset> AssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Asset> AssetSnapshotAsync(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = await AssetSnapshotWithHttpInfoAsync(asset, transferables, operationIndex, cancellationToken).ConfigureAwait(false);
+            Pieces.Os.Core.Client.ApiResponse<Asset> localVarResponse = await AssetSnapshotWithHttpInfoAsync(asset, transferables, packageActivities, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4124,10 +4135,11 @@ namespace Pieces.Os.Core.Api
         /// <exception cref="Pieces.Os.Core.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="asset">The id (uuid) of the asset that you are trying to access.</param>
         /// <param name="transferables">This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) (optional)</param>
+        /// <param name="packageActivities">This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Asset)</returns>
-        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Pieces.Os.Core.Client.ApiResponse<Asset>> AssetSnapshotWithHttpInfoAsync(Guid asset, bool? transferables = default(bool?), bool? packageActivities = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             Pieces.Os.Core.Client.RequestOptions localVarRequestOptions = new Pieces.Os.Core.Client.RequestOptions();
@@ -4157,6 +4169,10 @@ namespace Pieces.Os.Core.Api
             if (transferables != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "transferables", transferables));
+            }
+            if (packageActivities != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Pieces.Os.Core.Client.ClientUtils.ParameterToMultiMap("", "package_activities", packageActivities));
             }
 
             localVarRequestOptions.Operation = "AssetApi.AssetSnapshot";
