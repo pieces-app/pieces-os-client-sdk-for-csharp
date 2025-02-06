@@ -24,6 +24,15 @@ public interface IPiecesClient
     Task<Model> DownloadModelAsync(Model model, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Deletes an offline model.
+    /// 
+    /// If the model is not offline, this does nothing
+    /// If the model is an offline model, it is deleted
+    /// </summary>
+    /// <param name="model">The model to delete</param>
+    Task DeleteModelAsync(Model model, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Downloads an offline model based off the name. Models are found using a case insensitive comparison
     /// finding the first model with a name that contains the given model name.
     /// 

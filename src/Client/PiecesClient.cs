@@ -298,7 +298,19 @@ public class PiecesClient : IPiecesClient, IDisposable
     public async Task<IEnumerable<Model>> GetModelsAsync()
     {
         await EnsureConnected().ConfigureAwait(false);
-        return piecesApis!.ModelsApi.ModelsSnapshot().Iterable;
+        return (await piecesApis!.ModelsApi.ModelsSnapshotAsync()).Iterable;
+    }
+
+    /// <summary>
+    /// Delete an offline model - this removes the downloaded model from Ollama
+    /// </summary>
+    /// <param name="model">The model to delete</param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    public async Task DeleteModelAsync(Model model, CancellationToken cancellationToken = default)
+    {
+        await EnsureConnected().ConfigureAwait(false);
+        await piecesApis!.ModelsApi.ModelsDeleteSpecificModelCacheAsync(model.Id, new ModelDeleteCacheInput(), cancellationToken: cancellationToken);
     }
 
     /// <summary>
@@ -340,7 +352,7 @@ public class PiecesClient : IPiecesClient, IDisposable
 
             cancellationToken.ThrowIfCancellationRequested();
 
-            await Task.Delay(10, cancellationToken).ConfigureAwait(false);
+            await Task.Delay(100, cancellationToken).ConfigureAwait(false);
             downloadedModel = await piecesApis.ModelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -351,12 +363,12 @@ public class PiecesClient : IPiecesClient, IDisposable
 
             cancellationToken.ThrowIfCancellationRequested();
 
-            await Task.Delay(10, cancellationToken).ConfigureAwait(false);
+            await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
             downloadedModel = await piecesApis.ModelApi.ModelsSpecificModelSnapshotAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         // Now load the model
-        return await piecesApis.ModelApi.ModelSpecificModelLoadAsync(model.Id, cancellationToken: cancellationToken).ConfigureAwait(false);
+        return downloadedModel;
     }
 
     /// <summary>
