@@ -45,7 +45,7 @@ if (DateTime.Now.Month == 5 && DateTime.Now.Day == 4)
 chatMessages.Add(new(ChatRole.User, "Give me a summary of all the activities I was doing over the last few hours"));
 
 // Send the message and stream the result
-await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options).ConfigureAwait(false))
+await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages, options).ConfigureAwait(false))
 {
     // The last message has a copy of the entire text, so only log the non-stop messages
     if (r.FinishReason != ChatFinishReason.Stop)

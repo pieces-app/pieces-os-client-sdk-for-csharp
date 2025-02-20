@@ -39,15 +39,13 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     private readonly ILogger? logger = logger;
     private Model? model = model;
     private IPiecesCopilot? piecesCopilot;
+    private readonly ChatClientMetadata _metadata = new("Pieces for Developers", new Uri("https://pieces.app"), (model?.Name) ?? "Unknown model");
 
     // A cache of chats. These are keyed on a long string that is in the format "<Role><Message><Role><Message>..."
     // This is so we can take a set of chat messages and see if there is an existing conversation. If so, we can re-use this.
     // If not, we create a new conversation.
     // As new messages get added to the conversation, delete the old cache entry and create a new one.
     private readonly Dictionary<string, ICopilotChat> chatCache = [];
-
-    /// <inheritdoc />
-    public ChatClientMetadata Metadata => new("Pieces for Developers", new Uri("https://pieces.app"), (model?.Name) ?? "Unknown model");
 
     //
     // Summary:
@@ -84,7 +82,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     unless PersistChat is set to false. A conversation will be reused if
     //     it matches an existing conversation created by this chat client. Conversations created outside of this instance of the
     //     client will not be used.
-    public async Task<ChatCompletion> CompleteAsync(IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
+    public async Task<ChatResponse> GetResponseAsync(IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
         var chatWithCacheKey = await GetOrCreateChatAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
 
@@ -99,11 +97,11 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         await CacheOrDeleteChatAsync(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
 
         // Build the response
-        return new ChatCompletion([responseMessage])
+        return new ChatResponse([responseMessage])
         {
             ModelId = chatWithCacheKey.Chat.Model.Id,
             FinishReason = ChatFinishReason.Stop,
-            CompletionId = chatWithCacheKey.Chat.Id,
+            ResponseId = chatWithCacheKey.Chat.Id,
             RawRepresentation = responseMessage.Text,
             CreatedAt = DateTime.UtcNow,
             AdditionalProperties = options?.AdditionalProperties is null ? null : new AdditionalPropertiesDictionary(options.AdditionalProperties)
@@ -145,7 +143,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     unless PersistChat is set to false. A conversation will be reused if
     //     it matches an existing conversation created by this chat client. Conversations created outside of this instance of the
     //     client will not be used.
-    public async IAsyncEnumerable<StreamingChatCompletionUpdate> CompleteStreamingAsync(IList<ChatMessage> chatMessages,
+    public async IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(IList<ChatMessage> chatMessages,
                                                                                         ChatOptions? options = null,
                                                                                         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
@@ -157,15 +155,15 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         await foreach (var r in chatWithCacheKey.Chat.AskStreamingQuestionAsync(chatMessages.Last().Text!,
                                                                                 cancellationToken: cancellationToken))
         {
-            var response = new StreamingChatCompletionUpdate()
+            var response = new ChatResponseUpdate()
             {
                 Text = r,
-                CompletionId = chatWithCacheKey.Chat.Id,
+                ResponseId = chatWithCacheKey.Chat.Id,
                 Role = ChatRole.Assistant,
                 FinishReason = null,
                 CreatedAt = DateTime.UtcNow,
                 RawRepresentation = r,
-                AuthorName = Metadata.ProviderName,
+                AuthorName = _metadata.ProviderName,
             };
 
             responseText += r;
@@ -179,15 +177,15 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         // Cache or delete the chat depending on the options
         await CacheOrDeleteChatAsync(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
 
-        yield return new StreamingChatCompletionUpdate()
+        yield return new ChatResponseUpdate()
         {
             Text = responseText,
-            CompletionId = chatWithCacheKey.Chat.Id,
+            ResponseId = chatWithCacheKey.Chat.Id,
             Role = ChatRole.Assistant,
             FinishReason = ChatFinishReason.Stop,
             CreatedAt = DateTime.UtcNow,
             RawRepresentation = responseText,
-            AuthorName = Metadata.ProviderName,
+            AuthorName = _metadata.ProviderName,
         };
     }
 
@@ -331,6 +329,9 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     }
 
     /// <inheritdoc />
-    public object? GetService(Type serviceType, object? serviceKey = null)
-        => serviceKey is null && serviceType?.IsInstanceOfType(this) is true ? this : null;
+    public object? GetService(Type serviceType, object? serviceKey = null) =>
+        serviceKey is not null ? null :
+        serviceType == typeof(ChatClientMetadata) ? _metadata :
+        serviceType?.IsInstanceOfType(this) is true ? this :
+        null;
 }

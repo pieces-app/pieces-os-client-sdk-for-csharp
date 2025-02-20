@@ -36,7 +36,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Hello"));
 
 //     // Ask the question
-//     var response = await chatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     var response = await chatClient.GetResponseAsync(chatMessages).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
@@ -49,7 +49,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     {
 //         ModelId = "Claude 3.5 Sonnet"
 //     };
-//     response = await chatClient.CompleteAsync(chatMessages, options: options).ConfigureAwait(false);
+//     response = await chatClient.GetResponseAsync(chatMessages, options: options).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
@@ -58,7 +58,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
 
-//     response = await chatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     response = await chatClient.GetResponseAsync(chatMessages).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     Console.WriteLine();
@@ -86,7 +86,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Hello"));
 
 //     // Ask the question
-//     var response = await chatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     var response = await chatClient.GetResponseAsync(chatMessages).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
@@ -99,7 +99,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     {
 //         ModelId = "Claude 3.5 Sonnet"
 //     };
-//     response = await chatClient.CompleteAsync(chatMessages, options: options).ConfigureAwait(false);
+//     response = await chatClient.GetResponseAsync(chatMessages, options: options).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
@@ -112,7 +112,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
 
-//     response = await chatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     response = await chatClient.GetResponseAsync(chatMessages).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     Console.WriteLine();
@@ -148,7 +148,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Hello"));
 
 //     // Ask the question
-//     var response = await chatClient.CompleteAsync(chatMessages, options: options).ConfigureAwait(false);
+//     var response = await chatClient.GetResponseAsync(chatMessages, options: options).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
@@ -157,7 +157,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     // Ask the next question, but change the model
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Give me a single line of code to create a hello world in C#. No other text."));
 
-//     response = await chatClient.CompleteAsync(chatMessages, options: options).ConfigureAwait(false);
+//     response = await chatClient.GetResponseAsync(chatMessages, options: options).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
@@ -166,7 +166,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
 
-//     response = await chatClient.CompleteAsync(chatMessages, options: options).ConfigureAwait(false);
+//     response = await chatClient.GetResponseAsync(chatMessages, options: options).ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     Console.WriteLine();
@@ -193,7 +193,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Hello"));
 
 //     // Ask the question
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
 
@@ -213,7 +213,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     };
 
 //     // Ask the question
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options: options).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages, options: options).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
 
@@ -227,7 +227,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
 //     }
@@ -258,9 +258,12 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         }
 //     };
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options: options).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages, options: options).ConfigureAwait(false))
 //     {
-//         Console.Write(r.Text);
+//         if (r.FinishReason != ChatFinishReason.Stop)
+//         {
+//             Console.Write(r.Text);
+//         }
 //     }
 
 //     Console.WriteLine();
@@ -281,7 +284,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         new(ChatRole.User, "Hello")
 //     };
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
 
@@ -301,9 +304,12 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         }
 //     };
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options: options).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages, options: options).ConfigureAwait(false))
 //     {
-//         Console.Write(r.Text);
+//         if (r.FinishReason != ChatFinishReason.Stop)
+//         {
+//             Console.Write(r.Text);
+//         }
 //     }
 
 //     Console.WriteLine();
@@ -352,9 +358,12 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         new(ChatRole.User, "Describe this program")
 //     };
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options: options).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages, options: options).ConfigureAwait(false))
 //     {
-//         Console.Write(r.Text);
+//         if (r.FinishReason != ChatFinishReason.Stop)
+//         {
+//             Console.Write(r.Text);
+//         }
 //     }
 // }
 
@@ -370,7 +379,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         new(ChatRole.User, "Which LLM are you?"),
 //     };
 
-//     var response = await modelChatClient.CompleteAsync(chatMessages).ConfigureAwait(false);
+//     var response = await modelChatClient.GetResponseAsync(chatMessages).ConfigureAwait(false);
 //     Console.WriteLine(response.Message.Text);
 // }
 
@@ -396,7 +405,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         }
 //     };
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages, options).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages, options).ConfigureAwait(false))
 //     {
 //         Console.Write(r.Text);
 //     }
@@ -419,7 +428,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //         new(ChatRole.User, "Hello")
 //     };
 
-//     await foreach (var r in chatClient.CompleteStreamingAsync(chatMessages).ConfigureAwait(false))
+//     await foreach (var r in chatClient.GetStreamingResponseAsync(chatMessages).ConfigureAwait(false))
 //     {
 //         if (r.FinishReason != ChatFinishReason.Stop)
 //         {
