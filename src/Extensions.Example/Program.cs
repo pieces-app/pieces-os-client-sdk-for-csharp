@@ -40,7 +40,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Messages[0].Text));
 
 //     // Ask the next question, but change the model
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Give me a single line of code to create a hello world in C#. No other text."));
@@ -53,7 +53,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Messages[0].Text));
 
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
@@ -90,7 +90,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Messages[0].Text));
 
 //     // Ask the next question, but change the model
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Give me a single line of code to create a hello world in C#. No other text."));
@@ -103,7 +103,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Messages[0].Text));
 
 //     // Add a question and answer so we deviate from the conversation
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "What programming language is this?"));
@@ -152,7 +152,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Messages[0].Text));
 
 //     // Ask the next question, but change the model
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Give me a single line of code to create a hello world in C#. No other text."));
@@ -161,7 +161,7 @@ var assets = await client.GetAssetsAsync().ConfigureAwait(false);
 //     Console.WriteLine(response);
 
 //     // Add the response to the conversation
-//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Message!.Text));
+//     chatMessages.Add(new ChatMessage(ChatRole.Assistant, response.Messages[0].Text));
 
 //     // Ask the next question
 //     chatMessages.Add(new ChatMessage(ChatRole.User, "Comment this code"));
