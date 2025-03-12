@@ -82,19 +82,19 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     unless PersistChat is set to false. A conversation will be reused if
     //     it matches an existing conversation created by this chat client. Conversations created outside of this instance of the
     //     client will not be used.
-    public async Task<ChatResponse> GetResponseAsync(IList<ChatMessage> chatMessages, ChatOptions? options = null, CancellationToken cancellationToken = default)
+    public async Task<ChatResponse> GetResponseAsync(IEnumerable<ChatMessage> messages, ChatOptions? options = null, CancellationToken cancellationToken = default)
     {
-        var chatWithCacheKey = await GetOrCreateChatAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
+        var chatWithCacheKey = await GetOrCreateChatAsync(messages, options, cancellationToken).ConfigureAwait(false);
 
         // Ask the question
-        var response = await chatWithCacheKey.Chat.AskQuestionAsync(chatMessages.Last().Text!,
+        var response = await chatWithCacheKey.Chat.AskQuestionAsync(messages.Last().Text!,
                                                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
         // Build the response
         var responseMessage = new ChatMessage(ChatRole.Assistant, response);
 
         // Cache or delete the chat depending on the options
-        await CacheOrDeleteChatAsync(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
+        await CacheOrDeleteChatAsync(messages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
 
         // Build the response
         return new ChatResponse([responseMessage])
@@ -143,23 +143,21 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
     //     unless PersistChat is set to false. A conversation will be reused if
     //     it matches an existing conversation created by this chat client. Conversations created outside of this instance of the
     //     client will not be used.
-    public async IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(IList<ChatMessage> chatMessages,
+    public async IAsyncEnumerable<ChatResponseUpdate> GetStreamingResponseAsync(IEnumerable<ChatMessage> messages,
                                                                                         ChatOptions? options = null,
                                                                                         [EnumeratorCancellation] CancellationToken cancellationToken = default)
     {
-        var chatWithCacheKey = await GetOrCreateChatAsync(chatMessages, options, cancellationToken).ConfigureAwait(false);
+        var chatWithCacheKey = await GetOrCreateChatAsync(messages, options, cancellationToken).ConfigureAwait(false);
 
         var responseText = "";
 
         // Ask the question
-        await foreach (var r in chatWithCacheKey.Chat.AskStreamingQuestionAsync(chatMessages.Last().Text!,
+        await foreach (var r in chatWithCacheKey.Chat.AskStreamingQuestionAsync(messages.Last().Text!,
                                                                                 cancellationToken: cancellationToken))
         {
-            var response = new ChatResponseUpdate()
+            var response = new ChatResponseUpdate(ChatRole.Assistant, r)
             {
-                Text = r,
                 ResponseId = chatWithCacheKey.Chat.Id,
-                Role = ChatRole.Assistant,
                 FinishReason = null,
                 CreatedAt = DateTime.UtcNow,
                 RawRepresentation = r,
@@ -175,13 +173,11 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         var responseMessage = new ChatMessage(ChatRole.Assistant, responseText);
 
         // Cache or delete the chat depending on the options
-        await CacheOrDeleteChatAsync(chatMessages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
+        await CacheOrDeleteChatAsync(messages, options, chatWithCacheKey, responseMessage, cancellationToken).ConfigureAwait(false);
 
-        yield return new ChatResponseUpdate()
+        yield return new ChatResponseUpdate(ChatRole.Assistant, responseText)
         {
-            Text = responseText,
             ResponseId = chatWithCacheKey.Chat.Id,
-            Role = ChatRole.Assistant,
             FinishReason = ChatFinishReason.Stop,
             CreatedAt = DateTime.UtcNow,
             RawRepresentation = responseText,
@@ -189,7 +185,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         };
     }
 
-    private async Task CacheOrDeleteChatAsync(IList<ChatMessage> chatMessages,
+    private async Task CacheOrDeleteChatAsync(IEnumerable<ChatMessage> chatMessages,
                                               ChatOptions? options,
                                               ChatWithCacheKey chatWithCacheKey,
                                               ChatMessage responseMessage,
@@ -215,7 +211,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
 
     private record ChatWithCacheKey(string CacheKey, ICopilotChat Chat);
 
-    private async Task<ChatWithCacheKey> GetOrCreateChatAsync(IList<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
+    private async Task<ChatWithCacheKey> GetOrCreateChatAsync(IEnumerable<ChatMessage> chatMessages, ChatOptions? options, CancellationToken cancellationToken)
     {
         // Look up this chat in our cache
         var chatCacheKey = GetChatKey(chatMessages);
@@ -273,7 +269,8 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         };
     }
 
-    private static string GetChatKey(IList<ChatMessage> chatMessages) => string.Join("", chatMessages.Take(chatMessages.Count - 1).Select(m => $"{m.Role}{m.Text}"));
+    private static string GetChatKey(IEnumerable<ChatMessage> chatMessages) =>
+        string.Concat(chatMessages.SkipLast(1).Select(m => $"{m.Role}{m.Text}"));
 
     private static T? GetValueFromOptions<T>(ChatOptions? options, string propertyName, T? defaultValue = default)
     {
@@ -285,7 +282,7 @@ public class PiecesChatClient(IPiecesClient piecesClient, string chatName = "", 
         return defaultValue;
     }
 
-    private static List<SeedMessage> GetSeedsFromChatMessages(IList<ChatMessage> chatMessages)
+    private static List<SeedMessage> GetSeedsFromChatMessages(IEnumerable<ChatMessage> chatMessages)
     {
         // Validate the chat messages - we need at least one, and the last should be a user message
         if (!chatMessages.Any())
